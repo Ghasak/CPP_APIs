@@ -13,3 +13,10 @@ void printing_message(const char* message)
     cout << message << endl;
     cout << "------------------------------------------- \n";
 }
+
+
+int X(int a, int b)
+{
+    int result = a * b;
+    return result;
+}

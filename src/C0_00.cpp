@@ -3,6 +3,7 @@
 #include "Log.cpp"  // declaration
 #include "math.cpp"
 
+
 // void Log(const char* message); // definition - this one doesn't work
 
 using namespace std;
@@ -25,9 +26,11 @@ int main(){
     b = cin.get();
     cout << "-------OUTPUT----------";
     cout << Multiply(a, b);
+
     surprise();
     simpson();
     cumulative_sum();
+    cout << X(a,b);
     std::cin.get();
 
 }
