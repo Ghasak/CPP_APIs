@@ -9,7 +9,7 @@ int Multiply(int a, int b)
 }
 
 void surprise(){
-    int max = 100;
+    int max = 1000;
     int min = 2;
     cout << "\n";
     for(int i = min ; i <= max; i++){

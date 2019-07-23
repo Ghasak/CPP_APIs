@@ -24,12 +24,15 @@ int main(){
     a = cin.get();
     cout<< "Please input the value of b is = ";
     b = cin.get();
-    cout << "-------OUTPUT----------";
+    cout << "-------OUTPUT---------- \n";
     cout << Multiply(a, b);
-
+    cout << "-------Apply the surprise function---------- \n";
     surprise();
+    cout << "-------Apply the simpson function----------\n";
     simpson();
+    cout << "-------Apply the cumulative sum function----------\n";
     cumulative_sum();
+    cout << "-------Using Header declaration to a function----------\n";
     cout << X(a,b);
     std::cin.get();
 
