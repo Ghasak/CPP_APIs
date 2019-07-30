@@ -2,6 +2,7 @@
 #include <string>
 #include "Log.cpp"  // declaration
 #include "math.cpp"
+#include "test.h"
 
 
 // void Log(const char* message); // definition - this one doesn't work

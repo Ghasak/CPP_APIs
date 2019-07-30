@@ -63,3 +63,7 @@ void cumulative_sum(){
     delete [] a2;
     delete [] c2;
 }
+
+
+// This is a function to learn about using loops
+
