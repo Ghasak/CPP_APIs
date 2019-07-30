@@ -8,3 +8,8 @@ int X(int a, int b)
 }
 
 
+void for_loop_test (){
+    for ( int i = 0 ; i< 10; i ++){
+        cout << "Hellow world" << endl;
+    }
+}

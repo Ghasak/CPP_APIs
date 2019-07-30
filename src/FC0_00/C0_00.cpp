@@ -35,6 +35,8 @@ int main(){
     cumulative_sum();
     cout << "-------Using Header declaration to a function----------\n";
     cout << X(a,b);
+    cout << "------- Loop function ----------\n";
+    //cout << for_loop_test();
     std::cin.get();
 
 }

@@ -4,3 +4,5 @@ using namespace std;
 
 int X(int a, int b);
 
+void for_loop_test ();
+
