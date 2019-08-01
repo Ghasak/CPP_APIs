@@ -10,3 +10,19 @@ int USING_IF();
 
 void Log(const char* message);
 void using_loop(const char* message2);
+
+// Using loop but with conditions out of the standard loop itself
+void using_loop2(const char* message3);
+
+// Using the while loop here
+
+void using_while(const char* message);
+
+// using the do-while loop
+
+void using_do_while(const char* message);
+
+// control flow statement with loops usually
+// continue, break, return
+
+void control_flow(const char* message);

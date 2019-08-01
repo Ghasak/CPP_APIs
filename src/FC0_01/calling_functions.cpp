@@ -39,10 +39,75 @@ void Log(const char* message)
 
 }
 
-void using_loop(const char* message2)
+void using_loop(const char* message)
 {
     for(int i = 0 ; i < 10; i ++){
-        // Log(message2);
-        std::cout << message2 <<" "<<i<<std::endl;
+        // Log(message);
+        std::cout << message <<" "<<i<<std::endl;
     }
 }
+
+void using_loop2(const char* message)
+{
+    int i = 0;
+    bool condition = true;
+    for (;condition;)
+    {
+        Log(message);
+        i ++;
+        if ( !(i < 5))
+        {
+            condition = false;
+        }
+    }
+}
+
+// Using the while loop here
+
+void using_while(const char* message)
+{
+    int i = 1;
+    while (i < 10)
+    {
+        Log(message);
+        i ++;
+    }
+}
+
+
+// using the do-while loop
+
+void using_do_while(const char* message)
+{
+    int i = 0;
+    do
+    {
+        Log("at least this will be executed once");
+        Log("iteration No");
+        cout << i << endl;
+        i ++;
+    } while ( i < 10);
+
+}
+
+
+// control flow statement with loops usually
+// continue, break, return
+
+void control_flow(const char* message)
+{
+    for (int i = 0; i < 5; i ++)
+    {
+        if ( i % 2 == 0) // skip every second value of increment i
+        {
+            continue;
+        }
+        Log(message);
+        cout << i << endl;
+    }
+
+}
+
+
+
+

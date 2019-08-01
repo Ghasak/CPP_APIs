@@ -43,8 +43,21 @@ int main(){
         Log("Hello world!!");
     }
     // using the function itself
+    Log("====================================");
     using_loop("Iteration Number");
+    // Using loop but with conditions out of the standard loop itself
+    Log("============= Loop Statement ==============");
+    using_loop2("Here I use the second loop statement");
+    // Using the while loop here
+    Log("=========== While Statement ==============");
+    using_while("Here I used the while statement");
+    // using the do-while loop
+    Log("============ Do while ============");
+    using_do_while("I will use here the do while");
+    Log("============ Control Flow =============");
+    // control flow statement with loops usually
+    // continue, break, return
+    control_flow("test");
 
-    
     cin.get();
 }
