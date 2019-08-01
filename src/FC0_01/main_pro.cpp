@@ -1,5 +1,6 @@
 #include <iostream>
 #include <stdio.h>
+#include <string>
 
 using namespace std;
 
@@ -19,7 +20,18 @@ int main(){
     // We will call the function directly from calling_functions.cpp
     cout << add(100, 100);
     cout << USING_IF(5);
-
+    // input a value not valid:
+    cout << USING_IF(8);
+    cout << USING_IF(7);
+    // Using the conditional statement
+    printf("\n ======= Using if Statement ========= \n");
+    const char* ptr = "Wow";
+    if(ptr)
+        cout << ptr;
+    else if(ptr == "Wow")
+        cout << "Wow!!!!!!!";
+    else
+        printf("ptr is null!");
 
 
     cin.get();
