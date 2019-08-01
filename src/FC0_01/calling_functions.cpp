@@ -106,7 +106,57 @@ void control_flow(const char* message)
         cout << i << endl;
     }
 
+    for (int i = 0; i < 5; i ++)
+    {
+        if ( (i+1) % 2 == 0) // skip every second value of increment i
+        {
+            break;  // if the condition above true then the loop will be terminated
+        }
+        Log("========================");
+        cout << i << endl;
+    }
+
 }
+
+
+// Pointers - memory management enhancement -this is not smart pointer
+// pointer is an integer of the address of memory -
+
+void learn_pointer(const char* message)
+{
+    // pointer has not type - just a memory address (integer)
+    // but there is a social convention to define data type.
+
+     void* ptr1 = 0; // we gave a memory address of (0) we can read or write from (0)
+     void* ptr2 = NULL;
+     void* ptr = nullptr; // introdcued in C++11
+     cout << ptr << endl;
+     Log("===========================");
+     int var = 8; // where is the location in memory for a variable already declared
+     void* ptr3 = &var; // go bring me the address of memory and put it in pointer ptr3.
+     cout << "The pointer ptr3 is = "<< ptr3 << endl;
+     Log("You can see that uppersend just has return the address of (var) then we stored it in a pointer called ptr3");
+     Log("===========================");
+     Log("========= Change the pointer value doesn't change anything ===========");
+     int* ptr4 = &var;
+     cout << "The pointer ptr4 is = "<< ptr4 << endl;
+     Log("--------- Learn how to cast for different datatype ---------");
+     double* ptr5 = (double*)&var; // casting to make it same as the container that you declared.
+     cout << "The pointer ptr5 is = "<< ptr5 << endl;
+     Log("The data type of pointer is used only for manpulate data as we say store a (4) bytes as int in memory and it will not affect the address of memory which is the function of the pointer itself");
+     Log("===========================");
+     Log("--------- Dereferencing our pointer very important !!!! ---------");
+     Log("Simply we when we do dereferencing we will need to specify the memory length and thus we will need to us int, double ..etc instead of void ");
+     int var2 = 10;
+     int* ptr6 = &var2; // it was void before, and we told the compiler to specify this pointer as (int) so we can obtain the value we specified.
+     cout << *ptr6 ;
+
+
+
+}
+
+
+
 
 
 

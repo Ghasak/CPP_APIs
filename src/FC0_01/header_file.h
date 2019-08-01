@@ -26,3 +26,9 @@ void using_do_while(const char* message);
 // continue, break, return
 
 void control_flow(const char* message);
+
+
+// Pointers - memory management enhancement -this is not smart pointer
+// pointer is an integer of the address of memory -
+
+void learn_pointer(const char* message);

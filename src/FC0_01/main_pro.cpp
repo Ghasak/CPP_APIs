@@ -58,6 +58,10 @@ int main(){
     // control flow statement with loops usually
     // continue, break, return
     control_flow("test");
+    Log("============ Pointers in memory =============");
+    // Pointers - memory management enhancement -this is not smart pointer
+    // pointer is an integer of the address of memory -
+    learn_pointer(" ");
 
     cin.get();
 }
