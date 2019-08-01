@@ -18,6 +18,8 @@ int main(){
     printf("This is Ghasak \n");
     // We will call the function directly from calling_functions.cpp
     cout << add(100, 100);
+    cout << USING_IF(5);
+
 
 
     cin.get();
