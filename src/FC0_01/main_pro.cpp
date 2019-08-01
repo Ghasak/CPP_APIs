@@ -25,14 +25,26 @@ int main(){
     cout << USING_IF(7);
     // Using the conditional statement
     printf("\n ======= Using if Statement ========= \n");
-    const char* ptr = "Wow";
-    if(ptr)
+    const char* ptr = 0;
+    const char* comparwith = "Hello";
+    if(ptr) {
         cout << ptr;
-    else if(ptr == "Wow")
+    }
+    else if(ptr == comparwith){
         cout << "Wow!!!!!!!";
-    else
-        printf("ptr is null!");
+    }
+    else {
+        Log("We are having a Null pointer!!");
+    }
+    // Using the conditional statement
+    printf("\n ======= Using Loops ========= \n");
+    for (int i = 0 ; i < 10; i ++)
+    {
+        Log("Hello world!!");
+    }
+    // using the function itself
+    using_loop("Iteration Number");
 
-
+    
     cin.get();
 }

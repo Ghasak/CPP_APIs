@@ -32,5 +32,17 @@ int USING_IF(int x)
  return x;
 
 }
+void Log(const char* message)
+{
 
+    std::cout << message << std::endl;
 
+}
+
+void using_loop(const char* message2)
+{
+    for(int i = 0 ; i < 10; i ++){
+        // Log(message2);
+        std::cout << message2 <<" "<<i<<std::endl;
+    }
+}

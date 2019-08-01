@@ -8,4 +8,5 @@ int add(int x, int y);
 // again this function will not work unless you declare it here in the header in the top.
 int USING_IF();
 
-
+void Log(const char* message);
+void using_loop(const char* message2);
