@@ -5,6 +5,7 @@
 #include "test.h"
 
 
+
 // void Log(const char* message); // definition - this one doesn't work
 
 using namespace std;
@@ -21,9 +22,9 @@ int main(){
     int a;
     int b;
     a = 0; b = 0;
-    cout<< "Please input the value of a is = ";
+    cout << "Please input the value of a is = ";
     a = cin.get();
-    cout<< "Please input the value of b is = ";
+    cout << "Please input the value of b is = ";
     b = cin.get();
     cout << "-------OUTPUT---------- \n";
     cout << Multiply(a, b);
@@ -35,8 +36,10 @@ int main(){
     cumulative_sum();
     cout << "-------Using Header declaration to a function----------\n";
     cout << X(a,b);
+    cout << "------- Conditional ----------\n";
     cout << "------- Loop function ----------\n";
     //cout << for_loop_test();
+    // cout << addition(100 ,100);
     std::cin.get();
 
 }

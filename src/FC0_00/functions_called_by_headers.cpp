@@ -1,4 +1,5 @@
 #include <iostream>
+
 using namespace std;
 
 int X(int a, int b)
@@ -7,9 +8,12 @@ int X(int a, int b)
     return result;
 }
 
+// Define a conditional statement and branches
 
-void for_loop_test (){
-    for ( int i = 0 ; i< 10; i ++){
-        cout << "Hellow world" << endl;
-    }
+int addition (int a, int b)
+{
+  int r;
+  r = a+b;
+  return r;
 }
+
