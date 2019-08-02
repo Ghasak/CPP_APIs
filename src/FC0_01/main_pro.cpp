@@ -1,6 +1,8 @@
 #include <iostream>
-#include <stdio.h>
+#include <cstdio>
 #include <string>
+#include <climits>  // max & min size of integer types
+#include <cfloat>   // max & min size of real types
 
 using namespace std;
 
@@ -61,7 +63,11 @@ int main(){
     Log("============ Pointers in memory =============");
     // Pointers - memory management enhancement -this is not smart pointer
     // pointer is an integer of the address of memory -
-    learn_pointer(" ");
+    learn_pointer("");
+    // Using the printf in C++ language
+    using_printf("");
+    // Datatype in C++
+    data_type("");
 
     cin.get();
 }

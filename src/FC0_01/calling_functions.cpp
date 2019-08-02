@@ -1,5 +1,8 @@
 #include <iostream>
-#include <stdio.h>
+#include <cstdio>
+//#include <math.h> // This one for c and I didn't use it here
+#include <cmath> // This one for c++ and I used it for pow() function
+//#include <stdio.h>   // This is for C-language only
 using namespace std;
 
 int add(int x, int y)
@@ -148,15 +151,133 @@ void learn_pointer(const char* message)
      Log("--------- Dereferencing our pointer very important !!!! ---------");
      Log("Simply we when we do dereferencing we will need to specify the memory length and thus we will need to us int, double ..etc instead of void ");
      int var2 = 10;
-     int* ptr6 = &var2; // it was void before, and we told the compiler to specify this pointer as (int) so we can obtain the value we specified.
-     cout << *ptr6 ;
-
-
+     int* ptr6 = &var2; // it was void before, and we told the compiler to specify this pointer as (int) so we can obtain the value we specified. it can be 32-bit, 64-bit ...etc
+     cout << "\nI print here the current value of the pointer = "<< *ptr6 ;
+     printf("\nThe value of var2 = %d%*c Which I assigned recently",var2,2);
+     printf("\n--------------------------");
+     // lets change the value there to 8
+     *ptr6 = 8;
+     printf("\nThe value of pointer now is = %d",var2);
+     Log("\n===========================");
+     Log("--------- New Topic goes here ---------\n");
 
 }
 
 
+// Using printf in C++
+void using_printf(const char* message)
+{
+    char ch = 'a';
+    float a = 5.0, b = 3.0;
+    int x = 10;
+    printf("%.3f / %.3f = %.3f \n", a,b,a/b);
+    printf("Setting width %*c \n",5,ch);
+    printf("Octal equivalent of %d is %o \n",x,x);
+}
 
+
+
+void data_type(const char* message)
+{
+    /**
+     * Report on the size of various c++ data types.
+     * This program may give different results when run on different computers depending
+     * on how how each of the fundamental data type is defined on those platflorms.
+     */
+    // Integer types:
+    Log("============================================");
+    Log("         Data types and their memory        ");
+    Log("============================================");
+    Log("--------------------------------------------");
+    Log("---- The Integer types ------");
+    Log("--------------------------------------------");
+    cout << "The size of short is     = " << sizeof(short) << " bytes" << endl;
+    cout << "The size of int   is     = " << sizeof(int)   << " bytes" << endl;
+    cout << "The size of long  is     = " << sizeof(long)  << " bytes" << endl;
+    // long long might not exist on all computers.
+    Log("--------------------------------------------");
+    Log("---- The long-long types ------");
+    Log("--------------------------------------------");
+    cout << "The size of long long is = " << sizeof(long long) << " bytes" << endl;
+    // Character and boolean types:
+    Log("--------------------------------------------");
+    Log("---- The boolean types ------");
+    Log("--------------------------------------------");
+    cout << "The size of char   is    = " << sizeof(char)  << " bytes" << endl;
+    cout << "The size of bool   is    = " << sizeof(bool)  << " bytes" << endl;
+    // Floating point types:
+    Log("--------------------------------------------");
+    Log("---- The floating-point types ------");
+    Log("--------------------------------------------");
+    cout << "The size of float  is    = " << sizeof(float) << " bytes" << endl;
+    cout << "The size of double is    = " << sizeof(double)<< " bytes" << endl;
+    // long-double might not exist on all computers:
+    Log("--------------------------------------------");
+    Log("---- The long-double types ------");
+    Log("--------------------------------------------");
+    cout << "The size long-double is  = " << sizeof(long double) << " bytes" << endl;
+
+    /**
+     * Notice that an int is 4 bytes on both machines and so, in both cases, int variables can hold values from −2^31 to 2^31 − 1. Note also that double variables on both machines are 8 bytes, but this does not tell us the range of values that double values can take.
+        For the float and double data types, there are three quantities of interest: the largest value, the smallest positive value, and the difference between 1 and the smallest value greater than 1. This latter value is known as the epsilon value of the data type. Knowing that a double is 8 bytes does not immediately reveal these three quantities.
+        C++ provides header files with this information. The header file climits gives the minimum and maximum value of various integer types. It defines symbols such as INT_MIN and INT_MAX that are equal to the smallest and largest value an int may hold. Similarly, the header file cfloat gives the minimum positive, maximum, andepsilonvaluesforfloat,double,andlong double(if available)datatypes.
+     */
+    // #include <climits>  // max & min size of integer types
+    // #include <cfloat>   // max & min size of real types
+    // Integer types:
+    Log("============================================");
+    Log("         Data types and their memory        ");
+    Log("============================================");
+    // print out the extreme values of various integer types.
+    Log("--------------------------------------------");
+    Log("The maximum and minium of integer data types");
+    Log("--------------------------------------------");
+    cout << "The maximum size of an int  is              = " << INT_MAX  << endl;
+    cout << "The minimum size of an int  is              = " << INT_MIN  << endl;
+    cout << "The maximum size of a short is              = " << SHRT_MAX << endl;
+    cout << "The minimum size of a short is              = " << SHRT_MIN << endl;
+    cout << "The maximum size of a long  is              = " << LONG_MAX << endl;
+    cout << "The minimum size of a long  is              = " << LONG_MIN << endl;
+    Log("----------------------------------------------------");
+    Log("long - long values might not exist on some computers");
+    Log("----------------------------------------------------");
+    cout << "The maximum size of a long long is          = " << LLONG_MAX << endl;
+    cout << "The minimum size of a long long is          = " << LLONG_MIN << endl;
+    Log("----------------------------------------------------");
+    Log("               Float point                          ");
+    Log("----------------------------------------------------");
+    cout << "The minimum positive value of a float is    = "  << FLT_MIN     << endl;
+    cout << "The minimum epsilon value of a float is     = "  << FLT_EPSILON << endl;
+    cout << "The maximum value of a float is             = "  << FLT_MAX     << endl;
+
+    cout << "The minimum positive value of a double is   = "  << DBL_MIN     << endl;
+    cout << "The minimum epsilon value of a double is    = "  << DBL_EPSILON << endl;
+    cout << "The maximum value of a double is            = "  << DBL_MAX     << endl;
+
+    Log("----------------------------------------------------");
+    Log("               Long-double                          ");
+    Log("----------------------------------------------------");
+    cout << "The minimum positive value of a long double is = "  << LDBL_MIN     << endl;
+    cout << "The minimum epsilon value of a long double is  = "  << LDBL_EPSILON << endl;
+    cout << "The maximum value of a long double is          = "  << LDBL_MAX     << endl;
+
+    Log("----------------------------------------------------");
+    Log("               Example on variables types           ");
+    Log("----------------------------------------------------");
+    double numerator = 13;
+    double denominator = 5;
+    double quotient;
+    quotient = numerator / denominator;
+    printf("the value of r is = %.5f and the value of s = %.5f and the value of denomiantor is = %.5f \n",quotient,numerator,denominator);
+    Log("----------------------------------------------------");
+    Log("               Using int value capacity             ");
+    Log("----------------------------------------------------");
+    double x = pow(2,31); // Using the math
+    double xnew = x / 2;
+    printf("The value of x is = %.1f and xnew is = %.1f", x, xnew);
+
+
+}
 
 
 
