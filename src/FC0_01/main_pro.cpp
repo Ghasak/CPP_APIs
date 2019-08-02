@@ -65,10 +65,16 @@ int main(){
     // pointer is an integer of the address of memory -
     learn_pointer("");
     // Using the printf in C++ language
+    Log("============ printf method =============");
     using_printf("");
     // Datatype in C++
+    Log("============ Datatype in C++ =============");
     data_type("");
     // Practice pointers and data types
+    Log("============ Practice with pointers =============");
     practice_pointers_data_type("");
+    // Cating types in C++
+    Log("============ Casting Operators =============");
+    Type_Casting_Operators("");
     cin.get();
 }

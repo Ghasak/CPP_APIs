@@ -351,30 +351,90 @@ void data_type(const char* message)
 
 }
 
-
-
 void practice_pointers_data_type(const char* message)
 {
     Log("====================================================");
     Log("               Practice the datatypes               ");
     Log("====================================================");
      // Decimal numbers
-     int       x1   = 100;
-     short     x1_1 = 100;
-     long      x1_2 = 100;
-     long long x1_3 = 100;
+     int       x1     = 100;
+     short     x1_1   = 100;
+     long      x1_2   = 100;
+     long long x1_3   = 100;
     // Character and logical
-     char        A = 'a';
-     bool        B = true;
+     char        A    = 'a';
+     bool        B    = true;
     // floating numbers
      double      x2   = 100.10;
      float       x3   = 200.10;
      long double x2_1 = 100.10;
+    Log("----------------------------------------------------");
     printf("The integers values types we have are x = %d, x1_1 = %d, x1_2 = %ld and x1_3 = %lld\n",x1,x1_1,x1_2,x1_3);
+    printf("While the sizes are given for each are int       x1   = %lu\n",sizeof(x1));
+    printf("While the sizes are given for each are short     x1_1 = %lu\n",sizeof(x1_1));
+    printf("While the sizes are given for each are long      x1_2 = %lu\n",sizeof(x1_2));
+    printf("While the sizes are given for each are long long x1_3 = %lu\n",sizeof(x1_3));
     Log("----------------------------------------------------");
     printf("The boolian character are represented by char A = %c and B = %d\n",A,B);
+    printf("While the sizes are given for each are char       A   = %lu\n",sizeof(A));
+    printf("While the sizes are given for each are bool       B   = %lu\n",sizeof(B));
     Log("----------------------------------------------------");
+    printf("The floating numbers represented by double are x2 = %.2f and float x3 = %.2f\n and long double x2_1 = %.2Lf \n",x2,x3,x2_1);
+    printf("While the sizes are given for each are double       x2     = %lu\n",sizeof(x2));
+    printf("While the sizes are given for each are float        x3     = %lu\n",sizeof(x3));
+    printf("While the sizes are given for each are long double  x2_1   = %lu\n",sizeof(x2_1));
+    Log("----------------------------------------------------");
+    int* intptr = &x1;
+    printf("The address to refere to x1 in memory is       = %p\n",intptr);
+    printf("Dereferencing to obtain back the value of x1   = %d\n", *intptr);
+    printf("The value of x1 before changing is = %d\n", x1);
+    *intptr = 500;
+    printf("The value of x1 after changing is  = %d\n", x1);
+    printf("Can we chagne to other types .....\n");
+    double s = (1.000 * x1); //(double)x1;   // or you can cast by using 1.000 * x1
+    double* doubleptr = &s;   // you can't use &(double)x1;
+    *doubleptr = 500.5;
+    printf("The value of s after changing from int to double is  = %.3f\n",s);
+    printf("---------------------------------------------------\n");
+    short* shortptr = &x1_1;
+    printf("The address to refere to x1_1 in memory is     = %p\n",  shortptr);
+    printf("Dereferencing to obtain back the value of x1_1 = %d\n", *shortptr);
+    printf("The value of x1_1 before changing is = %d\n", x1_1);
+    *shortptr = 1000;
+    printf("The value of x1_1 after changing is  = %d\n", x1_1);
+    printf("---------------------------------------------------\n");
 
+
+}
+
+// Cating types in C++
+void Type_Casting_Operators(const char* message)
+{
+    /**
+     *          Static_cat in C++: Type Casting Operators
+     * A cast is an unary operator which forces one data type to be converted
+     * into another data type C++ supports four types of casting:
+     *          - Static      cast
+     *          - Dynamic     cast
+     *          - Const       cast
+     *          - Reinterpret cast
+     */
+
+    float f = 3.5;
+    int a = f; // this is how you do in C
+    int b = static_cast<int>(f);
+    cout << b << endl;
+    cout << a << endl;
+
+    int x1 = 100;
+    double x2 = static_cast<double>(x1);
+    double* doubleptr = &x2;
+    cout << doubleptr << endl;
+    cout << *doubleptr << endl;
+
+    double* q = static_cast<double*>(&x2);
+    cout << q  << endl;
+    cout << *q << endl;
 
 
 }
