@@ -28,3 +28,6 @@ void using_printf(const char* message);
 // Data type in C++
 void data_type(const char* message);
 
+// Practice pointers and data types
+void practice_pointers_data_type(const char* message);
+

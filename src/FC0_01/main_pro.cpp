@@ -68,6 +68,7 @@ int main(){
     using_printf("");
     // Datatype in C++
     data_type("");
-
+    // Practice pointers and data types
+    practice_pointers_data_type("");
     cin.get();
 }

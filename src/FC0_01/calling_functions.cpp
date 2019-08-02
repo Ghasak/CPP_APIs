@@ -153,13 +153,17 @@ void learn_pointer(const char* message)
      int var2 = 10;
      int* ptr6 = &var2; // it was void before, and we told the compiler to specify this pointer as (int) so we can obtain the value we specified. it can be 32-bit, 64-bit ...etc
      cout << "\nI print here the current value of the pointer = "<< *ptr6 ;
-     printf("\nThe value of var2 = %d%*c Which I assigned recently",var2,2);
+     printf("\nThe value of var2 = %d %c Which I assigned recently",var2,2);
      printf("\n--------------------------");
      // lets change the value there to 8
      *ptr6 = 8;
      printf("\nThe value of pointer now is = %d",var2);
      Log("\n===========================");
-     Log("--------- New Topic goes here ---------\n");
+
+
+
+
+
 
 }
 
@@ -167,12 +171,48 @@ void learn_pointer(const char* message)
 // Using printf in C++
 void using_printf(const char* message)
 {
+    /**
+     * Learn more about the place holder in: http://www.cplusplus.com/reference/cstdio/printf/
+     * also you will need the header file #include <cstido>
+     * specifier	Output	                                        Example
+       d or i	Signed decimal integer	                            392
+       u	     Unsigned decimal integer	                        7235
+       o	     Unsigned octal	                                    610
+       x	     Unsigned hexadecimal integer	                    7fa
+       X	     Unsigned hexadecimal integer (uppercase)	        7FA
+       f	     Decimal floating point, lowercase	                392.65
+       F	     Decimal floating point, uppercase	                392.65
+       e	     Scientific notation (mantissa/exponent), lowercase	3.9265e+2
+       E	     Scientific notation (mantissa/exponent), uppercase	3.9265E+2
+       g	     Use the shortest representation: %e or %f	        392.65
+       G	     Use the shortest representation: %E or %F	        392.65
+       a	     Hexadecimal floating point, lowercase	            -0xc.90fep-2
+       A	     Hexadecimal floating point, uppercase	            -0XC.90FEP-2
+       c	     Character	                                        a
+       s	     String of characters	                            sample
+       p	     Pointer address	                                b8000000
+       n	     Nothing printed.
+                 The corresponding argument must be a pointer to a signed int.
+                 The number of characters written so far is stored in the pointed location.
+       %	     A % followed by another % character will write a single % to the stream.	%
+     *
+     *
+     *  */
+
     char ch = 'a';
     float a = 5.0, b = 3.0;
     int x = 10;
     printf("%.3f / %.3f = %.3f \n", a,b,a/b);
     printf("Setting width %*c \n",5,ch);
     printf("Octal equivalent of %d is %o \n",x,x);
+    printf ("Characters: %c %c \n", 'a', 65);
+    printf ("Decimals: %d %ld\n", 1977, 650000L);
+    printf ("Preceding with blanks: %10d \n", 1977);
+    printf ("Preceding with zeros: %010d \n", 1977);
+    printf ("Some different radices: %d %x %o %#x %#o \n", 100, 100, 100, 100, 100);
+    printf ("floats: %4.2f %+.0e %E \n", 3.1416, 3.1416, 3.1416);
+    printf ("Width trick: %*d \n", 5, 10);
+    printf ("%s \n", "A string");
 }
 
 
@@ -274,11 +314,68 @@ void data_type(const char* message)
     Log("----------------------------------------------------");
     double x = pow(2,31); // Using the math
     double xnew = x / 2;
-    printf("The value of x is = %.1f and xnew is = %.1f", x, xnew);
+    /**
+     * Notice that the result is equivalent to the one we have
+     * in (INT_MAX) and the reason is: x is the maximum value of
+     * a integer number can occupy the memory of (int) variable defined
+     * such as: int---> is (4 bytes) and each (1 byte) is (8-bits)
+     * which means (32-bits) for an (int). Then if we exclude the (sign)
+     * such as (+/-) then we ended up with (31-bits). In the binary system
+     * and as (1/0) we can represent any value we get (2^31).
+     */
+    printf("The maximum value of x as an integer value is = %.1f and signed integer is = %.1f\n", x, xnew);
+    /**
+     * Similary about double (or double-double in mac c++ compiler) we have
+     * 16 bytes each byte is 8 bits and so we get (2^64) maximum double value
+     * remove one bit for the sign we ended up with (2^63)
+     */
+    x = pow(2,63); // (8 bytes * 8 bits --> 64 ---> 64-1 = 63)
+    xnew = x/2;
+    Log("-------------------------------------------------------");
+    printf("The maximum value of x as an double value is = %.1f and signed double is = %.1f\n", x, xnew);
 
+    x = pow(2,16); //short
+    xnew = x/2;
+    Log("-------------------------------------------------------");
+    printf("The maximum value of x as an short value is = %.1f and signed short is = %.1f\n", x, xnew);
+    // Log("----------------------------------------------------");
+    // Log("       Investgate the behavior of the mode          ");
+    // Log("----------------------------------------------------");
+
+    // int a, b;
+    // cout << "Enter the first number --> " << endl;
+    // cin >> a;
+    // cout << "Enter the second number -> " << endl;
+    // cin >> b;
+    // cout << a << " % " << b << " = " << a%b << endl;
 
 }
 
 
 
+void practice_pointers_data_type(const char* message)
+{
+    Log("====================================================");
+    Log("               Practice the datatypes               ");
+    Log("====================================================");
+     // Decimal numbers
+     int       x1   = 100;
+     short     x1_1 = 100;
+     long      x1_2 = 100;
+     long long x1_3 = 100;
+    // Character and logical
+     char        A = 'a';
+     bool        B = true;
+    // floating numbers
+     double      x2   = 100.10;
+     float       x3   = 200.10;
+     long double x2_1 = 100.10;
+    printf("The integers values types we have are x = %d, x1_1 = %d, x1_2 = %ld and x1_3 = %lld\n",x1,x1_1,x1_2,x1_3);
+    Log("----------------------------------------------------");
+    printf("The boolian character are represented by char A = %c and B = %d\n",A,B);
+    Log("----------------------------------------------------");
+
+
+
+}
 
