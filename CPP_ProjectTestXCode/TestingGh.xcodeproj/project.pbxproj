@@ -7,8 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		FB9A43F62339FA9B0056D267 /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = FB9A43F52339FA9B0056D267 /* main.cpp */; };
-		FB9A4401233CA6E40056D267 /* myFunctions.cpp in Sources */ = {isa = PBXBuildFile; fileRef = FB9A4400233CA6E40056D267 /* myFunctions.cpp */; };
+		FBBDDCEC234212180027D497 /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = FBBDDCEA234212180027D497 /* main.cpp */; };
+		FBBDDCED234212180027D497 /* myFunctions.cpp in Sources */ = {isa = PBXBuildFile; fileRef = FBBDDCEB234212180027D497 /* myFunctions.cpp */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -25,9 +25,9 @@
 
 /* Begin PBXFileReference section */
 		FB9A43F22339FA9B0056D267 /* TestingGh */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = TestingGh; sourceTree = BUILT_PRODUCTS_DIR; };
-		FB9A43F52339FA9B0056D267 /* main.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = "<group>"; };
-		FB9A43FF233CA6E40056D267 /* myFunctions.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; name = myFunctions.hpp; path = TestingGh/myFunctions.hpp; sourceTree = "<group>"; };
-		FB9A4400233CA6E40056D267 /* myFunctions.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = myFunctions.cpp; path = TestingGh/myFunctions.cpp; sourceTree = "<group>"; };
+		FBBDDCE9234212180027D497 /* myFunctions.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; name = myFunctions.hpp; path = TestingGh/TestingGh/myFunctions.hpp; sourceTree = "<group>"; };
+		FBBDDCEA234212180027D497 /* main.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = main.cpp; path = TestingGh/main.cpp; sourceTree = "<group>"; };
+		FBBDDCEB234212180027D497 /* myFunctions.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = myFunctions.cpp; path = TestingGh/TestingGh/myFunctions.cpp; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -44,8 +44,8 @@
 		FB9A43E92339FA9B0056D267 = {
 			isa = PBXGroup;
 			children = (
-				FB9A4400233CA6E40056D267 /* myFunctions.cpp */,
-				FB9A43FF233CA6E40056D267 /* myFunctions.hpp */,
+				FBBDDCEB234212180027D497 /* myFunctions.cpp */,
+				FBBDDCE9234212180027D497 /* myFunctions.hpp */,
 				FB9A43F42339FA9B0056D267 /* TestingGh */,
 				FB9A43F32339FA9B0056D267 /* Products */,
 			);
@@ -62,7 +62,7 @@
 		FB9A43F42339FA9B0056D267 /* TestingGh */ = {
 			isa = PBXGroup;
 			children = (
-				FB9A43F52339FA9B0056D267 /* main.cpp */,
+				FBBDDCEA234212180027D497 /* main.cpp */,
 			);
 			path = TestingGh;
 			sourceTree = "<group>";
@@ -124,8 +124,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				FB9A43F62339FA9B0056D267 /* main.cpp in Sources */,
-				FB9A4401233CA6E40056D267 /* myFunctions.cpp in Sources */,
+				FBBDDCEC234212180027D497 /* main.cpp in Sources */,
+				FBBDDCED234212180027D497 /* myFunctions.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
