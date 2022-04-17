@@ -33,7 +33,7 @@ g++ -o main main.cpp --std=c++17
 # In Mac you can also use
 c++ main.cpp -o main -std=c++20
 ```
-![My Image](./assets/M_01.png)
+
 
 
 ## References
@@ -41,4 +41,4 @@ c++ main.cpp -o main -std=c++20
 - [C++ How to Program by Paul Deitel Harvey Deitel z-liborg](reading here)
 - [Egin main page ... ](https://eigen.tuxfamily.org/index.php?title=Main_Page)
 - [Egin How to install ... ](https://eigen.tuxfamily.org/dox/GettingStarted.html)
-- [Artificial Neural Network  C++ class](https://www.codeproject.com/Articles/5292985/Artificial-Neural-Network-Cplusplus-Class)
+-- [Artificial Neural Network  C++ class](https://www.codeproject.com/Articles/5292985/Artificial-Neural-Network-Cplusplus-Class)
