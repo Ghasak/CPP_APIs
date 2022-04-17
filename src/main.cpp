@@ -24,10 +24,10 @@ class GradeBook {
 
         }
         // Another random function
-        void randomMessage() {
-            for (int i = 0; i <= 10; i++) {
+        void randomMessage(int n) {
+            for (int i = 0; i <= n; i++) {
                 string message = " Welcome to the grade book for ... ";
-                cout << color::rize("[\ue799 ] ", "Red", "") << color::rize(message, "Magenta", "")<<endl;
+                cout << color::rize("[\ue799 ] ", "Red", "") << "["<<i<<"]" << color::rize(message, "Magenta", "")<<endl;
 
             }
         }
@@ -39,13 +39,21 @@ int main() {
 
     // create a GradeBook object and assign it to myGradeBook
     string nameOfCourse;
+    string userInput;
+
+
     GradeBook myGradeBook;
 
     // call the displayMessage method
     cout << "Input the name of the course you want to construct ... " << endl;
     getline(cin, nameOfCourse);
     myGradeBook.displayMessage(nameOfCourse);
-    myGradeBook.randomMessage();
+
+    cout << "How many times you want to pring on screen ... " << endl;
+    getline(cin, userInput);
+    //place the new value in a new variable that holds int values, named num
+    int num = stoi(userInput);
+    myGradeBook.randomMessage(num);
     cout << "I use g++ main.cpp -o main -std=c++17 to compile this program ... " << endl;
     cout << "End of program.\n";
 
