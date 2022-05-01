@@ -15,7 +15,7 @@ cmake -S ./main.cpp -B ./build
 
 ```
 check this out here
-![Steps of using CMake](./assets/Assets/Image_01.png)
+![Steps of using CMake](./Assets/Image_01.png)
 
 
 
