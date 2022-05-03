@@ -1,3 +1,0 @@
-/Users/gmbp/Desktop/devCode/cppDev/CPP_APIs/CMAKE_FUNDAMENTALS/CMAKE_INDEPTH/Complite_CPP_Using_CMake_and_Make/build/CMakeFiles/myProject.dir
-/Users/gmbp/Desktop/devCode/cppDev/CPP_APIs/CMAKE_FUNDAMENTALS/CMAKE_INDEPTH/Complite_CPP_Using_CMake_and_Make/build/CMakeFiles/edit_cache.dir
-/Users/gmbp/Desktop/devCode/cppDev/CPP_APIs/CMAKE_FUNDAMENTALS/CMAKE_INDEPTH/Complite_CPP_Using_CMake_and_Make/build/CMakeFiles/rebuild_cache.dir
