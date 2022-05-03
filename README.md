@@ -95,3 +95,10 @@ g++ ./main.cpp -o main -I  dependencies/include -L dependencies/lib  -lSDL2 -std
 - (-I) is the directory that has the header files.
 - We add (-lSDL2) to add the compiled static or shared library to your final executable
 
+
+## References
+
+- [Setup SDL2 on your Mac without Xcode](https://medium.com/@edkins.sarah/set-up-sdl2-on-your-mac-without-xcode-6b0c33b723f7)
+- [SDL Wiki](https://wiki.libsdl.org/Installation)
+- [CMake Super-builds and Git Sub-modules](https://www.kitware.com/cmake-superbuilds-git-submodules/?fbclid=IwAR2ANzGXdfT5Hs_LErPS-I8PIZEBoNZ6hmCmZTyLM5uiXmU7ZNIGhN6EZgA)
+
