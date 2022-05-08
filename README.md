@@ -3,6 +3,8 @@
 The following steps are based on the idea of installing `sdl2` binary/complied without a need to use the `xcode`.
 The steps consist of two main things if we want to use only the binary.
 
+![SDL2 Rendering]("./assets/sdl2_rendering_snippet.gif")
+
 ## Instructions
 1. Install the binary of `sdl2` using
 
@@ -84,7 +86,7 @@ to the directory of the form our already defined directory before.
 g++ main.cpp -I./dependencies/include -L./dependencies/lib -lSDL2 -o main  && ./main
 # Or as I don't like not adding spaces, like other developers do.
 g++ main.cpp -I ./dependencies/include -L ./dependencies/lib -l SDL2 -o main  && ./main
-# Or
+# Or - This one I use -
 g++ ./main.cpp -o main -I  dependencies/include -L dependencies/lib  -lSDL2 -std=c++17  && ./main
 ```
 
