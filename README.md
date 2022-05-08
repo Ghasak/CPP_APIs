@@ -4,7 +4,7 @@ The following steps are based on the idea of installing `sdl2` binary/complied w
 The steps consist of two main things if we want to use only the binary.
 
 ![SDL2Rendering](./assets/sdl2_rendering_snippet.gif)
-
+<video src="./assets/Rendering_with_SDL2.mp4" width=80/>
 ## Instructions
 1. Install the binary of `sdl2` using
 
