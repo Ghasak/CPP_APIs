@@ -3,7 +3,7 @@
 The following steps are based on the idea of installing `sdl2` binary/complied without a need to use the `xcode`.
 The steps consist of two main things if we want to use only the binary.
 
-![SDL2 Rendering]("./assets/sdl2_rendering_snippet.gif")
+![SDL2Rendering](./assets/sdl2_rendering_snippet.gif)
 
 ## Instructions
 1. Install the binary of `sdl2` using
