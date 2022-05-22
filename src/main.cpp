@@ -49,6 +49,12 @@ int main(){
         std::cout << "\033[1;31mbold red text[\uf423 ]\033[0m"<<"["<<i<<"]"<< std::endl;
     }
 
+    for (int i = 0; i < 10; i++){
+        myFirstFunction( myVal, i);
+        std::cout << "********************************" << std::endl;
+        myPointerFunction(&myVal, &i);
+    }
+
 
 
 

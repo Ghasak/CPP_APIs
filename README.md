@@ -35,6 +35,7 @@ slower than the `stack`.
 - [x] Data Map, Hash table (called dictionary in python).
 - [x] OOP in C++
 - [ ] Templates.
+- [ ] Life of the objects in C++
 - [ ] Other concepts.
 
 ## Operators
@@ -49,6 +50,9 @@ This operator has several implementations in `CPP`:
       tech giants globally-Packt Publishing 2019.pdf`
     - Also watch more details here [C++ object-oriented tutorials](https://www.youtube.com/watch?v=crtrkPFWq6o&list=PLfyXUgjpxUVFwHkJJ7O6tejR-IL13J2uL&index=8)
 
+- As a `unary Scope Operator`
+check this out
+- [unary scope operator](https://www.youtube.com/watch?v=G4qXfcxMgMM&list=PLfyXUgjpxUVGsuprhbbniYm3VGuEaJN0s&index=25)
 ###
 
 
