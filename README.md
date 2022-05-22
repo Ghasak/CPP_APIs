@@ -1,106 +1,95 @@
-# Installing SDL 2.0 for Mac
+# CPP Core concepts:
+Collecting my notes on the `C++` Core concepts.
 
-The following steps are based on the idea of installing `sdl2` binary/complied without a need to use the `xcode`.
-The steps consist of two main things if we want to use only the binary.
+## Common Practice for memory management
 
-![SDL2Rendering](./assets/sdl2_rendering_snippet.gif)
-<video src="./assets/Rendering_with_SDL2.mp4" width=80/>
-## Instructions
-1. Install the binary of `sdl2` using
+Seems that most developers in C++ are using some pre-defined tools and data
+stature which allow them to control the objects and data creation in the
+memory. As we know the heap is a part of memory fer dynamic memory allocation
+while stack is on top of that that is used for static memory allocation.
+That is why for a `list` built-in in `C++` (not the one from `STl: standard
+template library`) must define the size statically, which means it cannot be
+expanded in `Runtime`. That is for the `Heap` which is used to allocate
+dynamically a list using the `heap` allocation which will be expanded
+dynamically in `runtime`, and also we have `size()` method usually defined to
+get us the size.
 
-```shell
-brew install sdl2
-# It will be located at
-cd /opt/homebrew/Cellar/sdl2/2.0.22
-```
-- It's a complied version of `SDL2`, so we don't need to build the project of `SDL2` from scratch.
+- Use `stack` allocation data types and data structure.
+- Use smart pointers.
+- Use the data structure `Vector` from `STL` and use the static ones, don't use
+  the `heap` array with (`new`) keyword.
 
-
-2. Compile the project using
-
-```shell
-g++ main.cpp -I ./dependencies/SDL2.framework/Headers -o main  -std=c++20  && ./main
-clang main.cpp -I/opt/homebrew/include -L/opt/homebrew/lib -lSDL2 -target x86_64-apple-darwin20.3.0 -o test.o
-g++ main.cpp -I ./dependencies/SDL2.framework/Headers -L ./dependencies/SDL2.framework/Resources -o main  -std=c++20  && ./main
-```
-
-All these I was not able to compile my project with `SDL` it seems my Mac ARM
-not compatible even with Metal.
-
-
-## Instructions -2-
-1. Go to SDL official website and download the `SDL2-2.022.dmg` from [SDL
-   official website](https://www.libsdl.org/download-2.0.php), under the
-   section `Development Libraries:` get the latest version of your SDL2.
-2. Now we have all the required both the library and the headers, we can map
-   them to our project using: this will give us the `SDL.h` directed to our current directory.
-
-```cpp
-#include "./dependencies/SDL2.framework/Headers/SDL.h"
-```
-
-3. Later I found the following, that as I already used `brew` I direct both the headers and the lib to these directories `opt/homebrew/include` and `opt/homebrew/lib`
-not to mention the flag `lSDL2` to make it work.
-```shell
-g++ main.cpp -I/opt/homebrew/include -L/opt/homebrew/lib -lSDL2 -o main  && ./main
-
-```
-also, including in the header of your main file
-
-```cpp
-#include "./dependencies/SDL2.framework/Headers/SDL.h"
-```
-
-I got the same results if I use
-
-```shell
-g++ main.cpp -I./dependencies/SDL2.framework/Headers -L./dependencies/SDL2.framework/Resources -lSDL2 -o main  && ./main
-# It supposed to be like:
-g++ main.cpp -I./dependencies/SDL2.framework/Headers -L./dependencies/SDL2.framework/Resources -l./dependencies/SDL2.framework/SDL2 -o main  && ./main
-```
-but, this will work for my current dependencies file
+**Note**:
+In python, it seems that the `variables` and some pre-defined size `list` such
+as `numpy.array` are created on the `stack` while dictionary or any other data
+structure that will expand in the `runtime` it will be created on the `heap`.
+Creating anything on the `heap` is considered a bad practice as it's notoriously
+slower than the `stack`.
 
 
-## Instructions -3-
+## Data Types and Data Structures and Fundamentals:
 
-Steps that I created
+- [x] Data Primitive Types.
+- [x] Array, list, vector - on stack and heap.
+- [x] Pointer and reference with functions and implementations.
+- [x] Data Map, Hash table (called dictionary in python).
+- [x] OOP in C++
+- [ ] Templates.
+- [ ] Other concepts.
 
-1. Copy the contains of the `SDL2` library into your current project directory using
+## Operators
 
-```shell
-cp -r /opt/homebrew/Cellar/sdl2/2.0.22 ./dependencies/
+### The (::) operator
 
-```
-2. Refer to it in your main.cpp using
+This operator has several implementations in `CPP`:
+- As a `namespace` to group files
+- As a scope resolution operator
+    - read more on page 92 `Antonio Mallia Francesco Zoffoli - C++
+      Fundamentals_ Hit the ground running with C++ the language that supports
+      tech giants globally-Packt Publishing 2019.pdf`
+    - Also watch more details here [C++ object-oriented tutorials](https://www.youtube.com/watch?v=crtrkPFWq6o&list=PLfyXUgjpxUVFwHkJJ7O6tejR-IL13J2uL&index=8)
 
-```cpp
-#include "./dependencies/include/SDL2/SDL.h"
-```
-
-3. Build your system using:
-Once we directed the lib with the flag (-L) which is the absolute directory, we
-can also add a relative directory (-l). Therefor the `-l SDL2` can refer also
-to the directory of the form our already defined directory before.
-
-```shell
-g++ main.cpp -I./dependencies/include -L./dependencies/lib -lSDL2 -o main  && ./main
-# Or as I don't like not adding spaces, like other developers do.
-g++ main.cpp -I ./dependencies/include -L ./dependencies/lib -l SDL2 -o main  && ./main
-# Or - This one I use -
-g++ ./main.cpp -o main -I  dependencies/include -L dependencies/lib  -lSDL2 -std=c++17  && ./main
-```
-
-### Hint
-- The `./dependencies/include/` has the header for all functions, attributes, classes, structs and methods declarations.
-- The `./dependencies/lib/` has all the definitions.
-- (-L) are the binary files to be linked to your final binary. Like `.so` or `.a files` in Linux for example
-- (-I) is the directory that has the header files.
-- We add (-lSDL2) to add the compiled static or shared library to your final executable
+###
 
 
-## References
 
-- [Setup SDL2 on your Mac without Xcode](https://medium.com/@edkins.sarah/set-up-sdl2-on-your-mac-without-xcode-6b0c33b723f7)
-- [SDL Wiki](https://wiki.libsdl.org/Installation)
-- [CMake Super-builds and Git Sub-modules](https://www.kitware.com/cmake-superbuilds-git-submodules/?fbclid=IwAR2ANzGXdfT5Hs_LErPS-I8PIZEBoNZ6hmCmZTyLM5uiXmU7ZNIGhN6EZgA)
+
+
+
+
+
+
+
+## Reference:
+
+- [How to color the std::cout](https://stackoverflow.com/questions/2616906/how-do-i-output-coloured-text-to-a-linux-terminal)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
