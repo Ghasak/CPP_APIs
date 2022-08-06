@@ -1,8 +1,5 @@
 #include <iostream>
 
-
-
-
 /* My Adding function is at moduleA.cpp*/
 float addFunction(float& a , float& b){
     return a + b ;
@@ -19,6 +16,16 @@ void myFirstFunction( int& var, int& idx){
 void myPointerFunction(int* var, int* idx){
     std::cout << "Printing the current results [pointer results] ... "<<"[" << *idx << "] " << *var << std::endl;
     std::cout << "Lets print the address of var: "<<"[" << var << "] "<<idx<< std::endl;
+}
+
+
+void myFunctionM(int& val){
+    std::cout << "Ghasak welcoming you in c++ value of val is : "<< val << std::endl;
+    int a [] = {1,2,3,4,5};
+    for (int i = 0; i < 5; i++)
+    {
+        std::cout << a[i] << std::endl;
+    }
 }
 
 

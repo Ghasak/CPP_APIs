@@ -5,17 +5,24 @@ void myFunction(int& val ){
     std::cout << "value of val is : "<< val << std::endl;
 }
 
+
+void myanotherFunction(int& val){
+    std::cout << "value of val is : "<< val << std::endl;
+}
+
 /* Passing a memeory address and capture it with pointer
    of course you need to dererence your pointer once you do that.
 */
 void myFunctionPointer(int* val){
     std::cout << "value of val is : "<< *val << std::endl;
 }
+
+
 /* our first program in c++ */
 int main(){
     std::cout << "This is just a test in CPP " << std::endl;
-
     int var = 8;
+
     int* ptr = &var ;
 
     std::cout << "The value of ptr: " << ptr << std::endl;
@@ -54,6 +61,27 @@ int main(){
         std::cout << "********************************" << std::endl;
         myPointerFunction(&myVal, &i);
     }
+
+
+    int varx = 10;
+
+
+    for (int i = 0; i < 10; i ++){
+        std::cout << "Current value of i = " << "["<< i<< "]" << std::endl;
+
+    }
+
+    for (int i = 0; i <= 10; i++){
+        for (int j = 0; j <=10; j++){
+            std::cout << "Value of " << "<"<<i << ", "<< j << ">" << std::endl;
+
+        }
+    }
+
+    int val = 10;
+
+    myFunctionM(val);
+
 
 
 
