@@ -27,6 +27,11 @@ Creating anything on the `heap` is considered a bad practice as it's notoriously
 slower than the `stack`.
 
 
+## How to run
+```cpp
+c++ ./src/main.cpp -o ./build/main --std=c++20  && ./build/main
+```
+
 ## Data Types and Data Structures and Fundamentals:
 
 - [x] Data Primitive Types.
@@ -56,4 +61,3 @@ This operator has several implementations in `CPP`:
 
 ## Reference:
 - [How to color the std::cout](https://stackoverflow.com/questions/2616906/how-do-i-output-coloured-text-to-a-linux-terminal)
-
