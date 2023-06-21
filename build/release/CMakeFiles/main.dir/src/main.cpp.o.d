@@ -730,15 +730,15 @@ CMakeFiles/main.dir/src/main.cpp.o: \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX13.3.sdk/usr/include/sys/_types/_fsfilcnt_t.h \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX13.3.sdk/usr/include/_types/_nl_item.h \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX13.3.sdk/usr/include/c++/v1/__bsd_locale_defaults.h \
-  /Users/gmbp/Desktop/devCode/cppDev/CPP_APIs/src/../dependencies/include/SDL2/SDL.h \
-  /Users/gmbp/Desktop/devCode/cppDev/CPP_APIs/src/../dependencies/include/SDL2/SDL_main.h \
-  /Users/gmbp/Desktop/devCode/cppDev/CPP_APIs/src/../dependencies/include/SDL2/SDL_stdinc.h \
-  /Users/gmbp/Desktop/devCode/cppDev/CPP_APIs/src/../dependencies/include/SDL2/SDL_config.h \
-  /Users/gmbp/Desktop/devCode/cppDev/CPP_APIs/src/../dependencies/include/SDL2/SDL_platform.h \
+  /Users/gmbp/Desktop/devCode/cppDev/CPP_APIs/dependencies/include/SDL2/SDL.h \
+  /Users/gmbp/Desktop/devCode/cppDev/CPP_APIs/dependencies/include/SDL2/SDL_main.h \
+  /Users/gmbp/Desktop/devCode/cppDev/CPP_APIs/dependencies/include/SDL2/SDL_stdinc.h \
+  /Users/gmbp/Desktop/devCode/cppDev/CPP_APIs/dependencies/include/SDL2/SDL_config.h \
+  /Users/gmbp/Desktop/devCode/cppDev/CPP_APIs/dependencies/include/SDL2/SDL_platform.h \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX13.3.sdk/usr/include/AvailabilityMacros.h \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX13.3.sdk/usr/include/TargetConditionals.h \
-  /Users/gmbp/Desktop/devCode/cppDev/CPP_APIs/src/../dependencies/include/SDL2/begin_code.h \
-  /Users/gmbp/Desktop/devCode/cppDev/CPP_APIs/src/../dependencies/include/SDL2/close_code.h \
+  /Users/gmbp/Desktop/devCode/cppDev/CPP_APIs/dependencies/include/SDL2/begin_code.h \
+  /Users/gmbp/Desktop/devCode/cppDev/CPP_APIs/dependencies/include/SDL2/close_code.h \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX13.3.sdk/usr/include/c++/v1/inttypes.h \
   /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/clang/14.0.3/include/inttypes.h \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX13.3.sdk/usr/include/inttypes.h \
@@ -746,46 +746,46 @@ CMakeFiles/main.dir/src/main.cpp.o: \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX13.3.sdk/usr/include/c++/v1/float.h \
   /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/clang/14.0.3/include/float.h \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX13.3.sdk/usr/include/float.h \
-  /Users/gmbp/Desktop/devCode/cppDev/CPP_APIs/src/../dependencies/include/SDL2/SDL_assert.h \
-  /Users/gmbp/Desktop/devCode/cppDev/CPP_APIs/src/../dependencies/include/SDL2/SDL_atomic.h \
-  /Users/gmbp/Desktop/devCode/cppDev/CPP_APIs/src/../dependencies/include/SDL2/SDL_audio.h \
-  /Users/gmbp/Desktop/devCode/cppDev/CPP_APIs/src/../dependencies/include/SDL2/SDL_error.h \
-  /Users/gmbp/Desktop/devCode/cppDev/CPP_APIs/src/../dependencies/include/SDL2/SDL_endian.h \
-  /Users/gmbp/Desktop/devCode/cppDev/CPP_APIs/src/../dependencies/include/SDL2/SDL_mutex.h \
-  /Users/gmbp/Desktop/devCode/cppDev/CPP_APIs/src/../dependencies/include/SDL2/SDL_thread.h \
-  /Users/gmbp/Desktop/devCode/cppDev/CPP_APIs/src/../dependencies/include/SDL2/SDL_rwops.h \
-  /Users/gmbp/Desktop/devCode/cppDev/CPP_APIs/src/../dependencies/include/SDL2/SDL_clipboard.h \
-  /Users/gmbp/Desktop/devCode/cppDev/CPP_APIs/src/../dependencies/include/SDL2/SDL_cpuinfo.h \
+  /Users/gmbp/Desktop/devCode/cppDev/CPP_APIs/dependencies/include/SDL2/SDL_assert.h \
+  /Users/gmbp/Desktop/devCode/cppDev/CPP_APIs/dependencies/include/SDL2/SDL_atomic.h \
+  /Users/gmbp/Desktop/devCode/cppDev/CPP_APIs/dependencies/include/SDL2/SDL_audio.h \
+  /Users/gmbp/Desktop/devCode/cppDev/CPP_APIs/dependencies/include/SDL2/SDL_error.h \
+  /Users/gmbp/Desktop/devCode/cppDev/CPP_APIs/dependencies/include/SDL2/SDL_endian.h \
+  /Users/gmbp/Desktop/devCode/cppDev/CPP_APIs/dependencies/include/SDL2/SDL_mutex.h \
+  /Users/gmbp/Desktop/devCode/cppDev/CPP_APIs/dependencies/include/SDL2/SDL_thread.h \
+  /Users/gmbp/Desktop/devCode/cppDev/CPP_APIs/dependencies/include/SDL2/SDL_rwops.h \
+  /Users/gmbp/Desktop/devCode/cppDev/CPP_APIs/dependencies/include/SDL2/SDL_clipboard.h \
+  /Users/gmbp/Desktop/devCode/cppDev/CPP_APIs/dependencies/include/SDL2/SDL_cpuinfo.h \
   /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/clang/14.0.3/include/arm_neon.h \
-  /Users/gmbp/Desktop/devCode/cppDev/CPP_APIs/src/../dependencies/include/SDL2/SDL_events.h \
-  /Users/gmbp/Desktop/devCode/cppDev/CPP_APIs/src/../dependencies/include/SDL2/SDL_video.h \
-  /Users/gmbp/Desktop/devCode/cppDev/CPP_APIs/src/../dependencies/include/SDL2/SDL_pixels.h \
-  /Users/gmbp/Desktop/devCode/cppDev/CPP_APIs/src/../dependencies/include/SDL2/SDL_rect.h \
-  /Users/gmbp/Desktop/devCode/cppDev/CPP_APIs/src/../dependencies/include/SDL2/SDL_surface.h \
-  /Users/gmbp/Desktop/devCode/cppDev/CPP_APIs/src/../dependencies/include/SDL2/SDL_blendmode.h \
-  /Users/gmbp/Desktop/devCode/cppDev/CPP_APIs/src/../dependencies/include/SDL2/SDL_keyboard.h \
-  /Users/gmbp/Desktop/devCode/cppDev/CPP_APIs/src/../dependencies/include/SDL2/SDL_keycode.h \
-  /Users/gmbp/Desktop/devCode/cppDev/CPP_APIs/src/../dependencies/include/SDL2/SDL_scancode.h \
-  /Users/gmbp/Desktop/devCode/cppDev/CPP_APIs/src/../dependencies/include/SDL2/SDL_mouse.h \
-  /Users/gmbp/Desktop/devCode/cppDev/CPP_APIs/src/../dependencies/include/SDL2/SDL_joystick.h \
-  /Users/gmbp/Desktop/devCode/cppDev/CPP_APIs/src/../dependencies/include/SDL2/SDL_gamecontroller.h \
-  /Users/gmbp/Desktop/devCode/cppDev/CPP_APIs/src/../dependencies/include/SDL2/SDL_sensor.h \
-  /Users/gmbp/Desktop/devCode/cppDev/CPP_APIs/src/../dependencies/include/SDL2/SDL_quit.h \
-  /Users/gmbp/Desktop/devCode/cppDev/CPP_APIs/src/../dependencies/include/SDL2/SDL_gesture.h \
-  /Users/gmbp/Desktop/devCode/cppDev/CPP_APIs/src/../dependencies/include/SDL2/SDL_touch.h \
-  /Users/gmbp/Desktop/devCode/cppDev/CPP_APIs/src/../dependencies/include/SDL2/SDL_filesystem.h \
-  /Users/gmbp/Desktop/devCode/cppDev/CPP_APIs/src/../dependencies/include/SDL2/SDL_haptic.h \
-  /Users/gmbp/Desktop/devCode/cppDev/CPP_APIs/src/../dependencies/include/SDL2/SDL_hidapi.h \
-  /Users/gmbp/Desktop/devCode/cppDev/CPP_APIs/src/../dependencies/include/SDL2/SDL_hints.h \
-  /Users/gmbp/Desktop/devCode/cppDev/CPP_APIs/src/../dependencies/include/SDL2/SDL_loadso.h \
-  /Users/gmbp/Desktop/devCode/cppDev/CPP_APIs/src/../dependencies/include/SDL2/SDL_log.h \
-  /Users/gmbp/Desktop/devCode/cppDev/CPP_APIs/src/../dependencies/include/SDL2/SDL_messagebox.h \
-  /Users/gmbp/Desktop/devCode/cppDev/CPP_APIs/src/../dependencies/include/SDL2/SDL_metal.h \
-  /Users/gmbp/Desktop/devCode/cppDev/CPP_APIs/src/../dependencies/include/SDL2/SDL_power.h \
-  /Users/gmbp/Desktop/devCode/cppDev/CPP_APIs/src/../dependencies/include/SDL2/SDL_render.h \
-  /Users/gmbp/Desktop/devCode/cppDev/CPP_APIs/src/../dependencies/include/SDL2/SDL_shape.h \
-  /Users/gmbp/Desktop/devCode/cppDev/CPP_APIs/src/../dependencies/include/SDL2/SDL_system.h \
-  /Users/gmbp/Desktop/devCode/cppDev/CPP_APIs/src/../dependencies/include/SDL2/SDL_timer.h \
-  /Users/gmbp/Desktop/devCode/cppDev/CPP_APIs/src/../dependencies/include/SDL2/SDL_version.h \
-  /Users/gmbp/Desktop/devCode/cppDev/CPP_APIs/src/../dependencies/include/SDL2/SDL_locale.h \
-  /Users/gmbp/Desktop/devCode/cppDev/CPP_APIs/src/../dependencies/include/SDL2/SDL_misc.h
+  /Users/gmbp/Desktop/devCode/cppDev/CPP_APIs/dependencies/include/SDL2/SDL_events.h \
+  /Users/gmbp/Desktop/devCode/cppDev/CPP_APIs/dependencies/include/SDL2/SDL_video.h \
+  /Users/gmbp/Desktop/devCode/cppDev/CPP_APIs/dependencies/include/SDL2/SDL_pixels.h \
+  /Users/gmbp/Desktop/devCode/cppDev/CPP_APIs/dependencies/include/SDL2/SDL_rect.h \
+  /Users/gmbp/Desktop/devCode/cppDev/CPP_APIs/dependencies/include/SDL2/SDL_surface.h \
+  /Users/gmbp/Desktop/devCode/cppDev/CPP_APIs/dependencies/include/SDL2/SDL_blendmode.h \
+  /Users/gmbp/Desktop/devCode/cppDev/CPP_APIs/dependencies/include/SDL2/SDL_keyboard.h \
+  /Users/gmbp/Desktop/devCode/cppDev/CPP_APIs/dependencies/include/SDL2/SDL_keycode.h \
+  /Users/gmbp/Desktop/devCode/cppDev/CPP_APIs/dependencies/include/SDL2/SDL_scancode.h \
+  /Users/gmbp/Desktop/devCode/cppDev/CPP_APIs/dependencies/include/SDL2/SDL_mouse.h \
+  /Users/gmbp/Desktop/devCode/cppDev/CPP_APIs/dependencies/include/SDL2/SDL_joystick.h \
+  /Users/gmbp/Desktop/devCode/cppDev/CPP_APIs/dependencies/include/SDL2/SDL_gamecontroller.h \
+  /Users/gmbp/Desktop/devCode/cppDev/CPP_APIs/dependencies/include/SDL2/SDL_sensor.h \
+  /Users/gmbp/Desktop/devCode/cppDev/CPP_APIs/dependencies/include/SDL2/SDL_quit.h \
+  /Users/gmbp/Desktop/devCode/cppDev/CPP_APIs/dependencies/include/SDL2/SDL_gesture.h \
+  /Users/gmbp/Desktop/devCode/cppDev/CPP_APIs/dependencies/include/SDL2/SDL_touch.h \
+  /Users/gmbp/Desktop/devCode/cppDev/CPP_APIs/dependencies/include/SDL2/SDL_filesystem.h \
+  /Users/gmbp/Desktop/devCode/cppDev/CPP_APIs/dependencies/include/SDL2/SDL_haptic.h \
+  /Users/gmbp/Desktop/devCode/cppDev/CPP_APIs/dependencies/include/SDL2/SDL_hidapi.h \
+  /Users/gmbp/Desktop/devCode/cppDev/CPP_APIs/dependencies/include/SDL2/SDL_hints.h \
+  /Users/gmbp/Desktop/devCode/cppDev/CPP_APIs/dependencies/include/SDL2/SDL_loadso.h \
+  /Users/gmbp/Desktop/devCode/cppDev/CPP_APIs/dependencies/include/SDL2/SDL_log.h \
+  /Users/gmbp/Desktop/devCode/cppDev/CPP_APIs/dependencies/include/SDL2/SDL_messagebox.h \
+  /Users/gmbp/Desktop/devCode/cppDev/CPP_APIs/dependencies/include/SDL2/SDL_metal.h \
+  /Users/gmbp/Desktop/devCode/cppDev/CPP_APIs/dependencies/include/SDL2/SDL_power.h \
+  /Users/gmbp/Desktop/devCode/cppDev/CPP_APIs/dependencies/include/SDL2/SDL_render.h \
+  /Users/gmbp/Desktop/devCode/cppDev/CPP_APIs/dependencies/include/SDL2/SDL_shape.h \
+  /Users/gmbp/Desktop/devCode/cppDev/CPP_APIs/dependencies/include/SDL2/SDL_system.h \
+  /Users/gmbp/Desktop/devCode/cppDev/CPP_APIs/dependencies/include/SDL2/SDL_timer.h \
+  /Users/gmbp/Desktop/devCode/cppDev/CPP_APIs/dependencies/include/SDL2/SDL_version.h \
+  /Users/gmbp/Desktop/devCode/cppDev/CPP_APIs/dependencies/include/SDL2/SDL_locale.h \
+  /Users/gmbp/Desktop/devCode/cppDev/CPP_APIs/dependencies/include/SDL2/SDL_misc.h

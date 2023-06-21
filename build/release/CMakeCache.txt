@@ -128,7 +128,7 @@ CMAKE_PROJECT_DESCRIPTION:STATIC=
 CMAKE_PROJECT_HOMEPAGE_URL:STATIC=
 
 //Value Computed by CMake
-CMAKE_PROJECT_NAME:STATIC=YourProjectName
+CMAKE_PROJECT_NAME:STATIC=CPP_APIs
 
 //Path to a program.
 CMAKE_RANLIB:FILEPATH=/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/ranlib
@@ -191,6 +191,15 @@ CMAKE_STRIP:FILEPATH=/Applications/Xcode.app/Contents/Developer/Toolchains/Xcode
 // during the make.  This is useful for debugging only. With Visual
 // Studio IDE projects all commands are done without /nologo.
 CMAKE_VERBOSE_MAKEFILE:BOOL=FALSE
+
+//Value Computed by CMake
+CPP_APIs_BINARY_DIR:STATIC=/Users/gmbp/Desktop/devCode/cppDev/CPP_APIs/build/release
+
+//Value Computed by CMake
+CPP_APIs_IS_TOP_LEVEL:STATIC=ON
+
+//Value Computed by CMake
+CPP_APIs_SOURCE_DIR:STATIC=/Users/gmbp/Desktop/devCode/cppDev/CPP_APIs
 
 //Value Computed by CMake
 YourProjectName_BINARY_DIR:STATIC=/Users/gmbp/Desktop/devCode/cppDev/CPP_APIs/build/release

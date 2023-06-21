@@ -165,7 +165,8 @@ set(CMAKE_CXX_FLAGS_RELEASE "${CMAKE_CXX_FLAGS_RELEASE} -O3")
 
 ```
 3. Now go to each directory `build/debug` or `build/release` and use `make` or
-   `ninja` to generate your binary.
+   `ninja` to generate your binary. Same apply if you use `cmake --build . `
+All of these will create the binary at the given directory.
 
 **Note**
 - Using `-O3` for optimization in the release model as you can see in the
@@ -182,6 +183,7 @@ can read
 Now, We can use `#include <SDL2/SDL.h>` Instead  of `#include
 "../dependencies/include/SDL2/SDL.h"`.
     - This will work for both `emacs` and `nvim` as both are using the same server `clangd`.
+
 
 ## References
 
