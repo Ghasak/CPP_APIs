@@ -1,5 +1,7 @@
 #include <iostream>
-#include "./dependencies/include/SDL2/SDL.h"
+/*#include "./dependencies/include/SDL2/SDL.h"*/
+//#include "../dependencies/include/SDL2/SDL.h"
+#include <SDL2/SDL.h>
 // #include "./dependencies/SDL2.framework/Headers/SDL.h"
 /* using namespace std; */
 /* int main() { */
