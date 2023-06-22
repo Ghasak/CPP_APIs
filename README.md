@@ -19,7 +19,7 @@ The steps consist of two main things if we want to use only the binary.
 ![SDL2Rendering](./assets/sdl2_rendering_snippet.gif)
 <video src="./assets/Rendering_with_SDL2.mp4" width=80/>
 
-## Instructions
+## Instructions -1-
 1. Install the binary of `sdl2` using
 
 ```shell
@@ -184,6 +184,12 @@ Now, We can use `#include <SDL2/SDL.h>` Instead  of `#include
 "../dependencies/include/SDL2/SDL.h"`.
     - This will work for both `emacs` and `nvim` as both are using the same server `clangd`.
 
+
+### clang-format
+I have used `clang-format` to keep on formatting my buffer on save. Simply
+```sh
+brew install clang-format
+```
 
 ## References
 
