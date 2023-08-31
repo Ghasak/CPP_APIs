@@ -1,2 +1,5 @@
 src/colorize
 src/eigen
+.vscode
+build
+.cache

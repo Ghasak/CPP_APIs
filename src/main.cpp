@@ -3,38 +3,7 @@
 #include <random>
 #include <string>
 #include <vector>
-
-// *************************************************
-//               Employee Class
-// *************************************************
-class Employee {
-private:
-  std::string name;
-  int id;
-  double salary;
-
-public:
-  Employee() : name(""), id(0), salary(0.0) {}
-
-  // Parameterized constructor
-  Employee(const std::string &n, int i, double s) : name(n), id(i), salary(s) {}
-
-  // Getter methods
-  std::string getName() const { return name; }
-  int getId() const { return id; }
-  double getSalary() const { return salary; }
-
-  // Setter methods
-  void setName(const std::string &n) { name = n; }
-  void setId(int i) { id = i; }
-  void setSalary(double s) { salary = s; }
-
-  // Display method
-  void display() const {
-    std::cout << "Name: " << name << " ID: " << id << " Salary: $" << salary
-              << "\n";
-  }
-};
+#include "./lib/Employee.hpp"
 
 // *************************************************
 //             Declare the function
@@ -46,7 +15,6 @@ std::string my_function(std::string, std::string);
 
 int main(int argc, char *argv[]) {
   std::cout << "Hello World! Wow" << std::endl;
-
   std::vector<std::string> names = {"Jack", "Michael", "Luke"};
   // Randomly selecting a value from the vector
   std::random_device rd;  // Obtain a random number from hardware
@@ -60,9 +28,9 @@ int main(int argc, char *argv[]) {
   // and then divide by 100 to get two decimal places
   std::uniform_int_distribution<> salaryDistrib(5000000, 15000000);
 
-  int a = 10;
-  int b = 20;
-  for (int i = 0; i < 10; i++) {
+  /* int a = 10; */
+  /* int b = 20; */
+  for (int i = 0; i < 1000000; i++) {
     // calling the function passing by value
     // std::cout << "value of i -> [" << my_function(a , i) << "]" << std::endl;
     // calling the function passing by pointer
@@ -70,18 +38,16 @@ int main(int argc, char *argv[]) {
     // calling the funcntion passing by reference
     // std::cout << "value of i -> [" << my_function_reference(a, i) << "]" <<
     // std::endl;
-    std::uniform_int_distribution<> distrib(
-        0, names.size() - 1); // Define the distribution
+    std::uniform_int_distribution<> distrib(0, names.size() - 1); // Define the distribution
 
     int randomIndex = distrib(gen); // Generate random index
-    std::string randomName =
-        names[randomIndex]; // Get the randomly selected name
+    std::string randomName = names[randomIndex]; // Get the randomly selected name
     int randomId = idDistrib(gen);
     double randomSalary = salaryDistrib(gen) / 100.0;
     Employee emp1(randomName, randomId, randomSalary);
     emp1.display();
-    std::string output = my_function(emp1.getName(), "Wow");
-    std::cout << output << "\n";
+    //std::string output = my_function(emp1.getName(), "Wow");
+    //std::cout << output << "\n";
   }
   int my_function_definition(int32_t & param_a, int32_t & param_b);
 
