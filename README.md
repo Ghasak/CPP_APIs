@@ -1,4 +1,8 @@
 # CPP Learning
+## Changing log
+- `Sun. Sep. 3rd.`: Finished the right,
+
+## Details
 - CPP learning is a special directory where I put all the necessary
   fundamentals of learning `C++` concepts and ideas.
 

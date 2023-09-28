@@ -25,12 +25,9 @@ help:
 	@echo "          Available Commands: ->                          "
 	@echo "          Author: Ghasak Ibrahim                          "
 	@echo "**********************************************************"
-	@echo "   make all          -> equivalent to make debug"
-	@echo "   make debug        -> build the project in Debug mode"
-	@echo "   make release      -> build the project in Release mode"
-	@echo "   make help         -> show this help message"
+	@echo " [1]  make all     -> equivalent to make debug"
+	@echo " [2]  make debug   -> build the project in Debug mode"
+	@echo " [3]  make release -> build the project in Release mode"
+	@echo " [4]  make help    -> show this help message"
 	@echo "**********************************************************"
-
-
-
 
