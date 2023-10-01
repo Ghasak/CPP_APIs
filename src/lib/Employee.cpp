@@ -17,3 +17,9 @@ void Employee::display() const {
             << "\t" << id << "\t"
             << " Salary: $" << salary << "\n";
 }
+
+/* Create an obj destructor */
+Employee::~Employee() {
+  std::cout << std::string("The Employee[") << name
+            << std::string("]Got destroyed") << std::endl;
+}

@@ -17,23 +17,24 @@ void function_does_nothing(size_t n);
 void add_fn(float &, float &);
 char *testing_string();
 
-class Entity {
-public:
-  std::string object_name;
-  Entity(std::string object_name) : object_name(object_name) {
+// class Entity {
+// public:
+//   std::string object_name;
+//   Entity(std::string object_name) : object_name(object_name) {
 
-    std::cout << "Created Entity:" << object_name << std::endl;
-  }
-  ~Entity() { std::cout << "Destroyed Entity:" << object_name << std::endl; }
-};
+//     std::cout << "Created Entity:" << object_name << std::endl;
+//   }
+//   ~Entity() { std::cout << "Destroyed Entity:" << object_name << std::endl; }
+// };
 
 int main(int argc, char *argv[]) {
 
   {
-    // create enitity object on the stack
-    Entity e1("e1");
-    // create entity object on the heap
-    Entity *e2 = new Entity(std::string("e2"));
+    // create employee on stack
+    Employee emp1 = Employee(std::string("Jack"), 102, 1121.33);
+    // create employee on heap
+    // Entity *e2 = new Entity(std::string("e2"));
+    Employee *emp2 = new Employee(std::string("Michael"), 1022, 2112.33);
   }
 
   std::cin.get();

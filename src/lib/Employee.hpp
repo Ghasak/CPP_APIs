@@ -10,7 +10,7 @@ private:
 
 public:
   Employee();
-  Employee(const std::string &n, int i, double s);
+  explicit Employee(const std::string &n, int i, double s);
   std::string getName() const;
   int getId() const;
   double getSalary() const;
@@ -18,4 +18,5 @@ public:
   void setId(int i);
   void setSalary(double s);
   void display() const;
+  ~Employee();
 };
