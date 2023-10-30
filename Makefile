@@ -41,8 +41,13 @@ run: $(OUTPUT)
 
 $(OUTPUT): $(SOURCES)
 	clang++ -std=c++17 \
-	$(INCLUDE_DIR)
+  	$(INCLUDE_DIR)
 	-o $@ $(SOURCES)
+
+clean:
+	rm -rf ./build/
+
+
 
 help:
 	@echo "**********************************************************"

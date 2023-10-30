@@ -1,6 +1,7 @@
 cmake_minimum_required(VERSION 3.5)
 project(CPPP_APIs CXX)
-set(SOURCES src/main.cpp src/lib/Employee.cpp)
+#set(SOURCES src/main.cpp src/lib/Employee.cpp)
+set(SOURCES src/main.cpp)
 
 # Set the build type if not provided
 if(NOT CMAKE_BUILD_TYPE)
@@ -20,21 +21,18 @@ set(CMAKE_RUNTIME_OUTPUT_DIRECTORY
 set(CMAKE_CXX_STANDARD 17)
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
 
-#************************************************
+# ************************************************
 # This is the executable for our current project.
-#************************************************
+# ************************************************
 # Set compiler flags
-set(CMAKE_CXX_STANDARD 17)
-set(CMAKE_CXX_FLAGS_DEBUG "${CMAKE_CXX_FLAGS_DEBUG} -Wall -Wextra -fcolor-diagnostics -g")
+set(CMAKE_CXX_FLAGS_DEBUG
+    "${CMAKE_CXX_FLAGS_DEBUG} -Wall -Wextra -fcolor-diagnostics -g")
 set(CMAKE_CXX_FLAGS_RELEASE "${CMAKE_CXX_FLAGS_RELEASE} -O3")
 
-#************************************************
-#         Can replace the one below
-#************************************************
+# ************************************************
+# Can replace the one below
+# ************************************************
 add_executable(main ${SOURCES})
-# Can be equivalent to the below as well,
-# # Apply compiler flags to the specific target
-# target_compile_options(main PRIVATE
-#     $<$<CONFIG:Debug>:-Wall -Wextra -g>
-#     $<$<CONFIG:Release>:-O3>
-# )
+# Can be equivalent to the below as well, # Apply compiler flags to the specific
+# target target_compile_options(main PRIVATE $<$<CONFIG:Debug>:-Wall -Wextra -g>
+# $<$<CONFIG:Release>:-O3> )
