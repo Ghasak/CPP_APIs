@@ -1,38 +1,46 @@
-cmake_minimum_required(VERSION 3.5)
+######################################
+#     BASICS CONFIGURATION CMAKE
+######################################
+cmake_minimum_required(VERSION 3.16..3.24)
+
 project(CPPP_APIs CXX)
-#set(SOURCES src/main.cpp src/lib/Employee.cpp)
-set(SOURCES src/main.cpp)
-
-# Set the build type if not provided
-if(NOT CMAKE_BUILD_TYPE)
-  set(CMAKE_BUILD_TYPE
-      "Debug"
-      CACHE STRING "Choose the type of build (Debug or Release)" FORCE)
-endif()
-
-# Setting my compiling command for clangd language server
-set(CMAKE_EXPORT_COMPILE_COMMANDS ON)
-
-# Set the output directories
-set(CMAKE_RUNTIME_OUTPUT_DIRECTORY
-    ${CMAKE_SOURCE_DIR}/build/${CMAKE_BUILD_TYPE})
-
-# Set compiler flags
 set(CMAKE_CXX_STANDARD 17)
+# Set compiler flags
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
 
-# ************************************************
-# This is the executable for our current project.
-# ************************************************
-# Set compiler flags
-set(CMAKE_CXX_FLAGS_DEBUG
-    "${CMAKE_CXX_FLAGS_DEBUG} -Wall -Wextra -fcolor-diagnostics -g")
-set(CMAKE_CXX_FLAGS_RELEASE "${CMAKE_CXX_FLAGS_RELEASE} -O3")
+######################################
+# Update the submodules here
+######################################
+#include(cmake/UpdateSubmodules.cmake)
+######################################
 
-# ************************************************
-# Can replace the one below
-# ************************************************
-add_executable(main ${SOURCES})
-# Can be equivalent to the below as well, # Apply compiler flags to the specific
-# target target_compile_options(main PRIVATE $<$<CONFIG:Debug>:-Wall -Wextra -g>
-# $<$<CONFIG:Release>:-O3> )
+
+######################################
+#     Adding dependencies
+######################################
+# Adding googletest for testing
+# Rest of dependencies are managed with vckpkg
+# and direct linking in ./src/CMakeLists.txt (e.g., SDL2)
+add_subdirectory(dependencies)
+
+
+######################################
+#   WHICH BUILD (BINARY vs TEST)
+######################################
+# By default we will not operate that
+# until we call the make test command
+option(BUILD_TESTS "Build the unit tests" OFF)
+if (BUILD_TESTS)
+# ------------------------------------
+# Running the test module
+# ------------------------------------
+    # Enable testing for this project
+    include(CTest)
+    # Add the test directory with its own CMakeLists.txt
+    add_subdirectory(tests)
+else()
+# ------------------------------------
+# Running the Main Binary
+# ------------------------------------
+    add_subdirectory(src)
+endif()

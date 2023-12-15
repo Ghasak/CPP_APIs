@@ -1,7 +1,11 @@
+#include "vault/variables.cpp"
+#include <cstddef>
 #include <iostream>
 #include <iterator>
-#include <list>
 #include <math.h>
+#include <ostream>
+#include <vector>
+#include <string>
 
 /* int main(int argc, char *argv[]) { */
 /*  */
@@ -70,6 +74,8 @@ public:
 
 int main(int argc, char **argv) {
 
+  std::string my_function_test_01(std::string &, std::vector<float> &);
+
   std::cout << "-------------------" << std::endl;
   std::cout << "Vector Engine Start!!" << std::endl;
   std::cout << "-------------------" << std::endl;
@@ -79,8 +85,6 @@ int main(int argc, char **argv) {
   Vector2D vec3{Vector2D::add_2(vec1, vec2)}; // add of two vector
   vec3.display();
 
-  // use of smart ptr
-
   std::unique_ptr<Vector2D> vec4 = std::make_unique<Vector2D>(1, 1);
   std::unique_ptr<Vector2D> vec5 = std::make_unique<Vector2D>(2, 2);
 
@@ -88,12 +92,44 @@ int main(int argc, char **argv) {
       std::make_unique<Vector2D>(Vector2D::add_2(*vec4, *vec5));
   vec6->display();
 
-  for (int i = 0; i < 10; i++) {
-    std::cout << "the value of i -> {" << i << "}" << std::endl;
+  std::vector<Vector2D> my_vector;
+
+  std::cout << "(((((((((((((((((((( CREATING NEW ENTRY )))))))))))))))))))))"
+            << std::endl;
+  for (size_t i = 0; i < 10; i++) {
+    my_vector.push_back(Vector2D(i, i + 10));
+  }
+  std::cout << "**************************************" << std::endl;
+  for (size_t i = 0; i <= my_vector.size(); i++) {
+    my_vector[i].display();
   }
 
-  for (int i = 0; i < 100; i++) {
-    std::cout << "This is the value of i -> { " << i << " }" << std::endl;
+  std::cout << "(((((((((((((((((((( Pointers in Action! )))))))))))))))))))))"
+            << std::endl;
+  std::cout << "***********************" << std::endl;
+  int val = 0;
+  int *ptr = &val;
+  for (size_t i = 0; i < 5; i++) {
+    val = i;
+    ptr = &val;
+    std::cout << "We are printing the value -> {" << val
+              << "} and its address: {" << ptr << "}" << std::endl;
   }
+
+  std::string str = "open.ai";
+  std::vector<float> vec = {12.23, 32.121};
+  std::string result = my_function_test_01(str, vec);
+  std::cout << result << std::endl;
+  std::cout << var_gx << std::endl;
+
   return 0;
 }
+
+std::string my_function_test_01(std::string &my_string, std::vector<float> &v) {
+  std::string s = std::string("open.ai");
+  if (my_string == s and !v.empty()) {
+    return "[PASS]:: The test is passed as the string is equal ...";
+  }
+
+  return "[NOT PASS]:: The test is not passed as the string is equal ...";
+};
