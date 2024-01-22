@@ -1,0 +1,12 @@
+Log file created at: 2024/01/22 22:37:15
+Running on machine: GMacBookPro.local
+Running duration (h:mm:ss): 0:00:00
+Log line format: [IWEF]yyyymmdd hh:mm:ss.uuuuuu threadid file:line] msg
+I20240122 22:37:15.121901 3527571 main.cpp:22] name: Jack_1 G. Michael with ID:[1]salary:112331.000000
+I20240122 22:37:15.124912 3527571 main.cpp:23] name: Jack_2 G. Michael with ID:[2]salary:112331.000000
+I20240122 22:37:15.124946 3527571 main.cpp:24] name: Jack_3 G. Michael with ID:[3]salary:112331.000000
+I20240122 22:37:15.124974 3527571 main.cpp:25] name: Jack_3 G. Michael with ID:[4]salary:157263.400000
+I20240122 22:37:15.125001 3527571 classes.cpp:39] REMOVE (freed from memory) object_id: 4
+I20240122 22:37:15.125023 3527571 classes.cpp:39] REMOVE (freed from memory) object_id: 3
+I20240122 22:37:15.125046 3527571 classes.cpp:39] REMOVE (freed from memory) object_id: 2
+I20240122 22:37:15.125066 3527571 classes.cpp:39] REMOVE (freed from memory) object_id: 1

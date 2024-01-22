@@ -3,6 +3,12 @@
 #include <iostream>
 #include <string>
 
+/*
+How to use it:
+LOG(INFO) << i;
+LOG(WARNING) << i;
+LOG(ERROR) << i;
+*/
 void init_logging(char **my_argv) {
 
   // Initialize Google's logging library after setting FLAGS_log_dir

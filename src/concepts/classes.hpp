@@ -21,7 +21,7 @@ public:
     // destructor
     ~Employee();
     // Assignment operator: When you assign like Employee emp2 = emp1;
-    // Employee& operator=(const Employee& other);
+    Employee& operator=(const Employee& other);
     // constat memeber function
     // std::string getName() const;
     // Virtual function
@@ -30,18 +30,17 @@ public:
     // Friend function
     // friend void resetSalary(Employee& emp);
     // displayInfo
-
+    void update_salary();
     std::string displayInfo();
 
 private:
+    int emp_id;
     std::string first_name;
     std::string middle_name;
     std::string last_name;
     int age;
     double salary;
-
-    // Private method
-    // void updateSalary();
+    static int emp_count;
 };
 
 #endif  // EMPLOYEE_HPP
