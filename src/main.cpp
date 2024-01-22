@@ -1,5 +1,6 @@
 #include "concepts/mylogging.hpp"
 #include "concepts/variables.hpp"
+#include "concepts/classes.hpp"
 // #include <cstddef> // this for reading environment variables
 #include <glog/logging.h>
 #include <iostream>
@@ -16,9 +17,13 @@ int main(int argc, char* argv[]) {
     const char* my_char = "This is just a test";
     std::cout << my_char << std::endl;
 
-    for (size_t i = 0; i < 10; i++) {
-        LOG(INFO) << i;
-        LOG(WARNING) << i;
-        LOG(ERROR) << i;
-    }
+    Employee emp = Employee("Jack", "G.", "Michael", 34, 112331.0);
+    LOG(INFO) << emp.displayInfo();
+
+
+    /* for (size_t i = 0; i < 10; i++) { */
+    /*     LOG(INFO) << i; */
+    /*     LOG(WARNING) << i; */
+    /*     LOG(ERROR) << i; */
+    /* } */
 }
