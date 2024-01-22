@@ -2,14 +2,15 @@
 #set(SOURCES src/main.cpp)
 file(GLOB_RECURSE SOURCES ./*.cpp)
 
-
-
 # Set the build type if not provided
 if(NOT CMAKE_BUILD_TYPE)
   set(CMAKE_BUILD_TYPE
     "Debug"
     CACHE STRING "Choose the type of build (Debug or Release)" FORCE)
 endif()
+
+## vcpkg libraries - Logging header
+find_package(glog CONFIG REQUIRED)
 
 # Setting my compiling command for clangd language server
 set(CMAKE_EXPORT_COMPILE_COMMANDS ON)
@@ -30,6 +31,24 @@ add_executable(main ${SOURCES})
 # Will allow emacs to run the `Makefile` options
 list(APPEND CMAKE_MODULE_PATH ${CMAKE_CURRENT_SOURCE_DIR}/cmake)
 # -----------------------------
+
+
+#--------------------------------------------------
+#               LINK OUTSIDE SOURCE FILES
+#                 (external libraries)
+#--------------------------------------------------
+# Now, we link the external libraries that out of the source
+# Link headers
+target_include_directories(
+  main PRIVATE glog::glog
+  )
+
+target_link_libraries(
+  main PRIVATE glog::glog
+  )
+
+
+
 # ************************************************
 # This is the executable for our current project.
 # ************************************************

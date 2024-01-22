@@ -3,7 +3,6 @@
 ######################################
 
 if(BUILD_TESTS)
-
     ## vcpkg libraries - Logging header
     # Required by vckpge
     find_package(glog CONFIG REQUIRED)
@@ -38,7 +37,6 @@ if(BUILD_TESTS)
     my_test PRIVATE
             glog::glog
             GTest::gtest_main
-
     )
 
   target_link_libraries(

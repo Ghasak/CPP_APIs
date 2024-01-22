@@ -100,6 +100,7 @@ clean:
 		vcpkg_installed CMakeCache.txt \
 		cmake_install.cmake CMakeFiles \
 		compile_commands.json .idea cmake-build-debug
+	@rm -rf src/logs/*
 
 clean_dependencies:
 	@rm -rf ./dependencies

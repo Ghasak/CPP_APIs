@@ -1,3 +1,3 @@
 # VARIABLES IN CPP
 
-Installing the variables in
+Using the variables in our current object
