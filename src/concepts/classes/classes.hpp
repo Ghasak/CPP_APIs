@@ -42,5 +42,6 @@ private:
     double salary;
     static int emp_count;
 };
-
+// This is a class implementation caller for the class methods and fields above
+void class_implementation();
 #endif  // EMPLOYEE_HPP

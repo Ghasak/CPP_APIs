@@ -1,7 +1,6 @@
 #include "classes.hpp"
-#include "mylogging.hpp"
+#include "../mylogging.hpp"
 #include <glog/logging.h>
-#include <iostream>
 #include <string>
 
 int Employee::emp_count = 0;
@@ -37,7 +36,9 @@ Employee::Employee(const Employee& other)
 };
 
 // Destructor
-Employee::~Employee() { LOG(INFO) << "REMOVE (freed from memory) object_id: " << RED << emp_id << RESET; };
+Employee::~Employee() {
+    LOG(INFO) << "REMOVE (freed from memory) object_id: " << RED << emp_id << RESET;
+};
 
 std::string Employee::displayInfo() {
     std::string temp_value = "name: " + first_name + " " + middle_name + " " + last_name +
@@ -45,8 +46,6 @@ std::string Employee::displayInfo() {
                              "salary:" + std::to_string(salary);
     return temp_value;
 }
-
-// Assignment operator
 
 // Assignment operator
 Employee& Employee::operator=(const Employee& other) {
@@ -58,9 +57,29 @@ Employee& Employee::operator=(const Employee& other) {
         salary = other.salary;
         emp_id = ++emp_count;
     }
-    return *this;  // means dereferencing the object and return the value.
+    return *this;  // means dereferencing the object and return the value.(returning the object
+                   // itself)
 }
 
-void Employee::update_salary() {
-    salary = salary + 0.40 * salary;
-};
+void Employee::update_salary() { salary = salary + 0.40 * salary; };
+
+// This is a class implementation caller for the class methods and fields above
+void class_implementation() {
+    std::cout << "(((((((( STARTING WITH VARIABLES TIPS AND HINTS  ))))))))" << std::endl;
+    const char* my_char = "This is just a test";
+    std::cout << my_char << std::endl;
+    Employee emp1 = Employee("Michael", "G.", "Scout", 34, 112331.0);
+    Employee emp2 = Employee("Jim", "H.", "Hilbert", 34, 112331.0);
+    Employee emp3 = Employee("Dwight", "S.", "Schrout", 34, 112331.0);
+    Employee emp4 = emp3;
+    emp4.update_salary();
+    LOG(INFO) << RED << emp1.displayInfo() << RESET;
+    LOG(INFO) << BLUE << emp2.displayInfo() << RESET;
+    LOG(INFO) << RED << emp3.displayInfo() << RESET;
+    LOG(INFO) << BLUE << emp4.displayInfo() << RESET;
+
+    for (int i = 0; i < 5; i++) {
+        emp1 = Employee("Jack_1", "G.", "Michael", 34, 112331.0);
+        emp1.displayInfo();
+    }
+}

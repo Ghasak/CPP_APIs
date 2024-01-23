@@ -23,7 +23,6 @@ set(CMAKE_CXX_STANDARD_REQUIRED ON)
 # and direct linking in ./src/CMakeLists.txt (e.g., SDL2)
 add_subdirectory(dependencies)
 
-
 ######################################
 #   WHICH BUILD (BINARY vs TEST)
 ######################################

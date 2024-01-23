@@ -1,0 +1,17 @@
+Log file created at: 2024/01/23 23:49:00
+Running on machine: GMacBookPro.local
+Running duration (h:mm:ss): 0:00:00
+Log line format: [IWEF]yyyymmdd hh:mm:ss.uuuuuu threadid file:line] msg
+I20240123 23:49:00.392305 4312882 classes.cpp:77] [1;31mname: Michael G. Scout with ID:[1]salary:112331.000000[0m
+I20240123 23:49:00.393172 4312882 classes.cpp:78] [1;36mname: Jim H. Hilbert with ID:[2]salary:112331.000000[0m
+I20240123 23:49:00.393183 4312882 classes.cpp:79] [1;31mname: Dwight S. Schrout with ID:[3]salary:112331.000000[0m
+I20240123 23:49:00.393193 4312882 classes.cpp:80] [1;36mname: Dwight S. Schrout with ID:[4]salary:157263.400000[0m
+I20240123 23:49:00.393199 4312882 classes.cpp:40] REMOVE (freed from memory) object_id: [1;31m5[0m
+I20240123 23:49:00.393208 4312882 classes.cpp:40] REMOVE (freed from memory) object_id: [1;31m7[0m
+I20240123 23:49:00.393214 4312882 classes.cpp:40] REMOVE (freed from memory) object_id: [1;31m9[0m
+I20240123 23:49:00.393222 4312882 classes.cpp:40] REMOVE (freed from memory) object_id: [1;31m11[0m
+I20240123 23:49:00.393229 4312882 classes.cpp:40] REMOVE (freed from memory) object_id: [1;31m13[0m
+I20240123 23:49:00.393236 4312882 classes.cpp:40] REMOVE (freed from memory) object_id: [1;31m4[0m
+I20240123 23:49:00.393242 4312882 classes.cpp:40] REMOVE (freed from memory) object_id: [1;31m3[0m
+I20240123 23:49:00.393249 4312882 classes.cpp:40] REMOVE (freed from memory) object_id: [1;31m2[0m
+I20240123 23:49:00.393254 4312882 classes.cpp:40] REMOVE (freed from memory) object_id: [1;31m14[0m

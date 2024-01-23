@@ -2,6 +2,9 @@
 #set(SOURCES src/main.cpp)
 file(GLOB_RECURSE SOURCES ./*.cpp)
 
+# This will allow the src directory to include the (concepts) directory, or any subdirectory if they have similar to /CPP_APIs/src/concepts/CMakeLists.txt
+include_directories(${CMAKE_CURRENT_SOURCE_DIR})
+
 # Set the build type if not provided
 if(NOT CMAKE_BUILD_TYPE)
   set(CMAKE_BUILD_TYPE
