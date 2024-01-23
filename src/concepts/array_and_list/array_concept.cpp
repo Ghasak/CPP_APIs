@@ -2,8 +2,17 @@
 #include <iostream>
 #include "../mylogging.hpp"
 #include <glog/logging.h>
+#include <array>
+
+void c_style_array();
+void standard_array_cpp();
 
 void array_function_in_depth() {
+    c_style_array();
+    standard_array_cpp();
+}
+
+void c_style_array() {
     std::cout << "######################################\n";
     // Array and Ptr arithmetics.
     int simple[5];
@@ -42,4 +51,15 @@ void array_function_in_depth() {
                  "[00][00][00][00]-[00][00][00][00]-[0A][00][00][00]-[00][00][00][00]-[05][00]["
                  "00][00]"
               << RESET;
+}
+
+void standard_array_cpp() {
+    std::array<int, 3> my_array = {5};
+    LOG(INFO) << "Size of the standard array from std::array -> " << my_array.size();
+    // int* ptr = my_array; you cannot do that as the std::array is not automatically casted into
+    // pointer.
+
+    int* ptr = my_array.data();
+    LOG(INFO) << "Getting a pointer to first element in  std::array similar to C-style -> "
+              << *(ptr);
 }

@@ -10,9 +10,10 @@
 int main(int argc, char* argv[]) {
     // Initialize logging
     init_logging(argv);
-    std::cout << "######################################\n";
-    // array_function_in_depth();
+    //std::cout << "######################################\n";
+    array_function_in_depth();
     // class_implementation();
     // data_type_table();
     //pointers_concept();
+
 }

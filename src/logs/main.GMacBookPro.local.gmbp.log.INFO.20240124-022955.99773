@@ -1,0 +1,10 @@
+Log file created at: 2024/01/24 02:29:55
+Running on machine: GMacBookPro.local
+Running duration (h:mm:ss): 0:00:00
+Log line format: [IWEF]yyyymmdd hh:mm:ss.uuuuuu threadid file:line] msg
+I20240124 02:29:55.304128 4415742 array_concept.cpp:13] [1;31mMemeory Profile: -> [00][00][00][00]-[00][00][00][00]-[00][00][00][00]-[00][00][00][00]-[00][00][00][00][0m
+I20240124 02:29:55.305337 4415742 array_concept.cpp:20] [1;31mMemeory Profile: -> [00][00][00][00]-[00][00][00][00]-[05][00][00][00]-[00][00][00][00]-[00][00][00][00][0m
+I20240124 02:29:55.305348 4415742 array_concept.cpp:27] [1;36mMemeory Profile: -> [00][00][00][00]-[00][00][00][00]-[05][00][00][00]-[00][00][00][00]-[05][00][00][00][0m
+I20240124 02:29:55.305356 4415742 array_concept.cpp:34] [1;36mMemeory Profile: -> [00][00][00][00]-[00][00][00][00]-[05][00][00][00]-[00][00][00][00]-[05][00][00][00][0m
+I20240124 02:29:55.305366 4415742 array_concept.cpp:41] [1;31mMemeory Profile: -> [00][00][00][00]-[00][00][00][00]-[0A][00][00][00]-[00][00][00][00]-[05][00][00][00][0m
+I20240124 02:29:55.305371 4415742 array_concept.cpp:52] Size of the standard array from std::array3
