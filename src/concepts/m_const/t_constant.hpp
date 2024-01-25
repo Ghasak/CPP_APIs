@@ -1,7 +1,10 @@
 #pragma once
 #include <iostream>
 void const_in_action();
-
+void with_pointer_1();
+void with_pointer_2();
+void const_method_usage();
+void const_with_classes();
 
 #pragma once
 #include <string>

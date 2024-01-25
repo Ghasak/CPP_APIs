@@ -29,6 +29,51 @@ Please note that this categorization is not strict; many programming languages
 support multiple paradigms, allowing developers to choose the best paradigm for
 their specific task.
 
+## Difference between parameters and arguments
+
+In programming, particularly in the context of functions, the terms
+"parameters" and "arguments" are often used and can sometimes be confusing as
+they are closely related but have distinct meanings:
+
+1. **Parameters**:
+
+   - Parameters are the variables listed as part of a function's declaration or
+     definition.
+   - They are placeholders within the function that represent the values that
+     the function expects to receive when it is called.
+   - Parameters define what type of data the function expects.
+   - Think of parameters as the "slots" in a function's signature where you
+     specify the type and, optionally, a name for the data the function will
+     operate on.
+
+   Example in a function definition:
+
+   ```cpp
+   void printMessage(std::string message) {
+       // 'message' is a parameter
+   }
+   ```
+
+2. **Arguments**:
+
+   - Arguments, on the other hand, are the actual values or expressions passed to the function when it is called.
+   - They are the real pieces of data provided to the function to operate on.
+   - Arguments are used to fill in the "slots" of the parameters when a function is invoked.
+
+   Example in a function call:
+
+   ```cpp
+   int my_var = 10;
+   printMessage("Hello, world!", my_var);
+   // "Hello, world!" is an argument, which is a string literal passed to the function
+   // my_var, also an argument.
+   ```
+
+In summary, when you define a function, you specify parameters. When you call a
+function, you provide arguments. Parameters are in the context of function
+definitions and declarations, whereas arguments are in the context of function
+calls.
+
 ## Assoicatd graphics accelerators
 
 Creating a comprehensive and up-to-date table of all GeForce models currently
@@ -57,4 +102,3 @@ manufacturers. Also, the availability of these models can vary based on the
 region and the current market situation. For the latest models and specific
 details, checking the official NVIDIA website or a reputable computer hardware
 retailer is recommended.
-

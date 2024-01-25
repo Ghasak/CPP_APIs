@@ -1,35 +1,168 @@
 # Pushing to Stack vs Heap Allocation
 
 <!-- markdown-toc start - Don't edit this section. Run M-x markdown-toc-refresh-toc -->
-
 **Table of Contents**
 
 - [Pushing to Stack vs Heap Allocation](#pushing-to-stack-vs-heap-allocation)
-  - [1. How we allocate on Heap](#1-how-we-allocate-on-heap)
-    - [Step 1: Allocating Memory on the Heap in C++](#step-1-allocating-memory-on-the-heap-in-c)
-    - [Step 2: Dereferencing the Pointer](#step-2-dereferencing-the-pointer)
-    - [Step 3: ASCII Diagram of Memory](#step-3-ascii-diagram-of-memory)
-    - [Step 4: Pointer and Dereferencing](#step-4-pointer-and-dereferencing)
-  - [2. Allocation on HEAP for different types](#2-allocation-on-heap-for-different-types)
-    - [Allocating an Integer](#allocating-an-integer)
-    - [Allocating a Float](#allocating-a-float)
-    - [Allocating a String](#allocating-a-string)
-    - [Code Example with Deallocation](#code-example-with-deallocation)
-  - [3. Why we need allocation for memeory mananged data structures?](#3-why-we-need-allocation-for-memeory-mananged-data-structures)
-    - [3.1. Lifetime Management](#31-lifetime-management)
-      - [3.1.1. Lifetime Management Example](#311-lifetime-management-example)
-    - [3.2. Large Objects](#32-large-objects)
-      - [3.2.1. Large Objects](#321-large-objects)
-    - [3.3. Shared Ownership](#33-shared-ownership)
-      - [3.3.1. Shared Ownership](#331-shared-ownership)
-    - [3.4. Polymorphism](#34-polymorphism)
-      - [3.4.1. Polymorphism](#341-polymorphism)
-    - [3.5. Delayed Initialization](#35-delayed-initialization)
-      - [3.5.1. Delayed Initialization](#351-delayed-initialization)
-    - [3.6. Example Use Cases](#36-example-use-cases)
-    - [3.7. Conclusion](#37-conclusion)
+    - [My Understanding on allocation on HEAP](#my-understanding-on-allocation-on-heap)
+    - [What is happening when we allocate on heap](#what-is-happening-when-we-allocate-on-heap)
+    - [1. How we allocate on Heap](#1-how-we-allocate-on-heap)
+        - [Step 1: Allocating Memory on the Heap in C++](#step-1-allocating-memory-on-the-heap-in-c)
+        - [Step 2: Dereferencing the Pointer](#step-2-dereferencing-the-pointer)
+        - [Step 3: ASCII Diagram of Memory](#step-3-ascii-diagram-of-memory)
+        - [Step 4: Pointer and Dereferencing](#step-4-pointer-and-dereferencing)
+    - [2. Allocation on HEAP for different types](#2-allocation-on-heap-for-different-types)
+        - [Allocating an Integer](#allocating-an-integer)
+        - [Allocating a Float](#allocating-a-float)
+        - [Allocating a String](#allocating-a-string)
+        - [Allocated a C-style array](#allocated-a-c-style-array)
+        - [Code Example with Deallocation](#code-example-with-deallocation)
+    - [3. Why we need allocation for memeory mananged data structures?](#3-why-we-need-allocation-for-memeory-mananged-data-structures)
+        - [3.1. Lifetime Management](#31-lifetime-management)
+            - [3.1.1. Lifetime Management Example](#311-lifetime-management-example)
+        - [3.2. Large Objects](#32-large-objects)
+            - [3.2.1. Large Objects](#321-large-objects)
+        - [3.3. Shared Ownership](#33-shared-ownership)
+            - [3.3.1. Shared Ownership](#331-shared-ownership)
+        - [3.4. Polymorphism](#34-polymorphism)
+            - [3.4.1. Polymorphism](#341-polymorphism)
+        - [3.5. Delayed Initialization](#35-delayed-initialization)
+            - [3.5.1. Delayed Initialization](#351-delayed-initialization)
+        - [3.6. Example Use Cases](#36-example-use-cases)
+        - [3.7. Conclusion](#37-conclusion)
 
 <!-- markdown-toc end -->
+
+## My Understanding on allocation on HEAP
+
+```sh
+
+------------------------
+- 255  in hex is `0x000000FF`
+- 400  in hex is `0x00000190`
+- 1000 in hex is `0x000003E8`
+------------------------
+
+std::vector<int>* my_vector_heap_ptr = new std::vector<int>({255,400,1000});
+
+      stack frame
+      O: Memeory address (pointer)
+      3: which is an int to store the size (in our case it is 3)
+      3: which is an int to store the capacity (in our case it is 3)
+      +-----------------------------------------------------------+
+      | O  | 3  | 3  |    |    |    |    |    |    |    |    |    |
+      +-----------------------------------------------------------+
+      +-----------------------------------------------------------------------------------+
+      |[0][0]-[0][0]-[0][0]-[0][0]|[0][0]-[0][0]-[0][0]-[0][0]|[0][0]-[0][0]-[0][0]-[0][0]
+      +-----------------------------------------------------------------------------------+
+       ^                          ^                           ^
+       |                          |                           |
+       |                          |                           |
+       |                          |                           +-> length   = 3 as an intger (these are integer value, temporary stored and you cannot access its address).
+       |                          |
+       |                          +------> Capacity = 3 as an intger (these are integer value, temporary stored and you cannot access its address).
+       |
+       +-----------+ pointer (memory address): = `0x15a004450`, (arbitray value, as it changes based on the memory location).
+                                 |
+                                 |
+                                 v  0x15a004450: Pointer refer to Heap locationn
+                                 +---------------------------------------------------------------------------------------------------------------------+
+                                 |                             |                            |                            |                             |
+       [HEAP]                    | [F][F]-[0][0]-[0][0]-[0][0]=|[9][0]-[0][1]-[0][0]-[0][0]=|[E][8]-[0][3]-[0][0]-[0][0]=|[X][X]-[X][X]-[X][X]-[X][X]  |
+                                 |                             |                            |                            |                             |
+                                 +---------------------------------------------------------------------------------------------------------------------+
+                                 Bytes allocations: [0x000000FF] [0x00000190] [0x000003E8]
+
+------------------------
+
+      [ Stack ]
++--------------------+
+| my_vector_heap_ptr |  ----->     [ Heap ]
++--------------------+       +-------------------+
+                             | std::vector<int>  |
+                             | ----------------- |
+                             | size: 3           |
+                             | capacity: 3       |
+                             | element type: int |
+                             | elements: [255,   |
+                             |       400,1000]   |
+                             +-------------------+
+
+```
+
+- The `XX` values represent unused bytes. Since the vector's size and capacity
+  are equal to the number of elements, these extra `XX` bytes would not be
+  present in a typical `std::vector` implementation, but are included here for
+  clarity.
+- Please note that the memory address `0x15a004450` is a placeholder and would
+  be different every time the program runs. Also, this is a simplified
+  representation and may not reflect the exact memory layout for all C++ standard
+  library implementations.
+
+## What is happening when we allocate on heap
+
+When a `std::vector` in C++ needs to accommodate more elements than its current
+capacity, it undergoes a process typically known as "dynamic resizing" or
+"reallocation." This is a key feature that allows `std::vector` to be a
+flexible and widely used container. Let's walk through the process, especially
+focusing on your example where a vector initially with 3 elements expands to
+hold 5 elements.
+
+1. **Initial Allocation**:
+
+   - At compile time, you define a `std::vector` with 3 elements. However, the
+     actual capacity of the vector might be equal to or greater than 3, depending
+     on the implementation of the standard library. The capacity is the amount of
+     space allocated for the vector, which can be more than the number of
+     elements (size) it currently holds.
+   - This memory is allocated on the heap, and the vector internally keeps
+     track of three things: a pointer to the start of this memory block, the
+     current size (3 in this case), and the capacity.
+
+2. **Adding More Elements**:
+
+   - When you try to add a fourth element (exceeding the initial size of 3),
+     the vector checks if the current capacity is sufficient to accommodate the
+     new element. If the capacity is enough, the new element is added in place,
+     and the size is incremented.
+   - If the current capacity is not enough (which is often the case in
+     real-world scenarios), the vector needs to allocate a new, larger block of
+     memory on the heap to store its elements.
+
+3. **Dynamic Resizing (Reallocation)**:
+
+   - The vector allocates a new block of memory on the heap. The size of this
+     new block is typically larger than just the necessary amount to fit the new
+     elements; this is done to optimize for future additions and to avoid
+     frequent reallocations. The exact factor by which the size increases varies
+     by implementation but is commonly around 1.5 to 2 times the current
+     capacity.
+   - The existing elements (the initial 3 in your case) are copied or moved to
+     the new memory block.
+   - The new elements (the 4th and 5th in your case) are then added to the
+     vector in this new memory block.
+   - The old memory block is freed, and the internal pointer is updated to
+     point to the new block. The vector's capacity is updated to reflect the size
+     of the new memory block.
+
+4. **Memory Management and Impact**:
+   - The reallocation process is generally efficient, but it can be
+     computationally expensive, especially for large vectors or vectors
+     containing complex objects, due to the need to copy or move elements.
+   - The new memory allocation is requested from the heap. The heap manager in
+     the operating system takes care of finding a suitable block of memory. This
+     should not affect other areas of memory adversely, as memory management is
+     designed to handle such dynamic requests and releases.
+   - However, frequent reallocations can lead to heap fragmentation over time,
+     especially if many vectors (or other dynamic data structures) are growing
+     and shrinking.
+
+In summary, the `std::vector` manages its growth by dynamically reallocating
+memory when needed. This process involves allocating a new, larger memory
+block, copying or moving existing elements to it, adding new elements, and then
+freeing the old block. The standard library's implementation of `std::vector`
+is designed to handle this efficiently, but it's still something to be aware
+of, especially in performance-critical applications.
 
 ## 1. How we allocate on Heap
 

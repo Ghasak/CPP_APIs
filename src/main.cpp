@@ -7,25 +7,25 @@
 #include <glog/logging.h>
 #include <iostream>
 #include <ostream>
-#include <string>
+
 
 int main(int argc, char* argv[]) {
     // Initialize logging
     init_logging(argv);
     std::cout << "######################################\n";
-    /* array_function_in_depth(); */
+    // array_function_in_depth();
     /* class_implementation(); */
     /* data_type_table(); */
-    //pointers_concept();
-    // const_in_action();
+    // pointers_concept();
+    //  const_in_action();
 
-
-
-
-
-
-
-
-
-
+    int a = 10;
+    LOG(INFO) << RED << "Original value of a: " << BLUE << a << RESET;
+    passing_args_as_val(a);
+    LOG(INFO) << RED << "After Passing as a value  :   " << BLUE << a << RESET;
+    passing_args_as_ptr(&a);
+    LOG(INFO) << RED << "After Passing as a pointer:   " << BLUE << a << RESET;
+    passing_args_as_reference(a);
+    LOG(INFO) << RED << "After Passing as a reference: " << BLUE << a << RESET;
 }
+

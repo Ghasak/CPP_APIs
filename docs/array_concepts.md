@@ -167,3 +167,33 @@ safely ensure no one will use this pointer by setting it to `nullptr`.
     delete[] my_array_ptr_on_heap;
     my_array_ptr_on_heap = nullptr;
 ```
+
+
+
+## Std::vector
+
+Assume we want to keep the `std::vector` which is allocated on heap. Assume the following case
+
+```cpp
+
+    {
+        std::vector<int>* my_vector_heap_ptr = new std::vector<int>({10, 20, 30});
+        int size = my_vector_heap_ptr->size();
+    }
+    for (size_t i = 0; i < (*my_vector_heap_ptr).size(); i++) {
+        LOG(INFO) << RED << (*my_vector_heap_ptr)[i] << RESET;
+    }
+
+    my_vector_heap_ptr = nullptr;
+    delete my_vector_heap_ptr;
+
+```
+
+- The above code will not works instead we can use:
+
+
+```cpp
+
+```
+
+

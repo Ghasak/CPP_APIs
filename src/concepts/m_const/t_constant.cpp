@@ -4,11 +4,6 @@
 #include "concepts/mylogging.hpp"
 #include "t_constant.hpp"
 
-void with_pointer_1();
-void with_pointer_2();
-void const_method_usage();
-void const_with_classes();
-
 void const_in_action() {
     /* const int version_number_major{2}; */
     /* const int version_number_minor{2}; */

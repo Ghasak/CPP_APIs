@@ -67,6 +67,7 @@ The following tips and tricks are generally common for professional C++ code wri
 ## References
 
 1. References in nutshell:
+
    - References are actually aliases for variable_name.
    - You can do everything with references that you can also do with pointers,
      pointers are much powerful than references.
@@ -75,6 +76,10 @@ The following tips and tricks are generally common for professional C++ code wri
    - Passing an alias for a function in function/method calling is similar to
      passing the variable itself (this is different from Rust and I feel it lacks
      consistency).
+
+2. In regards to references, always return a reference of an entity, such as a
+   variable, object, or similar, that is created outside the function/method body
+   to avoid creating a dangling reference.
 
 ## Rules of OPP
 

@@ -2,13 +2,19 @@
 #include <iostream>
 // #include "../mylogging.hpp"  //before using CPP_APIs/src/concepts/CMakeLists.txt
 #include "concepts/mylogging.hpp"
-
-void casting_with_pointer();
+#include "pointers.hpp"
 
 void pointers_concept() {
     // 1.  addressing the pointer casting system for nullptr
     casting_with_pointer();
 }
+
+// Based on my understnding to the pointer
+void what_is_pointer() {}
+
+void passing_args_as_val(int copy_of_a) { copy_of_a++; }
+void passing_args_as_ptr(int* ptr_to_a) { (*ptr_to_a)++; }
+void passing_args_as_reference(int& ref_to_a) { ref_to_a++; }
 
 void casting_with_pointer() {
     // create a placeholder for our pointer which refer to nothing
@@ -24,10 +30,4 @@ void casting_with_pointer() {
     // We have to use the `C++` which is the casting way for the void pointer, notice that the
     // syntax of the casting using C-style is not working.
     LOG(INFO) << RED << *(static_cast<int*>(ptr));
-}
-
-
-// Based on my understnding to the pointer
-void what_is_pointer(){
-
 }

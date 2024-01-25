@@ -1,0 +1,7 @@
+Log file created at: 2024/01/26 01:11:25
+Running on machine: GMacBookPro.local
+Running duration (h:mm:ss): 0:00:00
+Log line format: [IWEF]yyyymmdd hh:mm:ss.uuuuuu threadid file:line] msg
+I20240126 01:11:25.217200 6003765 main.cpp:24] [1;31mORIGINAL VALUE => [1;36m10[0m
+I20240126 01:11:25.218039 6003765 main.cpp:30] [1;31mThe value of -> [1;36m10[0m is being copied[0m
+I20240126 01:11:25.218048 6003765 main.cpp:26] [1;31mORIGINAL VALUE AFTER USING PASSING BY VALUE => [1;36m10[0m
