@@ -6,12 +6,17 @@
 
 void c_style_array();
 void standard_array_cpp();
+void pointer_with_array_arithmatic();
 
+// Caller function
 void array_function_in_depth() {
     c_style_array();
     standard_array_cpp();
+    pointer_with_array_arithmatic();
 }
 
+
+// concepts functions
 void c_style_array() {
     std::cout << "######################################\n";
     // Array and Ptr arithmetics.
@@ -62,4 +67,25 @@ void standard_array_cpp() {
     int* ptr = my_array.data();
     LOG(INFO) << "Getting a pointer to first element in  std::array similar to C-style -> "
               << *(ptr);
+}
+
+void pointer_with_array_arithmatic() {
+    int my_array[4]{0, 1, 2, 3};
+    int* ptr = my_array;
+    LOG(INFO) << RED << "[0][0]-[0][0]-[0][0]-[0][0] " << RESET;
+    LOG(INFO) << BLUE << "---1------2------3------4---" << RESET;
+    LOG(INFO) << RED << "MY ARRAY IS :" << BLUE << my_array << RESET;
+    LOG(INFO) << RED << "MY ARRAY IS :" << BLUE << my_array[0] << ", " << my_array[1] << ", "
+              << my_array[2] << ", " << my_array[3] << RESET;
+
+    *(ptr + 3) = 20;
+    LOG(INFO) << "ELEMENT my_array[*(ptr + 4)] -> " << RED << *(ptr + 3) << RESET;
+    LOG(INFO) << RED << "MY ARRAY IS :" << BLUE << my_array[0] << ", " << my_array[1] << ", "
+              << my_array[2] << ", " << my_array[3] << RESET;
+
+    *(int*)((char*)ptr + 8) = 30;
+    LOG(INFO) << "ELEMENT my_array[*(int*)((char*)ptr + 8)] -> " << RED << *(int*)((char*)ptr + 8)
+              << RESET;
+    LOG(INFO) << RED << "MY ARRAY IS :" << BLUE << my_array[0] << ", " << my_array[1] << ", "
+              << my_array[2] << ", " << my_array[3] << RESET;
 }

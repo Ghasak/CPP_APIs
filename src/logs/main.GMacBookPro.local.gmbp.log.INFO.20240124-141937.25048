@@ -1,0 +1,10 @@
+Log file created at: 2024/01/24 14:19:37
+Running on machine: GMacBookPro.local
+Running duration (h:mm:ss): 0:00:00
+Log line format: [IWEF]yyyymmdd hh:mm:ss.uuuuuu threadid file:line] msg
+I20240124 14:19:37.943250 4801798 t_constant.cpp:15] [1;31mPI Value: [1;36m3.14159[0m
+I20240124 14:19:37.944162 4801798 t_constant.cpp:27] [1;36mDereferencing *a as -> [1;31m2[0m
+I20240124 14:19:37.944173 4801798 t_constant.cpp:31] [1;36ma become a null pointer -> [1;36m0x13ce07bb0[0m
+I20240124 14:19:37.944181 4801798 t_constant.cpp:32] [1;36mptrx is a null pointer -> [1;36m0x0[0m
+I20240124 14:19:37.944190 4801798 t_constant.cpp:35] [1;36mMemory Address (pointer) of a is -> [1;31m0x16d5d1e6c[0m
+I20240124 14:19:37.944196 4801798 t_constant.cpp:19] XXXX

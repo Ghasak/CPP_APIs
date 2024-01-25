@@ -11,7 +11,6 @@ handled in the processor and storge is the basics block for store data. It can
 be represented as:
 
 ```sh
-
                                       +----------------------------+
                                       |   BYTE REPRESENTATION      |
                                       +----------------------------+
@@ -114,3 +113,6 @@ Please note:
   same as the lowest value.
 - The binary and hexadecimal representations are split into bytes for clarity.
 
+## REFERENCES
+
+- [HEX-DECMIAL-BINARY-OCT Calculator](https://www.rapidtables.com/convert/number/hex-to-decimal.html)

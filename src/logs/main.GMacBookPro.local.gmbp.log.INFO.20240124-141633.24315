@@ -1,0 +1,19 @@
+Log file created at: 2024/01/24 14:16:33
+Running on machine: GMacBookPro.local
+Running duration (h:mm:ss): 0:00:00
+Log line format: [IWEF]yyyymmdd hh:mm:ss.uuuuuu threadid file:line] msg
+I20240124 14:16:33.888365 4799363 array_concept.cpp:26] [1;31mMemeory Profile: -> [00][00][00][00]-[00][00][00][00]-[00][00][00][00]-[00][00][00][00]-[00][00][00][00][0m
+I20240124 14:16:33.889370 4799363 array_concept.cpp:33] [1;31mMemeory Profile: -> [00][00][00][00]-[00][00][00][00]-[05][00][00][00]-[00][00][00][00]-[00][00][00][00][0m
+I20240124 14:16:33.889381 4799363 array_concept.cpp:40] [1;36mMemeory Profile: -> [00][00][00][00]-[00][00][00][00]-[05][00][00][00]-[00][00][00][00]-[05][00][00][00][0m
+I20240124 14:16:33.889389 4799363 array_concept.cpp:47] [1;36mMemeory Profile: -> [00][00][00][00]-[00][00][00][00]-[05][00][00][00]-[00][00][00][00]-[05][00][00][00][0m
+I20240124 14:16:33.889397 4799363 array_concept.cpp:54] [1;31mMemeory Profile: -> [00][00][00][00]-[00][00][00][00]-[0A][00][00][00]-[00][00][00][00]-[05][00][00][00][0m
+I20240124 14:16:33.889405 4799363 array_concept.cpp:63] Size of the standard array from std::array -> 3
+I20240124 14:16:33.889411 4799363 array_concept.cpp:68] Getting a pointer to first element in  std::array similar to C-style -> 5
+I20240124 14:16:33.889417 4799363 array_concept.cpp:75] [1;31m[0][0]-[0][0]-[0][0]-[0][0] [0m
+I20240124 14:16:33.889423 4799363 array_concept.cpp:76] [1;36m---1------2------3------4---[0m
+I20240124 14:16:33.889429 4799363 array_concept.cpp:77] [1;31mMY ARRAY IS :[1;36m0x16b385f80[0m
+I20240124 14:16:33.889436 4799363 array_concept.cpp:78] [1;31mMY ARRAY IS :[1;36m0, 1, 2, 3[0m
+I20240124 14:16:33.889443 4799363 array_concept.cpp:82] ELEMENT my_array[*(ptr + 4)] -> [1;31m20[0m
+I20240124 14:16:33.889449 4799363 array_concept.cpp:83] [1;31mMY ARRAY IS :[1;36m0, 1, 2, 20[0m
+I20240124 14:16:33.889456 4799363 array_concept.cpp:87] ELEMENT my_array[*(int*)((char*)ptr + 8)] -> [1;31m30[0m
+I20240124 14:16:33.889462 4799363 array_concept.cpp:89] [1;31mMY ARRAY IS :[1;36m0, 1, 30, 20[0m

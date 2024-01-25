@@ -1,0 +1,7 @@
+Log file created at: 2024/01/24 13:47:42
+Running on machine: GMacBookPro.local
+Running duration (h:mm:ss): 0:00:00
+Log line format: [IWEF]yyyymmdd hh:mm:ss.uuuuuu threadid file:line] msg
+I20240124 13:47:42.249014 4776480 t_constant.cpp:15] [1;31mPI Value: [1;36m3.14159[0m
+I20240124 13:47:42.249733 4776480 t_constant.cpp:27] [1;36mDereferencing *a as -> [1;31m2[0m
+I20240124 13:47:42.249742 4776480 t_constant.cpp:30] [1;36mMemeory Address (pointer) of a is -> [1;31m0x16b561e5c[0m

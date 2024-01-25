@@ -1,0 +1,11 @@
+Log file created at: 2024/01/24 15:58:35
+Running on machine: GMacBookPro.local
+Running duration (h:mm:ss): 0:00:00
+Log line format: [IWEF]yyyymmdd hh:mm:ss.uuuuuu threadid file:line] msg
+I20240124 15:58:35.908097 4857589 t_constant.cpp:15] [1;31mPI Value: [1;36m3.14159[0m
+I20240124 15:58:35.909240 4857589 t_constant.cpp:44] [1;36m[CASE: (1)] Modifying the content is not allowed, but Modifying the pointer is allowed [0m
+I20240124 15:58:35.909250 4857589 t_constant.cpp:46] [1;31mFORM[1]:[1;36mconst int* ptr1 = &MAX_AGE;[0m
+I20240124 15:58:35.909258 4857589 t_constant.cpp:47] [1;31m*(ptr1) = 300;      => [ERROR:: not allowed ] -> Read-only variable is not assignable[0m
+I20240124 15:58:35.909265 4857589 t_constant.cpp:48] [1;31mptr1 = &MAX_WEIGHT; => [Allowed] -> the memeory address (ptr1/pointer) can reassigned to another address.[0m
+I20240124 15:58:35.909271 4857589 t_constant.cpp:52] [1;36m[CASE: (1)] Modifying the content is not allowed, but Modifying the pointer is allowed [0m
+I20240124 15:58:35.909278 4857589 t_constant.cpp:53] [1;31mFORM[2]:[1;36mconst int* ptr2 = &MAX_WEIGHT;[0m

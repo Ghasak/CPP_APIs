@@ -1,0 +1,12 @@
+Log file created at: 2024/01/24 14:14:24
+Running on machine: GMacBookPro.local
+Running duration (h:mm:ss): 0:00:00
+Log line format: [IWEF]yyyymmdd hh:mm:ss.uuuuuu threadid file:line] msg
+I20240124 14:14:24.834170 4797138 main.cpp:23] [1;31m[0][0]-[0][0]-[0][0]-[0][0] [0m
+I20240124 14:14:24.835079 4797138 main.cpp:24] [1;36m---1------2------3------4---[0m
+I20240124 14:14:24.835089 4797138 main.cpp:25] [1;31mMY ARRAY IS :[1;36m0x16d025fb0[0m
+I20240124 14:14:24.835098 4797138 main.cpp:26] [1;31mMY ARRAY IS :[1;36m0, 1, 2, 3[0m
+I20240124 14:14:24.835104 4797138 main.cpp:30] ELEMENT my_array[*(ptr + 4)] -> [1;31m20[0m
+I20240124 14:14:24.835111 4797138 main.cpp:31] [1;31mMY ARRAY IS :[1;36m0, 1, 2, 20[0m
+I20240124 14:14:24.835119 4797138 main.cpp:35] ELEMENT my_array[*(int*)((char*)ptr + 8)] -> [1;31m30[0m
+I20240124 14:14:24.835125 4797138 main.cpp:36] [1;31mMY ARRAY IS :[1;36m0, 1, 30, 20[0m

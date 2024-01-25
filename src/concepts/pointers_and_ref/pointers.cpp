@@ -25,3 +25,9 @@ void casting_with_pointer() {
     // syntax of the casting using C-style is not working.
     LOG(INFO) << RED << *(static_cast<int*>(ptr));
 }
+
+
+// Based on my understnding to the pointer
+void what_is_pointer(){
+
+}

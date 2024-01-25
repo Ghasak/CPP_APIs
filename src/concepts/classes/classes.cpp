@@ -42,8 +42,8 @@ Employee::~Employee() {
 
 std::string Employee::displayInfo() {
     std::string temp_value = "name: " + first_name + " " + middle_name + " " + last_name +
-                             " with ID:[" + std::to_string(emp_id) + "]" +
-                             "salary:" + std::to_string(salary);
+                             "\n with ID: [" + std::to_string(emp_id) + "] " +
+                             "salary: " + std::to_string(salary);
     return temp_value;
 }
 
