@@ -2,6 +2,22 @@
 
 The following tips and tricks are generally common for professional C++ code writing.
 
+## Allocation on Heap
+
+1. To allocate a `cstyle` list on the heap, we use the pointer obtained through
+   the `keyword`, and this also applies to any other data structure or
+   container that is memory-managed, such as `std::vector` and `std::string`.
+
+- There are so many benefits of allocating variables on heap, Here is a list of
+  the one I know so far:
+
+  - I don't know the size of the array at compilation time, hence I need to
+    prepare the size as a user input during runtime. Then, the program will accept
+    any user input size if the user chooses to enter it manually.
+
+  - Create your data container (array, string..etc.) to still alive out of the
+    scope that it is been created in, which will offer us more contorl
+
 ## Pointers
 
 1.  It does not make sense to perform a pointer-arithmetics on an `object pointer` as it

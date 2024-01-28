@@ -1,0 +1,8 @@
+#include "concepts/mylogging.hpp"
+#include "concepts/classes/classes.hpp"
+#include "concepts/array_and_list/array_concept.hpp"
+#include "concepts/data_types/variables.hpp"
+#include "concepts/pointers_and_ref/pointers.hpp"
+#include "concepts/m_const/t_constant.hpp"
+#include "concepts/m_string/t_string.hpp"
+#include "concepts/pointers_and_ref/double_pointers.hpp"

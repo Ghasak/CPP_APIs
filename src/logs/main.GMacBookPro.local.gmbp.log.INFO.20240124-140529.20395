@@ -1,8 +1,0 @@
-Log file created at: 2024/01/24 14:05:29
-Running on machine: GMacBookPro.local
-Running duration (h:mm:ss): 0:00:00
-Log line format: [IWEF]yyyymmdd hh:mm:ss.uuuuuu threadid file:line] msg
-I20240124 14:05:29.153249 4789308 main.cpp:23] [1;31mMY ARRAY IS :[1;36m0x16f121fb0[0m
-I20240124 14:05:29.154206 4789308 main.cpp:24] [1;31mMY ARRAY IS :[1;36m0123[0m
-I20240124 14:05:29.154217 4789308 main.cpp:26] ELEMENT my_array[] [1;31m20[0m
-I20240124 14:05:29.154224 4789308 main.cpp:28] ELEMENT my_array[] [1;31m30[0m

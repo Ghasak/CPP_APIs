@@ -1,8 +1,0 @@
-Log file created at: 2024/01/25 16:04:16
-Running on machine: GMacBookPro.local
-Running duration (h:mm:ss): 0:00:00
-Log line format: [IWEF]yyyymmdd hh:mm:ss.uuuuuu threadid file:line] msg
-I20240125 16:04:16.455103 5644754 pointers.cpp:22] [1;36m0x16b85de44[0m
-I20240125 16:04:16.456398 5644754 pointers.cpp:26] [1;31m2
-I20240125 16:04:16.456408 5644754 main.cpp:24] [1;36m                   VAR IS: [1;31m10[0m
-I20240125 16:04:16.456415 5644754 main.cpp:25] [1;36mMEMEORY ADDRESS OF VAR IS: [1;31m0x16b85dfbc[0m

@@ -1,0 +1,25 @@
+Log file created at: 2024/01/28 15:20:38
+Running on machine: GMacBookPro.local
+Running duration (h:mm:ss): 0:00:00
+Log line format: [IWEF]yyyymmdd hh:mm:ss.uuuuuu threadid file:line] msg
+I20240128 15:20:38.054119 8219118 double_pointers.cpp:24] [1;34m0x16dad5fe0[0m
+I20240128 15:20:38.055524 8219118 double_pointers.cpp:25] [1;31m0x16dad5ff0[0m
+I20240128 15:20:38.055532 8219118 double_pointers.cpp:26] [1;31m10[0m
+I20240128 15:20:38.055538 8219118 double_pointers.cpp:27] [1;31m10[0m
+I20240128 15:20:38.055544 8219118 double_pointers.cpp:28] [1;31m10[0m
+I20240128 15:20:38.055549 8219118 double_pointers.cpp:38] [1;31mPRINTING THE POINER ITSELF OR my_array          -> [1;34m0x16dad5ff8[0m
+I20240128 15:20:38.055554 8219118 double_pointers.cpp:40] [1;31mDEREFERENCING THE POINER ITSELF OR my_array     -> [1;34m100[0m
+I20240128 15:20:38.256886 8219118 double_pointers.cpp:42] [1;33mPRINTING THE POINER ITSELF OR my_std_array      -> [1;34m0x16dad5fe8[0m
+I20240128 15:20:38.256907 8219118 double_pointers.cpp:44] [1;33mDEREFERENCING THE POINER ITSELF OR my_std_array -> [1;34m400[0m
+I20240128 15:20:38.256914 8219118 double_pointers.cpp:66] [1;32mCasting our pointer to char with a size of one byte, incrementing it by four bytes, and then casting it again to an integer before dereferencing it. -> [1;33m1[0m
+I20240128 15:20:38.256919 8219118 double_pointers.cpp:66] [1;32mCasting our pointer to char with a size of one byte, incrementing it by four bytes, and then casting it again to an integer before dereferencing it. -> [1;33m2[0m
+I20240128 15:20:38.256924 8219118 double_pointers.cpp:66] [1;32mCasting our pointer to char with a size of one byte, incrementing it by four bytes, and then casting it again to an integer before dereferencing it. -> [1;33m3[0m
+I20240128 15:20:38.256929 8219118 double_pointers.cpp:66] [1;32mCasting our pointer to char with a size of one byte, incrementing it by four bytes, and then casting it again to an integer before dereferencing it. -> [1;33m4[0m
+I20240128 15:20:38.312314 8219118 double_pointers.cpp:66] [1;32mCasting our pointer to char with a size of one byte, incrementing it by four bytes, and then casting it again to an integer before dereferencing it. -> [1;33m5[0m
+I20240128 15:20:38.312330 8219118 double_pointers.cpp:66] [1;32mCasting our pointer to char with a size of one byte, incrementing it by four bytes, and then casting it again to an integer before dereferencing it. -> [1;33m6[0m
+I20240128 15:20:38.312336 8219118 double_pointers.cpp:78] [1;31mPOINTER TO POINTER -> [1;33m1[0m
+I20240128 15:20:38.312341 8219118 double_pointers.cpp:78] [1;31mPOINTER TO POINTER -> [1;33m2[0m
+I20240128 15:20:38.312346 8219118 double_pointers.cpp:78] [1;31mPOINTER TO POINTER -> [1;33m3[0m
+I20240128 15:20:38.312350 8219118 double_pointers.cpp:78] [1;31mPOINTER TO POINTER -> [1;33m4[0m
+I20240128 15:20:38.369645 8219118 double_pointers.cpp:78] [1;31mPOINTER TO POINTER -> [1;33m5[0m
+I20240128 15:20:38.369663 8219118 double_pointers.cpp:78] [1;31mPOINTER TO POINTER -> [1;33m6[0m

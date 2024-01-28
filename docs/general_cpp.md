@@ -1,5 +1,15 @@
 # General concepts in CPP
 
+<!-- markdown-toc start - Don't edit this section. Run M-x markdown-toc-refresh-toc -->
+**Table of Contents**
+
+- [General concepts in CPP](#general-concepts-in-cpp)
+    - [Difference between parameters and arguments](#difference-between-parameters-and-arguments)
+    - [Assoicatd graphics accelerators](#assoicatd-graphics-accelerators)
+
+<!-- markdown-toc end -->
+
+
 There are several programming paradigms beyond procedural, imperative, and
 expression-oriented programming. I'll expand the table to include a broader
 range of these paradigms, along with examples of programming languages that

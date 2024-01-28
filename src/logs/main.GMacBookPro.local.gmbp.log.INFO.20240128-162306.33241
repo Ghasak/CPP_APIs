@@ -1,0 +1,5 @@
+Log file created at: 2024/01/28 16:23:06
+Running on machine: GMacBookPro.local
+Running duration (h:mm:ss): 0:00:00
+Log line format: [IWEF]yyyymmdd hh:mm:ss.uuuuuu threadid file:line] msg
+I20240128 16:23:06.621685 8263784 main.cpp:57] [1;35mi = [1;34m0[1;35m , j = [1;34m0 cell value = [1;33m0[0m

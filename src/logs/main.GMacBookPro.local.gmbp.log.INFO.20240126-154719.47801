@@ -1,0 +1,11 @@
+Log file created at: 2024/01/26 15:47:19
+Running on machine: GMacBookPro.local
+Running duration (h:mm:ss): 0:00:00
+Log line format: [IWEF]yyyymmdd hh:mm:ss.uuuuuu threadid file:line] msg
+I20240126 15:47:19.076570 6514466 pointers.cpp:45] [1;36m0x16f249d24[0m
+I20240126 15:47:19.077587 6514466 pointers.cpp:49] [1;31m2[0m
+I20240126 15:47:19.077597 6514466 pointers.cpp:12] [1;31mOriginal value of a: [1;36m10[0m
+I20240126 15:47:19.077605 6514466 pointers.cpp:25] [1;31mThe Parameter change but it will not change the argument that got passed to this function[0m
+I20240126 15:47:19.077611 6514466 pointers.cpp:14] [1;31mAfter Passing as a value  :   [1;36m10[0m
+I20240126 15:47:19.077618 6514466 pointers.cpp:16] [1;31mAfter Passing as a pointer:   [1;36m11[0m
+I20240126 15:47:19.077625 6514466 pointers.cpp:18] [1;31mAfter Passing as a reference: [1;36m12[0m

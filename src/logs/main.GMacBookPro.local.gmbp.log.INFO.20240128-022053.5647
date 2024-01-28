@@ -1,0 +1,13 @@
+Log file created at: 2024/01/28 02:20:53
+Running on machine: GMacBookPro.local
+Running duration (h:mm:ss): 0:00:00
+Log line format: [IWEF]yyyymmdd hh:mm:ss.uuuuuu threadid file:line] msg
+I20240128 02:20:53.896745 7775192 double_pointers.cpp:23] [1;34m0x16dc6df60[0m
+I20240128 02:20:53.897955 7775192 double_pointers.cpp:24] [1;31m0x16dc6df70[0m
+I20240128 02:20:53.897969 7775192 double_pointers.cpp:25] [1;31m10[0m
+I20240128 02:20:53.897976 7775192 double_pointers.cpp:26] [1;31m10[0m
+I20240128 02:20:53.897984 7775192 double_pointers.cpp:27] [1;31m10[0m
+I20240128 02:20:53.897989 7775192 double_pointers.cpp:37] [1;31mPRINTING THE POINER ITSELF OR my_array          -> [1;34m0x16dc6df78[0m
+I20240128 02:20:53.897996 7775192 double_pointers.cpp:39] [1;31mDEREFERENCING THE POINER ITSELF OR my_array     -> [1;34m100[0m
+I20240128 02:20:53.898002 7775192 double_pointers.cpp:41] [1;33mPRINTING THE POINER ITSELF OR my_std_array      -> [1;34m0x16dc6df50[0m
+I20240128 02:20:53.898010 7775192 double_pointers.cpp:43] [1;33mDEREFERENCING THE POINER ITSELF OR my_std_array -> [1;34m400[0m

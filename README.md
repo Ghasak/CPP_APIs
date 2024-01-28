@@ -22,6 +22,7 @@ These concepts include:
 
 ## Changing log
 
+- `Fir. Jan. 26th`: Wroking with pointers and references concepts.
 - `Mon. Oct. 23rd`: Added more experimentals.
 - `Sun. Sep. 3rd.`: Finished the right,
 

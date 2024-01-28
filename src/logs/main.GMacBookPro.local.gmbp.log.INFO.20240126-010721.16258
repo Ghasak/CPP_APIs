@@ -1,6 +1,0 @@
-Log file created at: 2024/01/26 01:07:21
-Running on machine: GMacBookPro.local
-Running duration (h:mm:ss): 0:00:00
-Log line format: [IWEF]yyyymmdd hh:mm:ss.uuuuuu threadid file:line] msg
-I20240126 01:07:21.224269 6000658 main.cpp:28] [1;31mThe value of -> [1;36m10[0m is being copied[0m
-I20240126 01:07:21.223608 6000658 main.cpp:24] [1;31mRETURN AS VALUE [1;36m10[0m

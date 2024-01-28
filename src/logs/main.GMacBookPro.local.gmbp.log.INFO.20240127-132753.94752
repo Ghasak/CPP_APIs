@@ -1,0 +1,9 @@
+Log file created at: 2024/01/27 13:27:53
+Running on machine: GMacBookPro.local
+Running duration (h:mm:ss): 0:00:00
+Log line format: [IWEF]yyyymmdd hh:mm:ss.uuuuuu threadid file:line] msg
+I20240127 13:27:53.710842 7335441 double_pointers.cpp:24] [1;34m0x16d26df60[0m
+I20240127 13:27:53.712004 7335441 double_pointers.cpp:25] [1;31m0x16d26df70[0m
+I20240127 13:27:53.712015 7335441 double_pointers.cpp:26] [1;31m10[0m
+I20240127 13:27:53.712023 7335441 double_pointers.cpp:27] [1;31m10[0m
+I20240127 13:27:53.712029 7335441 double_pointers.cpp:28] [1;31m10[0m

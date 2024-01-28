@@ -1,0 +1,7 @@
+Log file created at: 2024/01/26 22:21:38
+Running on machine: GMacBookPro.local
+Running duration (h:mm:ss): 0:00:00
+Log line format: [IWEF]yyyymmdd hh:mm:ss.uuuuuu threadid file:line] msg
+I20240126 22:21:38.486487 6783513 main.cpp:57] [1;31m string literal allocated on heap - getting the actual string[1;34mHello World!
+I20240126 22:21:38.487411 6783513 main.cpp:59] [1;31m string literal allocated on heap - dereferencing the pointer -> (*my_cstyle_string_array_on_heap);[1;33mH
+I20240126 22:21:38.487421 6783513 main.cpp:62] [1;31m string literal allocated on heap - dereferencing the pointer -> static_cast<const void*>(my_cstyle_string_array_on_heap);[1;33m0x155e07b30

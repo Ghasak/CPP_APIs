@@ -1,0 +1,6 @@
+Log file created at: 2024/01/26 15:57:34
+Running on machine: GMacBookPro.local
+Running duration (h:mm:ss): 0:00:00
+Log line format: [IWEF]yyyymmdd hh:mm:ss.uuuuuu threadid file:line] msg
+I20240126 15:57:34.406628 6523991 t_string.cpp:14] [1;36mPrinting the string itself -> [1;31mHello World[0m
+I20240126 15:57:34.407662 6523991 t_string.cpp:17] [1;36mPrinting the pointer of first element using: [1;31m static_cast<const void*>(my_cstyle_string_ptr) -> [1;31m0x1043334c3[0m

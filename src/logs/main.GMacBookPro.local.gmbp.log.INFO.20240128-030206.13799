@@ -1,0 +1,10 @@
+Log file created at: 2024/01/28 03:02:06
+Running on machine: GMacBookPro.local
+Running duration (h:mm:ss): 0:00:00
+Log line format: [IWEF]yyyymmdd hh:mm:ss.uuuuuu threadid file:line] msg
+I20240128 03:02:06.502485 7813231 main.cpp:51] 1
+I20240128 03:02:06.503448 7813231 main.cpp:51] 2
+I20240128 03:02:06.503458 7813231 main.cpp:51] 3
+I20240128 03:02:06.503464 7813231 main.cpp:55] 4
+I20240128 03:02:06.503470 7813231 main.cpp:55] 5
+I20240128 03:02:06.503476 7813231 main.cpp:55] 6

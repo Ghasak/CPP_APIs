@@ -1,16 +1,17 @@
 # Array and Lists in action
 
 <!-- markdown-toc start - Don't edit this section. Run M-x markdown-toc-refresh-toc -->
+
 **Table of Contents**
 
 - [Array and Lists in action](#array-and-lists-in-action)
-    - [Associated code](#associated-code)
-    - [C-style array](#c-style-array)
-        - [Size of array](#size-of-array)
-    - [std::array](#stdarray)
-        - [How to obtain a pointer from std::array simmilar to C-style array](#how-to-obtain-a-pointer-from-stdarray-simmilar-to-c-style-array)
-        - [Compare C-style array vs std::array](#compare-c-style-array-vs-stdarray)
-        - [Stack vs Allocation on Heap C-Style array](#stack-vs-allocation-on-heap-c-style-array)
+  - [Associated code](#associated-code)
+  - [C-style array](#c-style-array)
+    - [Size of array](#size-of-array)
+  - [std::array](#stdarray)
+    - [How to obtain a pointer from std::array simmilar to C-style array](#how-to-obtain-a-pointer-from-stdarray-simmilar-to-c-style-array)
+    - [Compare C-style array vs std::array](#compare-c-style-array-vs-stdarray)
+    - [Stack vs Allocation on Heap C-Style array](#stack-vs-allocation-on-heap-c-style-array)
 
 <!-- markdown-toc end -->
 
@@ -130,7 +131,7 @@ highlighting various aspects including the decay to a pointer using the
 `.data()` method for `std::array`:
 
 | idx | Feature/Aspect                   | C-style Array                                                      | `std::array`                                                                          |
-| --  | -------------------------------- | ------------------------------------------------------------------ | ------------------------------------------------------------------------------------- |
+| --- | -------------------------------- | ------------------------------------------------------------------ | ------------------------------------------------------------------------------------- |
 | 01  | **Type**                         | Basic array type                                                   | Class template in the standard library                                                |
 | 02  | **Size Specification**           | Defined at declaration (fixed size)                                | Fixed size, specified as template parameter                                           |
 | 03  | **Size Flexibility**             | Fixed size, cannot be resized                                      | Fixed size, cannot be resized                                                         |
@@ -152,14 +153,11 @@ used for legacy code or for interfacing with C APIs. The choice between the two
 often depends on the specific requirements of the application and the
 programming environment.
 
-
-
 ### Stack vs Allocation on Heap C-Style array
 
 Allocation on `Heap` for a `C-style` array assoicated with the keyword `new`. We
 need to delete the assoicated data from the allocated memeory also we need to
 safely ensure no one will use this pointer by setting it to `nullptr`.
-
 
 ```cpp
     int my_array[3]{};                       // pushed to stack
@@ -167,8 +165,6 @@ safely ensure no one will use this pointer by setting it to `nullptr`.
     delete[] my_array_ptr_on_heap;
     my_array_ptr_on_heap = nullptr;
 ```
-
-
 
 ## Std::vector
 
@@ -191,9 +187,6 @@ Assume we want to keep the `std::vector` which is allocated on heap. Assume the 
 
 - The above code will not works instead we can use:
 
-
 ```cpp
 
 ```
-
-
