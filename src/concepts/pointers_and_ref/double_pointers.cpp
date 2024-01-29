@@ -3,12 +3,26 @@
 #include "concepts/mylogging.hpp"
 #include <glog/logging.h>
 
+/*
+HOSTING ALL CONCPETS
+*/
 void double_pointers_in_action() {
+    const char* message = "DOUBLE POINER - CONCEPT ";
     double_pointer_with_matrices();
+    concept_separation(message);
     double_pointer_of_std_array();
+    concept_separation(message);
     double_pointer_with_matricesII();
+    concept_separation(message);
     double_pointer_with_matricesIII();
+    concept_separation(message);
     double_pointer_with_matricesIV();
+    concept_separation(message);
+    using_matrix_on_heap_demo();
+    concept_separation(message);
+    pointer_to_pointer_insight();
+    concept_separation(message);
+    cstyle_string_array_as_pointer();
 }
 
 void double_pointer_with_matrices() {
@@ -178,3 +192,140 @@ void double_pointer_with_matricesIV() {
     }
 }
 
+/*
+This function will create a matrix allocated on heap and using double pointers concept
+You can see how to do similar in C-Style at
+- [Return a dynamically allocated 2D array from a function | C Programming
+Tutorial](https://www.youtube.com/watch?v=22wkCgsPZSU)
+
+*/
+void using_matrix_on_heap_demo() {
+    int** matrix;
+
+    int m;
+    int n;
+    int fill_value;
+
+    std::cout << YELLOW << "Input the first dimension of your array  -> " << RESET;
+    std::cin >> n;
+    std::cout << YELLOW << "Input the second dimension of your array -> " << RESET;
+    std::cin >> m;
+    std::cout << YELLOW << "Fill it with -> " << RESET;
+    std::cin >> fill_value;
+
+    matrix = create_matrix(m, n, fill_value);
+    print_matrix(matrix, m, n);
+
+    // Free the memory
+
+    for (int i = 1; i < m; i++) {
+        delete[] matrix[i];
+        // In C-style
+        // free(matrix[i]);
+    }
+    delete[] matrix;
+    // In C-style
+    // free(matrix)
+    matrix = nullptr;
+}
+
+/*
+The function that we use for creating the matrix\n
+Must be cleaned later by the user when it called
+*/
+int** create_matrix(int rows, int cols, int fill_value) {
+    int** matrix;
+
+    // Initialize the matrix in a form of a pointer
+    matrix = new int*[rows];
+    // In C-style
+    // matrix = malloc(sizeof(int*) * rows);
+
+    for (int i = 0; i < rows; i++) {
+        matrix[i] = new int[cols];
+        // In C-style
+        // matrix[i] =  malloc(sizeof(int) * cols);
+    }
+
+    // Filling the matrix with the value
+    for (int i = 0; i < rows; i++) {
+        for (int j = 0; j < cols; j++) {
+            matrix[i][j] = fill_value;
+        }
+    }
+
+    return matrix;
+}
+
+void print_matrix(int** matrix, int rows, int cols) {
+    for (int i = 0; i < rows; i++) {
+        for (int j = 0; j < cols; j++) {
+            std::cout << BLUE << matrix[i][j] << " - ";
+        }
+        std::cout << std::endl;
+    }
+}
+
+/*
+Function show the pointer-to-pointer
+concept, casting pointers will allow us to
+clearily powerful contorl over the memory-allocation
+*/
+void pointer_to_pointer_insight() {
+    int cstyle_array[2][3] = {{10, 20, 30}, {40, 50, 60}};
+
+    LOG(INFO) << RED << cstyle_array << RESET;
+    LOG(INFO) << BLUE << **(cstyle_array + 1) << RESET;
+    LOG(INFO) << BLUE << *((int*)((char*)cstyle_array + 4)) << RESET;
+    LOG(INFO) << MAGENTA << *(int*)(((char*)(*cstyle_array)) + 4) << RESET;
+    LOG(INFO) << RED << *(int*)(((*cstyle_array)) + 1)
+              << RESET;                                   //  <- *cstyle_array is an integer length
+    LOG(INFO) << RED << *((*cstyle_array) + 1) << RESET;  //  <- *cstyle_array is an integer length
+
+    /* I20240129 18:45:07.822881 9186708 main.cpp:43] 0x16f0b9fc0 */
+    /* I20240129 18:45:07.823963 9186708 main.cpp:44] 40 */
+    /* I20240129 18:45:07.823973 9186708 main.cpp:45] 20 */
+    /* I20240129 18:45:07.823980 9186708 main.cpp:46] 20 */
+    /* I20240129 18:47:53.410066 9188879 main.cpp:48] 20 */
+}
+
+void cstyle_string_array_as_pointer() {
+    // declare a pointer-to-pointer for 2D-matrix;
+    /* const char* my_char_array_ptr[] = {"Hello","World"}; */
+    /* const char my_char_array[][6] = {"Hello", "World"}; */
+    const char* my_cstyle_char_ptr[] = {"Hello", "World"};
+
+    LOG(INFO) << YELLOW << "const char* my_cstyle_char_ptr[] ={\"Hello\", \"World\"};" << RESET;
+    LOG(INFO) << BLUE << "Pointer of char array my_cstyle_char_ptr      -> " << my_cstyle_char_ptr
+              << RESET;
+    LOG(INFO) << RED << "Dereference the pointer **my_cstyle_char_ptr   -> "
+              << **(my_cstyle_char_ptr) << RESET;
+    LOG(INFO) << BLUE << "Dereference the pointer *my_cstyle_char_ptr   -> "
+              << *(my_cstyle_char_ptr) << RESET;
+
+    LOG(INFO) << BLUE << "dereferencing the pointer after incrementing  -> "
+              << *(my_cstyle_char_ptr + 1) << RESET;
+
+    // Navigate over each pointer in top level
+    for (size_t i = 0; i < strlen(my_cstyle_char_ptr[0]); i++) {
+        LOG(INFO) << RED << "deferencing with casting " << YELLOW
+                  << *(((char*)(*my_cstyle_char_ptr)) + i) << RESET;
+    }
+    // OUTPUT
+    /*  const char* my_cstyle_char_ptr[] ={"Hello", "World"}; */
+    /*  Pointer of char array my_cstyle_char_ptr       -> 0x16f08df70 */
+    /*  Dereference the pointer **my_cstyle_char_ptr   -> H */
+    /*  Dereference the pointer *my_cstyle_char_ptr    -> Hello */
+    /*  dereferencing the pointer after incrementing   -> World */
+    /*  deferencing with casting H */
+    /*  deferencing with casting e */
+    /*  deferencing with casting l */
+    /*  deferencing with casting l */
+    /*  deferencing with casting o */
+}
+
+void concept_separation(const char* message) {
+    std::cout << MAGENTA << "%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%\n" << RESET;
+    std::cout << RED << message << RESET;
+    std::cout << MAGENTA << "\n%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%" << RESET << "\n";
+}

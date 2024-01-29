@@ -1,0 +1,6 @@
+Log file created at: 2024/01/30 00:37:28
+Running on machine: GMacBookPro.local
+Running duration (h:mm:ss): 0:00:00
+Log line format: [IWEF]yyyymmdd hh:mm:ss.uuuuuu threadid file:line] msg
+I20240130 00:37:28.543159 9469261 main.cpp:46] Pointer of char array -> 0x16b9fdfc0[0m
+I20240130 00:37:28.545536 9469261 main.cpp:47] [1;31mDereference the pointerHello[0m

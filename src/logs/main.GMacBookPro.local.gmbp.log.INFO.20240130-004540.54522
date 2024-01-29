@@ -1,0 +1,14 @@
+Log file created at: 2024/01/30 00:45:40
+Running on machine: GMacBookPro.local
+Running duration (h:mm:ss): 0:00:00
+Log line format: [IWEF]yyyymmdd hh:mm:ss.uuuuuu threadid file:line] msg
+I20240130 00:45:40.815640 9477386 main.cpp:45] [1;33mconst char* my_cstyle_char_ptr[] ={"Hello", "World"};[0m
+I20240130 00:45:40.816908 9477386 main.cpp:46] [1;34mPointer of char array my_cstyle_char_ptr      -> 0x16f025fc0[0m
+I20240130 00:45:40.816921 9477386 main.cpp:48] [1;31mDereference the pointer **my_cstyle_char_ptr   -> H[0m
+I20240130 00:45:40.816931 9477386 main.cpp:50] [1;34mDereference the pointer *my_cstyle_char_ptr   -> Hello[0m
+I20240130 00:45:40.816939 9477386 main.cpp:53] [1;34mdereferencing the pointer after incrementing  -> World[0m
+I20240130 00:45:40.816947 9477386 main.cpp:57] [1;31mdeferencing with casting [1;33mH[0m
+I20240130 00:45:40.816955 9477386 main.cpp:57] [1;31mdeferencing with casting [1;33me[0m
+I20240130 00:45:40.816963 9477386 main.cpp:57] [1;31mdeferencing with casting [1;33ml[0m
+I20240130 00:45:40.816972 9477386 main.cpp:57] [1;31mdeferencing with casting [1;33ml[0m
+I20240130 00:45:40.816979 9477386 main.cpp:57] [1;31mdeferencing with casting [1;33mo[0m

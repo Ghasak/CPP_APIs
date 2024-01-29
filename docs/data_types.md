@@ -14,10 +14,10 @@ be represented as:
                                       +----------------------------+
                                       |   BYTE REPRESENTATION      |
                                       +----------------------------+
-                                                   [] : 1-byte
+                                                   [ ] : 1-byte
                                                     |
                                                     v
-              +-------------------------------------- -------------------------------------+
+              +------------------------------------   -------------------------------------+
               |                                                                            |
               v                                                                            v
   +----------------------------+                                              +----------------------------+
@@ -35,7 +35,8 @@ be represented as:
 
 ```
 
-- The representation between maximum and minimum values can be held for one byte is provided as:
+- The representation between maximum and minimum values can be held for one
+  byte is provided as:
 
 | idx | Minimum value        | Maximum value        |
 | --- | -------------------- | -------------------- |

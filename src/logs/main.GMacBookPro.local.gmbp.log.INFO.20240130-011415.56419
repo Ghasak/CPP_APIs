@@ -1,0 +1,75 @@
+Log file created at: 2024/01/30 01:14:15
+Running on machine: GMacBookPro.local
+Running duration (h:mm:ss): 0:00:00
+Log line format: [IWEF]yyyymmdd hh:mm:ss.uuuuuu threadid file:line] msg
+I20240130 01:14:15.632681 9500445 double_pointers.cpp:41] [1;34m0x16bb81f60[0m
+I20240130 01:14:15.635428 9500445 double_pointers.cpp:42] [1;31m0x16bb81f70[0m
+I20240130 01:14:15.635447 9500445 double_pointers.cpp:43] [1;31m10[0m
+I20240130 01:14:15.635460 9500445 double_pointers.cpp:44] [1;31m10[0m
+I20240130 01:14:15.635473 9500445 double_pointers.cpp:45] [1;31m10[0m
+I20240130 01:14:15.635486 9500445 double_pointers.cpp:55] [1;31mPRINTING THE POINER ITSELF OR my_array          -> [1;34m0x16bb81f78[0m
+I20240130 01:14:15.635500 9500445 double_pointers.cpp:57] [1;31mDEREFERENCING THE POINER ITSELF OR my_array     -> [1;34m100[0m
+I20240130 01:14:15.635512 9500445 double_pointers.cpp:59] [1;33mPRINTING THE POINER ITSELF OR my_std_array      -> [1;34m0x16bb81f68[0m
+I20240130 01:14:15.635525 9500445 double_pointers.cpp:61] [1;33mDEREFERENCING THE POINER ITSELF OR my_std_array -> [1;34m400[0m
+I20240130 01:14:15.635540 9500445 double_pointers.cpp:82] [1;32mCasting our pointer to char with a size of one byte, incrementing it by four 
+bytes, and then casting it again to an integer before dereferencing it. -> 
+4-bytes as a 1-cell occupied with a single integer value, and int -> 4-bytes 
+[1;33m1[0m
+I20240130 01:14:15.635552 9500445 double_pointers.cpp:82] [1;32mCasting our pointer to char with a size of one byte, incrementing it by four 
+bytes, and then casting it again to an integer before dereferencing it. -> 
+4-bytes as a 1-cell occupied with a single integer value, and int -> 4-bytes 
+[1;33m2[0m
+I20240130 01:14:15.635566 9500445 double_pointers.cpp:82] [1;32mCasting our pointer to char with a size of one byte, incrementing it by four 
+bytes, and then casting it again to an integer before dereferencing it. -> 
+4-bytes as a 1-cell occupied with a single integer value, and int -> 4-bytes 
+[1;33m3[0m
+I20240130 01:14:15.635579 9500445 double_pointers.cpp:82] [1;32mCasting our pointer to char with a size of one byte, incrementing it by four 
+bytes, and then casting it again to an integer before dereferencing it. -> 
+4-bytes as a 1-cell occupied with a single integer value, and int -> 4-bytes 
+[1;33m4[0m
+I20240130 01:14:15.635591 9500445 double_pointers.cpp:82] [1;32mCasting our pointer to char with a size of one byte, incrementing it by four 
+bytes, and then casting it again to an integer before dereferencing it. -> 
+4-bytes as a 1-cell occupied with a single integer value, and int -> 4-bytes 
+[1;33m5[0m
+I20240130 01:14:15.635604 9500445 double_pointers.cpp:82] [1;32mCasting our pointer to char with a size of one byte, incrementing it by four 
+bytes, and then casting it again to an integer before dereferencing it. -> 
+4-bytes as a 1-cell occupied with a single integer value, and int -> 4-bytes 
+[1;33m6[0m
+I20240130 01:14:15.635617 9500445 double_pointers.cpp:95] [1;31mPOINTER TO POINTER -> [1;33m1[0m
+I20240130 01:14:15.635629 9500445 double_pointers.cpp:95] [1;31mPOINTER TO POINTER -> [1;33m2[0m
+I20240130 01:14:15.635640 9500445 double_pointers.cpp:95] [1;31mPOINTER TO POINTER -> [1;33m3[0m
+I20240130 01:14:15.635653 9500445 double_pointers.cpp:95] [1;31mPOINTER TO POINTER -> [1;33m4[0m
+I20240130 01:14:15.635664 9500445 double_pointers.cpp:95] [1;31mPOINTER TO POINTER -> [1;33m5[0m
+I20240130 01:14:15.635675 9500445 double_pointers.cpp:95] [1;31mPOINTER TO POINTER -> [1;33m6[0m
+I20240130 01:14:15.635689 9500445 double_pointers.cpp:118] [1;35mi = [1;34m0[1;35m , j = [1;34m0[1;31m cell value = [1;33m0[0m
+I20240130 01:14:15.635704 9500445 double_pointers.cpp:118] [1;35mi = [1;34m0[1;35m , j = [1;34m1[1;31m cell value = [1;33m1[0m
+I20240130 01:14:15.635717 9500445 double_pointers.cpp:118] [1;35mi = [1;34m0[1;35m , j = [1;34m2[1;31m cell value = [1;33m2[0m
+I20240130 01:14:15.635730 9500445 double_pointers.cpp:118] [1;35mi = [1;34m0[1;35m , j = [1;34m3[1;31m cell value = [1;33m3[0m
+I20240130 01:14:15.635744 9500445 double_pointers.cpp:118] [1;35mi = [1;34m1[1;35m , j = [1;34m0[1;31m cell value = [1;33m4[0m
+I20240130 01:14:15.635757 9500445 double_pointers.cpp:118] [1;35mi = [1;34m1[1;35m , j = [1;34m1[1;31m cell value = [1;33m5[0m
+I20240130 01:14:15.635808 9500445 double_pointers.cpp:118] [1;35mi = [1;34m1[1;35m , j = [1;34m2[1;31m cell value = [1;33m6[0m
+I20240130 01:14:15.635823 9500445 double_pointers.cpp:118] [1;35mi = [1;34m1[1;35m , j = [1;34m3[1;31m cell value = [1;33m7[0m
+I20240130 01:14:15.635835 9500445 double_pointers.cpp:118] [1;35mi = [1;34m2[1;35m , j = [1;34m0[1;31m cell value = [1;33m8[0m
+I20240130 01:14:15.635848 9500445 double_pointers.cpp:118] [1;35mi = [1;34m2[1;35m , j = [1;34m1[1;31m cell value = [1;33m9[0m
+I20240130 01:14:15.635861 9500445 double_pointers.cpp:118] [1;35mi = [1;34m2[1;35m , j = [1;34m2[1;31m cell value = [1;33m10[0m
+I20240130 01:14:15.635874 9500445 double_pointers.cpp:118] [1;35mi = [1;34m2[1;35m , j = [1;34m3[1;31m cell value = [1;33m11[0m
+I20240130 01:14:15.635887 9500445 double_pointers.cpp:118] [1;35mi = [1;34m3[1;35m , j = [1;34m0[1;31m cell value = [1;33m12[0m
+I20240130 01:14:15.635900 9500445 double_pointers.cpp:118] [1;35mi = [1;34m3[1;35m , j = [1;34m1[1;31m cell value = [1;33m13[0m
+I20240130 01:14:15.635912 9500445 double_pointers.cpp:118] [1;35mi = [1;34m3[1;35m , j = [1;34m2[1;31m cell value = [1;33m14[0m
+I20240130 01:14:15.635926 9500445 double_pointers.cpp:118] [1;35mi = [1;34m3[1;35m , j = [1;34m3[1;31m cell value = [1;33m15[0m
+I20240130 01:14:37.933840 9500445 double_pointers.cpp:278] [1;31m0x16bb81f70[0m
+I20240130 01:14:37.933909 9500445 double_pointers.cpp:279] [1;34m40[0m
+I20240130 01:14:37.933920 9500445 double_pointers.cpp:280] [1;34m20[0m
+I20240130 01:14:37.933930 9500445 double_pointers.cpp:281] [1;35m20
+I20240130 01:14:37.933939 9500445 double_pointers.cpp:282] [1;31m20
+I20240130 01:14:37.933948 9500445 double_pointers.cpp:283] [1;31m20
+I20240130 01:14:37.933957 9500445 double_pointers.cpp:295] [1;33mconst char* my_cstyle_char_ptr[] ={"Hello", "World"};[0m
+I20240130 01:14:37.933966 9500445 double_pointers.cpp:296] [1;34mPointer of char array my_cstyle_char_ptr      -> 0x16bb81f70[0m
+I20240130 01:14:37.933975 9500445 double_pointers.cpp:298] [1;31mDereference the pointer **my_cstyle_char_ptr   -> H[0m
+I20240130 01:14:37.933984 9500445 double_pointers.cpp:300] [1;34mDereference the pointer *my_cstyle_char_ptr   -> Hello[0m
+I20240130 01:14:37.933993 9500445 double_pointers.cpp:303] [1;34mdereferencing the pointer after incrementing  -> World[0m
+I20240130 01:14:37.934001 9500445 double_pointers.cpp:308] [1;31mdeferencing with casting [1;33mH[0m
+I20240130 01:14:37.934010 9500445 double_pointers.cpp:308] [1;31mdeferencing with casting [1;33me[0m
+I20240130 01:14:37.934018 9500445 double_pointers.cpp:308] [1;31mdeferencing with casting [1;33ml[0m
+I20240130 01:14:37.934026 9500445 double_pointers.cpp:308] [1;31mdeferencing with casting [1;33ml[0m
+I20240130 01:14:37.934036 9500445 double_pointers.cpp:308] [1;31mdeferencing with casting [1;33mo[0m

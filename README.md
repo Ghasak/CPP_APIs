@@ -3,6 +3,47 @@
 The following repository is used mainly for developing and experimneting with
 the latest `cpp` apis and the concepts behind the main issues.
 
+## Agenda
+
+- [x] Poiners and References
+
+  - [x] double poiner
+  - [x] poiners with array and char array
+
+- [ ] Chars and Strings
+  - [x] Char and Strings as C-Style
+  - [x] Array of Chars
+  - [ ] std::string
+- [ ] Arrays and Lists
+
+  - [x] Arrays as a C-Style
+  - [x] two dimensional array
+  - [ ] std::vector
+
+- [x] Function/methods declaration, defitions and calling
+- [ ] OOP - Classes and Strings
+
+  - [ ] Pointers in Classes
+  - [ ] Member Initzliation
+  - [ ] Return types in class methods
+  - [ ] Static in methods
+  - [ ] Creating objects stack vs heap
+  - [ ] (\*this ) pointer
+  - [ ] Copy Constructors
+  - [ ] Operators with Classes
+  - [ ] Templates with Classes
+  - [ ] Virtual Methods
+  - [ ] Friend Methods
+
+- [ ] Modules and Project Structure
+  - [x] CMake Buidling with Clang and Clangd-lsp
+  - [ ] Installing 3rd libraries Using:
+    - [ ] manually with CMake
+    - [ ] vcpkg
+    - [ ] as a git module
+    - [ ] CMake downloading directly
+    - [ ] Using pkg-config
+
 ### OOP with CPP
 
 The concepts of object-oriented programming (OOP) are thoroughly analyzed and
@@ -18,7 +59,6 @@ These concepts include:
 4. Polymorphism - utilizing the same method or function in different ways based
    on the context or type of input, enabling adaptability and versatility in
    program design.
-
 
 ## Changing log
 
@@ -45,7 +85,6 @@ clang++ -std=c++17 -o ./build/debug/main src/main.cpp  && ./build/debug/main
 ```sh
 fswatch -o src/ | xargs -n1 -I{} make all
 ```
-
 
 ## Debugging using CPPTOOLS
 

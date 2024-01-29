@@ -1,0 +1,28 @@
+Log file created at: 2024/01/29 17:51:24
+Running on machine: GMacBookPro.local
+Running duration (h:mm:ss): 0:00:00
+Log line format: [IWEF]yyyymmdd hh:mm:ss.uuuuuu threadid file:line] msg
+I20240129 17:51:24.556543 9142580 pointers.cpp:66] [1;34m0x16b3b5cf4[0m
+I20240129 17:51:24.558133 9142580 pointers.cpp:70] [1;31m2[0m
+I20240129 17:51:24.558144 9142580 pointers.cpp:13] [1;31mOriginal value of a: [1;34m10[0m
+I20240129 17:51:24.558151 9142580 pointers.cpp:30] [1;31m[Value Call] -> [1;34mThe Parameter change but it will not change the argument that got passed to this function[0m
+I20240129 17:51:24.558158 9142580 pointers.cpp:15] [1;31mAfter Passing as a value  :   [1;34m10[0m
+I20240129 17:51:24.558166 9142580 pointers.cpp:39] [1;31m[Pointer Call] -> [1;34mThe Parameter change also it will change the argument that got passed to this function[0m
+I20240129 17:51:24.558172 9142580 pointers.cpp:17] [1;31mAfter Passing as a pointer:   [1;34m11[0m
+I20240129 17:51:24.558178 9142580 pointers.cpp:48] [1;31m[Reference Call] -> [1;34mThe Parameter change also it will change the argument that got passed to this function[0m
+I20240129 17:51:24.558185 9142580 pointers.cpp:19] [1;31mAfter Passing as a reference: [1;34m12[0m
+I20240129 17:51:24.558192 9142580 pointers.cpp:83] [1;33mH[0m
+I20240129 17:51:24.558197 9142580 pointers.cpp:83] [1;33me[0m
+I20240129 17:51:24.558204 9142580 pointers.cpp:83] [1;33ml[0m
+I20240129 17:51:24.558210 9142580 pointers.cpp:83] [1;33ml[0m
+I20240129 17:51:24.558216 9142580 pointers.cpp:83] [1;33mo[0m
+I20240129 17:51:24.558223 9142580 pointers.cpp:83] [1;33m [0m
+I20240129 17:51:24.558228 9142580 pointers.cpp:83] [1;33mW[0m
+I20240129 17:51:24.558234 9142580 pointers.cpp:83] [1;33mo[0m
+I20240129 17:51:24.558239 9142580 pointers.cpp:83] [1;33mr[0m
+I20240129 17:51:24.558245 9142580 pointers.cpp:83] [1;33ml[0m
+I20240129 17:51:24.558251 9142580 pointers.cpp:83] [1;33md[0m
+I20240129 17:51:24.558257 9142580 pointers.cpp:83] [1;33m![0m
+I20240129 17:51:24.558264 9142580 pointers.cpp:83] [1;33m![0m
+I20240129 17:51:24.558275 9142580 pointers.cpp:113] [1;31mVALUE OF A : [1;34m0x16b3b5cb4[0m
+I20240129 17:51:24.558282 9142580 pointers.cpp:114] [1;31mVALUE OF *A: [1;34m5[0m
