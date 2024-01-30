@@ -23,6 +23,9 @@ void double_pointers_in_action() {
     pointer_to_pointer_insight();
     concept_separation(message);
     cstyle_string_array_as_pointer();
+    concept_separation(message);
+    poiner_with_array_allocation_on_heap_only_first_level();
+    poiner_with_array_allocation_on_heap_both_levels();
 }
 
 void double_pointer_with_matrices() {
@@ -322,6 +325,85 @@ void cstyle_string_array_as_pointer() {
     /*  deferencing with casting l */
     /*  deferencing with casting l */
     /*  deferencing with casting o */
+}
+
+/* This function: */
+/* 1. You allocate an array of pointers to C-style strings on the heap correctly. */
+/* 2. You copy the pointers from the my_array to the my_cstyle_char_ptr_on_heap array. */
+/* 3. You deallocate the memory for the array of pointers correctly. */
+void poiner_with_array_allocation_on_heap_only_first_level() {
+    // We create a string array in read-only memeory location using
+    const char* my_array[] = {"Hello", "World"};
+    // We want to know how many string-elements we have right now;
+    const int num_strings = sizeof(my_array) / sizeof(my_array[0]);
+
+    // Allocate an array of pointers to C-style string on the heap
+
+    const char** my_cstyle_char_ptr_on_heap = new const char*[num_strings];
+
+    // Copy the pointers to the heap-allocated array
+    for (int i = 0; i < num_strings; i++) {
+        my_cstyle_char_ptr_on_heap[i] = my_array[i];
+    }
+
+    LOG(INFO) << MAGENTA
+              << "C-style string as Array allocated on heap, but not the string themselves: " << RED
+              << *my_cstyle_char_ptr_on_heap << RESET;
+
+    // Printing all strings
+    for (int i = 0; i < num_strings; i++) {
+        LOG(INFO)
+            << YELLOW
+            << "C-style string as Array allocated on heap, but not the string themselves: -> "
+            << BLUE << (my_cstyle_char_ptr_on_heap[i])
+            << RESET;  // <- my_cstyle_char_ptr_on_heap : pointer to first letter in first string
+    }
+
+    // Dealloacte memeory for the array of pointers
+    delete[] my_cstyle_char_ptr_on_heap;
+}
+
+/* This function: */
+/* 1. We allocate an array of pointers to C-style strings on the heap, as before. */
+/* 2. Inside the loop, we allocate memory for each C-style string using new[], and we also copy the
+ */
+/* content from the my_array into these dynamically allocated strings. */
+/* 3. After we are done with the dynamically allocated strings, we must deallocate each of them
+ * using */
+/* delete[] within a loop. */
+/* 4. Finally, we deallocate the memory for the array of pointers using delete[]. */
+void poiner_with_array_allocation_on_heap_both_levels() {
+    const char* my_array[] = {"Hello", "World"};
+    const int num_strings = sizeof(my_array) / sizeof(my_array[0]);
+
+    // Allocate an array of pointers to C-style strings on the heap
+    const char** my_cstyle_char_ptr_on_heap = new const char*[num_strings];
+
+    // Allocate memory for each C-style string and copy the pointers
+    for (int i = 0; i < num_strings; i++) {
+        my_cstyle_char_ptr_on_heap[i] =
+            new char[strlen(my_array[i]) + 1];  // +1 for null terminator
+        strcpy(const_cast<char*>(my_cstyle_char_ptr_on_heap[i]), my_array[i]);
+    }
+
+    // Printing all strings
+    for (int i = 0; i < num_strings; i++) {
+        LOG(INFO)
+            << YELLOW
+            << "C-style string as array dynamically allocated on the heap, as well as the "
+               "individual string elements also being allocated on the heap -> "
+            << BLUE << (my_cstyle_char_ptr_on_heap[i])
+            << RESET;  // <- my_cstyle_char_ptr_on_heap : pointer to first letter in first string
+    }
+    // Deallocate memeory for each C-style string
+
+    for (int i = 0; i < num_strings; i++) {
+        delete[] my_cstyle_char_ptr_on_heap[i];
+    }
+
+    // Deallocate memeory for the array of pointers
+
+    delete[] my_cstyle_char_ptr_on_heap;
 }
 
 void concept_separation(const char* message) {

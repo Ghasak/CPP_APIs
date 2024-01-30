@@ -13,3 +13,5 @@ void print_matrix(int**, int, int);
 void pointer_to_pointer_insight();
 void cstyle_string_array_as_pointer();
 void concept_separation(const char*);
+void poiner_with_array_allocation_on_heap_only_first_level();
+void poiner_with_array_allocation_on_heap_both_levels();
