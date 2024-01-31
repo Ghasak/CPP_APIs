@@ -1,0 +1,38 @@
+Log file created at: 2024/01/31 14:51:00
+Running on machine: GMacBookPro.local
+Running duration (h:mm:ss): 0:00:00
+Log line format: [IWEF]yyyymmdd hh:mm:ss.uuuuuu threadid file:line] msg
+I20240131 14:51:00.502851 10912671 classes_intro.cpp:102] [1;31mOBJECT::[1;34m[1;34m[[1;31m1[1;34m] is destroyed ...[0m
+I20240131 14:51:00.504837 10912671 classes_intro.cpp:102] [1;31mOBJECT::[1;34m[1;34m[[1;31m1[1;34m] is destroyed ...[0m
+I20240131 14:51:00.504858 10912671 classes_intro.cpp:102] [1;31mOBJECT::[1;34m[1;34m[[1;31m1[1;34m] is destroyed ...[0m
+I20240131 14:51:00.504873 10912671 classes_intro.cpp:102] [1;31mOBJECT::[1;34m[1;34m[[1;31m1[1;34m] is destroyed ...[0m
+I20240131 14:51:00.504885 10912671 classes_intro.cpp:102] [1;31mOBJECT::[1;34m[1;34m[[1;31m1[1;34m] is destroyed ...[0m
+I20240131 14:51:00.504899 10912671 classes_intro.cpp:102] [1;31mOBJECT::[1;34m[1;34m[[1;31m1[1;34m] is destroyed ...[0m
+I20240131 14:51:00.504911 10912671 classes_intro.cpp:102] [1;31mOBJECT::[1;34m[1;34m[[1;31m1[1;34m] is destroyed ...[0m
+I20240131 14:51:00.504925 10912671 classes_intro.cpp:102] [1;31mOBJECT::[1;34m[1;34m[[1;31m1[1;34m] is destroyed ...[0m
+I20240131 14:51:00.504937 10912671 classes_intro.cpp:102] [1;31mOBJECT::[1;34m[1;34m[[1;31m1[1;34m] is destroyed ...[0m
+I20240131 14:51:00.504951 10912671 classes_intro.cpp:102] [1;31mOBJECT::[1;34m[1;34m[[1;31m1[1;34m] is destroyed ...[0m
+I20240131 14:51:00.504962 10912671 classes_intro.cpp:115] [1;31m Player [1;34m[[1;35m1[1;34m][1;33m at ([1;34m0[1;31m, [1;34m0[1;33m) with speed [1;35m0[0m
+I20240131 14:51:00.504978 10912671 classes_intro.cpp:115] [1;31m Player [1;34m[[1;35m2[1;34m][1;33m at ([1;34m0[1;31m, [1;34m0[1;33m) with speed [1;35m0[0m
+I20240131 14:51:00.504993 10912671 classes_intro.cpp:115] [1;31m Player [1;34m[[1;35m3[1;34m][1;33m at ([1;34m10[1;31m, [1;34m10[1;33m) with speed [1;35m100[0m
+I20240131 14:51:00.505008 10912671 classes_intro.cpp:102] [1;31mOBJECT::[1;34m[1;34m[[1;31m3[1;34m] is destroyed ...[0m
+I20240131 14:51:00.505020 10912671 classes_intro.cpp:115] [1;31m Player [1;34m[[1;35m3[1;34m][1;33m at ([1;34m11[1;31m, [1;34m9[1;33m) with speed [1;35m101[0m
+I20240131 14:51:00.505035 10912671 classes_intro.cpp:102] [1;31mOBJECT::[1;34m[1;34m[[1;31m3[1;34m] is destroyed ...[0m
+I20240131 14:51:00.505048 10912671 classes_intro.cpp:115] [1;31m Player [1;34m[[1;35m3[1;34m][1;33m at ([1;34m12[1;31m, [1;34m8[1;33m) with speed [1;35m102[0m
+I20240131 14:51:00.505062 10912671 classes_intro.cpp:102] [1;31mOBJECT::[1;34m[1;34m[[1;31m3[1;34m] is destroyed ...[0m
+I20240131 14:51:00.505177 10912671 classes_intro.cpp:115] [1;31m Player [1;34m[[1;35m3[1;34m][1;33m at ([1;34m13[1;31m, [1;34m7[1;33m) with speed [1;35m103[0m
+I20240131 14:51:00.505203 10912671 classes_intro.cpp:102] [1;31mOBJECT::[1;34m[1;34m[[1;31m3[1;34m] is destroyed ...[0m
+I20240131 14:51:00.505219 10912671 classes_intro.cpp:115] [1;31m Player [1;34m[[1;35m3[1;34m][1;33m at ([1;34m14[1;31m, [1;34m6[1;33m) with speed [1;35m104[0m
+I20240131 14:51:00.505235 10912671 classes_intro.cpp:102] [1;31mOBJECT::[1;34m[1;34m[[1;31m3[1;34m] is destroyed ...[0m
+I20240131 14:51:00.505249 10912671 classes_intro.cpp:115] [1;31m Player [1;34m[[1;35m3[1;34m][1;33m at ([1;34m15[1;31m, [1;34m5[1;33m) with speed [1;35m105[0m
+I20240131 14:51:00.505263 10912671 classes_intro.cpp:102] [1;31mOBJECT::[1;34m[1;34m[[1;31m3[1;34m] is destroyed ...[0m
+I20240131 14:51:00.505275 10912671 classes_intro.cpp:115] [1;31m Player [1;34m[[1;35m3[1;34m][1;33m at ([1;34m16[1;31m, [1;34m4[1;33m) with speed [1;35m106[0m
+I20240131 14:51:00.505290 10912671 classes_intro.cpp:102] [1;31mOBJECT::[1;34m[1;34m[[1;31m3[1;34m] is destroyed ...[0m
+I20240131 14:51:00.505302 10912671 classes_intro.cpp:115] [1;31m Player [1;34m[[1;35m3[1;34m][1;33m at ([1;34m17[1;31m, [1;34m3[1;33m) with speed [1;35m107[0m
+I20240131 14:51:00.505316 10912671 classes_intro.cpp:102] [1;31mOBJECT::[1;34m[1;34m[[1;31m3[1;34m] is destroyed ...[0m
+I20240131 14:51:00.505329 10912671 classes_intro.cpp:115] [1;31m Player [1;34m[[1;35m3[1;34m][1;33m at ([1;34m18[1;31m, [1;34m2[1;33m) with speed [1;35m108[0m
+I20240131 14:51:00.505409 10912671 classes_intro.cpp:102] [1;31mOBJECT::[1;34m[1;34m[[1;31m3[1;34m] is destroyed ...[0m
+I20240131 14:51:00.505460 10912671 classes_intro.cpp:115] [1;31m Player [1;34m[[1;35m3[1;34m][1;33m at ([1;34m19[1;31m, [1;34m1[1;33m) with speed [1;35m109[0m
+I20240131 14:51:00.505475 10912671 classes_intro.cpp:102] [1;31mOBJECT::[1;34m[1;34m[[1;31m3[1;34m] is destroyed ...[0m
+I20240131 14:51:00.505488 10912671 classes_intro.cpp:102] [1;31mOBJECT::[1;34m[1;34m[[1;31m2[1;34m] is destroyed ...[0m
+I20240131 14:51:00.505501 10912671 classes_intro.cpp:102] [1;31mOBJECT::[1;34m[1;34m[[1;31m1[1;34m] is destroyed ...[0m

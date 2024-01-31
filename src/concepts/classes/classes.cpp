@@ -2,6 +2,7 @@
 #include "../mylogging.hpp"
 #include <glog/logging.h>
 #include <string>
+#include <iostream>
 
 int Employee::emp_count = 0;
 

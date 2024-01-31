@@ -6,3 +6,4 @@
 #include "concepts/m_const/t_constant.hpp"
 #include "concepts/m_string/t_string.hpp"
 #include "concepts/pointers_and_ref/double_pointers.hpp"
+#include "concepts/classes/classes_intro.hpp"

@@ -1,7 +1,6 @@
 #include "concepts/mylogging.hpp"
 #include "concepts_bundles.hpp"
 #include <glog/logging.h>
-#include <algorithm>
 #include <iostream>
 #include <ostream>
 
@@ -16,23 +15,23 @@ int main(int argc, char* argv[]) {
     std::cout << "######################################\n";
 
     // ------------------------------
-    /* array_function_in_depth(); */
+    // array_function_in_depth();
     // ------------------------------
-    /* class_implementation(); */
+    // class_implementation();
+    classes_conccepts_hub();
     // ------------------------------
-    /* data_type_table(); */
+    // data_type_table();
     // ------------------------------
-    /* pointers_concept(); */
+    // pointers_concept();
     // ------------------------------
-    /* const_in_action(); */
+    // const_in_action();
     // ------------------------------
     // cstyle_string_as_apointer();
     // ------------------------------
-    /* c_style_string_in_action(); */
+    // c_style_string_in_action();
     // ------------------------------
-    double_pointers_in_action();
+    // double_pointers_in_action();
     // ------------------------------
 
     return 0;
 }
-

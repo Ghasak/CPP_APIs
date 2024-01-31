@@ -1,0 +1,16 @@
+Log file created at: 2024/01/31 14:45:35
+Running on machine: GMacBookPro.local
+Running duration (h:mm:ss): 0:00:00
+Log line format: [IWEF]yyyymmdd hh:mm:ss.uuuuuu threadid file:line] msg
+I20240131 14:45:35.690461 10907579 classes_intro.cpp:100] [1;31mOBJECT::[1;34m[1;34m[[1;31m1[1;34m] is destroyed ...[0m
+I20240131 14:45:35.692657 10907579 classes_intro.cpp:100] [1;31mOBJECT::[1;34m[1;34m[[1;31m1[1;34m] is destroyed ...[0m
+I20240131 14:45:35.692677 10907579 classes_intro.cpp:100] [1;31mOBJECT::[1;34m[1;34m[[1;31m1[1;34m] is destroyed ...[0m
+I20240131 14:45:35.692692 10907579 classes_intro.cpp:100] [1;31mOBJECT::[1;34m[1;34m[[1;31m1[1;34m] is destroyed ...[0m
+I20240131 14:45:35.692705 10907579 classes_intro.cpp:100] [1;31mOBJECT::[1;34m[1;34m[[1;31m1[1;34m] is destroyed ...[0m
+I20240131 14:45:35.692718 10907579 classes_intro.cpp:100] [1;31mOBJECT::[1;34m[1;34m[[1;31m1[1;34m] is destroyed ...[0m
+I20240131 14:45:35.692730 10907579 classes_intro.cpp:100] [1;31mOBJECT::[1;34m[1;34m[[1;31m1[1;34m] is destroyed ...[0m
+I20240131 14:45:35.692744 10907579 classes_intro.cpp:100] [1;31mOBJECT::[1;34m[1;34m[[1;31m1[1;34m] is destroyed ...[0m
+I20240131 14:45:35.692756 10907579 classes_intro.cpp:100] [1;31mOBJECT::[1;34m[1;34m[[1;31m1[1;34m] is destroyed ...[0m
+I20240131 14:45:35.692768 10907579 classes_intro.cpp:100] [1;31mOBJECT::[1;34m[1;34m[[1;31m1[1;34m] is destroyed ...[0m
+I20240131 14:45:35.692781 10907579 classes_intro.cpp:113] [1;31m Player [1;34m[[1;35m1[1;34m][1;33m at ([1;34m0[1;31m, [1;34m0[1;33m) with speed [1;35m0[0m
+I20240131 14:45:35.692796 10907579 classes_intro.cpp:113] [1;31m Player [1;34m[[1;35m2[1;34m][1;33m at ([1;34m0[1;31m, [1;34m0[1;33m) with speed [1;35m0[0m

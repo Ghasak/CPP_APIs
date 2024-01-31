@@ -1,0 +1,29 @@
+Log file created at: 2024/01/30 17:42:32
+Running on machine: GMacBookPro.local
+Running duration (h:mm:ss): 0:00:00
+Log line format: [IWEF]yyyymmdd hh:mm:ss.uuuuuu threadid file:line] msg
+I20240130 17:42:32.787400 10106569 variables.cpp:11] --
+I20240130 17:42:32.789156 10106569 variables.cpp:13] [1;34m- Number of bytes in an int: -> 4 bytes[0m
+I20240130 17:42:32.789171 10106569 variables.cpp:14] [1;34m- Maximum value for int    : -> 2147483647[0m
+I20240130 17:42:32.789182 10106569 variables.cpp:16] [1;34m- Minimum value for int    : -> -2147483648[0m
+I20240130 17:42:32.789191 10106569 variables.cpp:18] [1;34m- Lowest value for int     : -> -2147483648[0m
+I20240130 17:42:32.789202 10106569 variables.cpp:21] [1;34m- Number of bytes in an long int: -> 8 bytes[0m
+I20240130 17:42:32.789211 10106569 variables.cpp:23] [1;34m- Maximum value for long int    : -> 9223372036854775807[0m
+I20240130 17:42:32.789222 10106569 variables.cpp:25] [1;34m- Minimum value for long int    : -> -9223372036854775808[0m
+I20240130 17:42:32.789230 10106569 variables.cpp:27] [1;34m- Lowest value for long int     : -> -9223372036854775808[0m
+I20240130 17:42:32.789240 10106569 variables.cpp:31] [1;34m- Number of bytes in an signed long int: -> 8 bytes[0m
+I20240130 17:42:32.789250 10106569 variables.cpp:33] [1;34m- Maximum value for signed long int    : -> 9223372036854775807[0m
+I20240130 17:42:32.789259 10106569 variables.cpp:35] [1;34m- Minimum value for signed long int    : -> -9223372036854775808[0m
+I20240130 17:42:32.789268 10106569 variables.cpp:37] [1;34m- Lowest value for signed long int     : -> -9223372036854775808[0m
+I20240130 17:42:32.789280 10106569 variables.cpp:42] [1;34m- Number of bytes in an float:       -> 4 bytes[0m
+I20240130 17:42:32.789289 10106569 variables.cpp:44] [1;34m- Maximum value for float:           -> 3.40282e+38[0m
+I20240130 17:42:32.789304 10106569 variables.cpp:46] [1;34m- Minimum value for float:           -> 1.17549e-38[0m
+I20240130 17:42:32.789312 10106569 variables.cpp:48] [1;34m- Lowest value for float:            -> -3.40282e+38[0m
+I20240130 17:42:32.789323 10106569 variables.cpp:52] [1;34m- Number of bytes in an double:       -> 8 bytes[0m
+I20240130 17:42:32.789332 10106569 variables.cpp:54] [1;34m- Maximum value for double:           -> 1.79769e+308[0m
+I20240130 17:42:32.789341 10106569 variables.cpp:56] [1;34m- Minimum value for double:           -> 2.22507e-308[0m
+I20240130 17:42:32.789351 10106569 variables.cpp:58] [1;34m- Lowest value for double:            -> -1.79769e+308[0m
+I20240130 17:42:32.789361 10106569 variables.cpp:62] [1;34m- Number of bytes in an long double:       -> 8 bytes[0m
+I20240130 17:42:32.789371 10106569 variables.cpp:64] [1;34m- Maximum value for long double:           -> 1.79769e+308[0m
+I20240130 17:42:32.789381 10106569 variables.cpp:66] [1;34m- Minimum value for long double:           -> 2.22507e-308[0m
+I20240130 17:42:32.789391 10106569 variables.cpp:68] [1;34m- Lowest value for long double:            -> -1.79769e+308[0m

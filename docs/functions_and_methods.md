@@ -1,34 +1,5 @@
 # Functions and Methods
 
-<!-- markdown-toc start - Don't edit this section. Run M-x markdown-toc-refresh-toc -->
-**Table of Contents**
-
-- [Functions and Methods](#functions-and-methods)
-    - [1. My Understanding](#1-my-understanding)
-    - [2. Function/method syntax](#2-functionmethod-syntax)
-        - [2.1. Common Coding Practices for Function Creation in C++](#21-common-coding-practices-for-function-creation-in-c)
-        - [2.2. Example Function](#22-example-function)
-    - [3. Return types of function signature](#3-return-types-of-function-signature)
-        - [3.1. Points to Note:](#31-points-to-note)
-    - [4. Passing arguments to parameters](#4-passing-arguments-to-parameters)
-    - [Return with methods/functions](#return-with-methodsfunctions)
-        - [1. Returning by Value](#1-returning-by-value)
-        - [2. Returning by Pointer](#2-returning-by-pointer)
-        - [3. Returning by Reference](#3-returning-by-reference)
-        - [General Guidelines](#general-guidelines)
-    - [Return with string in functions/methods](#return-with-string-in-functionsmethods)
-        - [1. Returning by Value](#1-returning-by-value-1)
-        - [2. Returning by Pointer](#2-returning-by-pointer-1)
-        - [3. Returning by Reference](#3-returning-by-reference-1)
-        - [Summary and Best Practices](#summary-and-best-practices)
-    - [Return for common scenarios - String](#return-for-common-scenarios---string)
-        - [1. Function Returning a `char` Pointer](#1-function-returning-a-char-pointer)
-        - [2. Function Returning a `char` Array](#2-function-returning-a-char-array)
-        - [3. Function Returning an Array of Integers](#3-function-returning-an-array-of-integers)
-        - [Summary](#summary)
-
-<!-- markdown-toc end -->
-
 In C++, the syntax for creating a function that takes input variables and
 returns an output variable is quite straightforward. The basic structure
 includes specifying the return type of the function, the name of the function,
@@ -46,14 +17,15 @@ outline:
 
 ```sh
 
-[outside the function]  --> +--+                                                                    +--+
-                        --> |  |                    +-------------------+                           |  |
-int var_x = 10;         --> |  |  o---- INPUT --->  |  Function/method  |    o---- OUTPUT --->      |  |
-                        --> |  |                    +-------------------+                           |  |
-                        --> |  |     [signature]   local defintion variables      [return]          |  |
-                        --> +--+ <----------------------  Scope  -------------------------------->  +--+
-                                                      int var_y = 10;                                var_x still alive
-                                                                                                     var_y died at exit of the scope of the function/method
+[outside the function]
+                --> +--+                                                                    +--+
+                --> |  |                    +-------------------+                           |  |
+int var_x = 10; --> |  |  o---- INPUT --->  |  Function/method  |    o---- OUTPUT --->      |  |
+                --> |  |                    +-------------------+                           |  |
+                --> |  |     [signature]   local defintion variables      [return]          |  |
+                --> +--+ <----------------------  Scope  -------------------------------->  +--+
+                                                      int var_y = 10;                       var_x still alive
+                                                                                            var_y died at exit of the scope of the function/method
 ```
 
 - In regards to references, always return a reference of an entity, such as a

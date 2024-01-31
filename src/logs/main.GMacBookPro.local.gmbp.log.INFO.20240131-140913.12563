@@ -1,0 +1,15 @@
+Log file created at: 2024/01/31 14:09:13
+Running on machine: GMacBookPro.local
+Running duration (h:mm:ss): 0:00:00
+Log line format: [IWEF]yyyymmdd hh:mm:ss.uuuuuu threadid file:line] msg
+I20240131 14:09:13.997267 10868639 classes_intro.cpp:77] [1;31mOBJECT::[1;34m2 is destroyed ...[0m
+I20240131 14:09:13.999608 10868639 classes_intro.cpp:77] [1;31mOBJECT::[1;34m3 is destroyed ...[0m
+I20240131 14:09:13.999639 10868639 classes_intro.cpp:77] [1;31mOBJECT::[1;34m4 is destroyed ...[0m
+I20240131 14:09:13.999662 10868639 classes_intro.cpp:77] [1;31mOBJECT::[1;34m5 is destroyed ...[0m
+I20240131 14:09:13.999683 10868639 classes_intro.cpp:77] [1;31mOBJECT::[1;34m6 is destroyed ...[0m
+I20240131 14:09:14.072608 10868639 classes_intro.cpp:77] [1;31mOBJECT::[1;34m7 is destroyed ...[0m
+I20240131 14:09:14.072638 10868639 classes_intro.cpp:77] [1;31mOBJECT::[1;34m8 is destroyed ...[0m
+I20240131 14:09:14.072651 10868639 classes_intro.cpp:77] [1;31mOBJECT::[1;34m9 is destroyed ...[0m
+I20240131 14:09:14.072664 10868639 classes_intro.cpp:77] [1;31mOBJECT::[1;34m10 is destroyed ...[0m
+I20240131 14:09:14.072674 10868639 classes_intro.cpp:77] [1;31mOBJECT::[1;34m11 is destroyed ...[0m
+I20240131 14:09:14.072682 10868639 classes_intro.cpp:77] [1;31mOBJECT::[1;34m1 is destroyed ...[0m

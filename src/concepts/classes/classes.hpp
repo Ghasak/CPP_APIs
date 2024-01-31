@@ -1,8 +1,8 @@
 #ifndef EMPLOYEE_HPP
 #define EMPLOYEE_HPP
-#include <cmath>
-#include <iostream>
 #include <string>
+
+void classes_conccepts_hub();
 
 class Employee {
 public:
