@@ -4,32 +4,32 @@ In C++, strings are simply arrays of characters used to store text. One can
 think of an array as a collection of elements.
 
 <!-- markdown-toc start - Don't edit this section. Run M-x markdown-toc-refresh-toc -->
+
 **Table of Contents**
 
 - [Strings in CPP](#strings-in-cpp)
-    - [My Understanding](#my-understanding)
-        - [1. C-Style String Understanding](#1-c-style-string-understanding)
-            - [1.1 As a const pointer](#11-as-a-const-pointer)
-                - [1.1.1. Accessing the pointer of the char pointer as a variable](#111-accessing-the-pointer-of-the-char-pointer-as-a-variable)
-            - [1.2. As an array](#12-as-an-array)
-                - [1.2.1 C-Style String as Array - Pointer comparision to regular C-Style Array](#121-c-style-string-as-array---pointer-comparision-to-regular-c-style-array)
-                - [1.2.2 C-Style String as Array - Allocation on Heap](#122-c-style-string-as-array---allocation-on-heap)
-                - [1.2.3 C-Style String as Array - When we need Termianation Point](#123-c-style-string-as-array---when-we-need-termianation-point)
-            - [1.3 Comparison between C-Style as a Pointer and as An Array](#13-comparison-between-c-style-as-a-pointer-and-as-an-array)
-    - [C-Style Strings Types](#c-style-strings-types)
-        - [1. **Introduction to C-Style Strings**](#1-introduction-to-c-style-strings)
-            - [**Syntax of Creating a C-Style String**](#syntax-of-creating-a-c-style-string)
-            - [**Considerations for C-Style Strings**](#considerations-for-c-style-strings)
-        - [2. **Representing Strings Using `char`**](#2-representing-strings-using-char)
-            - [**Is a Char String a Pointer?**](#is-a-char-string-a-pointer)
-        - [3. **Allocating Strings on the Heap**](#3-allocating-strings-on-the-heap)
-        - [4. **Passing and Returning Strings from Functions**](#4-passing-and-returning-strings-from-functions)
-            - [**Passing Strings**](#passing-strings)
-            - [**Returning Strings**](#returning-strings)
-    - [References](#references)
+  - [My Understanding](#my-understanding)
+    - [1. C-Style String Understanding](#1-c-style-string-understanding)
+      - [1.1 As a const pointer](#11-as-a-const-pointer)
+        - [1.1.1. Accessing the pointer of the char pointer as a variable](#111-accessing-the-pointer-of-the-char-pointer-as-a-variable)
+      - [1.2. As an array](#12-as-an-array)
+        - [1.2.1 C-Style String as Array - Pointer comparision to regular C-Style Array](#121-c-style-string-as-array---pointer-comparision-to-regular-c-style-array)
+        - [1.2.2 C-Style String as Array - Allocation on Heap](#122-c-style-string-as-array---allocation-on-heap)
+        - [1.2.3 C-Style String as Array - When we need Termianation Point](#123-c-style-string-as-array---when-we-need-termianation-point)
+      - [1.3 Comparison between C-Style as a Pointer and as An Array](#13-comparison-between-c-style-as-a-pointer-and-as-an-array)
+  - [C-Style Strings Types](#c-style-strings-types)
+    - [1. **Introduction to C-Style Strings**](#1-introduction-to-c-style-strings)
+      - [**Syntax of Creating a C-Style String**](#syntax-of-creating-a-c-style-string)
+      - [**Considerations for C-Style Strings**](#considerations-for-c-style-strings)
+    - [2. **Representing Strings Using `char`**](#2-representing-strings-using-char)
+      - [**Is a Char String a Pointer?**](#is-a-char-string-a-pointer)
+    - [3. **Allocating Strings on the Heap**](#3-allocating-strings-on-the-heap)
+    - [4. **Passing and Returning Strings from Functions**](#4-passing-and-returning-strings-from-functions)
+      - [**Passing Strings**](#passing-strings)
+      - [**Returning Strings**](#returning-strings)
+  - [References](#references)
 
 <!-- markdown-toc end -->
-
 
 ## My Understanding
 
@@ -416,12 +416,12 @@ Once you have a heap-allocated string, you can manipulate it using pointer arith
 
 Allocating and manipulating C-style strings on the heap provides flexibility
 but requires careful handling of memory and bounds. Always prefer higher-level
-abstractions like `std::string** unless you have a specific reason to manage
+abstractions like `std::string\*\* unless you have a specific reason to manage
 memory manually.
 
 ##### 1.2.3 C-Style String as Array - When we need Termianation Point
 
-- **NOTE*: You will need it when you have access the charcters index.
+- \*_NOTE_: You will need it when you have access the charcters index.
 
 You need to manually add a null terminator to a C-style string in C++ in the
 following scenarios:
@@ -644,6 +644,95 @@ delete[] str;
   the use of `std::string` and smart pointers for safer and more efficient string
   handling. We'll get to `std::string` later as you expand your question.
 
+## Difference between (char\* name) vs (char name[])
+
+In C++, the two declarations `const char* mystr1 = "Hello World";` and `const char mystr2[] = "Hello World";` are quite different in terms of how they handle
+and store the string. Let's break down these differences:
+
+### `const char* mystr1 = "Hello World";`
+
+- **Storage:** The string literal `"Hello World"` is stored in read-only memory
+  (typically in a section of memory allocated for constants). `mystr1` is a
+  pointer pointing to the first character of this string literal.
+- **Memory Location:** Usually in the program's data segment, specifically in a
+  non-modifiable section.
+- **Usage:** You cannot change the contents of `"Hello World"` through `mystr1`.
+  Attempting to modify the string results in undefined behavior, often a crash.
+- **Commonality:** This is a common way to use string literals in C and C++ when
+  the string is not meant to be modified.
+
+### `const char mystr2[] = "Hello World";`
+
+- **Storage:** This creates an array of characters on the stack and initializes
+  it with the contents of the string literal `"Hello World"`, including the null
+  terminator `\0`.
+- **Memory Location:** On the stack, as part of the local variables.
+- **Usage:** The contents of `mystr2` are read-only due to the `const` keyword.
+  Removing `const` would allow modification of the array contents.
+- **Commonality:** This syntax is less common in pure C++ code but might be used
+  when a local, modifiable copy of the string is needed.
+
+### Allocating on the Heap
+
+To allocate equivalent strings on the heap, you would typically use dynamic memory allocation:
+
+1. **Using `const char*` with Heap Allocation:**
+
+   ```cpp
+   const char* mystr1 = new char[strlen("Hello World") + 1];
+   strcpy(mystr1, "Hello World");
+   // ... use mystr1
+   delete[] mystr1; // Remember to free the memory
+   ```
+
+2. **Using `char[]` with Heap Allocation:**
+   - You can't directly create a `char[]` on the heap, but you can create a `char*` that behaves similarly:
+     ```cpp
+     char* mystr2 = new char[strlen("Hello World") + 1];
+     strcpy(mystr2, "Hello World");
+     // ... use mystr2
+     delete[] mystr2; // Remember to free the memory
+     ```
+
+### Summary of Facts
+
+- `const char* mystr1` points to a string literal in read-only memory. It's
+  common for fixed strings that won't change.
+- `const char mystr2[]` creates a local array on the stack, initialized with the
+  string. It's less common but useful for local, read-only copies.
+- Both declarations with `const` prevent modification of the strings.
+- For dynamic allocation (heap), you use `new` and `delete[]` in C++.
+- String literals are null-terminated in both cases, which is important for
+  C-style string functions.
+
+### Best Practices
+
+In modern C++, it's recommended to use `std::string` for string manipulation, as
+it handles memory management automatically and provides a rich set of features.
+However, understanding C-style strings is still important, especially when
+interacting with C APIs or legacy codebases.
+
+- Here's a table summarizing the differences between `const char* mystr1 = "Hello World";` and `const char mystr2[] = "Hello World";`, along with their heap
+  allocation equivalents in C++:
+
+| Aspect                | `const char* mystr1 = "Hello World";`                                                       | `const char mystr2[] = "Hello World";`                                                |
+| --------------------- | ------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------- |
+| **Type**              | Pointer to `const char`                                                                     | Array of `const char`                                                                 |
+| **Storage**           | Points to a string literal in read-only memory.                                             | Creates a copy of the string on the stack.                                            |
+| **Memory Location**   | Read-only section of memory (data segment).                                                 | Stack (as part of local variables).                                                   |
+| **Modifiability**     | The string literal is not modifiable.                                                       | The string itself is not modifiable due to `const`.                                   |
+| **Common Usage**      | Common for fixed strings that are not modified.                                             | Less common, used for local, read-only copies.                                        |
+| **Syntax Example**    | `const char* mystr1 = "Hello World";`                                                       | `const char mystr2[] = "Hello World";`                                                |
+| **Heap Allocation**   | `const char* mystr1 = new char[strlen("Hello World") + 1];\nstrcpy(mystr1, "Hello World");` | `char* mystr2 = new char[strlen("Hello World") + 1];\nstrcpy(mystr2, "Hello World");` |
+| **Heap Deallocation** | `delete[] mystr1;`                                                                          | `delete[] mystr2;`                                                                    |
+| **Null-Terminated**   | Yes                                                                                         | Yes                                                                                   |
+
+- In both heap allocation examples, memory is dynamically allocated for a copy
+  of the string "Hello World". The allocated memory needs to be managed
+  manually, including deallocation with `delete[]`.
+- The examples demonstrate how to create read-only or modifiable strings in
+  memory, either on the stack or heap, and highlight the importance of proper
+  memory management in C++.
 
 ## References
 

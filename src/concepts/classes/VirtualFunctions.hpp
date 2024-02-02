@@ -1,13 +1,12 @@
 #include <string>
-#include "concepts/classes/classes.hpp"
 #pragma once
 
 void virtual_function_concept();
 // Parent Class
 class EntityVirtualClass {
 public:
-    std::string GetName();
-    ~EntityVirtualClass();
+    virtual std::string GetName();
+    virtual ~EntityVirtualClass();
 };
 
 // Child Class
@@ -19,6 +18,6 @@ public:
     // constructor
     PlayerVirtualClass(const std::string& name);
     // Method with same name for the parent class
-    std::string GetName();
+    std::string GetName() override;
     ~PlayerVirtualClass();
 };

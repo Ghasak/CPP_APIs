@@ -20,12 +20,25 @@ void virtual_function_concept() {
 
     // Now see that why we need virtual functions
     EntityVirtualClass* p3 = p2;
-    std::cout << p3->GetName() << std::endl;  // This suppose to print ``
+    std::cout << p3->GetName() << std::endl;  // This will print
 
     delete e2;
     delete p2;
     e2 = nullptr;
     p2 = nullptr;
+
+    // OUTPUT AFTER ADDING virtual and override
+    /* EntityVirtualClass */
+    /* PlayerVirtualClass */
+    /* EntityVirtualClass */
+    /* PlayerVirtualClass */
+    /* PlayerVirtualClass */  //<--PlayerVirtualClass using virtual instead of EntityVirtualClass without virtual
+    /* Entity Object got destroyed */
+    /* Player Object got destroyed */
+    /* Entity Object got destroyed */
+    /* Player Object got destroyed */
+    /* Entity Object got destroyed */
+    /* Entity Object got destroyed */
 };
 // Parent Class
 std::string EntityVirtualClass::GetName() { return std::string("EntityVirtualClass"); }

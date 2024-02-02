@@ -1,31 +1,36 @@
 # Virtual Functions
 
 <!-- markdown-toc start - Don't edit this section. Run M-x markdown-toc-refresh-toc -->
+
 **Table of Contents**
 
 - [Virtual Functions](#virtual-functions)
-    - [1. My Understanding](#1-my-understanding)
-        - [1.1. Without Using Virtual](#11-without-using-virtual)
-        - [1.2. Using Virtual](#12-using-virtual)
-    - [2. Introduction to Virtual Functions](#2-introduction-to-virtual-functions)
-        - [2.1. Why Use Virtual Methods?](#21-why-use-virtual-methods)
-        - [2.2. Common Practices and Notes](#22-common-practices-and-notes)
-        - [2.3. Example Without Virtual Methods](#23-example-without-virtual-methods)
-        - [2.4. Example With Virtual Methods](#24-example-with-virtual-methods)
-        - [2.5. Allocation on Heap and Dereferencing](#25-allocation-on-heap-and-dereferencing)
-        - [2.6. Expected Results](#26-expected-results)
-    - [3. Why we need Virtual Functions Clarification](#3-why-we-need-virtual-functions-clarification)
-        - [3.1 Polymorphism](#31-polymorphism)
-        - [3.2. Code Reusability and Extensibility](#32-code-reusability-and-extensibility)
-        - [3.3. Decoupling](#33-decoupling)
-        - [3.4. Design Patterns](#34-design-patterns)
-        - [3.5. Dynamic Binding](#35-dynamic-binding)
-        - [3.6. Example Scenario:](#36-example-scenario)
-        - [3.7. Conclusion](#37-conclusion)
-    - [4. Efficent way to use Virtual Methods](#4-efficent-way-to-use-virtual-methods)
-        - [4.1. C++ Code Example:](#41-c-code-example)
-        - [4.2. Explanation:](#42-explanation)
-        - [4.3. Expected Output:](#43-expected-output)
+  - [1. My Understanding](#1-my-understanding)
+    - [1.1. Without Using Virtual](#11-without-using-virtual)
+    - [1.2. Using Virtual](#12-using-virtual)
+  - [2. Introduction to Virtual Functions](#2-introduction-to-virtual-functions)
+    - [2.1. Why Use Virtual Methods?](#21-why-use-virtual-methods)
+    - [2.2. Common Practices and Notes](#22-common-practices-and-notes)
+    - [2.3. Example Without Virtual Methods](#23-example-without-virtual-methods)
+    - [2.4. Example With Virtual Methods](#24-example-with-virtual-methods)
+    - [2.5. Allocation on Heap and Dereferencing](#25-allocation-on-heap-and-dereferencing)
+    - [2.6. Expected Results](#26-expected-results)
+  - [3. Why we need Virtual Functions Clarification](#3-why-we-need-virtual-functions-clarification)
+    - [3.1 Polymorphism](#31-polymorphism)
+    - [3.2. Code Reusability and Extensibility](#32-code-reusability-and-extensibility)
+    - [3.3. Decoupling](#33-decoupling)
+    - [3.4. Design Patterns](#34-design-patterns)
+    - [3.5. Dynamic Binding](#35-dynamic-binding)
+    - [3.6. Example Scenario:](#36-example-scenario)
+    - [3.7. Conclusion](#37-conclusion)
+  - [4. Efficent way to use Virtual Methods](#4-efficent-way-to-use-virtual-methods)
+    - [4.1. C++ Code Example:](#41-c-code-example)
+    - [4.2. Explanation:](#42-explanation)
+    - [4.3. Expected Output:](#43-expected-output)
+  - [5. Dynamic Dispatch and Virtual (V) Table](#5-dynamic-dispatch-and-virtual-v-table)
+    - [5.1. Virtual Table (v-table)](#51-virtual-table-v-table)
+    - [5.2. Dynamic Dispatch](#52-dynamic-dispatch)
+    - [5.3. Correcting Understanding](#53-correcting-understanding)
 
 <!-- markdown-toc end -->
 
@@ -38,9 +43,12 @@ access the child class method rather than the parent's similar name method.
 - This occurs consistently, as far as I know, when we create something that
   involves both ChildClass and ParentClass, which share a similarly named method
   called SimilarMethod().
-
   - Suppose both ChildClass and ParentClass possess a method named SimilarMethod,
     which share similar characteristics.
+  - We want to make our ParentClass objects called method (virtual method) to
+    follow the method for the ChildClass. Thats why you will see, it is common
+    to find `ChildClass c = ChildClass(); ParentClass* ptr = &c;` and access
+    using `c->SimilarMethod()`.
 
 ```cpp
 ChildClass* child_ptr = new ChildClass();
@@ -48,7 +56,8 @@ ParentClass* parent_ptr = child_ptr;
 std::cout << parent_ptr->SimilarMethod() << std::endl; <--- [ Without Virtual] This will give us the Parent method `SimilarMethod()`
 std::cout << parent_ptr->SimilarMethod() << std::endl; <--- [ Virtual] This will give us the child method `SimilarMethod()`
 ```
-
+- Some developers prefer to now use them as it has some cost for calling the
+  `V-table` to check which method to call.
 - Let see how we do that with and without a `Virtual`
 
 ### 1.1. Without Using Virtual
@@ -84,9 +93,9 @@ std::cout << parent_ptr->SimilarMethod() << std::endl; <--- [ Virtual] This will
 |     std::cout << e1.GetName() << std::endl;     |
 |     std::cout << p1.GetName() << std::endl;     |
 |                                                 |
-|     // Create a pointer for an object on stack  |
-|     Entity* ptr1 = &e1;                         |
-|     Player* ptr2 = &p1;                         |
+|     // Create a pointer for an object on stack  |                // Allocate on Heap (you need to clean them manually)
+|     Entity* ptr1 = &e1;                         |                Entity* ptr1 = new Player();
+|     Player* ptr2 = &p1;                         |                std::cout << ptr1->GetName()  << std::endl;
 |     // Dereferencing the pointer and            |
 |     // access the methods also no confusion     |
 |     std::cout << ptr1->GetName() << std::endl;  |
@@ -99,6 +108,15 @@ std::cout << parent_ptr->SimilarMethod() << std::endl; <--- [ Virtual] This will
 | return 0;                                       |
 | }                                               |
 +-------------------------------------------------+
+
+
+
+
+
+
+
+
+
 
 ```
 
@@ -445,3 +463,68 @@ its type, even though we're invoking the `draw()` method through pointers to the
 base class. This is the power of virtual functions and polymorphism in C++,
 allowing for flexible and extendable designs without the need for explicit type
 checks or casting.
+
+## 5. Dynamic Dispatch and Virtual (V) Table
+
+The inquiry touches on some core concepts of object-oriented programming in C++
+and other languages that support polymorphism through virtual methods. Let's
+clarify these concepts:
+
+### 5.1. Virtual Table (v-table)
+
+A virtual table, or v-table, is an implementation detail used by C++ compilers
+to support dynamic dispatch (runtime method binding) for classes with virtual
+functions. When a class has one or more virtual functions:
+
+- A v-table is created by the compiler for that class. This v-table contains
+  pointers to the virtual functions defined or inherited by the class.
+- Each object of a class with virtual functions has a hidden pointer (often
+  called the v-pointer) that points to the v-table of its class. This ensures
+  that method calls can be correctly dispatched at runtime.
+- When a class is derived from a base class with virtual functions, its v-table
+  is constructed by replacing pointers to base class methods with pointers to
+  overridden methods in the derived class, if any.
+
+This mechanism allows C++ to support runtime polymorphism. When a virtual
+function is called on a pointer or reference to a base class, the actual
+function that gets called is determined at runtime based on the v-table of the
+object's actual class.
+
+### 5.2. Dynamic Dispatch
+
+Dynamic dispatch is the process by which a call to an overridden virtual
+function is resolved at runtime. This contrasts with static dispatch, where the
+function call is resolved at compile time. Dynamic dispatch is essential for
+implementing polymorphism, where the exact method to be called is determined not
+by the type of the pointer or reference, but by the actual type of the object it
+points to or references.
+
+Here’s how dynamic dispatch is related to virtual functions and the v-table:
+
+- **When a virtual function is called**: The compiler generates code to look up
+  the function pointer in the v-table of the object's class.
+- **Resolution of the function call**: This lookup happens at runtime, and the
+  function that the pointer in the v-table refers to is called. This is how the
+  correct overridden method is invoked on a derived class object, even when the
+  call is made through a base class pointer or reference.
+
+### 5.3. Correcting Understanding
+
+My current understanding of the relationship between virtual methods, the
+v-table, and dynamic dispatch seems largely accurate. Here are a few
+clarifications to ensure precision in how these concepts interrelate:
+
+- **Virtual methods** are declared with the `virtual` keyword in C++ and
+  indicate that dynamic dispatch should be used for these methods.
+- **The v-table** is an underlying mechanism used to implement dynamic dispatch.
+  It's not part of the C++ language itself but a common technique used by
+  compilers to support runtime method resolution.
+- **Dynamic dispatch** is the runtime mechanism that allows C++ programs to call
+  the correct method implementation in a hierarchy of classes with overridden
+  methods. It relies on the v-table to determine the actual function to call.
+
+In summary, the v-table and dynamic dispatch are closely related: the v-table
+enables dynamic dispatch, and dynamic dispatch is the mechanism that allows
+polymorphic behavior in object-oriented systems, facilitated by virtual methods
+in classes. Your understanding aligns well with these concepts, emphasizing the
+importance of these mechanisms in supporting runtime polymorphism in C++.
