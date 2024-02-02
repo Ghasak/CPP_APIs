@@ -1,5 +1,5 @@
 #pragma once
-void classes_conccepts_hub();
+void classes_concepts_hub();
 
 class Player {
 public:

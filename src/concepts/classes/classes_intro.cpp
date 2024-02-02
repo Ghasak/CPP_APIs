@@ -5,7 +5,7 @@
 int Player::object_count = 0;
 int Player::object_count_since_starting = 0;
 
-void classes_conccepts_hub() {
+void classes_concepts_hub() {
     /* Player player(x = 10, y = 20, speed = 200, verbose = verbose); */
     /* player.display(); */
 

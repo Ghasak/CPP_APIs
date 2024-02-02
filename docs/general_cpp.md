@@ -5,10 +5,11 @@
 
 - [General concepts in CPP](#general-concepts-in-cpp)
     - [Difference between parameters and arguments](#difference-between-parameters-and-arguments)
+    - [Difference between Fields and Attributes in OOP](#difference-between-fields-and-attributes-in-oop)
+    - [OOP Terms](#oop-terms)
     - [Assoicatd graphics accelerators](#assoicatd-graphics-accelerators)
 
 <!-- markdown-toc end -->
-
 
 There are several programming paradigms beyond procedural, imperative, and
 expression-oriented programming. I'll expand the table to include a broader
@@ -83,6 +84,71 @@ In summary, when you define a function, you specify parameters. When you call a
 function, you provide arguments. Parameters are in the context of function
 definitions and declarations, whereas arguments are in the context of function
 calls.
+
+## Difference between Fields and Attributes in OOP
+
+In the context of Object-Oriented Programming (OOP), the terms "field" and
+"attribute" are often used interchangeably, but there can be subtle differences
+in how they are perceived, depending on the programming language or the
+programmer's perspective. Let's break it down:
+
+1. **Field**: A field is typically considered a variable that belongs to an
+   object or a class. In OOP, fields represent the state of an object and are
+   used to store data. For example, in a `Car` class, fields might include
+   `color`, `brand`, and `engineType`.
+2. **Attribute**: The term attribute can also refer to a variable that belongs
+   to an object or class. However, in some contexts, "attribute" might convey a
+   broader meaning, encompassing not just the data (like fields) but also other
+   characteristics or properties of an object. For instance, in some languages
+   or frameworks, attributes can also refer to additional metadata or
+   annotations that provide more information about the property (like
+   constraints or serialization properties).
+
+- In most practical scenarios in C++ and many other OOP languages, you can use
+  "field" and "attribute" interchangeably when referring to the data part of a
+  class. Both terms are used to describe the variables contained within a class
+  that hold the state of an object.
+- It's worth noting that different programming communities might have slight
+  variations in how they use these terms. For example, in database-oriented
+  contexts, "attribute" might more specifically refer to the columns of a table,
+  while in web development, "attribute" often refers to properties of HTML
+  elements.
+- In summary, while there can be nuanced differences in meaning, in the
+  day-to-day use of OOP in C++, "field" and "attribute" are generally considered
+  synonymous and are used to refer to the data members of a class.
+
+## OOP Terms
+
+Certainly! In Object-Oriented Programming (OOP) with C++, various terms are used
+to describe different concepts. Below is a table that maps these OOP terms to
+their equivalent or related terms in procedural or general programming:
+
+| OOP Term        | General Programming Term | Description                                                                                           |
+| --------------- | ------------------------ | ----------------------------------------------------------------------------------------------------- |
+| Class           | -                        | A blueprint for creating objects (instances). Defines attributes and methods.                         |
+| Object          | -                        | An instance of a class. Contains data and behavior as defined in the class.                           |
+| Instance        | -                        | Similar to object; an individual realization of any class.                                            |
+| Method          | Function                 | A function defined within a class. Operates on data that is contained within the class.               |
+| Constructor     | -                        | A special type of method used to initialize objects of a class.                                       |
+| Destructor      | -                        | A special method called when an object is destroyed. Used to release resources.                       |
+| Field           | Variable                 | Variables that belong to an object or class. Used to store data.                                      |
+| Attribute       | Variable                 | Often used interchangeably with 'field'. Also refers to variables that define properties of a class.  |
+| Member          | -                        | Refers to both methods and fields/attributes within a class.                                          |
+| Parameter       | Parameter                | Variables listed as part of a method/function definition. Used to pass values into methods.           |
+| Argument        | Argument                 | Actual values passed to a method/function when it is called.                                          |
+| Encapsulation   | -                        | OOP concept of bundling data (fields) and methods that operate on the data into a single unit.        |
+| Inheritance     | -                        | OOP concept where a class derives (or inherits) properties and behavior from another class.           |
+| Polymorphism    | -                        | OOP concept that allows objects of different classes to be treated as objects of a common superclass. |
+| Overloading     | -                        | Defining multiple methods with the same name but different parameters.                                |
+| Overriding      | -                        | Redefining a method in a subclass that was already defined in a superclass.                           |
+| Access Modifier | -                        | Keywords like `public`, `private`, and `protected` that define the access level of class members.     |
+| Interface       | -                        | An abstract type that contains no data but defines behaviors as method signatures.                    |
+| Abstract Class  | -                        | A class that cannot be instantiated and may contain abstract methods. Used as a base class.           |
+
+Note that some of these terms do not have direct equivalents in procedural or
+general programming, as they are specific to the OOP paradigm. The table above
+provides a basic reference for understanding these terms in the context of C++
+OOP.
 
 ## Assoicatd graphics accelerators
 

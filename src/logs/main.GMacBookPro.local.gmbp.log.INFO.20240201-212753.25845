@@ -1,0 +1,8 @@
+Log file created at: 2024/02/01 21:27:53
+Running on machine: GMacBookPro.local
+Running duration (h:mm:ss): 0:00:00
+Log line format: [IWEF]yyyymmdd hh:mm:ss.uuuuuu threadid file:line] msg
+I20240201 21:27:53.263567 12090137 enums_intro.cpp:25] Selection from Enum: 0[0m
+I20240201 21:27:53.265162 12090137 enums_intro.cpp:26] Selection from Enum: 1[0m
+I20240201 21:27:53.265175 12090137 enums_intro.cpp:27] Selection from Enum: 2[0m
+I20240201 21:27:53.265184 12090137 enums_intro.cpp:31] My selection from Enum: 2[0m

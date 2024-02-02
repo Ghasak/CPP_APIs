@@ -1,5 +1,5 @@
-#ifndef EMPLOYEE_HPP
-#define EMPLOYEE_HPP
+#ifndef CLASSES_HPP
+#define CLASSES_HPP
 #include <string>
 
 void classes_conccepts_hub();
@@ -42,6 +42,37 @@ private:
     double salary;
     static int emp_count;
 };
+
+// -------------------------------------
+//         Classes Inheritance
+// -------------------------------------
+
+// Base class for Player
+class PlayerParent {
+public:
+    float X, Y;  // Coordinates of the player
+
+    // Default constructor
+    PlayerParent();
+
+    // Parameterized constructor to set initial position
+    PlayerParent(float x, float y);
+
+    // Moves the player to a new position
+    void Move(float deltaX, float deltaY);
+};
+
+// Derived class from PlayerParent
+class PlayerChild : public PlayerParent {
+public:
+    const char* Name;  // Name of the player
+    PlayerChild(const char*);
+
+    // Prints the player's name to the console
+    void PrintName();
+};
+
 // This is a class implementation caller for the class methods and fields above
 void class_implementation();
-#endif  // EMPLOYEE_HPP
+
+#endif

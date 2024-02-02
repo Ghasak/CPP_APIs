@@ -7,3 +7,5 @@
 #include "concepts/m_string/t_string.hpp"
 #include "concepts/pointers_and_ref/double_pointers.hpp"
 #include "concepts/classes/classes_intro.hpp"
+#include "concepts/classes/enums_intro.hpp"
+#include "concepts/classes/VirtualFunctions.hpp"

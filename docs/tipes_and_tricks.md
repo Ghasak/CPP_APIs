@@ -2,6 +2,74 @@
 
 The following tips and tricks are generally common for professional C++ code writing.
 
+## Convension in Coding
+
+Here's a table summarizing the common C++ naming conventions mentioned, along
+with their descriptions and examples:
+
+| Prefix/Scheme          | Description                                                                                            | Example                                                                                            |
+| ---------------------- | ------------------------------------------------------------------------------------------------------ | -------------------------------------------------------------------------------------------------- |
+| `m_`                   | Indicates a member variable of a class. Used to differentiate instance variables from local variables. | `m_age` (member variable storing the age of an instance)                                           |
+| `s_`                   | Denotes a static variable within a class, shared by all instances of the class.                        | `s_instanceCount` (tracks the number of class instances)                                           |
+| `g_`                   | Used for global variables to differentiate them from local and class member variables.                 | `g_appConfig` (global variable for application configuration)                                      |
+| `c_`                   | Occasionally used for constant variables. Constants are more commonly written in uppercase.            | `c_MaxConnections` (constant value for maximum connections)                                        |
+| `p_`                   | Indicates a pointer variable.                                                                          | `p_nextNode` (pointer to the next node in a linked list)                                           |
+| CamelCase              | Used for naming functions, classes, and methods. The first letter of each word is capitalized.         | `MyClass` (class name), `calculateTotal` (method name)                                             |
+| lowercase / snake_case | Used for local variables and function parameters, with words separated by underscores.                 | `local_variable` (local variable), `calculate_total(number_of_items)` (function and its parameter) |
+
+This table provides a quick reference to the naming conventions discussed,
+offering both a description of their intended use and concrete examples to
+illustrate each convention.
+
+In C++, naming conventions are a set of guidelines that programmers follow to
+name their variables, functions, classes, and other identifiers in a consistent
+and meaningful way. These conventions are not enforced by the C++ language
+itself but are adopted by developers to improve code readability and
+maintainability. Among the various naming conventions, the prefixes `m_` and
+`s_` are commonly used to indicate the scope or usage of a variable within a
+class. Here's a brief overview of these and other commonly used naming
+conventions in C++:
+
+1. **`m_` Prefix**: The `m_` prefix stands for "member" and is used to name
+   instance variables (also known as member variables) of a class. This
+   convention helps to distinguish instance variables from local variables and
+   parameters within class methods. Example:
+   - `m_age` might refer to a member variable that stores the age of an instance
+     of a class.
+2. **`s_` Prefix**: The `s_` prefix denotes a static variable within a class.
+   Static variables are shared by all instances of a class and belong to the
+   class itself rather than any particular object instance. Example:
+   - `s_instanceCount` could be used to keep track of the number of instances
+     that have been created for a given class.
+3. **`g_` Prefix**: Sometimes used for global variables to differentiate them
+   from local and class member variables. It stands for "global." Example:
+   - `g_appConfig` might refer to a global variable that holds configuration
+     settings for an application.
+4. **`c_` Prefix**: Occasionally used for constant variables, though it's more
+   common to see constants written in uppercase with underscores between words.
+   Example:
+   - `const int c_MaxConnections` could represent a constant value indicating
+     the maximum number of connections.
+5. **`p_` Prefix**: This can be used for pointer variables to indicate that the
+   variable holds a pointer to a certain type. Example:
+   - `p_nextNode` could be used in a linked list implementation to point to the
+     next node.
+6. **CamelCase**: Used for naming functions, classes, and methods where the
+   first letter of each word is capitalized, and there is no underscore between
+   words. This is common for class names and method names. Example:
+   - `MyClass` for a class name.
+   - `calculateTotal` for a method name.
+7. **lowercase or snake_case**: Used for local variables and function
+   parameters, with words separated by underscores. Example:
+   - `local_variable` for a local variable.
+   - `calculate_total(int number_of_items)` for a function and its parameter.
+
+These conventions can vary between projects and development teams. Some teams
+might use different prefixes or prefer other conventions altogether, like
+entirely using `camelCase` or `snake_case` for naming. It's important to follow
+the specific guidelines provided for a project or to be consistent with the
+conventions established within your team or codebase.
+
 ## Allocation on Heap
 
 1. To allocate a `cstyle` list on the heap, we use the pointer obtained through

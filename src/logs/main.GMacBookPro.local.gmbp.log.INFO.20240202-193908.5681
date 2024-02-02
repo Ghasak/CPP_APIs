@@ -1,0 +1,6 @@
+Log file created at: 2024/02/02 19:39:08
+Running on machine: GMacBookPro.local
+Running duration (h:mm:ss): 0:00:00
+Log line format: [IWEF]yyyymmdd hh:mm:ss.uuuuuu threadid file:line] msg
+I20240202 19:39:08.741336 13078443 classes.cpp:77] [1;31mname: Michael G. Scout
+ with ID: [1] salary: 112331.000000[0m

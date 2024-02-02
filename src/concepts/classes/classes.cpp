@@ -83,4 +83,40 @@ void class_implementation() {
         emp1 = Employee("Jack_1", "G.", "Michael", 34, 112331.0);
         emp1.displayInfo();
     }
+
+    // --------------------------
+    // Classes Inheritance Caller
+    // --------------------------
+
+    PlayerChild e = PlayerChild("Jack");
+    e.PrintName();
+    std::cout << "Size of our e from PlayerChild object -> " << RED << sizeof(PlayerChild) << RESET
+              << std::endl;
+    std::cout << "Size of our e from Person object      -> " << RED << YELLOW
+              << sizeof(PlayerParent) << RESET << std::endl;
+}
+
+// Classes Inheritance Concept
+// Default constructor implementation
+PlayerParent::PlayerParent()
+    : X(0.0f),
+      Y(0.0f) {}
+
+PlayerParent::PlayerParent(float x, float y)
+    : X(x),
+      Y(y){
+          // Initializes player at a given position (x,y)
+      };
+void PlayerParent::Move(float deltaX, float deltaY) {
+    this->X += deltaX;
+    this->Y += deltaY;
+}
+
+// Child class methods
+PlayerChild::PlayerChild(const char* name)
+    : Name{name} {}
+
+// Print Name method implementation for PlayerChild
+void PlayerChild::PrintName() {
+    std::cout << Name << std::endl;  // Output the player's name to the console
 }

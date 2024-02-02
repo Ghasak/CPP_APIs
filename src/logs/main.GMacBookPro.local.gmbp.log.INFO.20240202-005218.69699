@@ -1,0 +1,5 @@
+Log file created at: 2024/02/02 00:52:18
+Running on machine: GMacBookPro.local
+Running duration (h:mm:ss): 0:00:00
+Log line format: [IWEF]yyyymmdd hh:mm:ss.uuuuuu threadid file:line] msg
+I20240202 00:52:18.690761 12423096 enums_intro.cpp:25] Selection from Enum: 0[0m
