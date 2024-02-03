@@ -10,13 +10,13 @@ int main(int argc, char* argv[]) {
         std::cout << RED << "Argument No. " << BLUE << "[" << YELLOW << i << BLUE "]" << BLUE
                   << " which is -> " << MAGENTA << argv[i] << std::endl;
     }
-
     // ------------------------------
     // array_function_in_depth();
     // ------------------------------
     // class_implementation();
     // classes_concepts_hub();
     // virtual_function_concept();
+    friends_in_action();
     // ------------------------------
     // data_type_table();
     // ------------------------------

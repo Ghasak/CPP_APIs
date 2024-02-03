@@ -9,3 +9,4 @@
 #include "concepts/classes/classes_intro.hpp"
 #include "concepts/classes/enums_intro.hpp"
 #include "concepts/classes/VirtualFunctions.hpp"
+#include "concepts/classes/Friends.hpp"
