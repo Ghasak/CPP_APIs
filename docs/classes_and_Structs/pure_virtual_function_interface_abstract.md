@@ -3,12 +3,12 @@
 **Table of Contents**
 
 - [Interfaces in C++ - Pure Virtual Functions](#interfaces-in-c---pure-virtual-functions)
-    - [-](#-)
-    - [Why We Need Them?](#why-we-need-them)
-    - [How to Use Them?](#how-to-use-them)
-    - [Common Code Practices](#common-code-practices)
-    - [Things to Be Considered](#things-to-be-considered)
-    - [Examples](#examples)
+    - [What are Pure Virtual Functions?](#what-are-pure-virtual-functions)
+        - [Why We Need Them?](#why-we-need-them)
+        - [How to Use Them?](#how-to-use-them)
+        - [Common Code Practices](#common-code-practices)
+        - [Things to Be Considered](#things-to-be-considered)
+        - [Examples](#examples)
 
 <!-- markdown-toc end -->
 
@@ -20,7 +20,7 @@ and considerations, including examples.
 - Pure virtual function is similar to `abstract` method or `interface` in other
   programming laguages.
 
-### What are Pure Virtual Functions?
+## What are Pure Virtual Functions?
 
 A pure virtual function is a function that is declared in a base class but is
 intended to be overridden in a derived class. It doesn't have its implementation
