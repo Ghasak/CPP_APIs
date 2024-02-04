@@ -1,25 +1,24 @@
 # Pointers in NutShell
 
 <!-- markdown-toc start - Don't edit this section. Run M-x markdown-toc-refresh-toc -->
-
 **Table of Contents**
 
 - [Pointers in NutShell](#pointers-in-nutshell)
-  - [1. Introduction](#1-introduction)
-    - [1.1. Based on Memory Management](#11-based-on-memory-management)
-    - [1.2. Based on Usage](#12-based-on-usage)
-    - [1.3. Location and Use of Pointers](#13-location-and-use-of-pointers)
-    - [1.4. Additional Points](#14-additional-points)
-  - [2. My Interpretation](#2-my-interpretation)
-    - [2.1 Creating Pointers](#21-creating-pointers)
-    - [2.2. Dereferencing a pointer](#22-dereferencing-a-pointer)
-    - [2.3. How about Entity?](#23-how-about-entity)
-    - [2.4. Understanding the Pointer to an Object](#24-understanding-the-pointer-to-an-object)
-  - [3. Pointers with Heap allocation](#3-pointers-with-heap-allocation)
-    - [3.1. Allocating Primitive Data Types](#31-allocating-primitive-data-types)
-    - [3.2. Allocating Objects](#32-allocating-objects)
-    - [3.3. Pointers to Primitive Data Types](#33-pointers-to-primitive-data-types)
-      - [3.3.1 Pointers to Objects](#331-pointers-to-objects)
+    - [1. Introduction](#1-introduction)
+        - [1.1. Based on Memory Management](#11-based-on-memory-management)
+        - [1.2. Based on Usage](#12-based-on-usage)
+        - [1.3. Location and Use of Pointers](#13-location-and-use-of-pointers)
+        - [1.4. Additional Points](#14-additional-points)
+    - [2. My Interpretation](#2-my-interpretation)
+        - [2.1 Creating Pointers](#21-creating-pointers)
+        - [2.2. Dereferencing a pointer](#22-dereferencing-a-pointer)
+        - [2.3. How about Entity?](#23-how-about-entity)
+        - [2.4. Understanding the Pointer to an Object](#24-understanding-the-pointer-to-an-object)
+    - [3. Pointers with Heap allocation](#3-pointers-with-heap-allocation)
+        - [3.1. Allocating Primitive Data Types](#31-allocating-primitive-data-types)
+        - [3.2. Allocating Objects](#32-allocating-objects)
+        - [3.3. Pointers to Primitive Data Types](#33-pointers-to-primitive-data-types)
+            - [3.3.1 Pointers to Objects](#331-pointers-to-objects)
 
 <!-- markdown-toc end -->
 
@@ -352,4 +351,3 @@ int var = 10;
 heap_ptr = &var
 
 ```
-

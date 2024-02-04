@@ -109,15 +109,6 @@ std::cout << parent_ptr->SimilarMethod() << std::endl; <--- [ Virtual] This will
 | }                                               |
 +-------------------------------------------------+
 
-
-
-
-
-
-
-
-
-
 ```
 
 ### 1.2. Using Virtual

@@ -10,3 +10,7 @@
 #include "concepts/classes/enums_intro.hpp"
 #include "concepts/classes/VirtualFunctions.hpp"
 #include "concepts/classes/Friends.hpp"
+#include "concepts/classes/operators.hpp"
+#include "concepts/classes/object_lifetime.hpp"
+#include "concepts/classes/object_lifetime.hpp"
+#include "concepts/m_const/t_constant.hpp"

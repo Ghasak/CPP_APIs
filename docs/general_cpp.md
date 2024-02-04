@@ -1,13 +1,14 @@
 # General concepts in CPP
 
 <!-- markdown-toc start - Don't edit this section. Run M-x markdown-toc-refresh-toc -->
+
 **Table of Contents**
 
 - [General concepts in CPP](#general-concepts-in-cpp)
-    - [Difference between parameters and arguments](#difference-between-parameters-and-arguments)
-    - [Difference between Fields and Attributes in OOP](#difference-between-fields-and-attributes-in-oop)
-    - [OOP Terms](#oop-terms)
-    - [Assoicatd graphics accelerators](#assoicatd-graphics-accelerators)
+  - [Difference between parameters and arguments](#difference-between-parameters-and-arguments)
+  - [Difference between Fields and Attributes in OOP](#difference-between-fields-and-attributes-in-oop)
+  - [OOP Terms](#oop-terms)
+  - [Assoicatd graphics accelerators](#assoicatd-graphics-accelerators)
 
 <!-- markdown-toc end -->
 

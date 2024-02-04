@@ -53,16 +53,17 @@ int friends_in_action() {
     Vector2d my_vector;  // don't use Vector2d my-vector()
 
     // Prompts the user for the number of Vector2d objects to create.
-    int number_of_vectors;
-    std::cout << "Input number of vectors: ";  // Prompt the user for input
-    std::cin >> number_of_vectors;             // Read the input value
-    if (!std::cin) {                           // Check if the input operation failed
-        std::cerr
-            << "Error: Invalid input for the number of vectors, must be an integer decimal value."
-            << std::endl;
-        return 1;
-    }
+    /* int number_of_vectors; */
+    /* std::cout << "Input number of vectors: ";  // Prompt the user for input */
+    /* std::cin >> number_of_vectors;             // Read the input value */
+    /* if (!std::cin) {                           // Check if the input operation failed */
+    /*     std::cerr */
+    /*         << "Error: Invalid input for the number of vectors, must be an integer decimal value." */
+    /*         << std::endl; */
+    /*     return 1; */
+    /* } */
 
+    int number_of_vectors = 10;
     // In the first loop, updates a single Vector2d object with new random coordinates on each
 
     for (int i = 0; i < number_of_vectors; i++) {

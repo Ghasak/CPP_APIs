@@ -36,16 +36,18 @@
   memebers of the defined class.
 - There are mainly three types that I am aware of, these are:
 
-  - Friend Cunctions
+  - Friend Functions
   - Friend Class
   - Friend Class Method
-    When declaring a function as a friend within a class in a header file, it is not
-    necessary to declare it again in the same header file as it has already been
-    declared.
+
+- When declaring a function as a friend within a class in a header file, it is not
+  necessary to declare it again in the same header file as it has already been
+  declared.
 
 ### Friend Function Explanation
 
 - Check the example `4` of the file `Classes.cpp -> 4. Using ostream friend method operator <<`.
+
   - Using `operator<<` for the `Person` class involves a
     **friend function**. It's not a method of a class or a friend class. In C++, a
     friend function is a function that is not a member of a class but has access to
