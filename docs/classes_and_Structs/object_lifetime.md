@@ -1,37 +1,38 @@
 # Object Lifetime in C++ (Stack/Scope Lifetime)
 
 <!-- markdown-toc start - Don't edit this section. Run M-x markdown-toc-refresh-toc -->
+
 **Table of Contents**
 
 - [Object Lifetime in C++ (Stack/Scope Lifetime)](#object-lifetime-in-c-stackscope-lifetime)
-    - [My Understanding](#my-understanding)
-        - [Key Principles of Raw Pointer Management](#key-principles-of-raw-pointer-management)
-        - [Best Practices](#best-practices)
-        - [Diagram For Understanding Lifetime](#diagram-for-understanding-lifetime)
-        - [More Insight](#more-insight)
-            - [Modified Function with Explanation](#modified-function-with-explanation)
-            - [Key Points and Comparison](#key-points-and-comparison)
-            - [Conclusion](#conclusion)
-        - [How about this](#how-about-this)
-            - [How to Avoid Memory Leaks](#how-to-avoid-memory-leaks)
-    - [Lifetime - Introduction](#lifetime---introduction)
-        - [What is it?](#what-is-it)
-        - [Why We Need It](#why-we-need-it)
-        - [How to Use It](#how-to-use-it)
-        - [Common Things to Consider](#common-things-to-consider)
-        - [Examples](#examples)
-    - [Stack Frame](#stack-frame)
-        - [Analogy: A Box for Each Task](#analogy-a-box-for-each-task)
-        - [Components of a Stack Frame](#components-of-a-stack-frame)
-        - [How It Works](#how-it-works)
-        - [Simplified Example](#simplified-example)
-    - [Important - Delete a heap-pointer?](#important---delete-a-heap-pointer)
-        - [Is All Data Deleted?](#is-all-data-deleted)
-    - [Caution about assign a pointer on Heap](#caution-about-assign-a-pointer-on-heap)
-        - [Memory Leaks](#memory-leaks)
-        - [Proper Management](#proper-management)
-        - [Safety Measures](#safety-measures)
-        - [Conclusion](#conclusion-1)
+  - [My Understanding](#my-understanding)
+    - [Key Principles of Raw Pointer Management](#key-principles-of-raw-pointer-management)
+    - [Best Practices](#best-practices)
+    - [Diagram For Understanding Lifetime](#diagram-for-understanding-lifetime)
+    - [More Insight](#more-insight)
+      - [Modified Function with Explanation](#modified-function-with-explanation)
+      - [Key Points and Comparison](#key-points-and-comparison)
+      - [Conclusion](#conclusion)
+    - [How about this](#how-about-this)
+      - [How to Avoid Memory Leaks](#how-to-avoid-memory-leaks)
+  - [Lifetime - Introduction](#lifetime---introduction)
+    - [What is it?](#what-is-it)
+    - [Why We Need It](#why-we-need-it)
+    - [How to Use It](#how-to-use-it)
+    - [Common Things to Consider](#common-things-to-consider)
+    - [Examples](#examples)
+  - [Stack Frame](#stack-frame)
+    - [Analogy: A Box for Each Task](#analogy-a-box-for-each-task)
+    - [Components of a Stack Frame](#components-of-a-stack-frame)
+    - [How It Works](#how-it-works)
+    - [Simplified Example](#simplified-example)
+  - [Important - Delete a heap-pointer?](#important---delete-a-heap-pointer)
+    - [Is All Data Deleted?](#is-all-data-deleted)
+  - [Caution about assign a pointer on Heap](#caution-about-assign-a-pointer-on-heap)
+    - [Memory Leaks](#memory-leaks)
+    - [Proper Management](#proper-management)
+    - [Safety Measures](#safety-measures)
+    - [Conclusion](#conclusion-1)
 
 <!-- markdown-toc end -->
 
@@ -165,7 +166,7 @@ applications.
                                                                              |                                                                              |
                                                                              v                                                                              ^
                                                         +----------------------------------------------------------------------------------------------+    |       - We need to keep the pointer `eobj_heap_ptr` alive during the outer-scope
-                                                        |                                        ON-Stack                                              |    |       - Why, because we need to access its data during this scope.
+                                                        |                                        ON-Stack                                              |    |       - Why, because we need to access its data during the outer-scope.
                                                         +----------------------------------------------------------------------------------------------+    |       - We first declare it, and initialize it to a nullptr (optional btw)
                                                             - First eobj_stack_ptr pointer got destroyed                                                    |       - Later the memory gets freed and the pointer set to nullptr to ensure no one can use it.
                                                             - You cannot print it using std::cout out of the inner-scope                                    |
@@ -183,8 +184,20 @@ applications.
                                                                                                   V                                                         |
                                                                                                   |                                                         |
                                                                                                   +------------------------------->-------------------------+
+                                                                              - This is because any pointer, whether on the stack or the heap, gets destroyed
+                                                                                after exiting the scope in which it was created.
+                                                                                - The reason for this is that pointers are typically 64-bit integers (8 bytes)
+                                                                                  on a x64 system. As an integer is a primitive type, it gets freed from memory
+                                                                                  once it goes out of scope in the function or block where it was declared.
 
 ```
+
+
+
+
+
+
+
 
 ### More Insight
 

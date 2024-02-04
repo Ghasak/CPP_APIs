@@ -1,0 +1,6 @@
+Log file created at: 2024/02/05 03:01:24
+Running on machine: GMacBookPro.local
+Running duration (h:mm:ss): 0:00:00
+Log line format: [IWEF]yyyymmdd hh:mm:ss.uuuuuu threadid file:line] msg
+I20240205 03:01:24.944429 14785425 main.cpp:48] [1;31mSize of this Vec2d Class data type -> [1;34m16[0m
+I20240205 03:01:24.954702 14785425 main.cpp:51] [1;31mSize of this char* pointer data type -> [1;34m8[0m

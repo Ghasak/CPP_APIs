@@ -27,6 +27,8 @@ void object_life_time_concpet() {
     }
     std::cout << "Exited the hypothetical inner-scope." << std::endl;
     std::cout << "Arriving to the end of the outer-scope." << std::endl;
+    std::cout << RED << "Size of the heap pointer eobj_heap_ptr -> " << sizeof(EEntity) << RESET
+              << std::endl;
 
     delete eobj_heap_ptr;     // Properly delete heap-allocated object.
     eobj_heap_ptr = nullptr;  // Avoid dangling pointer by setting to nullptr.

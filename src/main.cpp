@@ -1,10 +1,21 @@
+#include "concepts/classes/Friends.hpp"
 #include "concepts_bundles.hpp"
 #include "concepts/mylogging.hpp"
 #include <glog/logging.h>
 #include <iostream>
 #include <ostream>
 
-int* CreateArray();
+class Vec2d {
+    int x;
+    int y;
+    const char* c;
+
+public:
+    Vec2d(int xi, int yi, const char* ci)
+        : x{xi},
+          y{yi},
+          c{ci} {}
+};
 
 int main(int argc, char* argv[]) {
     // Initialize logging before processing arguments
@@ -33,7 +44,16 @@ int main(int argc, char* argv[]) {
     // double_pointers_in_action();
     // enums_concept_hub();
 
+    const char* my_name = "ABC";
+    LOG(INFO) << RED "Size of this char* pointer data type -> " << BLUE << sizeof(my_name) << RESET;
+
+    Vec2d v1 = Vec2d(10, 20, "ABC");
+    LOG(INFO) << RED "Size of this Vec2d Class data type -> " << BLUE << sizeof(Vec2d) << RESET;
 
     return 0;
 }
 
+// int[] my_function_return_array_cstyle() {
+//     int my_array[]{1, 2, 3, 4};
+//     return my_array;
+// }

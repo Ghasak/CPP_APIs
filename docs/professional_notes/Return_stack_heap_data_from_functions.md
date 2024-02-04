@@ -1,32 +1,233 @@
 # Return Data from Functions
 
 <!-- markdown-toc start - Don't edit this section. Run M-x markdown-toc-refresh-toc -->
+
 **Table of Contents**
 
 - [Return Data from Functions](#return-data-from-functions)
-    - [My Understanding](#my-understanding)
-    - [Q1: Returning a local variable from a function or method](#q1-returning-a-local-variable-from-a-function-or-method)
-        - [Answer - Q1](#answer---q1)
-            - [Issue with `CreateArray` Function](#issue-with-createarray-function)
-            - [Correct Approach](#correct-approach)
-    - [Q2: Related to Q1, can we achieve such thing alternatively?](#q2-related-to-q1-can-we-achieve-such-thing-alternatively)
-        - [1. Dynamic Allocation - We have saw that (see above)](#1-dynamic-allocation---we-have-saw-that-see-above)
-        - [2. Returning by Value Using Containers](#2-returning-by-value-using-containers)
-        - [3. Static Allocation](#3-static-allocation)
-        - [4. Using std::array or std::tuple (for Fixed Size Arrays)](#4-using-stdarray-or-stdtuple-for-fixed-size-arrays)
-        - [Conclusion](#conclusion)
-    - [Q3 - Rules For Return a value from a function/method](#q3---rules-for-return-a-value-from-a-functionmethod)
-        - [1. Returning by Value](#1-returning-by-value)
-        - [2. Returning by Pointer](#2-returning-by-pointer)
-        - [3. Returning by Reference](#3-returning-by-reference)
-        - [4. Returning C-Style Arrays](#4-returning-c-style-arrays)
-        - [5. Modern C++ Alternatives](#5-modern-c-alternatives)
-        - [General Considerations](#general-considerations)
-        - [Key Considerations:](#key-considerations)
+  - [My Understanding](#my-understanding)
+    - [What I found](#what-i-found)
+      - [Returning by value](#returning-by-value)
+      - [Returning by Pointer/Reference](#returning-by-pointerreference)
+      - [General Notes](#general-notes)
+      - [What can be considered Pointer or Reference](#what-can-be-considered-pointer-or-reference)
+      - [Additionally, what else can be considered as a pointer or reference](#additionally-what-else-can-be-considered-as-a-pointer-or-reference)
+      - [**Revised Rule of Thumb:**](#revised-rule-of-thumb)
+    - [Further Explanation](#further-explanation)
+  - [Q1: Returning a local variable from a function or method](#q1-returning-a-local-variable-from-a-function-or-method)
+    - [Answer - Q1](#answer---q1)
+      - [Issue with `CreateArray` Function](#issue-with-createarray-function)
+      - [Correct Approach](#correct-approach)
+  - [Q2: Related to Q1, can we achieve such thing alternatively?](#q2-related-to-q1-can-we-achieve-such-thing-alternatively)
+    - [1. Dynamic Allocation - We have saw that (see above)](#1-dynamic-allocation---we-have-saw-that-see-above)
+    - [2. Returning by Value Using Containers](#2-returning-by-value-using-containers)
+    - [3. Static Allocation](#3-static-allocation)
+    - [4. Using std::array or std::tuple (for Fixed Size Arrays)](#4-using-stdarray-or-stdtuple-for-fixed-size-arrays)
+    - [Conclusion](#conclusion)
+  - [Q3 - Rules For Return a value from a function/method](#q3---rules-for-return-a-value-from-a-functionmethod)
+    - [1. Returning by Value](#1-returning-by-value)
+    - [2. Returning by Pointer](#2-returning-by-pointer)
+    - [3. Returning by Reference](#3-returning-by-reference)
+    - [4. Returning C-Style Arrays](#4-returning-c-style-arrays)
+    - [5. Modern C++ Alternatives](#5-modern-c-alternatives)
+    - [General Considerations](#general-considerations)
+    - [Key Considerations:](#key-considerations)
 
 <!-- markdown-toc end -->
 
+## Logging and Updates
+
+- The missing element in this note is the return of a pointer from a method
+  within a class/struct. This will be elaborated on in a separate section ("/docs/classes_And_Structs/classes_with_RVO.md" for further details).
+
 ## My Understanding
+
+### What I found
+
+The following idea can revolutionize my way of thing of `C++` which is never was
+possible without understand a bit more about the `C` language. Speaking on how
+the `function/method` works in general.
+
+```cpp
+
+        +--------------------------------------------------------------------+
+        |                     Function/Method Anatomy                        |
+        +--------------------------------------------------------------------+
+        | return_type function_name(parameter_type1 parameter_name1,         |
+        |                           parameter_type2 parameter_name2, ...) {  | ----+
+        |     // function body                                               |     | Local Area (function/method-scope/body)
+        |     // operations and statements                                   |     |
+        |     return return_value; // return_value must match return_type    | ----+
+        | }                                                                  |
+        +--------------------------------------------------------------------+
+
+```
+
+#### Returning by value
+
+1. Returning by value is a common and encouraged practice in C++ for many types
+   of objects, especially those of trivial or moderate size. Modern C++
+   compliers often optimize return by value usign copy elision and move
+   semantics, reducing the overhead of copying.
+
+2. When a function returns by value, it indeed returns a copy of its local
+   object. However, with move semantics introduction in C++11, if the returned
+   object is a termporary (rvalue), it can be moved rather than copied, which is
+   more efficient.
+
+3. The caller receives a copy (or a moved instance) of the returned value, which
+   is then owned by the caller.
+
+4. It is crusial that the return type of the function matches the type of the
+   returned value. However, implicit conversions may occur if they are defined
+   (e.g., returning a derived class object by value where the function's return
+   type is a base class).
+5. Returning by value is suitable for objects that can be efficiently moved or
+   for return values that are primitive data types (e.g., int, double).
+
+6. Examples include returning instance of STL containers (like `std::vector`,
+   `std::string`) which support move semantics.
+
+#### Returning by Pointer/Reference
+
+1. Returning a pointer or reference to local scope data is highly discouraged
+   and often incorrect because local objects are destroyed when the function
+   scope exists. leaving dangling pointers or references.
+
+2. Returning pointers or references is suitable when referring to objects with
+   static storage duration, objects allocated on the heap, or members of objects
+   whose lifetime exceeds that of the function call.
+
+- Static local variables: A function can return a pointer or reference to a
+  static local variable. These objects have a lifetime of the entire program
+  execution, and thus their references or pointers remain valid after the
+  function returns.
+
+3. Heap-allocated objects: Returning a pointer (or a smart pointer like
+   std::unique_ptr or std::shared_ptr) to an object allocated on the heap is
+   valid. The caller becomes responsible for managing the lifetime of this
+   object, especially if a raw pointer is used. Smart pointers are preferred to
+   automate lifetime management.
+
+4. Not Allowed for Stack-allocated non-static objects: Returning a pointer or
+   reference to a non-static local variable (stack-allocated) is incorrect as
+   the object's lifetime ends when the function scope is exited, leading to
+   undefined behavior.
+
+5. std::array and std::tuple Exception: You cannot safely return a pointer or
+   reference to a local std::array or std::tuple from a function because these
+   objects have automatic storage duration (stack-allocated) unless they are
+   declared static within the function. These data container can return by value.
+
+#### General Notes
+
+- Static storage data: Use static storage duration objects judiciously as they
+  remain in memory for the lifetime of the program and can lead to higher memory
+  usage if overused.
+
+- Choosing between Pointer/Reference and Value: The decision to return by
+  pointer, reference, or value depends on the use case, performance
+  considerations, and ownership semantics. Returning by value is preferred for
+  simplicity and safety in many cases, especially with support for move
+  semantics in C++11 and later.
+
+- When returning references or pointers, consider the object's lifetime and who
+  owns the object to avoid memory leaks and dangling references.
+
+#### What can be considered Pointer or Reference
+
+Here examples, highlight several scenarios where a type can be considered as or
+decay to a pointer, as well as the general concept of references. Let's organize
+this information into a clearer table format, correcting and expanding where
+necessary:
+
+| **Data Type/Scenario**                                    | **Description/Behavior**                                                                                                                                                                                                                                                                                                                                                   |
+| --------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| **C-Style Array**                                         | Decays to a pointer to its first element when passed to a function. For example, `int arr[10];` decays to `int*` when used as a function argument.                                                                                                                                                                                                                         |
+| **Character Pointer (`char*`)**                           | A pointer to a character. Often used for C-style strings, which are arrays of characters terminated by a null character (`'\0'`).                                                                                                                                                                                                                                          |
+| **Multidimensional Array (2D, 3D, etc.)**                 | Decays to a pointer to its first element (which itself may be an array). For example, `int mat[10][10];` can decay to `int (*)[10]`, a pointer to an array of 10 `int`s. A 3D array can decay similarly, with each level of decay reflecting the array's dimensions.                                                                                                       |
+| **Pointers to Class/Struct Instances**                    | Can point to objects either on the stack or heap. For stack objects: `Entity obj; Entity* ptr = &obj;`. For heap objects: `Entity* obj = new Entity();`. It's crucial to manage the lifetime and ownership of heap-allocated objects to avoid memory leaks.                                                                                                                |
+| **Function Pointers**                                     | Points to functions. Can be used to pass functions as arguments, store them in arrays, etc. For example, `void (*funcPtr)() = &myFunction;` points to a function `myFunction` that returns void and takes no arguments.                                                                                                                                                    |
+| **Smart Pointers (`std::unique_ptr`, `std::shared_ptr`)** | Modern C++ types that manage dynamic memory automatically. `std::unique_ptr<Entity>` is a smart pointer that owns an Entity object on the heap exclusively, while `std::shared_ptr<Entity>` allows multiple smart pointers to share ownership of an object.                                                                                                                |
+| **References (`Type&`)**                                  | An alias for another object. Does not decay but behaves as an alternative name for the object it references. Can be used almost interchangeably with the object itself, except it cannot be null and cannot be made to reference a different object after its initialization. References are not pointers themselves but are often implemented under the hood as pointers. |
+
+This table corrects and expands upon your initial points, providing a structured
+overview of data types and scenarios involving pointers and references in C++.
+It's important to note that while references act similarly to pointers in some
+respects (such as referring to another object's memory), they are syntactically
+and semantically different in C++: references are meant to be safer and more
+intuitive than pointers, as they cannot be null and do not need to be
+dereferenced explicitly.
+
+#### Additionally, what else can be considered as a pointer or reference
+
+To expand on the initial table and cover additional C++ concepts related to
+pointers, references, and their behaviors, let's include more scenarios and data
+types that involve or behave similarly to pointers and references:
+
+| **Data Type/Scenario**                           | **Description/Behavior**                                                                                                                                                                                                                                                                                                                                                      |
+| ------------------------------------------------ | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| **`void*` Pointers**                             | A generic pointer type that can hold the address of any object. `void*` pointers cannot be dereferenced without casting to another pointer type because they do not know the type of the object they point to.                                                                                                                                                                |
+| **Member Function Pointers**                     | Points to a member function of a class. Syntax and usage are more complex than function pointers. For example, `void (Entity::*funcPtr)() = &Entity::methodName;` points to a member function of `Entity`.                                                                                                                                                                    |
+| **`std::weak_ptr`**                              | A smart pointer that holds a non-owning ("weak") reference to an object that is managed by `std::shared_ptr`. It is used to break circular references between `std::shared_ptr` instances.                                                                                                                                                                                    |
+| **`std::function`**                              | A wrapper for callable objects, functions, lambda expressions, bind expressions, or other function objects. It can store and invoke any callable target. `std::function<int(int, int)>` can represent a function that takes two `int` parameters and returns an `int`.                                                                                                        |
+| **R-value References (`Type&&`)**                | Introduced in C++11 to support move semantics and perfect forwarding. They bind to temporary objects (r-values), allowing the efficient transfer of resources from temporaries to other objects.                                                                                                                                                                              |
+| **Dynamic Arrays (`std::vector`, `std::array`)** | While not pointers themselves, these container classes manage dynamic arrays behind the scenes. `std::vector` manages its storage automatically and can resize, while `std::array` has fixed size. Accessing elements or getting a raw pointer to the data often involves pointer-like syntax (e.g., `&vector[0]` or `vector.data()` for a raw pointer to the first element). |
+| **Iterators**                                    | While conceptually different from pointers, iterators in C++ often behave like pointers, especially iterators of standard library containers like `std::vector`, `std::list`, etc. They support operations like dereferencing (`*it`) and increment (`++it`), similar to pointer arithmetic.                                                                                  |
+| **`const` Pointers and References**              | Pointers and references can be qualified with `const` to denote they point to const objects. For pointers, this can be `const Type*` (pointer to const) or `Type* const` (const pointer). For references, a `const Type&` is a reference to a const object, ensuring the referenced object cannot be modified through the reference.                                          |
+
+These additions provide a more comprehensive view of the scenarios and data
+types in C++ that involve or behave like pointers and references, highlighting
+the language's flexibility in managing memory, function calls, and object
+lifetimes. Understanding these concepts is crucial for effective C++
+programming, especially in contexts requiring dynamic memory management,
+polymorphism, and resource optimization.
+
+#### **Revised Rule of Thumb:**
+
+- **Avoid returning pointers or references to local (stack-allocated)
+  variables** from a function, as these variables will be destroyed when the
+  function exits, leaving dangling pointers or invalid references.
+
+- **Returning pointers or references is safe and appropriate in the following cases**:
+
+  - **Heap-Allocated Objects**: If the function dynamically allocates an object
+    on the heap (using `new` or similar mechanisms), returning a pointer (or a
+    smart pointer) to this object is valid. The caller becomes responsible for
+    managing the object's lifetime, ideally using smart pointers
+    (`std::unique_ptr`, `std::shared_ptr`) to automate memory management and
+    avoid leaks.
+
+  - **Static or Global Variables**: Returning a pointer or reference to static
+    or global variables is safe because their lifetime extends over the entire
+    runtime of the program. However, use this approach judiciously to avoid
+    unintended side effects or dependencies on global state.
+
+  - **Existing Objects Passed to the Function**: Returning a pointer or
+    reference to objects that were passed into the function (either directly or
+    indirectly) is also safe, assuming the lifetime of the passed objects
+    extends beyond the use of the pointer or reference.
+
+- **Use Smart Pointers for Ownership and Lifetime Management**: When returning
+  dynamically allocated objects from a function, prefer smart pointers
+  (`std::unique_ptr` for unique ownership, `std::shared_ptr` for shared
+  ownership) over raw pointers. Smart pointers automate memory management,
+  making your code safer and easier to maintain.
+
+- **Explicitly Document Ownership and Lifetime Expectations**: When a function
+  returns a pointer or reference, clearly document who is responsible for
+  managing the object's lifetime and how the object should be used. This helps
+  prevent memory leaks and undefined behavior.
+
+**Summary**:
+
+The key is to ensure that any pointer or reference returned by a function
+remains valid after the function exits and that the ownership and lifetime
+expectations are clear and managed correctly. By adhering to these refined
+guidelines, you can safely use pointers and references in your C++ programs
+without risking undefined behavior, memory leaks, or other common pitfalls.
+
+### Further Explanation
 
 The following points cover important considerations for returning data from functions in
 C++ but need some clarifications and corrections for accuracy and completeness.
@@ -93,6 +294,163 @@ lifetime and ownership of returned data, prefer standard library containers and
 smart pointers for dynamic data, and ensure returned references or pointers
 point to data with a guaranteed lifetime to avoid dangling references or memory
 leaks.
+
+## Examples
+
+Certainly! Below are examples of C++ functions that demonstrate returning
+various types of data. Each function is a simple example intended to illustrate
+the specific type being returned.
+
+### 1. Returning an Integer
+
+```cpp
+int getNumber() {
+    return 42; // Returns an integer value
+}
+```
+
+### 2. Returning a `std::string`
+
+```cpp
+#include <string>
+
+std::string getMessage() {
+    return "Hello, World!"; // Returns a std::string
+}
+```
+
+### 3. Returning a C-Style Array
+
+Returning a C-style array directly from a function is tricky because you can't
+return an array by value in C++. However, you can return a pointer to a static
+array (not recommended for serious applications due to lifetime and scope
+issues) or dynamically allocated array (remember to deal with memory
+management).
+
+```cpp
+const char* getDaysOfWeek() {
+    static const char* days[] = {"Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"};
+    return *days; // Returns a pointer to the first element of a static array of C-style string
+}
+```
+
+### 4. Returning a Char Array
+
+Similar to returning a C-style array, returning a char array directly is not
+straightforward due to the same reasons. A function can return a pointer to a
+static or dynamically allocated char array.
+
+```cpp
+char* getAlphabet() {
+    static char alphabet[] = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+    return alphabet; // Returns a pointer to a static char array
+}
+```
+
+### 5. Returning a `std::vector`
+
+```cpp
+#include <vector>
+
+std::vector<int> getFibonacci(int n) {
+    std::vector<int> fib = {0, 1};
+    for (int i = 2; i < n; ++i) {
+        fib.push_back(fib[i - 1] + fib[i - 2]);
+    }
+    return fib; // Returns a std::vector of integers
+}
+```
+
+**Important Notes:**
+
+- For the C-style array and char array examples, remember that returning
+  pointers to local non-static arrays is dangerous because they go out of scope
+  once the function exits.
+- The static array or static char array approach is limited and generally not
+  recommended for returning arrays from functions due to potential issues with
+  data integrity in a multithreaded context or reentrancy issues.
+- For more complex or larger data, consider using STL containers like
+  `std::vector`, `std::array`, or smart pointers to manage dynamic memory
+  safely.
+
+## Example -2 About Array
+
+In C++, you cannot return a C-style array by value directly from a function.
+This limitation is because the array decays to a pointer when passed to or
+returned from a function. Therefore, what you actually return when you try to
+return a C-style array is a pointer to the first element of the array.
+
+However, there are some important considerations and limitations:
+
+1. **Local Non-Static Arrays:** If the array is local to the function (i.e., it
+   is created inside the function), returning a pointer to it is unsafe. Once
+   the function exits, the local array goes out of scope, and its memory can be
+   overwritten by other parts of the program. Accessing this memory afterwards
+   through the returned pointer leads to undefined behavior.
+
+2. **Static Arrays:** If the array is declared as `static` within the function,
+   then it is stored in the static storage area, not the stack, and its lifetime
+   extends across the entire run of the program. In this case, you can return a
+   pointer to the array, and it will still be valid outside the function.
+   However, this approach has its own drawbacks, including potential issues with
+   thread safety and the inability to return different arrays across different
+   calls.
+
+3. **Dynamically Allocated Arrays:** You can dynamically allocate an array on
+   the heap using `new` (or `malloc` in C style), and return a pointer to this
+   array. This way, the array remains valid until it is explicitly deleted
+   (using `delete[]` for C++ or `free()` for C style). While this approach
+   allows for flexible memory management and returning different arrays across
+   calls, it introduces the need for careful memory management to avoid memory
+   leaks.
+
+Here's a quick illustration of each case:
+
+- **Unsafe Return (Local Non-Static Array):**
+
+  ```cpp
+  int* getArray() {
+      int arr[5] = {1, 2, 3, 4, 5}; // Local array, goes out of scope after function exit.
+      return arr; // Warning: returning address of local variable
+  }
+  ```
+
+- **Safe Return (Static Array):**
+
+  ```cpp
+  int* getStaticArray() {
+      static int arr[5] = {1, 2, 3, 4, 5}; // Static array, remains valid.
+      return arr; // OK: arr has static storage duration
+  }
+  ```
+
+- **Dynamic Allocation (Heap Array):**
+  ```cpp
+  int* getDynamicArray() {
+      int* arr = new int[5]{1, 2, 3, 4, 5}; // Dynamically allocated array, remains valid until deleted.
+      return arr; // OK: pointer to heap memory
+  }
+  ```
+
+In summary, while you can return a "C-style array" from a function in C++, what
+you're actually returning is a pointer, and the method to do so safely involves
+either using static arrays (with caution) or dynamically allocated memory (with
+proper memory management).
+
+- some examples that I created before:
+
+```cpp
+int My_function_retur_int() {
+    int x = 10;
+    return x;
+}
+
+std::string My_function_return_string() {
+    std::string my_string = std::string("This is just a string on heap");
+    return my_string;
+}
+
+```
 
 ## Q1: Returning a local variable from a function or method
 
