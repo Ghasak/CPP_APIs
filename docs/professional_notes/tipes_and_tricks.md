@@ -1,11 +1,11 @@
 # Tips and Tricks in C++
 
 The following tips and tricks are generally common for professional C++ code writing.
+
 ## Rule of Functions/methods
 
 - Don't try to return `pointer` to a stack data structure of a local variable
   (within the body of the function). This include `reference` as well.
-
 
 ## Convension in Coding
 
@@ -91,6 +91,14 @@ conventions established within your team or codebase.
   - Create your data container (array, string..etc.) to still alive out of the
     scope that it is been created in, which will offer us more contorl
 
+2. In C++, when working with raw pointers, it is almost always recommended to
+   declare the pointer, whether initialized or not, within the same scope, known as
+   the Parent-Scope, as the `delete` keyword. However, for `new` keyword of allocations, it is
+   possible to have the allocation in an inner-scope, also known as the
+   Child-Scope, within the Parent-scope.
+   - Same goes to assign the pointer once it is done with it at the end of the
+     `Parent-Scope` with `nullptr`.
+
 ## Pointers
 
 1.  It does not make sense to perform a pointer-arithmetics on an `object pointer` as it
@@ -169,8 +177,6 @@ conventions established within your team or codebase.
 2. In regards to references, always return a reference of an entity, such as a
    variable, object, or similar, that is created outside the function/method body
    to avoid creating a dangling reference.
-
-
 
 ## Rules of OPP
 

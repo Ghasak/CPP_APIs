@@ -1,24 +1,25 @@
 # Static In C++
 
 <!-- markdown-toc start - Don't edit this section. Run M-x markdown-toc-refresh-toc -->
+
 **Table of Contents**
 
 - [Static In C++](#static-in-c)
-    - [NOTEs To be taken](#notes-to-be-taken)
-    - [1. Within a Translation Unit - (Varaibles and Functions)](#1-within-a-translation-unit---varaibles-and-functions)
-        - [1.1. Static Main Usage (same for both variables and functions )](#11-static-main-usage-same-for-both-variables-and-functions-)
-        - [1.2. Using Extern](#12-using-extern)
-    - [2. Within Classes](#2-within-classes)
-        - [2.1. with class varaibles, methods](#21-with-class-varaibles-methods)
-            - [2.1.1. Why We Need Static Methods](#211-why-we-need-static-methods)
-            - [2.1.2. Considerations for Creating Static Methods](#212-considerations-for-creating-static-methods)
-            - [2.1.3. Common Use Cases for Static Methods](#213-common-use-cases-for-static-methods)
-            - [2.1.4. Common Code Practice for Using and Creating Static Methods](#214-common-code-practice-for-using-and-creating-static-methods)
-            - [2.1.5. Summary Table](#215-summary-table)
-        - [2.2. Examples](#22-examples)
-            - [2.2.1 General - Example using static variable](#221-general---example-using-static-variable)
-            - [2.2.2 General - Static Method in C++](#222-general---static-method-in-c)
-            - [2.2.3. Accessing Non-static Members from a Static Method](#223-accessing-non-static-members-from-a-static-method)
+  - [NOTEs To be taken](#notes-to-be-taken)
+  - [1. Within a Translation Unit - (Varaibles and Functions)](#1-within-a-translation-unit---varaibles-and-functions)
+    - [1.1. Static Main Usage (same for both variables and functions )](#11-static-main-usage-same-for-both-variables-and-functions-)
+    - [1.2. Using Extern](#12-using-extern)
+  - [2. Within Classes](#2-within-classes)
+    - [2.1. with class varaibles, methods](#21-with-class-varaibles-methods)
+      - [2.1.1. Why We Need Static Methods](#211-why-we-need-static-methods)
+      - [2.1.2. Considerations for Creating Static Methods](#212-considerations-for-creating-static-methods)
+      - [2.1.3. Common Use Cases for Static Methods](#213-common-use-cases-for-static-methods)
+      - [2.1.4. Common Code Practice for Using and Creating Static Methods](#214-common-code-practice-for-using-and-creating-static-methods)
+      - [2.1.5. Summary Table](#215-summary-table)
+    - [2.2. Examples](#22-examples)
+      - [2.2.1 General - Example using static variable](#221-general---example-using-static-variable)
+      - [2.2.2 General - Static Method in C++](#222-general---static-method-in-c)
+      - [2.2.3. Accessing Non-static Members from a Static Method](#223-accessing-non-static-members-from-a-static-method)
 
 <!-- markdown-toc end -->
 

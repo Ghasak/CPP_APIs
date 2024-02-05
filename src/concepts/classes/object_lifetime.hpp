@@ -6,7 +6,6 @@
  * related to object lifetime concepts.       *
  **********************************************/
 void object_life_time_concpet();
-
 // Represents an entity with an integer and a name.
 class EEntity {
 public:
@@ -49,7 +48,6 @@ public:
     ~ScopedPtr1();
 };
 
-
 /****************************************************
  * CONCEPT OF FREEING MEMEORY AUTOMATICALLY -       *
  *   Making similar to unique pointers from scratch *
@@ -67,7 +65,7 @@ public:
     ~ScopedPtr2();
 
     // Delete copy semantics to prevent multiple ownership issues
-    ScopedPtr2(const ScopedPtr2&) = delete ;
+    ScopedPtr2(const ScopedPtr2&) = delete;
     ScopedPtr2& operator=(const ScopedPtr2&) = delete;
 
     // Optionally implement move semantics to allow transfer of ownership

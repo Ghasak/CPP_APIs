@@ -1,0 +1,241 @@
+Log file created at: 2024/02/06 03:05:06
+Running on machine: GMacBookPro.local
+Running duration (h:mm:ss): 0:00:00
+Log line format: [IWEF]yyyymmdd hh:mm:ss.uuuuuu threadid file:line] msg
+I20240206 03:05:06.483698 15540471 array_concept.cpp:23] [1;31mMemeory Profile: -> [00][00][00][00]-[00][00][00][00]-[00][00][00][00]-[00][00][00][00]-[00][00][00][00][0m
+I20240206 03:05:06.486624 15540471 array_concept.cpp:30] [1;31mMemeory Profile: -> [00][00][00][00]-[00][00][00][00]-[05][00][00][00]-[00][00][00][00]-[00][00][00][00][0m
+I20240206 03:05:06.486644 15540471 array_concept.cpp:37] [1;34mMemeory Profile: -> [00][00][00][00]-[00][00][00][00]-[05][00][00][00]-[00][00][00][00]-[05][00][00][00][0m
+I20240206 03:05:06.486660 15540471 array_concept.cpp:44] [1;34mMemeory Profile: -> [00][00][00][00]-[00][00][00][00]-[05][00][00][00]-[00][00][00][00]-[05][00][00][00][0m
+I20240206 03:05:06.486675 15540471 array_concept.cpp:51] [1;31mMemeory Profile: -> [00][00][00][00]-[00][00][00][00]-[0A][00][00][00]-[00][00][00][00]-[05][00][00][00][0m
+I20240206 03:05:06.486687 15540471 array_concept.cpp:60] Size of the standard array from std::array -> 3
+I20240206 03:05:06.486701 15540471 array_concept.cpp:65] Getting a pointer to first element in  std::array similar to C-style -> 5
+I20240206 03:05:06.486713 15540471 array_concept.cpp:72] [1;31m[0][0]-[0][0]-[0][0]-[0][0] [0m
+I20240206 03:05:06.486725 15540471 array_concept.cpp:73] [1;34m---1------2------3------4---[0m
+I20240206 03:05:06.486737 15540471 array_concept.cpp:74] [1;31mMY ARRAY IS :[1;34m0x16f055fa0[0m
+I20240206 03:05:06.486749 15540471 array_concept.cpp:75] [1;31mMY ARRAY IS :[1;34m0, 1, 2, 3[0m
+I20240206 03:05:06.486763 15540471 array_concept.cpp:79] ELEMENT my_array[*(ptr + 4)] -> [1;31m20[0m
+I20240206 03:05:06.486774 15540471 array_concept.cpp:80] [1;31mMY ARRAY IS :[1;34m0, 1, 2, 20[0m
+I20240206 03:05:06.486788 15540471 array_concept.cpp:84] ELEMENT my_array[*(int*)((char*)ptr + 8)] -> [1;31m30[0m
+I20240206 03:05:06.486800 15540471 array_concept.cpp:86] [1;31mMY ARRAY IS :[1;34m0, 1, 30, 20[0m
+I20240206 03:05:06.486815 15540471 array_concept.cpp:100] [1;31mSize of our vector is => [1;34m3[0m
+I20240206 03:05:06.486828 15540471 array_concept.cpp:103] [1;31m10[0m
+I20240206 03:05:06.486840 15540471 array_concept.cpp:103] [1;31m20[0m
+I20240206 03:05:06.486850 15540471 array_concept.cpp:103] [1;31m30[0m
+I20240206 03:05:06.486861 15540471 array_concept.cpp:106] [1;31m(*my_vector_heap_ptr).size() is same as my_vector_heap_ptr->size()[0m
+I20240206 03:05:06.486873 15540471 array_concept.cpp:115] [1;34mMy Vector Heap Pointer: Memeory Address: 0x152e08790[0m
+I20240206 03:05:06.486886 15540471 array_concept.cpp:116] [1;34mMy Vector Heap Pointer: Capacity       : 3[0m
+I20240206 03:05:06.486897 15540471 array_concept.cpp:118] [1;34mMy Vector Heap Pointer: Length         : 3[0m
+I20240206 03:05:06.486959 15540471 classes.cpp:77] [1;31mname: Michael G. Scout
+ with ID: [1] salary: 112331.000000[0m
+I20240206 03:05:06.486985 15540471 classes.cpp:78] [1;34mname: Jim H. Hilbert
+ with ID: [2] salary: 112331.000000[0m
+I20240206 03:05:06.486999 15540471 classes.cpp:79] [1;31mname: Dwight S. Schrout
+ with ID: [3] salary: 112331.000000[0m
+I20240206 03:05:06.487012 15540471 classes.cpp:80] [1;34mname: Dwight S. Schrout
+ with ID: [4] salary: 157263.400000[0m
+I20240206 03:05:06.487026 15540471 classes.cpp:41] REMOVE (freed from memory) object_id: [1;31m5[0m
+I20240206 03:05:06.487039 15540471 classes.cpp:41] REMOVE (freed from memory) object_id: [1;31m7[0m
+I20240206 03:05:06.487053 15540471 classes.cpp:41] REMOVE (freed from memory) object_id: [1;31m9[0m
+I20240206 03:05:06.487066 15540471 classes.cpp:41] REMOVE (freed from memory) object_id: [1;31m11[0m
+I20240206 03:05:06.487079 15540471 classes.cpp:41] REMOVE (freed from memory) object_id: [1;31m13[0m
+I20240206 03:05:06.487099 15540471 classes.cpp:41] REMOVE (freed from memory) object_id: [1;31m4[0m
+I20240206 03:05:06.487111 15540471 classes.cpp:41] REMOVE (freed from memory) object_id: [1;31m3[0m
+I20240206 03:05:06.487123 15540471 classes.cpp:41] REMOVE (freed from memory) object_id: [1;31m2[0m
+I20240206 03:05:06.487133 15540471 classes.cpp:41] REMOVE (freed from memory) object_id: [1;31m14[0m
+I20240206 03:05:06.487145 15540471 classes_intro.cpp:102] [1;31mOBJECT::[1;34m[1;34m[[1;31m1[1;34m] is destroyed ...[0m
+I20240206 03:05:06.487157 15540471 classes_intro.cpp:102] [1;31mOBJECT::[1;34m[1;34m[[1;31m2[1;34m] is destroyed ...[0m
+I20240206 03:05:06.487200 15540471 classes_intro.cpp:102] [1;31mOBJECT::[1;34m[1;34m[[1;31m3[1;34m] is destroyed ...[0m
+I20240206 03:05:06.487213 15540471 classes_intro.cpp:102] [1;31mOBJECT::[1;34m[1;34m[[1;31m4[1;34m] is destroyed ...[0m
+I20240206 03:05:06.487226 15540471 classes_intro.cpp:102] [1;31mOBJECT::[1;34m[1;34m[[1;31m5[1;34m] is destroyed ...[0m
+I20240206 03:05:06.487237 15540471 classes_intro.cpp:102] [1;31mOBJECT::[1;34m[1;34m[[1;31m6[1;34m] is destroyed ...[0m
+I20240206 03:05:06.487249 15540471 classes_intro.cpp:102] [1;31mOBJECT::[1;34m[1;34m[[1;31m7[1;34m] is destroyed ...[0m
+I20240206 03:05:06.487260 15540471 classes_intro.cpp:102] [1;31mOBJECT::[1;34m[1;34m[[1;31m8[1;34m] is destroyed ...[0m
+I20240206 03:05:06.487272 15540471 classes_intro.cpp:102] [1;31mOBJECT::[1;34m[1;34m[[1;31m9[1;34m] is destroyed ...[0m
+I20240206 03:05:06.487284 15540471 classes_intro.cpp:102] [1;31mOBJECT::[1;34m[1;34m[[1;31m10[1;34m] is destroyed ...[0m
+I20240206 03:05:06.487545 15540471 classes_intro.cpp:115] [1;31m Player [1;34m[[1;35m11[1;34m][1;33m at ([1;34m0[1;31m, [1;34m0[1;33m) with speed [1;35m0[0m
+I20240206 03:05:06.487573 15540471 classes_intro.cpp:115] [1;31m Player [1;34m[[1;35m12[1;34m][1;33m at ([1;34m0[1;31m, [1;34m0[1;33m) with speed [1;35m0[0m
+I20240206 03:05:06.487589 15540471 classes_intro.cpp:115] [1;31m Player [1;34m[[1;35m13[1;34m][1;33m at ([1;34m10[1;31m, [1;34m10[1;33m) with speed [1;35m100[0m
+I20240206 03:05:06.487604 15540471 classes_intro.cpp:115] [1;31m Player [1;34m[[1;35m13[1;34m][1;33m at ([1;34m11[1;31m, [1;34m9[1;33m) with speed [1;35m101[0m
+I20240206 03:05:06.487618 15540471 classes_intro.cpp:115] [1;31m Player [1;34m[[1;35m13[1;34m][1;33m at ([1;34m12[1;31m, [1;34m8[1;33m) with speed [1;35m102[0m
+I20240206 03:05:06.487632 15540471 classes_intro.cpp:115] [1;31m Player [1;34m[[1;35m13[1;34m][1;33m at ([1;34m13[1;31m, [1;34m7[1;33m) with speed [1;35m103[0m
+I20240206 03:05:06.487733 15540471 classes_intro.cpp:115] [1;31m Player [1;34m[[1;35m13[1;34m][1;33m at ([1;34m14[1;31m, [1;34m6[1;33m) with speed [1;35m104[0m
+I20240206 03:05:06.487751 15540471 classes_intro.cpp:115] [1;31m Player [1;34m[[1;35m13[1;34m][1;33m at ([1;34m15[1;31m, [1;34m5[1;33m) with speed [1;35m105[0m
+I20240206 03:05:06.487763 15540471 classes_intro.cpp:115] [1;31m Player [1;34m[[1;35m13[1;34m][1;33m at ([1;34m16[1;31m, [1;34m4[1;33m) with speed [1;35m106[0m
+I20240206 03:05:06.487777 15540471 classes_intro.cpp:115] [1;31m Player [1;34m[[1;35m13[1;34m][1;33m at ([1;34m17[1;31m, [1;34m3[1;33m) with speed [1;35m107[0m
+I20240206 03:05:06.487790 15540471 classes_intro.cpp:115] [1;31m Player [1;34m[[1;35m13[1;34m][1;33m at ([1;34m18[1;31m, [1;34m2[1;33m) with speed [1;35m108[0m
+I20240206 03:05:06.487803 15540471 classes_intro.cpp:115] [1;31m Player [1;34m[[1;35m13[1;34m][1;33m at ([1;34m19[1;31m, [1;34m1[1;33m) with speed [1;35m109[0m
+I20240206 03:05:06.488101 15540471 classes_intro.cpp:102] [1;31mOBJECT::[1;34m[1;34m[[1;31m13[1;34m] is destroyed ...[0m
+I20240206 03:05:06.488114 15540471 classes_intro.cpp:102] [1;31mOBJECT::[1;34m[1;34m[[1;31m12[1;34m] is destroyed ...[0m
+I20240206 03:05:06.488126 15540471 classes_intro.cpp:102] [1;31mOBJECT::[1;34m[1;34m[[1;31m11[1;34m] is destroyed ...[0m
+I20240206 03:05:06.488138 15540471 classes_structs_size.cpp:10] [1;31mSize of this char* pointer data type -> [1;34m8[1;34mwith lenghth3[0m
+I20240206 03:05:06.488150 15540471 classes_structs_size.cpp:13] [1;31mSize of this Vec2d Class data type -> [1;34m16[0m
+I20240206 03:05:06.488162 15540471 classes_structs_size.cpp:14] [1;34mWE HAVE x, y both int of              4-bytes size[0m
+I20240206 03:05:06.488174 15540471 classes_structs_size.cpp:15] [1;34mWE HAVE char* pointer which is int of 8-bytes size[0m
+I20240206 03:05:06.488772 15540471 classes_structs_size.cpp:16] [1;33m------------------------------------------------[0m
+I20240206 03:05:06.488819 15540471 classes_structs_size.cpp:17] [1;35mSUM of two integers 2* 4-bytes + 1 pointer int of 8-bytes = 16 Bytes[0m
+I20240206 03:05:06.488831 15540471 classes_structs_size.cpp:23] [1;31mSize of this Vec2c Class data type -> [1;34m32[0m
+I20240206 03:05:06.488843 15540471 classes_structs_size.cpp:24] [1;34mWE HAVE x, y both int of              4-bytes size[0m
+I20240206 03:05:06.488854 15540471 classes_structs_size.cpp:25] [1;34mWE HAVE string which is has inner-data for capacity, length and pointer[0m
+I20240206 03:05:06.488865 15540471 classes_structs_size.cpp:27] [1;34mBoth Capacity and length and the pointer for heap allocating this string are 8-bytes length[0m
+I20240206 03:05:06.488878 15540471 classes_structs_size.cpp:31] [1;33m------------------------------------------------[0m
+I20240206 03:05:06.488888 15540471 classes_structs_size.cpp:32] [1;35mSUM of 3 int of 8-bytes = 24 Bytes[0m
+I20240206 03:05:06.489151 15540471 classes_structs_size.cpp:33] [1;35mThere is also padding and alignment (reservation for expanding the string)[0m
+I20240206 03:05:06.489161 15540471 classes_structs_size.cpp:36] [1;33mIt seems this padding/alignment is about -> [1;31m8-bytes[0m
+I20240206 03:05:06.489173 15540471 classes_structs_size.cpp:54] [1;31mClass [Vec2c] Object got destroyed[0m
+I20240206 03:05:06.489184 15540471 classes_structs_size.cpp:46] [1;31mClass [Vec2d] Object got destroyed[0m
+I20240206 03:05:06.489921 15540471 operatos.cpp:8] [1;31mWe are using now the operator module..[0m
+I20240206 03:05:06.490736 15540471 operatos.cpp:17] Vector: 7.45, 8.04
+I20240206 03:05:06.490752 15540471 operatos.cpp:18] Vector: 13.8, 16.16
+I20240206 03:05:06.490765 15540471 operatos.cpp:19] Vector: 29.8, 32.16
+I20240206 03:05:06.490777 15540471 operatos.cpp:23] Vector: 7.45, 8.04
+I20240206 03:05:06.490788 15540471 operatos.cpp:27] [1;34mv1 is equal to v2[0m
+I20240206 03:05:06.490823 15540471 object_lifetime.cpp:100] [1;34mCEntity Object is created ...[0m
+I20240206 03:05:06.490854 15540471 object_lifetime.cpp:101] [1;34mCEntity Object is destroyed ...[0m
+I20240206 03:05:06.490865 15540471 object_lifetime.cpp:100] [1;34mCEntity Object is created ...[0m
+I20240206 03:05:06.490877 15540471 object_lifetime.cpp:125] [1;34mCEntity Object is created Using   -> [1;33mScopedPtr2 Enhanced Edition[0m
+I20240206 03:05:06.490888 15540471 object_lifetime.cpp:101] [1;34mCEntity Object is destroyed ...[0m
+I20240206 03:05:06.490900 15540471 object_lifetime.cpp:132] [1;34mCEntity Object is destroyed Using -> [1;33mScopedPtr2 Enhanced Edition[0m
+I20240206 03:05:06.490913 15540471 variables.cpp:14] --
+I20240206 03:05:06.490927 15540471 variables.cpp:16] [1;34m- Number of bytes in an int: -> 4 bytes[0m
+I20240206 03:05:06.490938 15540471 variables.cpp:17] [1;34m- Maximum value for int    : -> 2147483647[0m
+I20240206 03:05:06.490950 15540471 variables.cpp:19] [1;34m- Minimum value for int    : -> -2147483648[0m
+I20240206 03:05:06.490962 15540471 variables.cpp:21] [1;34m- Lowest value for int     : -> -2147483648[0m
+I20240206 03:05:06.490976 15540471 variables.cpp:24] [1;34m- Number of bytes in an long int: -> 8 bytes[0m
+I20240206 03:05:06.490988 15540471 variables.cpp:26] [1;34m- Maximum value for long int    : -> 9223372036854775807[0m
+I20240206 03:05:06.490999 15540471 variables.cpp:28] [1;34m- Minimum value for long int    : -> -9223372036854775808[0m
+I20240206 03:05:06.491011 15540471 variables.cpp:30] [1;34m- Lowest value for long int     : -> -9223372036854775808[0m
+I20240206 03:05:06.491024 15540471 variables.cpp:34] [1;34m- Number of bytes in an signed long int: -> 8 bytes[0m
+I20240206 03:05:06.491035 15540471 variables.cpp:36] [1;34m- Maximum value for signed long int    : -> 9223372036854775807[0m
+I20240206 03:05:06.491047 15540471 variables.cpp:38] [1;34m- Minimum value for signed long int    : -> -9223372036854775808[0m
+I20240206 03:05:06.491058 15540471 variables.cpp:40] [1;34m- Lowest value for signed long int     : -> -9223372036854775808[0m
+I20240206 03:05:06.491118 15540471 variables.cpp:45] [1;34m- Number of bytes in an float:       -> 4 bytes[0m
+I20240206 03:05:06.491132 15540471 variables.cpp:47] [1;34m- Maximum value for float:           -> 3.40282e+38[0m
+I20240206 03:05:06.491144 15540471 variables.cpp:49] [1;34m- Minimum value for float:           -> 1.17549e-38[0m
+I20240206 03:05:06.491156 15540471 variables.cpp:51] [1;34m- Lowest value for float:            -> -3.40282e+38[0m
+I20240206 03:05:06.491169 15540471 variables.cpp:55] [1;34m- Number of bytes in an double:       -> 8 bytes[0m
+I20240206 03:05:06.491181 15540471 variables.cpp:57] [1;34m- Maximum value for double:           -> 1.79769e+308[0m
+I20240206 03:05:06.491194 15540471 variables.cpp:59] [1;34m- Minimum value for double:           -> 2.22507e-308[0m
+I20240206 03:05:06.491204 15540471 variables.cpp:61] [1;34m- Lowest value for double:            -> -1.79769e+308[0m
+I20240206 03:05:06.491329 15540471 variables.cpp:65] [1;34m- Number of bytes in an long double:       -> 8 bytes[0m
+I20240206 03:05:06.491341 15540471 variables.cpp:67] [1;34m- Maximum value for long double:           -> 1.79769e+308[0m
+I20240206 03:05:06.491354 15540471 variables.cpp:69] [1;34m- Minimum value for long double:           -> 2.22507e-308[0m
+I20240206 03:05:06.491366 15540471 variables.cpp:71] [1;34m- Lowest value for long double:            -> -1.79769e+308[0m
+I20240206 03:05:06.491379 15540471 pointers.cpp:66] [1;34m0x16f055d44[0m
+I20240206 03:05:06.491390 15540471 pointers.cpp:70] [1;31m2[0m
+I20240206 03:05:06.491401 15540471 pointers.cpp:13] [1;31mOriginal value of a: [1;34m10[0m
+I20240206 03:05:06.491413 15540471 pointers.cpp:30] [1;31m[Value Call] -> [1;34mThe Parameter change but it will not change the argument that got passed to this function[0m
+I20240206 03:05:06.491425 15540471 pointers.cpp:15] [1;31mAfter Passing as a value  :   [1;34m10[0m
+I20240206 03:05:06.491443 15540471 pointers.cpp:39] [1;31m[Pointer Call] -> [1;34mThe Parameter change also it will change the argument that got passed to this function[0m
+I20240206 03:05:06.491456 15540471 pointers.cpp:17] [1;31mAfter Passing as a pointer:   [1;34m11[0m
+I20240206 03:05:06.491467 15540471 pointers.cpp:48] [1;31m[Reference Call] -> [1;34mThe Parameter change also it will change the argument that got passed to this function[0m
+I20240206 03:05:06.491478 15540471 pointers.cpp:19] [1;31mAfter Passing as a reference: [1;34m12[0m
+I20240206 03:05:06.491490 15540471 pointers.cpp:83] [1;33mH[0m
+I20240206 03:05:06.491501 15540471 pointers.cpp:83] [1;33me[0m
+I20240206 03:05:06.491513 15540471 pointers.cpp:83] [1;33ml[0m
+I20240206 03:05:06.491524 15540471 pointers.cpp:83] [1;33ml[0m
+I20240206 03:05:06.491534 15540471 pointers.cpp:83] [1;33mo[0m
+I20240206 03:05:06.491545 15540471 pointers.cpp:83] [1;33m [0m
+I20240206 03:05:06.491556 15540471 pointers.cpp:83] [1;33mW[0m
+I20240206 03:05:06.491567 15540471 pointers.cpp:83] [1;33mo[0m
+I20240206 03:05:06.491577 15540471 pointers.cpp:83] [1;33mr[0m
+I20240206 03:05:06.491588 15540471 pointers.cpp:83] [1;33ml[0m
+I20240206 03:05:06.491600 15540471 pointers.cpp:83] [1;33md[0m
+I20240206 03:05:06.491611 15540471 pointers.cpp:83] [1;33m![0m
+I20240206 03:05:06.491622 15540471 pointers.cpp:83] [1;33m![0m
+I20240206 03:05:06.491643 15540471 pointers.cpp:113] [1;31mVALUE OF A : [1;34m0x16f055d04[0m
+I20240206 03:05:06.491655 15540471 pointers.cpp:114] [1;31mVALUE OF *A: [1;34m5[0m
+I20240206 03:05:06.491669 15540471 t_constant.cpp:159] [1;34mGetting m_x: [1;31m10[0m
+I20240206 03:05:06.491681 15540471 t_constant.cpp:160] [1;34m<10,20>
+I20240206 03:05:06.491693 15540471 t_string.cpp:17] [1;34mPrinting the string itself -> [1;33mHello World[0m
+I20240206 03:05:06.491705 15540471 t_string.cpp:21] [1;34mThis prints the memory address where the first character ('H') is stored.: [1;31m static_cast<const void*>(my_cstyle_string_ptr) -> [1;33m0x100dfa963[0m
+I20240206 03:05:06.491717 15540471 t_string.cpp:28] [1;34mThis will output the first character of the string: H[1;31m *my_cstyle_string_ptr -> [1;33mH[0m
+I20240206 03:05:06.491755 15540471 t_string.cpp:37] [1;31m75[0m
+I20240206 03:05:06.491766 15540471 t_string.cpp:40] [1;31mlo World[0m
+I20240206 03:05:06.491777 15540471 t_string.cpp:17] [1;34mPrinting the string itself -> [1;33mHello World[0m
+I20240206 03:05:06.491788 15540471 t_string.cpp:21] [1;34mThis prints the memory address where the first character ('H') is stored.: [1;31m static_cast<const void*>(my_cstyle_string_ptr) -> [1;33m0x100dfa963[0m
+I20240206 03:05:06.491801 15540471 t_string.cpp:28] [1;34mThis will output the first character of the string: H[1;31m *my_cstyle_string_ptr -> [1;33mH[0m
+I20240206 03:05:06.491812 15540471 t_string.cpp:37] [1;31m75[0m
+I20240206 03:05:06.491823 15540471 t_string.cpp:40] [1;31mlo World[0m
+I20240206 03:05:06.491834 15540471 t_string.cpp:45] [1;31m string literal allocated on heap - getting the actual string[1;34mHello World!
+I20240206 03:05:06.491847 15540471 t_string.cpp:47] [1;31m string literal allocated on heap - dereferencing the pointer -> (*my_cstyle_string_array_on_heap); => [1;33mH[0m
+I20240206 03:05:06.491914 15540471 t_string.cpp:52] [1;31m string literal allocated on heap - dereferencing the pointer -> static_cast<const void*>(my_cstyle_string_array_on_heap); => [1;33m0x154804080[0m
+I20240206 03:05:06.491928 15540471 double_pointers.cpp:43] [1;34m0x16f055f80[0m
+I20240206 03:05:06.491940 15540471 double_pointers.cpp:44] [1;31m0x16f055f90[0m
+I20240206 03:05:06.491951 15540471 double_pointers.cpp:45] [1;31m10[0m
+I20240206 03:05:06.491963 15540471 double_pointers.cpp:46] [1;31m10[0m
+I20240206 03:05:06.491974 15540471 double_pointers.cpp:47] [1;31m10[0m
+I20240206 03:05:06.491993 15540471 double_pointers.cpp:57] [1;31mPRINTING THE POINER ITSELF OR my_array          -> [1;34m0x16f055f98[0m
+I20240206 03:05:06.492004 15540471 double_pointers.cpp:59] [1;31mDEREFERENCING THE POINER ITSELF OR my_array     -> [1;34m100[0m
+I20240206 03:05:06.492017 15540471 double_pointers.cpp:61] [1;33mPRINTING THE POINER ITSELF OR my_std_array      -> [1;34m0x16f055f88[0m
+I20240206 03:05:06.492028 15540471 double_pointers.cpp:63] [1;33mDEREFERENCING THE POINER ITSELF OR my_std_array -> [1;34m400[0m
+I20240206 03:05:06.492045 15540471 double_pointers.cpp:84] [1;32mCasting our pointer to char with a size of one byte, incrementing it by four 
+bytes, and then casting it again to an integer before dereferencing it. -> 
+4-bytes as a 1-cell occupied with a single integer value, and int -> 4-bytes 
+[1;33m1[0m
+I20240206 03:05:06.492059 15540471 double_pointers.cpp:84] [1;32mCasting our pointer to char with a size of one byte, incrementing it by four 
+bytes, and then casting it again to an integer before dereferencing it. -> 
+4-bytes as a 1-cell occupied with a single integer value, and int -> 4-bytes 
+[1;33m2[0m
+I20240206 03:05:06.492071 15540471 double_pointers.cpp:84] [1;32mCasting our pointer to char with a size of one byte, incrementing it by four 
+bytes, and then casting it again to an integer before dereferencing it. -> 
+4-bytes as a 1-cell occupied with a single integer value, and int -> 4-bytes 
+[1;33m3[0m
+I20240206 03:05:06.492223 15540471 double_pointers.cpp:84] [1;32mCasting our pointer to char with a size of one byte, incrementing it by four 
+bytes, and then casting it again to an integer before dereferencing it. -> 
+4-bytes as a 1-cell occupied with a single integer value, and int -> 4-bytes 
+[1;33m4[0m
+I20240206 03:05:06.492249 15540471 double_pointers.cpp:84] [1;32mCasting our pointer to char with a size of one byte, incrementing it by four 
+bytes, and then casting it again to an integer before dereferencing it. -> 
+4-bytes as a 1-cell occupied with a single integer value, and int -> 4-bytes 
+[1;33m5[0m
+I20240206 03:05:06.492264 15540471 double_pointers.cpp:84] [1;32mCasting our pointer to char with a size of one byte, incrementing it by four 
+bytes, and then casting it again to an integer before dereferencing it. -> 
+4-bytes as a 1-cell occupied with a single integer value, and int -> 4-bytes 
+[1;33m6[0m
+I20240206 03:05:06.492305 15540471 double_pointers.cpp:97] [1;31mPOINTER TO POINTER -> [1;33m1[0m
+I20240206 03:05:06.492318 15540471 double_pointers.cpp:97] [1;31mPOINTER TO POINTER -> [1;33m2[0m
+I20240206 03:05:06.492331 15540471 double_pointers.cpp:97] [1;31mPOINTER TO POINTER -> [1;33m3[0m
+I20240206 03:05:06.492342 15540471 double_pointers.cpp:97] [1;31mPOINTER TO POINTER -> [1;33m4[0m
+I20240206 03:05:06.492354 15540471 double_pointers.cpp:97] [1;31mPOINTER TO POINTER -> [1;33m5[0m
+I20240206 03:05:06.492365 15540471 double_pointers.cpp:97] [1;31mPOINTER TO POINTER -> [1;33m6[0m
+I20240206 03:05:06.492384 15540471 double_pointers.cpp:120] [1;35mi = [1;34m0[1;35m , j = [1;34m0[1;31m cell value = [1;33m0[0m
+I20240206 03:05:06.492398 15540471 double_pointers.cpp:120] [1;35mi = [1;34m0[1;35m , j = [1;34m1[1;31m cell value = [1;33m1[0m
+I20240206 03:05:06.492412 15540471 double_pointers.cpp:120] [1;35mi = [1;34m0[1;35m , j = [1;34m2[1;31m cell value = [1;33m2[0m
+I20240206 03:05:06.492424 15540471 double_pointers.cpp:120] [1;35mi = [1;34m0[1;35m , j = [1;34m3[1;31m cell value = [1;33m3[0m
+I20240206 03:05:06.492437 15540471 double_pointers.cpp:120] [1;35mi = [1;34m1[1;35m , j = [1;34m0[1;31m cell value = [1;33m4[0m
+I20240206 03:05:06.492449 15540471 double_pointers.cpp:120] [1;35mi = [1;34m1[1;35m , j = [1;34m1[1;31m cell value = [1;33m5[0m
+I20240206 03:05:06.492462 15540471 double_pointers.cpp:120] [1;35mi = [1;34m1[1;35m , j = [1;34m2[1;31m cell value = [1;33m6[0m
+I20240206 03:05:06.492475 15540471 double_pointers.cpp:120] [1;35mi = [1;34m1[1;35m , j = [1;34m3[1;31m cell value = [1;33m7[0m
+I20240206 03:05:06.492488 15540471 double_pointers.cpp:120] [1;35mi = [1;34m2[1;35m , j = [1;34m0[1;31m cell value = [1;33m8[0m
+I20240206 03:05:06.492501 15540471 double_pointers.cpp:120] [1;35mi = [1;34m2[1;35m , j = [1;34m1[1;31m cell value = [1;33m9[0m
+I20240206 03:05:06.492512 15540471 double_pointers.cpp:120] [1;35mi = [1;34m2[1;35m , j = [1;34m2[1;31m cell value = [1;33m10[0m
+I20240206 03:05:06.492525 15540471 double_pointers.cpp:120] [1;35mi = [1;34m2[1;35m , j = [1;34m3[1;31m cell value = [1;33m11[0m
+I20240206 03:05:06.492537 15540471 double_pointers.cpp:120] [1;35mi = [1;34m3[1;35m , j = [1;34m0[1;31m cell value = [1;33m12[0m
+I20240206 03:05:06.492550 15540471 double_pointers.cpp:120] [1;35mi = [1;34m3[1;35m , j = [1;34m1[1;31m cell value = [1;33m13[0m
+I20240206 03:05:06.492699 15540471 double_pointers.cpp:120] [1;35mi = [1;34m3[1;35m , j = [1;34m2[1;31m cell value = [1;33m14[0m
+I20240206 03:05:06.492715 15540471 double_pointers.cpp:120] [1;35mi = [1;34m3[1;35m , j = [1;34m3[1;31m cell value = [1;33m15[0m
+I20240206 03:05:11.352802 15540471 double_pointers.cpp:280] [1;31m0x16f055f90[0m
+I20240206 03:05:11.352895 15540471 double_pointers.cpp:281] [1;34m40[0m
+I20240206 03:05:11.352913 15540471 double_pointers.cpp:282] [1;34m20[0m
+I20240206 03:05:11.352929 15540471 double_pointers.cpp:283] [1;35m20[0m
+I20240206 03:05:11.352944 15540471 double_pointers.cpp:284] [1;31m20[0m
+I20240206 03:05:11.352959 15540471 double_pointers.cpp:286] [1;31m20[0m
+I20240206 03:05:11.352981 15540471 double_pointers.cpp:301] [1;33mconst char* my_cstyle_char_ptr[] ={"Hello", "World"};[0m
+I20240206 03:05:11.353114 15540471 double_pointers.cpp:302] [1;34mPointer of char array my_cstyle_char_ptr      -> 0x16f055f90[0m
+I20240206 03:05:11.353147 15540471 double_pointers.cpp:304] [1;31mDereference the pointer **my_cstyle_char_ptr   -> H[0m
+I20240206 03:05:11.353165 15540471 double_pointers.cpp:306] [1;34mDereference the pointer *my_cstyle_char_ptr   -> Hello[0m
+I20240206 03:05:11.353181 15540471 double_pointers.cpp:309] [1;34mdereferencing the pointer after incrementing  -> World[0m
+I20240206 03:05:11.353195 15540471 double_pointers.cpp:314] [1;31mdeferencing with casting [1;33mH[0m
+I20240206 03:05:11.353210 15540471 double_pointers.cpp:314] [1;31mdeferencing with casting [1;33me[0m
+I20240206 03:05:11.353341 15540471 double_pointers.cpp:314] [1;31mdeferencing with casting [1;33ml[0m
+I20240206 03:05:11.353358 15540471 double_pointers.cpp:314] [1;31mdeferencing with casting [1;33ml[0m
+I20240206 03:05:11.353371 15540471 double_pointers.cpp:314] [1;31mdeferencing with casting [1;33mo[0m
+I20240206 03:05:11.353397 15540471 double_pointers.cpp:349] [1;35mC-style string as Array allocated on heap, but not the string themselves: [1;31mHello[0m
+I20240206 03:05:11.353412 15540471 double_pointers.cpp:355] [1;33mC-style string as Array allocated on heap, but not the string themselves: -> [1;34mHello[0m
+I20240206 03:05:11.353426 15540471 double_pointers.cpp:355] [1;33mC-style string as Array allocated on heap, but not the string themselves: -> [1;34mWorld[0m
+I20240206 03:05:11.353442 15540471 double_pointers.cpp:391] [1;33mC-style string as array dynamically allocated on the heap, as well as the individual string elements also being allocated on the heap -> [1;34mHello[0m
+I20240206 03:05:11.353457 15540471 double_pointers.cpp:391] [1;33mC-style string as array dynamically allocated on the heap, as well as the individual string elements also being allocated on the heap -> [1;34mWorld[0m
+I20240206 03:05:11.371251 15540471 enums_intro.cpp:25] Selection from Enum: 0[0m
+I20240206 03:05:11.371270 15540471 enums_intro.cpp:26] Selection from Enum: 1[0m
+I20240206 03:05:11.371280 15540471 enums_intro.cpp:27] Selection from Enum: 2[0m
+I20240206 03:05:11.371289 15540471 enums_intro.cpp:31] My selection from Enum: 2[0m

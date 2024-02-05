@@ -3,6 +3,7 @@
 #include <glog/logging.h>
 #include <iostream>
 #include <ostream>
+#include "concepts/classes/object_lifetime.hpp"
 
 int main(int argc, char* argv[]) {
     // Initialize logging before processing arguments
@@ -24,7 +25,7 @@ int main(int argc, char* argv[]) {
     // friends_in_action();
     // operators_and_operatos_overloading_concept();
     // object_life_time_concpet();
-    similar_to_unique_pointer_from_scratch_concept();
+    // similar_to_unique_pointer_from_scratch_concept();
     // data_type_table();
     // pointers_concept();
     // const_in_action();

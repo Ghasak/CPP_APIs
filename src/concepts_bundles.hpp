@@ -14,3 +14,4 @@
 #include "concepts/classes/object_lifetime.hpp"
 #include "concepts/m_const/t_constant.hpp"
 #include "concepts/classes/classes_structs_size.hpp"
+#include "concepts/classes/object_lifetime.hpp"
