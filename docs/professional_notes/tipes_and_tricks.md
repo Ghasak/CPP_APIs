@@ -1,6 +1,11 @@
 # Tips and Tricks in C++
 
 The following tips and tricks are generally common for professional C++ code writing.
+## Rule of Functions/methods
+
+- Don't try to return `pointer` to a stack data structure of a local variable
+  (within the body of the function). This include `reference` as well.
+
 
 ## Convension in Coding
 
@@ -164,12 +169,6 @@ conventions established within your team or codebase.
 2. In regards to references, always return a reference of an entity, such as a
    variable, object, or similar, that is created outside the function/method body
    to avoid creating a dangling reference.
-
-
-
-
-
-
 
 
 

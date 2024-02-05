@@ -1,0 +1,13 @@
+Log file created at: 2024/02/05 14:17:58
+Running on machine: GMacBookPro.local
+Running duration (h:mm:ss): 0:00:00
+Log line format: [IWEF]yyyymmdd hh:mm:ss.uuuuuu threadid file:line] msg
+I20240205 14:17:58.879983 15115996 classes_structs_size.cpp:10] [1;31mSize of this char* pointer data type -> [1;34m8[1;34mwith lenghth3[0m
+I20240205 14:17:58.881971 15115996 classes_structs_size.cpp:13] [1;31mSize of this Vec2d Class data type -> [1;34m16[0m
+I20240205 14:17:58.881995 15115996 classes_structs_size.cpp:14] [1;34mWE HAVE x, y both int of              4-bytes size[0m
+I20240205 14:17:58.882012 15115996 classes_structs_size.cpp:15] [1;34mWE HAVE char* pointer which is int of 8-bytes size[0m
+I20240205 14:17:58.882028 15115996 classes_structs_size.cpp:16] [1;33m------------------------------------------------[0m
+I20240205 14:17:58.882043 15115996 classes_structs_size.cpp:17] [1;35mSUM of two integers 2* 4-bytes + 1 pointer int of 8-bytes = 16 Bytes[0m
+I20240205 14:17:58.882058 15115996 classes_structs_size.cpp:23] [1;31mSize of this Vec2c Class data type -> [1;34m32[0m
+I20240205 14:17:58.882074 15115996 classes_structs_size.cpp:40] [1;31mClass [Vec2c] Object got destroyed[0m
+I20240205 14:17:58.882090 15115996 classes_structs_size.cpp:32] [1;31mClass [Vec2d] Object got destroyed[0m

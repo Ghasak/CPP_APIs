@@ -5,6 +5,9 @@
 #include <glog/logging.h>
 #include <iostream>
 #include <limits>
+#include <algorithm>
+
+void data_type_concept() { void data_type_table(); }
 
 void data_type_table() {
     std::cout << "(((((((( INTEGER (int, int32) VALUE ))))))))" << std::endl;

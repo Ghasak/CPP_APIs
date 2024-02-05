@@ -1,0 +1,10 @@
+Log file created at: 2024/02/05 23:11:03
+Running on machine: GMacBookPro.local
+Running duration (h:mm:ss): 0:00:00
+Log line format: [IWEF]yyyymmdd hh:mm:ss.uuuuuu threadid file:line] msg
+I20240205 23:11:03.377177 15393197 object_lifetime.cpp:100] [1;34mCEntity Object is created ...[0m
+I20240205 23:11:03.378769 15393197 object_lifetime.cpp:101] [1;34mCEntity Object is destroyed ...[0m
+I20240205 23:11:03.378787 15393197 object_lifetime.cpp:100] [1;34mCEntity Object is created ...[0m
+I20240205 23:11:03.378798 15393197 object_lifetime.cpp:125] [1;34mCEntity Object is created Using  -> [1;33mScopedPtr2 Enhanced Edition[0m
+I20240205 23:11:03.378809 15393197 object_lifetime.cpp:101] [1;34mCEntity Object is destroyed ...[0m
+I20240205 23:11:03.378819 15393197 object_lifetime.cpp:132] [1;34mCEntity Object is destroyed Using -> [1;33mScopedPtr2 Enhanced Edition[0m

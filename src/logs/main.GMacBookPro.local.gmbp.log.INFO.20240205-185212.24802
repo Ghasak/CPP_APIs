@@ -1,0 +1,6 @@
+Log file created at: 2024/02/05 18:52:12
+Running on machine: GMacBookPro.local
+Running duration (h:mm:ss): 0:00:00
+Log line format: [IWEF]yyyymmdd hh:mm:ss.uuuuuu threadid file:line] msg
+I20240205 18:52:12.512167 15247850 object_lifetime.cpp:80] [1;34mCEntity Object is created ...[0m
+I20240205 18:52:12.512935 15247850 object_lifetime.cpp:81] [1;34mCEntity Object is destroyed ...[0m

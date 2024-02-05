@@ -1,0 +1,20 @@
+Log file created at: 2024/02/05 14:22:23
+Running on machine: GMacBookPro.local
+Running duration (h:mm:ss): 0:00:00
+Log line format: [IWEF]yyyymmdd hh:mm:ss.uuuuuu threadid file:line] msg
+I20240205 14:22:23.902053 15118490 classes_structs_size.cpp:10] [1;31mSize of this char* pointer data type -> [1;34m8[1;34mwith lenghth3[0m
+I20240205 14:22:23.903311 15118490 classes_structs_size.cpp:13] [1;31mSize of this Vec2d Class data type -> [1;34m16[0m
+I20240205 14:22:23.903326 15118490 classes_structs_size.cpp:14] [1;34mWE HAVE x, y both int of              4-bytes size[0m
+I20240205 14:22:23.903333 15118490 classes_structs_size.cpp:15] [1;34mWE HAVE char* pointer which is int of 8-bytes size[0m
+I20240205 14:22:23.903340 15118490 classes_structs_size.cpp:16] [1;33m------------------------------------------------[0m
+I20240205 14:22:23.903347 15118490 classes_structs_size.cpp:17] [1;35mSUM of two integers 2* 4-bytes + 1 pointer int of 8-bytes = 16 Bytes[0m
+I20240205 14:22:23.903353 15118490 classes_structs_size.cpp:23] [1;31mSize of this Vec2c Class data type -> [1;34m32[0m
+I20240205 14:22:23.903360 15118490 classes_structs_size.cpp:24] [1;34mWE HAVE x, y both int of              4-bytes size[0m
+I20240205 14:22:23.903367 15118490 classes_structs_size.cpp:25] [1;34mWE HAVE string which is has inner-data for capacity, length and pointer[0m
+I20240205 14:22:23.903374 15118490 classes_structs_size.cpp:27] [1;34mBoth Capacity and length and the pointer for heap allocating this string are 8-bytes length[0m
+I20240205 14:22:23.903380 15118490 classes_structs_size.cpp:31] [1;33m------------------------------------------------[0m
+I20240205 14:22:23.903388 15118490 classes_structs_size.cpp:32] [1;35mSUM of 3 int of 8-bytes = 24 Bytes[0m
+I20240205 14:22:23.903394 15118490 classes_structs_size.cpp:33] [1;35mThere is also padding and alignment (reservation for expanding the string)[0m
+I20240205 14:22:23.903402 15118490 classes_structs_size.cpp:36] [1;33mIt seems this padding/alignment is about -> [1;31m8-bytes[0m
+I20240205 14:22:23.903409 15118490 classes_structs_size.cpp:54] [1;31mClass [Vec2c] Object got destroyed[0m
+I20240205 14:22:23.903415 15118490 classes_structs_size.cpp:46] [1;31mClass [Vec2d] Object got destroyed[0m
