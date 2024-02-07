@@ -1,9 +1,0 @@
-Log file created at: 2024/02/05 14:14:16
-Running on machine: GMacBookPro.local
-Running duration (h:mm:ss): 0:00:00
-Log line format: [IWEF]yyyymmdd hh:mm:ss.uuuuuu threadid file:line] msg
-I20240205 14:14:16.472622 15114127 classes_structs_size.cpp:10] [1;31mSize of this char* pointer data type -> [1;34m8[1;34mwith lenghth3[0m
-I20240205 14:14:16.473606 15114127 classes_structs_size.cpp:13] [1;31mSize of this Vec2d Class data type -> [1;34m16[0m
-I20240205 14:14:16.473616 15114127 classes_structs_size.cpp:18] [1;31mSize of this Vec2c Class data type -> [1;34m32[0m
-I20240205 14:14:16.473624 15114127 classes_structs_size.cpp:35] [1;31mClass [Vec2c] Object got destroyed[0m
-I20240205 14:14:16.473631 15114127 classes_structs_size.cpp:27] [1;31mClass [Vec2d] Object got destroyed[0m

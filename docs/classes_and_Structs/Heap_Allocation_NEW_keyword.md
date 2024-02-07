@@ -72,7 +72,7 @@ class Entity{                                                 |     // Creating 
         }
 };
 
-//---------------------------------------------------------------------------------------------------------------------------------
+//---------------------------------------------------------------------------------------------------------------------------------//
                                                               +-----------------------------+
                                                               |       Stack allocation      |
                                                               +-----------------------------+
@@ -83,7 +83,7 @@ class Entity{                                                 |     // Creating 
 |       Main function            |                                                              |       Main function            |
 +--------------------------------+                                                              +--------------------------------+
 |  void Function(){                                                                             |
-|      // Creating an object on stack                                                           |  int main(int argc, char* argv[]){
+|      Creating an object on stack                                                              |  int main(int argc, char* argv[]){
 |      Entity entity = Entity("Name"); <--- this entity object is                               |           Entity* e;                                 <- create a pointer of a type Entity (refer to a stack object)
 |                                           cleared once exiting the                            |           {                                          <--------+
 |                                           fucntion scope                                      |                Entity entity = Entity("SomeName");            |
@@ -449,6 +449,7 @@ for(int i = 0; i < 50; ++i) {
 ```
 
 #### 3.3.4. Access only first element
+
 To access only the first element of the array pointed to by `e`, you can use any
 of the methods described earlier but simplified for the first element (index 0).
 Here's how you can do it:

@@ -59,7 +59,8 @@ definition.
   - When defining a variable as `int VariableG = 10;` in `tu.cpp` and you have set
     up your headers along with the `CMakelists.txt`, the variable `VariableG` can be
     accessed directly in `main.cpp`.
-  - However, if you want to use another variable with the same name, `int VariableG = 20;`, within `main.cpp`, it will result in a compiler error as
+  - However, if you want to use another variable with the same name,
+    `int VariableG = 20;` within `main.cpp`, it will result in a compiler error as
     the variable has already been defined at `tu.cpp` and this is not allowed.
 
 ```sh

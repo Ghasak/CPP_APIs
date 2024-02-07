@@ -1,5 +1,0 @@
-Log file created at: 2024/01/30 21:48:47
-Running on machine: GMacBookPro.local
-Running duration (h:mm:ss): 0:00:00
-Log line format: [IWEF]yyyymmdd hh:mm:ss.uuuuuu threadid file:line] msg
-I20240130 21:48:47.608937 10245235 classes_intro.cpp:60] [1;31mOBJECT::[1;34m1 is destroyed ...[0m

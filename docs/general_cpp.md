@@ -68,9 +68,11 @@ they are closely related but have distinct meanings:
 
 2. **Arguments**:
 
-   - Arguments, on the other hand, are the actual values or expressions passed to the function when it is called.
+   - Arguments, on the other hand, are the actual values or expressions passed
+     to the function when it is called.
    - They are the real pieces of data provided to the function to operate on.
-   - Arguments are used to fill in the "slots" of the parameters when a function is invoked.
+   - Arguments are used to fill in the "slots" of the parameters when a function
+     is invoked.
 
    Example in a function call:
 

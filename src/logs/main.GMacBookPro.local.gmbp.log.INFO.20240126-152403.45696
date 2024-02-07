@@ -1,7 +1,0 @@
-Log file created at: 2024/01/26 15:24:03
-Running on machine: GMacBookPro.local
-Running duration (h:mm:ss): 0:00:00
-Log line format: [IWEF]yyyymmdd hh:mm:ss.uuuuuu threadid file:line] msg
-I20240126 15:24:03.851025 6496194 main.cpp:42] [1;31mOriginal string                 : [1;36mHello World![0m
-I20240126 15:24:03.851994 6496194 main.cpp:44] [1;31m[1] Obtaining the Pointer Itself: [1;36m0x16f621fb8[0m
-I20240126 15:24:03.852003 6496194 main.cpp:46] [1;31m[2] Dereference the pointer     : [1;36mH[0m

@@ -1,7 +1,0 @@
-Log file created at: 2024/01/26 16:03:38
-Running on machine: GMacBookPro.local
-Running duration (h:mm:ss): 0:00:00
-Log line format: [IWEF]yyyymmdd hh:mm:ss.uuuuuu threadid file:line] msg
-I20240126 16:03:38.879501 6530714 t_string.cpp:17] [1;34mPrinting the string itself -> [1;33mHello World[0m
-I20240126 16:03:38.880501 6530714 t_string.cpp:21] [1;34mThis prints the memory address where the first character ('H') is stored.: [1;31m static_cast<const void*>(my_cstyle_string_ptr) -> [1;33m0x10253744f[0m
-I20240126 16:03:38.880513 6530714 t_string.cpp:28] [1;34mThis will output the first character of the string: H[1;31m*my_cstyle_string_ptr[1;33mH[0m

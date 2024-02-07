@@ -1,6 +1,21 @@
 # Tips and Tricks in C++
 
-The following tips and tricks are generally common for professional C++ code writing.
+<!-- markdown-toc start - Don't edit this section. Run M-x markdown-toc-refresh-toc -->
+**Table of Contents**
+
+- [Tips and Tricks in C++](#tips-and-tricks-in-c)
+    - [Rule of Functions/methods](#rule-of-functionsmethods)
+    - [Convension in Coding](#convension-in-coding)
+    - [Allocation on Heap](#allocation-on-heap)
+    - [Pointers](#pointers)
+    - [References](#references)
+    - [Rules of OPP](#rules-of-opp)
+    - [Accessing Assembly](#accessing-assembly)
+
+<!-- markdown-toc end -->
+
+The following tips and tricks are generally common for professional C++ code
+writing.
 
 ## Rule of Functions/methods
 
@@ -99,6 +114,20 @@ conventions established within your team or codebase.
    - Same goes to assign the pointer once it is done with it at the end of the
      `Parent-Scope` with `nullptr`.
 
+## Auto
+- The rule to follow when utilizing `auto` for determining a type should involve
+  an explicit declaration rather than an implicit one, in order to facilitate
+  ease of understanding by others.
+
+```cpp
+ std::unique_ptr<Vec2b> smart_ptr_on_heap_object_Vec2b2 = std::make_unique<Vec2b>(200, 300);
+                          |
+                          |
+                          |
+                          V
+ auto smart_ptr_on_heap_object_Vec2b2 = std::make_unique<Vec2b>(200, 300);
+
+```
 ## Pointers
 
 1.  It does not make sense to perform a pointer-arithmetics on an `object pointer` as it
@@ -185,4 +214,14 @@ conventions established within your team or codebase.
 ```cpp
 // Assume you have an object called e extensionated from a class called Entity.
 void my_function_caller(const &Entity e){}
+```
+
+
+## Accessing Assembly
+
+This command is generated in Emacs using the shortcut '<space>' m `Disaster`,
+which is a part of the C++ supporting layer in 'spacemacs'.
+
+```sh
+objdump -d -M att -Sl --no-show-raw-insn /Users/<user_name>/<project_dir>/CPP_APIs/build/debug/src/CMakeFiles/main.dir/main.cpp.o
 ```

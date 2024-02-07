@@ -64,19 +64,18 @@ It is a pointer to the object `Read more about the RVO` concept.
 +------------------------------+
 |       Entity Class           |
 +------------------------------+
-  class Entity{
-    public:
-        int x, y;
-        Entity(int x, int y){
-            this->x = x;
-            this->y = y;
-        }
-         int GetX() const{
-             const Entity* e = this;  // const for the content not the pointer
-            // e->x = x; NOT ALLOWED
-         }
-
-  }
+|   class Entity{
+|     public:
+|         int x, y;
+|         Entity(int x, int y){
+|             this->x = x;
+|             this->y = y;
+|         }
+|          int GetX() const{
+|              const Entity* e = this;  // const for the content not the pointer
+|             // e->x = x; NOT ALLOWED
+|          }
+|   }
 
 
 ```

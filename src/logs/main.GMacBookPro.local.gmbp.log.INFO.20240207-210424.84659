@@ -1,0 +1,5 @@
+Log file created at: 2024/02/07 21:04:24
+Running on machine: GMacBookPro.local
+Running duration (h:mm:ss): 0:00:00
+Log line format: [IWEF]yyyymmdd hh:mm:ss.uuuuuu threadid file:line] msg
+I20240207 21:04:24.429329 16771113 smart_pointers.cpp:85] [1;34m10[1;33m, 20[0m

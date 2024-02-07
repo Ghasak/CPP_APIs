@@ -1,7 +1,0 @@
-Log file created at: 2024/01/26 19:11:22
-Running on machine: GMacBookPro.local
-Running duration (h:mm:ss): 0:00:00
-Log line format: [IWEF]yyyymmdd hh:mm:ss.uuuuuu threadid file:line] msg
-I20240126 19:11:22.835909 6676519 main.cpp:60] [1;33mGhasak Ibrahim[0m
-I20240126 19:11:22.836827 6676519 main.cpp:70] [1;31m14[0m
-I20240126 19:11:22.836838 6676519 main.cpp:65] [1;35mNOW OUR STRING BECAME -> [1;34mThis is just a string in std Ghasak Ibrahim[0m

@@ -1,6 +1,0 @@
-Log file created at: 2024/01/26 22:19:31
-Running on machine: GMacBookPro.local
-Running duration (h:mm:ss): 0:00:00
-Log line format: [IWEF]yyyymmdd hh:mm:ss.uuuuuu threadid file:line] msg
-I20240126 22:19:31.019418 6781227 main.cpp:57] [1;31m string literal allocated on heap - getting the actual string[1;34mHello World!
-I20240126 22:19:31.020326 6781227 main.cpp:59] [1;31m string literal allocated on heap - dereferencing the pointer -> [1;33mH

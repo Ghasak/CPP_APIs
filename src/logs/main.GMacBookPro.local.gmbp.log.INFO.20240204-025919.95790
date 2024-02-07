@@ -1,7 +1,0 @@
-Log file created at: 2024/02/04 02:59:19
-Running on machine: GMacBookPro.local
-Running duration (h:mm:ss): 0:00:00
-Log line format: [IWEF]yyyymmdd hh:mm:ss.uuuuuu threadid file:line] msg
-I20240204 02:59:19.744735 14025290 operatos.cpp:7] [1;31mWe are using now the operator module..[0m
-I20240204 02:59:19.746884 14025290 operatos.cpp:13] Vector: 7.45, 8.04
-I20240204 02:59:19.746917 14025290 operatos.cpp:14] Vector: 13.8, 16.16

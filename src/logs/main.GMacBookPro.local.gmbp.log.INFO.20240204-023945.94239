@@ -1,5 +1,0 @@
-Log file created at: 2024/02/04 02:39:45
-Running on machine: GMacBookPro.local
-Running duration (h:mm:ss): 0:00:00
-Log line format: [IWEF]yyyymmdd hh:mm:ss.uuuuuu threadid file:line] msg
-I20240204 02:39:45.863263 14013872 operatos.cpp:6] [1;31mWe are using now the operator module..[0m
