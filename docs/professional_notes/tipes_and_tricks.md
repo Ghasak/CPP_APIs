@@ -1,16 +1,17 @@
 # Tips and Tricks in C++
 
 <!-- markdown-toc start - Don't edit this section. Run M-x markdown-toc-refresh-toc -->
+
 **Table of Contents**
 
 - [Tips and Tricks in C++](#tips-and-tricks-in-c)
-    - [Rule of Functions/methods](#rule-of-functionsmethods)
-    - [Convension in Coding](#convension-in-coding)
-    - [Allocation on Heap](#allocation-on-heap)
-    - [Pointers](#pointers)
-    - [References](#references)
-    - [Rules of OPP](#rules-of-opp)
-    - [Accessing Assembly](#accessing-assembly)
+  - [Rule of Functions/methods](#rule-of-functionsmethods)
+  - [Convension in Coding](#convension-in-coding)
+  - [Allocation on Heap](#allocation-on-heap)
+  - [Pointers](#pointers)
+  - [References](#references)
+  - [Rules of OPP](#rules-of-opp)
+  - [Accessing Assembly](#accessing-assembly)
 
 <!-- markdown-toc end -->
 
@@ -115,6 +116,7 @@ conventions established within your team or codebase.
      `Parent-Scope` with `nullptr`.
 
 ## Auto
+
 - The rule to follow when utilizing `auto` for determining a type should involve
   an explicit declaration rather than an implicit one, in order to facilitate
   ease of understanding by others.
@@ -128,6 +130,7 @@ conventions established within your team or codebase.
  auto smart_ptr_on_heap_object_Vec2b2 = std::make_unique<Vec2b>(200, 300);
 
 ```
+
 ## Pointers
 
 1.  It does not make sense to perform a pointer-arithmetics on an `object pointer` as it
@@ -190,6 +193,15 @@ conventions established within your team or codebase.
       make: \*\*\* [debug_using_ninja] Abort trap: 6
       ```
 
+3.  Points to be considered:
+
+- The stack contains local variables, including the raw pointer (ptr).
+- This pointer (ptr) is directed towards a specific location in the heap where
+  memory has been allocated for an object or primitive data type.
+- To avoid memory leaks, it is essential to manually manage this heap memory by
+  using 'delete' for the allocated memory when it is no longer needed, before
+  the pointer goes out of scope.
+
 ## References
 
 1. References in nutshell:
@@ -215,7 +227,6 @@ conventions established within your team or codebase.
 // Assume you have an object called e extensionated from a class called Entity.
 void my_function_caller(const &Entity e){}
 ```
-
 
 ## Accessing Assembly
 

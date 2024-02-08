@@ -1,17 +1,17 @@
 # Classes in C++ Introduction
 
 <!-- markdown-toc start - Don't edit this section. Run M-x markdown-toc-refresh-toc -->
+
 **Table of Contents**
 
 - [Classes in C++ Introduction](#classes-in-c-introduction)
-    - [1. Types of Methods in OOP](#1-types-of-methods-in-oop)
-        - [1.1 Methods in OOP - Python](#11-methods-in-oop---python)
-        - [1.2. What are the all methds in OOP - C++](#12-what-are-the-all-methds-in-oop---c)
-        - [1.3. Compare Python vs C++](#13-compare-python-vs-c)
-    - [How to think of Class](#how-to-think-of-class)
+  - [1. Types of Methods in OOP](#1-types-of-methods-in-oop)
+    - [1.1 Methods in OOP - Python](#11-methods-in-oop---python)
+    - [1.2. What are the all methds in OOP - C++](#12-what-are-the-all-methds-in-oop---c)
+    - [1.3. Compare Python vs C++](#13-compare-python-vs-c)
+  - [How to think of Class](#how-to-think-of-class)
 
 <!-- markdown-toc end -->
-
 
 We utilize classes as blueprints to encompass all data and functionality.
 

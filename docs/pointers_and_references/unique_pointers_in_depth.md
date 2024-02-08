@@ -1,4 +1,20 @@
 # Unique Pointers in Depth
+<!-- markdown-toc start - Don't edit this section. Run M-x markdown-toc-refresh-toc -->
+**Table of Contents**
+
+- [Unique Pointers in Depth](#unique-pointers-in-depth)
+    - [Review the raw pointer concept](#review-the-raw-pointer-concept)
+    - [Unique Pointers Concept](#unique-pointers-concept)
+    - [1.My Understanding](#1my-understanding)
+        - [1.1. Smart Pointer - Unique Pointer](#11-smart-pointer---unique-pointer)
+    - [1. Raw Pointers vs Unique Pointers](#1-raw-pointers-vs-unique-pointers)
+    - [2. Move Ownership of unique pointers](#2-move-ownership-of-unique-pointers)
+    - [Passing a Pointer of an object to a function](#passing-a-pointer-of-an-object-to-a-function)
+        - [Passing a raw pointer](#passing-a-raw-pointer)
+        - [Passing by unique pointer](#passing-by-unique-pointer)
+
+<!-- markdown-toc end -->
+
 
 ## Review the raw pointer concept
 
@@ -100,6 +116,87 @@ Explanation:
   intervention.
 - This automatic management of heap memory simplifies resource management and
   improves code safety and reliability.
+
+## 1.My Understanding
+
+- Notice that we create a pointer to an object
+- The object can be any type either primitive or more complex data structure
+  like classes, structs, enums ..etc.
+- Meaning, this pointer can access the object public methods, attributes ..etc.
+
+### 1.1. Smart Pointer - Unique Pointer
+
+- Unique Pointers:
+  - The smart unique pointer is just an `integer` on stack depends on the system
+    (x64 usually they are 8-bytes)(Later we learn that this address can also
+    stored at the heap, like we store set of addresses/pointers using
+    std::vector on a heap with new keyword).
+  - The smart unique pointer if deleted it will delete all the related data to
+    the object it refers to.
+  - The main usage is to free the object with all its allocated data on heap
+    once it goes out of the scope automatically.
+
+```cpp
++------------------------------+
+|        Entity Class          |
++------------------------------+
+
+class Entity{
+    public:
+        Entity(){
+            std::cout
+            << "Created Entity!"
+            << std::endl;
+        }
+        ~Entity(){
+            std::cout
+            <<"Destoryed Entity!"
+            << std::endl;
+        }
+        void Print(){
+
+        }
+}
+
++------------------------------+
+|        Main Function         |
++------------------------------+
+| #include <memory>
+| #include <string>
+| #include <iostream>
+| int main(int argc, char* argv[]){
+|     // Create an inner-scope
+|     {                                                                                                                                          <-------+
+|         +-----------------------------------------------+                                                                                              |
+|         | std::unique_ptr<Entity> entity(new Entity()) ;| <- This is way is possible                                                                   | I
+|         +-----------------------------------------------+                                                                                              | N
+|         +-------------------------------------------------------------------+                                                                          | N
+|         | std::unique_ptr<Entity> entity = std::make_unique<Entity>() ;     | <- this is the most common way                                           | E
+|         +-------------------------------------------------------------------+                                                                          | R
+|                                                                 ^                                                                                      | -
+|     //Accessing the smart pointer using:                        |                                                                                      | S
+|     entity->Print();                                            |                                                                                      | C
+|     //or                                                        |                                                                                      | O
+|     (*entity).Print();                                          +----- make unique with that entity there the primary                                  | P
+|     std::cin.get();                                                    reason that that's important                                                    | E
+|                                                                        it is for exception safety (will throw an error if its not possible)            | D
+|     }                                                                                                                                          <-------+
+|                                                                                    +
+|                                                                                    |
+|                                                                                    |
+|                                                                                    +-----> the smart unique pointer is gone and no longer is existed.
+|                                                                                            Means the object that it refer to it is already gone too
+|
+| }
+
+// NOTICE THIS IS NOT ALLOWED IN C++
++-------------------------------------------------------------------------------------------------+
+| std::unique_ptr<Entity> entity = new Entity() ; <--- This is not allowed (unique_ptr constructor|
+|                                                      is explicit to the brackts). There is no   |
+|                                                      inversion constructor, by the C++ library  |
++-------------------------------------------------------------------------------------------------+
+```
+
 
 ## 1. Raw Pointers vs Unique Pointers
 
@@ -332,3 +429,55 @@ transferring ownership of the `Vec2b` object; you're merely allowing the
 function to access the object via the smart pointer. The smart pointer ensures
 that the memory is automatically managed, making this approach safer and
 avoiding memory leaks without needing an explicit `delete`.
+
+## Demo - Move Ownership unique pointer
+
+To correctly move ownership from one `std::unique_ptr` to another, you should
+use the `std::move()` function from the `<utility>` header, which casts its
+argument to an r-value indicating that it's safe to transfer ownership of the
+resource. Your example has a small mistake in calling the `.move()` method
+directly on the smart pointer, which is not correct. Instead, you should use
+`std::move(smart_ptr_on_heap_object_Vec2b2)`.
+
+Here's how you can correctly move ownership from
+`smart_ptr_on_heap_object_Vec2b2` to `smart_ptr_on_heap_object_Vec2b1`:
+
+```cpp
+#include <iostream>
+#include <memory> // For std::unique_ptr
+#include <utility> // For std::move
+
+class Vec2b {
+public:
+    int x, y;
+
+    Vec2b(int x, int y) : x(x), y(y) {}
+
+    void Print() const {
+        std::cout << "Vec2b(" << x << ", " << y << ")" << std::endl;
+    }
+};
+
+int main() {
+    std::unique_ptr<Vec2b> smart_ptr_on_heap_object_Vec2b1 = nullptr;
+
+    {
+        std::unique_ptr<Vec2b> smart_ptr_on_heap_object_Vec2b2 = std::make_unique<Vec2b>(200, 300);
+        smart_ptr_on_heap_object_Vec2b2->Print();
+        smart_ptr_on_heap_object_Vec2b1 = std::move(smart_ptr_on_heap_object_Vec2b2);
+    }
+
+    // At this point, smart_ptr_on_heap_object_Vec2b2 is nullptr, and ownership has been transferred to smart_ptr_on_heap_object_Vec2b1
+    if (smart_ptr_on_heap_object_Vec2b1) {
+        smart_ptr_on_heap_object_Vec2b1->Print(); // Confirming the ownership has been transferred
+    }
+}
+```
+
+In this corrected example, the `std::move()` function is used to transfer the
+ownership of the `Vec2b` object from `smart_ptr_on_heap_object_Vec2b2` to
+`smart_ptr_on_heap_object_Vec2b1`. After the move,
+`smart_ptr_on_heap_object_Vec2b2` becomes `nullptr`, and
+`smart_ptr_on_heap_object_Vec2b1` now owns the resource. This is demonstrated by
+the ability to call `Print()` on `smart_ptr_on_heap_object_Vec2b1` after the
+block in which `smart_ptr_on_heap_object_Vec2b2` was declared has ended.

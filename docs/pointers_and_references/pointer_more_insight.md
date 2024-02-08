@@ -4,10 +4,6 @@
 
 - [Pointer More Insights](#pointer-more-insights)
     - [Double Pointers - Intger array of array](#double-pointers---intger-array-of-array)
-    - [*(my_array) --> `100`](#my_array----100)
-    - [*((int*)((char*)cstyle_array + 4)) -> 200](#intcharcstyle_array--4---200)
-    - [*(int*)(((char*)(*cstyle_array)) + 4) -> 200](#intcharcstyle_array--4---200)
-    - [*(int*)(((*cstyle_array)) + 1) -> 200](#intcstyle_array--1---200)
     - [String with array as a double pointer](#string-with-array-as-a-double-pointer)
     - [Double Pointers allocated on heap for array of string](#double-pointers-allocated-on-heap-for-array-of-string)
     - [More Insights](#more-insights)

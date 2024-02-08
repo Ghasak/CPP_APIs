@@ -1,24 +1,26 @@
 # Pointers in NutShell
 
 <!-- markdown-toc start - Don't edit this section. Run M-x markdown-toc-refresh-toc -->
+
 **Table of Contents**
 
 - [Pointers in NutShell](#pointers-in-nutshell)
-    - [1. Introduction](#1-introduction)
-        - [1.1. Based on Memory Management](#11-based-on-memory-management)
-        - [1.2. Based on Usage](#12-based-on-usage)
-        - [1.3. Location and Use of Pointers](#13-location-and-use-of-pointers)
-        - [1.4. Additional Points](#14-additional-points)
-    - [2. My Interpretation](#2-my-interpretation)
-        - [2.1 Creating Pointers](#21-creating-pointers)
-        - [2.2. Dereferencing a pointer](#22-dereferencing-a-pointer)
-        - [2.3. How about Entity?](#23-how-about-entity)
-        - [2.4. Understanding the Pointer to an Object](#24-understanding-the-pointer-to-an-object)
-    - [3. Pointers with Heap allocation](#3-pointers-with-heap-allocation)
-        - [3.1. Allocating Primitive Data Types](#31-allocating-primitive-data-types)
-        - [3.2. Allocating Objects](#32-allocating-objects)
-        - [3.3. Pointers to Primitive Data Types](#33-pointers-to-primitive-data-types)
-            - [3.3.1 Pointers to Objects](#331-pointers-to-objects)
+  - [1. Introduction](#1-introduction)
+    - [1.1. Based on Memory Management](#11-based-on-memory-management)
+    - [1.2. Based on Usage](#12-based-on-usage)
+    - [1.3. Location and Use of Pointers](#13-location-and-use-of-pointers)
+    - [1.4. Additional Points](#14-additional-points)
+  - [2. My Interpretation](#2-my-interpretation)
+    - [2.1 Creating Pointers](#21-creating-pointers)
+    - [2.2. Dereferencing a pointer](#22-dereferencing-a-pointer)
+    - [2.3. How about Entity?](#23-how-about-entity)
+    - [2.4. Understanding the Pointer to an Object](#24-understanding-the-pointer-to-an-object)
+  - [3. Pointers with Heap allocation](#3-pointers-with-heap-allocation)
+    - [3.1. Allocating Primitive Data Types](#31-allocating-primitive-data-types)
+    - [3.2. Allocating Objects](#32-allocating-objects)
+    - [3.3. Pointers to Primitive Data Types](#33-pointers-to-primitive-data-types)
+      - [3.3.1 Pointers to Objects](#331-pointers-to-objects)
+  - [Demo Raw Pointer in Action](#demo-raw-pointer-in-action)
 
 <!-- markdown-toc end -->
 
@@ -229,8 +231,7 @@ types). This type of pointers is called `object pointer`.
      object as a whole, using its methods and properties.
 
 5. **Dynamic Allocation**:
-   - If you dynamically allocate an object using `new`, such as `Entity* e =
-new Entity(10, 20, 30.0, "my input string");`, then `e` points to an
+   - If you dynamically allocate an object using `new`, such as `Entity* e = new Entity(10, 20, 30.0, "my input string");`, then `e` points to an
      `Entity` object in heap memory. Here, pointer arithmetic is still not
      advisable, but managing the lifetime of the object (i.e., when to `delete`
      it) becomes important.
@@ -351,3 +352,208 @@ int var = 10;
 heap_ptr = &var
 
 ```
+
+## Demo Raw Pointer in Action
+
+To demonstrate your request, I'll create an example in C++ that incorporates
+several concepts: dynamic memory allocation using raw pointers, scope
+management, function passing (by value and by reference), and handling of a
+basic class containing a C-style array. We'll follow good practices for memory
+management, ensuring that we properly allocate and deallocate memory to avoid
+leaks.
+
+Here's the basic layout of the program:
+
+1. **Class Definition**: A simple class `ArrayWrapper` that contains a C-style
+   array.
+2. **Dynamic Allocation**: Allocate an `ArrayWrapper` object on the heap within
+   the `main` function.
+3. **Function Passing**: Define a function `processArrayWrapper` that takes a
+   pointer to `ArrayWrapper`. This function will be called twice: once in the
+   outer scope of `main` and once in an inner scope.
+4. **Memory Management**: Show correct placement of the `delete` keyword to
+   avoid memory leaks.
+5. **Passing Raw Pointer**: Demonstrate how the raw pointer gets copied when
+   passed to a function and how to pass it as a reference.
+
+Let's implement this:
+
+```cpp
+#include <iostream>
+
+class ArrayWrapper {
+public:
+    int* array;
+    size_t size;
+
+    ArrayWrapper(size_t size) : size(size), array(new int[size]) {
+        // Initialize array for demonstration
+        for (size_t i = 0; i < size; ++i) {
+            array[i] = i * 2; // Example values
+        }
+    }
+
+    ~ArrayWrapper() {
+        delete[] array;
+    }
+};
+
+// Function that processes ArrayWrapper objects
+void processArrayWrapper(ArrayWrapper* wrapper) {
+    std::cout << "Processing ArrayWrapper elements: ";
+    for (size_t i = 0; i < wrapper->size; ++i) {
+        std::cout << wrapper->array[i] << " ";
+    }
+    std::cout << std::endl;
+}
+
+int main() {
+    // Allocate ArrayWrapper on the heap
+    ArrayWrapper* wrapper = new ArrayWrapper(5);
+
+    // Process in the outer scope
+    processArrayWrapper(wrapper);
+
+    {
+        // Inner scope
+        // Process again in the inner scope
+        processArrayWrapper(wrapper);
+    }
+
+    // Correct place to delete the allocated ArrayWrapper to avoid memory leaks
+    delete wrapper;
+
+    return 0;
+}
+```
+
+This program demonstrates the following:
+
+1. **Dynamic Allocation**: An `ArrayWrapper` object is allocated on the heap in
+   the `main` function using a raw pointer.
+2. **Function Passing**: The `processArrayWrapper` function is called twice to
+   process the array within the `ArrayWrapper` object: once in the outer scope
+   of `main` and once in an inner scope.
+3. **Memory Management**: The `delete` keyword is used outside the inner scope
+   but inside the `main` function to properly deallocate memory before the
+   program ends, preventing a memory leak.
+4. **Passing Raw Pointer**: The raw pointer to `ArrayWrapper` is copied when
+   passed to the `processArrayWrapper` function. In this example, passing by
+   value and passing by reference are conceptually similar since the pointer
+   itself is passed by value, but it points to the same memory location (i.e.,
+   the raw pointer acts as a reference to the heap-allocated object).
+
+This example focuses on raw pointer usage and manual memory management, which
+are foundational in understanding C++'s lower-level memory management
+mechanisms, despite the modern C++ practices advocating for smart pointers (like
+`std::unique_ptr` or `std::shared_ptr`) for safer and more automatic memory
+management.
+
+## Cases of double deletion of a pointer
+
+Double deletion of a pointer occurs when `delete` is called more than once on
+the same dynamically allocated memory address. This can lead to undefined
+behavior, crashes, or corruption of the memory allocation data structures. Here
+are several scenarios where double deletion might occur:
+
+### 1. Deleting a Raw Pointer Twice
+
+```cpp
+int* ptr = new int(10);
+delete ptr; // Correctly deletes the allocated memory
+delete ptr; // Undefined behavior: ptr was already deleted
+```
+
+### 2. Deleting a Raw Pointer in Multiple Places Without Nullifying
+
+```cpp
+int* ptr = new int(20);
+delete ptr; // First deletion
+
+// Later in the code, without setting ptr to nullptr
+if (ptr != nullptr) {
+    delete ptr; // Undefined behavior: ptr was already deleted
+}
+```
+
+This can be mitigated by setting `ptr` to `nullptr` after the first deletion:
+
+```cpp
+delete ptr;
+ptr = nullptr; // Now safe to check ptr and not double delete
+```
+
+### 3. Improper Copying of Raw Pointers Leading to Double Deletion
+
+When raw pointers are copied, both pointers point to the same memory. If both
+are deleted, it results in double deletion.
+
+```cpp
+int* original = new int(30);
+int* copy = original;
+
+delete original; // Deletes the memory
+delete copy; // Undefined behavior: the same memory is deleted again
+```
+
+### 4. Using Raw Pointers in Containers Without Proper Management
+
+```cpp
+std::vector<int*> vec;
+vec.push_back(new int(40));
+vec.push_back(vec[0]); // Both elements point to the same int
+
+delete vec[0];
+delete vec[1]; // Undefined behavior: double deletion of the same pointer
+```
+
+### 5. Releasing Memory Managed by Smart Pointers Manually
+
+If you manually delete memory that is also managed by a smart pointer, the smart
+pointer's destructor will attempt to delete it again.
+
+```cpp
+std::unique_ptr<int> uptr(new int(50));
+int* rawPtr = uptr.get();
+
+delete rawPtr; // Manual deletion
+// Undefined behavior: unique_ptr's destructor will delete it again when uptr goes out of scope
+```
+
+### Prevention and Best Practices
+
+- **Nullify Pointers After Deletion**: Always set raw pointers to `nullptr`
+  after deleting them. This prevents double deletion by ensuring subsequent
+  checks against `nullptr` succeed before attempting deletion.
+
+- **Use Smart Pointers**: Prefer `std::unique_ptr`, `std::shared_ptr`, and
+  `std::weak_ptr` from the C++ Standard Library, which manage memory
+  automatically and prevent common memory management errors like double
+  deletion.
+
+- **Be Cautious with Raw Pointer Copies**: Avoid copying raw pointers unless
+  necessary. If you do, ensure only one copy owns the memory (responsible for
+  deletion) or use smart pointers to manage shared ownership correctly.
+
+- **Avoid Manual Deletion with Smart Pointers**: When using smart pointers, let
+  them manage the lifetime of the object. Do not manually call `delete` on the
+  pointer obtained from smart pointers.
+
+Understanding and avoiding these scenarios is crucial for safe memory management
+in C++. Smart pointers should be used wherever possible to automate memory
+management and prevent issues like double deletion.
+
+Here's a table summarizing the scenarios where double deletion of a pointer
+might occur, along with prevention tips:
+
+| Scenario                                  | Description                                                                                                                | Prevention                                                                                                             |
+| ----------------------------------------- | -------------------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------- |
+| **Direct Double Deletion**                | Directly calling `delete` twice on the same pointer.                                                                       | Set pointer to `nullptr` after deletion.                                                                               |
+| **Multiple Deletions Without Nullifying** | Deleting a raw pointer in multiple places without setting it to `nullptr` after the first deletion.                        | Always set pointers to `nullptr` after deleting.                                                                       |
+| **Improper Copying of Raw Pointers**      | Copying raw pointers and deleting both copies, leading to double deletion of the same memory.                              | Use smart pointers like `std::unique_ptr` for unique ownership or `std::shared_ptr` for shared ownership.              |
+| **Raw Pointers in Containers**            | Storing the same raw pointer in a container multiple times and deleting it more than once.                                 | Use containers of smart pointers to ensure automatic and safe memory management.                                       |
+| **Manual Deletion with Smart Pointers**   | Manually deleting memory that is managed by a smart pointer, which then tries to delete it again upon its own destruction. | Trust the smart pointer to manage memory. Avoid manual memory management operations on memory owned by smart pointers. |
+
+This table encapsulates common pitfalls leading to double deletion and how to
+avoid them, emphasizing the importance of smart pointer usage in modern C++ for
+safe and effective memory management.
