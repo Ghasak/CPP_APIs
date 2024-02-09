@@ -1,0 +1,5 @@
+Log file created at: 2024/02/09 18:25:33
+Running on machine: GMacBookPro.local
+Running duration (h:mm:ss): 0:00:00
+Log line format: [IWEF]yyyymmdd hh:mm:ss.uuuuuu threadid file:line] msg
+I20240209 18:25:33.153951 18108093 copying_and_copy_constructor.cpp:6] [1;33mStarting with copying and cop constructor concept in C++[0m

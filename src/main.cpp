@@ -3,7 +3,6 @@
 #include <glog/logging.h>
 #include <iostream>
 #include <ostream>
-#include "concepts/classes/object_lifetime.hpp"
 
 int main(int argc, char* argv[]) {
     // Initialize logging before processing arguments
@@ -14,8 +13,10 @@ int main(int argc, char* argv[]) {
         std::cout << RED << "Argument No. " << BLUE << "[" << YELLOW << i << BLUE "]" << BLUE
                   << " which is -> " << MAGENTA << argv[i] << RESET << std::endl;
     }
+    //---------------------------------------------
     // Demonstrate various concepts
     // Uncomment the functions you wish to run
+    //---------------------------------------------
     // array_function_in_depth();
     // class_implementation();
     // classes_concepts_hub();
@@ -27,7 +28,8 @@ int main(int argc, char* argv[]) {
     // similar_to_unique_pointer_from_scratch_concept();
     // data_type_table();
     // pointers_concept();
-    smart_pointers_concept();
+    // smart_pointers_concept();
+    copying_and_copy_constructor_concept();
     // const_in_action();
     // cstyle_string_as_apointer();
     // c_style_string_in_action();

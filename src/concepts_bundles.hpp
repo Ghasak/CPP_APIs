@@ -16,3 +16,4 @@
 #include "concepts/classes/classes_structs_size.hpp"
 #include "concepts/classes/object_lifetime.hpp"
 #include "concepts/pointers_and_ref/smart_pointers.hpp"
+#include "concepts/classes/copying_and_copy_constructor.hpp"

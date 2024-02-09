@@ -1,0 +1,11 @@
+Log file created at: 2024/02/10 03:13:24
+Running on machine: GMacBookPro.local
+Running duration (h:mm:ss): 0:00:00
+Log line format: [IWEF]yyyymmdd hh:mm:ss.uuuuuu threadid file:line] msg
+I20240210 03:13:24.778260 18480207 main.cpp:31] [1;31mCopy occur to [1;33mGhasak[0m
+I20240210 03:13:24.780414 18480207 main.cpp:31] [1;31mCopy occur to [1;33mKhasak[0m
+I20240210 03:13:24.780440 18480207 main.cpp:42] [1;33mOur string -> [1;31mKhasak[1;34m ::is deleted from the heap ..[0m
+I20240210 03:13:24.780458 18480207 main.cpp:31] [1;31mCopy occur to [1;33mGhasak[0m
+I20240210 03:13:24.780476 18480207 main.cpp:42] [1;33mOur string -> [1;31mGhasak[1;34m ::is deleted from the heap ..[0m
+I20240210 03:13:24.780491 18480207 main.cpp:42] [1;33mOur string -> [1;31mGhasak[1;34m ::is deleted from the heap ..[0m
+I20240210 03:13:24.780508 18480207 main.cpp:42] [1;33mOur string -> [1;31mKhasak[1;34m ::is deleted from the heap ..[0m
