@@ -2164,3 +2164,212 @@ manual management. On the other hand, smart pointers like `std::shared_ptr` and
 `std::weak_ptr` provide a higher-level abstraction that automatically manages
 object lifetimes, making them a preferred choice in modern C++ for managing
 complex object lifecycles and relationships.
+
+## Demo - Shared Pointer Reference count decrease from 4 to 0
+
+In C++, a shared pointer (`std::shared_ptr`) is a smart pointer that retains
+shared ownership of an object through a pointer. Multiple `shared_ptr` instances
+can own the same object, and the object is destroyed when the last remaining
+`shared_ptr` owning it is destroyed or reset.
+
+Let's create a hypothetical scenario with a class `Vec2d` where the reference
+count of a `shared_ptr` to a `Vec2d` object decreases from 4 to 0, leading to
+the object's destruction.
+
+First, here's a simple definition of the `Vec2d` class:
+
+```cpp
+class Vec2d {
+public:
+    double x, y;
+    Vec2d(double x, double y) : x(x), y(y) {}
+    ~Vec2d() {
+        std::cout << "Vec2d destroyed\n";
+    }
+};
+```
+
+Now, let's create a scenario where the reference count goes from 4 to 0:
+
+1. **Creating the initial shared pointer:** We start by creating a `shared_ptr`
+   to a `Vec2d` object. This is the first reference, so the count is 1.
+
+   ```cpp
+   auto v = std::make_shared<Vec2d>(1.0, 2.0);
+   ```
+
+2. **Increasing the reference count:** We create three more shared pointers that
+   share ownership of the same `Vec2d` object, which brings the reference count
+   to 4.
+
+   ```cpp
+   std::shared_ptr<Vec2d> v1 = v; // Count = 2
+   std::shared_ptr<Vec2d> v2 = v; // Count = 3
+   std::shared_ptr<Vec2d> v3 = v; // Count = 4
+   ```
+
+3. **Decreasing the reference count to 0:** We then reset or allow these
+   pointers to go out of scope, decreasing the reference count back down to 0,
+   which triggers the destruction of the `Vec2d` object.
+
+   a. **First decrease:** We explicitly reset one of the pointers.
+
+   ```cpp
+   v1.reset(); // Count decreases to 3
+   ```
+
+   b. **Second decrease:** Another pointer goes out of scope or is reset.
+
+   ```cpp
+   v2.reset(); // Count decreases to 2
+   ```
+
+   c. **Third decrease:** The third shared pointer is reset.
+
+   ```cpp
+   v3.reset(); // Count decreases to 1
+   ```
+
+   d. **Final decrease:** Finally, the original shared pointer is reset or goes
+   out of scope.
+
+   ```cpp
+   v.reset(); // Count decreases to 0, Vec2d is destroyed
+   ```
+
+Alternatively, the decrease could also occur by letting the pointers go out of
+scope naturally, such as by exiting a block of code where they are defined. Once
+the reference count hits 0, the `Vec2d` object is destroyed, and its destructor
+is called, signaling the memory has been freed.
+
+## Without using reset()
+
+The code here is actually very clear in illustrating the concept of shared
+pointers as it demonstrates how a scope function and pointer will be created
+locally, and their reference count will be decremented (indicating destruction)
+which refers to the object. Once the pointer (acting as a reference) reaches the
+end of the local scope, it will also be destroyed. Finally, when all references
+(shared pointers) that we have created referencing the same object, the last one
+of them will be responsible for freeing (deallocating) the heap-allocated object
+that all of them were pointing to.
+
+Certainly! In the following C++ code example, we'll demonstrate how the
+reference count of a `std::shared_ptr` decreases from 4 to 0 without explicitly
+calling `reset()`. Instead, we'll let the shared pointers go out of scope, which
+will naturally decrease the reference count and eventually lead to the
+destruction of the managed object. We'll use the `Vec2d` class and print
+statements to observe the changes in reference count and the destruction of the
+object.
+
+```cpp
+#include <iostream>
+#include <memory>
+
+class Vec2d {
+public:
+    double x, y;
+    Vec2d(double x, double y) : x(x), y(y) {
+        std::cout << "Vec2d created\n";
+    }
+    ~Vec2d() {
+        std::cout << "Vec2d destroyed\n";
+    }
+};
+
+void createAdditionalSharedPointers(std::shared_ptr<Vec2d> v) {
+    // Creating three more shared pointers. This increases the reference count to 4.
+    std::shared_ptr<Vec2d> v1 = v;
+    std::shared_ptr<Vec2d> v2 = v;
+    std::shared_ptr<Vec2d> v3 = v;
+
+    std::cout << "Inside function, reference count = " << v.use_count() << std::endl;
+    // v1, v2, and v3 will be destroyed here as they go out of scope, reducing the reference count.
+}
+
+int main() {
+    // Creating the initial shared pointer with a reference count of 1.
+    auto v = std::make_shared<Vec2d>(1.0, 2.0);
+    std::cout << "Initially, reference count = " << v.use_count() << std::endl;
+
+    createAdditionalSharedPointers(v);
+    // After returning from the function, the reference count is reduced as v1, v2, and v3 are out of scope.
+    std::cout << "After function, reference count = " << v.use_count() << std::endl;
+
+    // v will be destroyed here as it goes out of scope, reducing the reference count to 0 and destroying Vec2d.
+    return 0;
+}
+```
+
+Here's what happens in this program:
+
+1. A `Vec2d` object is created and managed by a shared pointer `v`. This prints
+   "Vec2d created" and sets the reference count to 1.
+2. The `createAdditionalSharedPointers` function is called with `v` as an
+   argument. Inside this function, three more shared pointers (`v1`, `v2`, `v3`)
+   are created, all sharing ownership of the same `Vec2d` object. This increases
+   the reference count to 4.
+3. The function prints the current reference count (which should be 4),
+   demonstrating that the reference count increased inside the function.
+4. As the function ends, `v1`, `v2`, and `v3` go out of scope and are destroyed,
+   which decreases the reference count each time they are destroyed. The output
+   will not explicitly show these decreases, but you'll know it happened because
+   the reference count will be 1 again once we exit the function.
+5. Finally, the `main` function ends, and `v` goes out of scope. This reduces
+   the reference count to 0, and the `Vec2d` object is destroyed, printing
+   "Vec2d destroyed".
+
+This code effectively demonstrates how shared pointers manage ownership and how
+the reference count influences the lifetime of the managed object.
+
+## Again, List all Scenarios which the reference count is droped (decreases)
+
+The reference count of a `std::shared_ptr` in C++ decreases in several specific
+scenarios, each involving the reduction of ownership or the destruction of
+`shared_ptr` instances that share ownership of an object. Here's a comprehensive
+list of those scenarios:
+
+1. **Going out of scope:** When a `std::shared_ptr` goes out of scope, its
+   destructor is called, and it releases its ownership of the object. If this
+   `shared_ptr` was the last owner, the object is destroyed.
+
+2. **Resetting the shared pointer:** Calling the `reset()` method on a
+   `shared_ptr` without passing a new pointer makes it release its ownership of
+   the current object and sets it to manage nothing. If it was the last owner,
+   the object is destroyed.
+
+3. **Assigning a new resource:** Assigning a new pointer or another `shared_ptr`
+   managing a different resource to a `shared_ptr` causes it to release its
+   current ownership. If it was the last owner of the previously managed object,
+   that object is destroyed.
+
+4. **Swapping with another shared pointer managing a different object:** When a
+   `shared_ptr` is swapped with another that manages a different object (using
+   `std::swap` or the member `swap` function), it releases ownership of its
+   original object. If it was the last owner of that object, the object is
+   destroyed.
+
+5. **Assigning `nullptr`:** Assigning `nullptr` to a `shared_ptr` effectively
+   resets it, causing it to release ownership of the object it was managing.
+   This is a specific case of resetting the shared pointer.
+
+6. **Destructing the last copy:** If a `shared_ptr` is copied several times, and
+   all copies eventually are destroyed or reset (including going out of scope),
+   the last destruction or reset operation will drop the reference count to
+   zero, leading to the object's destruction.
+
+7. **Using `std::move` to transfer ownership:** Moving a `shared_ptr` to another
+   `shared_ptr` using `std::move` does not directly decrease the reference
+   count. However, if the moved-from `shared_ptr` was the last owner of an
+   object before the move, its destruction (when it goes out of scope or is
+   explicitly reset after being moved from) will not affect the reference count,
+   as it already relinquished ownership. The object's lifetime is then solely
+   managed by the moved-to `shared_ptr`.
+
+It's important to note that these scenarios involve the manipulation or
+lifecycle events of `std::shared_ptr` instances themselves. The underlying
+mechanism ensures that the managed object's lifetime is correctly tied to the
+ownership status of all shared pointers managing it, ensuring deterministic and
+automatic resource management.
+
+
+##

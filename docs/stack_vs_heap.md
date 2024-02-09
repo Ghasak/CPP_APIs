@@ -1,35 +1,36 @@
 # Pushing to Stack vs Heap Allocation
 
 <!-- markdown-toc start - Don't edit this section. Run M-x markdown-toc-refresh-toc -->
+
 **Table of Contents**
 
 - [Pushing to Stack vs Heap Allocation](#pushing-to-stack-vs-heap-allocation)
-    - [My Understanding on allocation on HEAP](#my-understanding-on-allocation-on-heap)
-    - [What is happening when we allocate on heap](#what-is-happening-when-we-allocate-on-heap)
-    - [1. How we allocate on Heap](#1-how-we-allocate-on-heap)
-        - [Step 1: Allocating Memory on the Heap in C++](#step-1-allocating-memory-on-the-heap-in-c)
-        - [Step 2: Dereferencing the Pointer](#step-2-dereferencing-the-pointer)
-        - [Step 3: ASCII Diagram of Memory](#step-3-ascii-diagram-of-memory)
-        - [Step 4: Pointer and Dereferencing](#step-4-pointer-and-dereferencing)
-    - [2. Allocation on HEAP for different types](#2-allocation-on-heap-for-different-types)
-        - [Allocating an Integer](#allocating-an-integer)
-        - [Allocating a Float](#allocating-a-float)
-        - [Allocating a String](#allocating-a-string)
-        - [Allocated a C-style array](#allocated-a-c-style-array)
-        - [Code Example with Deallocation](#code-example-with-deallocation)
-    - [3. Why we need allocation for memeory mananged data structures?](#3-why-we-need-allocation-for-memeory-mananged-data-structures)
-        - [3.1. Lifetime Management](#31-lifetime-management)
-            - [3.1.1. Lifetime Management Example](#311-lifetime-management-example)
-        - [3.2. Large Objects](#32-large-objects)
-            - [3.2.1. Large Objects](#321-large-objects)
-        - [3.3. Shared Ownership](#33-shared-ownership)
-            - [3.3.1. Shared Ownership](#331-shared-ownership)
-        - [3.4. Polymorphism](#34-polymorphism)
-            - [3.4.1. Polymorphism](#341-polymorphism)
-        - [3.5. Delayed Initialization](#35-delayed-initialization)
-            - [3.5.1. Delayed Initialization](#351-delayed-initialization)
-        - [3.6. Example Use Cases](#36-example-use-cases)
-        - [3.7. Conclusion](#37-conclusion)
+  - [My Understanding on allocation on HEAP](#my-understanding-on-allocation-on-heap)
+  - [What is happening when we allocate on heap](#what-is-happening-when-we-allocate-on-heap)
+  - [1. How we allocate on Heap](#1-how-we-allocate-on-heap)
+    - [Step 1: Allocating Memory on the Heap in C++](#step-1-allocating-memory-on-the-heap-in-c)
+    - [Step 2: Dereferencing the Pointer](#step-2-dereferencing-the-pointer)
+    - [Step 3: ASCII Diagram of Memory](#step-3-ascii-diagram-of-memory)
+    - [Step 4: Pointer and Dereferencing](#step-4-pointer-and-dereferencing)
+  - [2. Allocation on HEAP for different types](#2-allocation-on-heap-for-different-types)
+    - [Allocating an Integer](#allocating-an-integer)
+    - [Allocating a Float](#allocating-a-float)
+    - [Allocating a String](#allocating-a-string)
+    - [Allocated a C-style array](#allocated-a-c-style-array)
+    - [Code Example with Deallocation](#code-example-with-deallocation)
+  - [3. Why we need allocation for memeory mananged data structures?](#3-why-we-need-allocation-for-memeory-mananged-data-structures)
+    - [3.1. Lifetime Management](#31-lifetime-management)
+      - [3.1.1. Lifetime Management Example](#311-lifetime-management-example)
+    - [3.2. Large Objects](#32-large-objects)
+      - [3.2.1. Large Objects](#321-large-objects)
+    - [3.3. Shared Ownership](#33-shared-ownership)
+      - [3.3.1. Shared Ownership](#331-shared-ownership)
+    - [3.4. Polymorphism](#34-polymorphism)
+      - [3.4.1. Polymorphism](#341-polymorphism)
+    - [3.5. Delayed Initialization](#35-delayed-initialization)
+      - [3.5.1. Delayed Initialization](#351-delayed-initialization)
+    - [3.6. Example Use Cases](#36-example-use-cases)
+    - [3.7. Conclusion](#37-conclusion)
 
 <!-- markdown-toc end -->
 
@@ -498,3 +499,144 @@ memory, the decision to allocate these objects on the heap is more about the
 control over their lifetime and the size of data they manage, rather than just
 about memory management. It's a design choice that depends on the specific
 requirements and constraints of your application.
+
+## When I need Heap allocation data?
+
+When you allocate memory on the heap in C++ using a raw pointer and do not
+delete it before your program ends, you create what is known as a memory leak.
+Here's what happens to this memory both during the program's execution and after
+its termination, especially considering you are using macOS:
+
+### During the Program's Execution:
+
+1. **Memory Remains Allocated**: The memory you allocated remains reserved for
+   your program until it explicitly frees it (using `delete` or `delete[]` for
+   arrays) or the program terminates. This means that the memory cannot be used
+   by other parts of your program or by other applications, potentially reducing
+   the available memory for other tasks.
+2. **Potential for Memory Exhaustion**: If your program repeatedly allocates
+   memory without freeing it (for example, inside a loop), it can lead to memory
+   exhaustion, causing your program to use up the available memory. This can
+   lead to performance degradation of your program and possibly affect other
+   running applications or even the whole system.
+3. **No Automatic Garbage Collection**: Unlike languages with garbage collection
+   (e.g., Java, Python), C++ does not automatically reclaim memory that is no
+   longer referenced. If you lose all pointers to an allocated memory block
+   without freeing it, that memory is lost until the program ends, contributing
+   to a memory leak.
+
+### When the Program is Terminated:
+
+1. **Operating System Reclaims Memory**: Upon program termination, modern
+   operating systems like macOS will automatically reclaim the memory that was
+   allocated to the program. This means that the memory leak will not persist
+   beyond the lifetime of the program, and the leaked memory will eventually be
+   made available again for other applications.
+2. **Resources are Cleaned Up**: Besides memory, the operating system will also
+   clean up other resources that were used by the program, such as file
+   descriptors and network connections.
+
+### Conclusion:
+
+While memory leaks do not persist after a program has terminated on modern
+operating systems like macOS, they can still cause problems during the program's
+execution, especially in long-running applications or those that consume a lot
+of resources. It's best practice to manage memory carefully in C++, ensuring
+that every `new` is matched with a `delete` (or using smart pointers, which
+automatically manage memory, reducing the risk of leaks).
+
+
+## Demo - Return a CStyle-Array
+
+Assume I have the following `WRONG` code:
+```cpp
+Int* myArrayFunction(){
+      Int my_array[5];
+      Return my_array;
+}
+
+```
+
+Returning a local array defined on the stack from a function in C++ as you've
+shown is not safe. The reason is that local variables, including arrays, are
+allocated on the stack, and their lifetime is limited to the scope of the
+function. Once the function returns, the stack frame is popped, and the memory
+area where `my_array` was stored is considered free. Accessing this memory
+afterwards results in undefined behavior because it may be overwritten by other
+stack operations.
+
+However, if you want to return an array from a function, there are several safer
+alternatives:
+
+### 1. Dynamic Allocation
+You can dynamically allocate an array on the heap and return a pointer to it.
+Remember, this approach requires you to manage the memory manually and ensure
+that it is properly deleted when no longer needed to avoid memory leaks.
+
+```cpp
+int* myArrayFunction() {
+    int* my_array = new int[5];
+    // Initialize array or perform operations
+    return my_array;
+}
+```
+
+Caller must remember to `delete[]` the array when done:
+
+```cpp
+int* arr = myArrayFunction();
+// Use arr
+delete[] arr;
+```
+
+### 2. Returning by Value Using Containers
+A more modern and safer approach is to use STL containers like `std::vector`,
+which manages memory automatically and can be returned by value efficiently
+thanks to Return Value Optimization (RVO) and move semantics introduced in
+C++11.
+
+```cpp
+std::vector<int> myArrayFunction() {
+    std::vector<int> my_array(5);
+    // Initialize vector or perform operations
+    return my_array;
+}
+```
+
+### 3. Static Allocation
+If the size of the array is fixed and known at compile time, and if the array is
+not too large, you might opt for static allocation with `static` storage
+duration, though this approach has limitations and is generally not recommended
+for returning data from functions due to the shared state.
+
+```cpp
+int* myArrayFunction() {
+    static int my_array[5];
+    // Initialize array or perform operations
+    return my_array;
+}
+```
+
+This makes `my_array` persist beyond the function call, but the same array will
+be shared across all calls to the function, which is rarely what you want and
+can lead to unexpected behavior or data corruption in a multithreaded context.
+
+### 4. Using std::array or std::tuple (for Fixed Size Arrays)
+For small, fixed-size arrays, `std::array` (C++11 and later) provides a
+stack-allocated, fixed-size array that can be returned by value, avoiding the
+undefined behavior of returning a pointer to a local array.
+
+```cpp
+#include <array>
+
+std::array<int, 5> myArrayFunction() {
+    std::array<int, 5> my_array{};
+    // Initialize array or perform operations
+    return my_array;
+}
+```
+
+### Conclusion
+Prefer using `std::vector` or `std::array` for most cases where you need to
+return a collection of elements from a function. These containers manage memory
+for you, make your code safer, more modern, and less prone to errors.

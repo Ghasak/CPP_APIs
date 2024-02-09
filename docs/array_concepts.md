@@ -187,6 +187,180 @@ Assume we want to keep the `std::vector` which is allocated on heap. Assume the 
 
 - The above code will not works instead we can use:
 
-```cpp
+## CStyle Core Design Lacking Feature
 
+Can return cstyle as a value instead of a pointer for same example? **Remember**
+the `C-style` array decays to a pointer when you call it without an index
+brackets `[]`.
+
+Returning a C-style array directly by value from a function in C++ is not
+directly possible due to the language's design. C++ does not allow functions to
+return arrays by value because arrays cannot be copied in the same way as other
+types. When you try to return an array from a function, what you're actually
+returning is a pointer to the first element of the array, which, as we've
+discussed, leads to issues with scope and lifetime if the array is allocated on
+the stack.
+
+However, there are alternative methods to achieve similar functionality,
+encapsulating the array in a way that it can be returned by value. Here are a
+couple of methods:
+
+### 1. Wrapping the Array in a Struct or Class
+
+One workaround is to wrap the array in a struct or class. This allows the entire
+object, including the array, to be returned by value. The struct or class can
+then be copied or returned, effectively passing the array by value.
+
+```cpp
+struct ArrayWrapper {
+    int my_array[5];
+};
+
+ArrayWrapper myArrayFunction() {
+    ArrayWrapper aw;
+    // Initialize aw.my_array here
+    return aw;
+}
 ```
+
+### 2. Using `std::array` or `std::vector`
+
+As previously mentioned, a more modern and convenient approach is to use
+`std::array` for fixed-size arrays or `std::vector` for dynamic arrays. These
+containers are part of the C++ Standard Library and are designed to be safely
+returned from functions by value. They manage the underlying array memory and
+support copy and move semantics, making them safe and efficient to pass around.
+
+#### Returning a `std::array`:
+
+```cpp
+#include <array>
+
+std::array<int, 5> myArrayFunction() {
+    std::array<int, 5> my_array{};
+    // Initialize my_array here
+    return my_array;
+}
+```
+
+#### Returning a `std::vector`:
+
+```cpp
+#include <vector>
+
+std::vector<int> myArrayFunction() {
+    std::vector<int> my_array(5);
+    // Initialize my_array here
+    return my_array;
+}
+```
+
+Both `std::array` and `std::vector` can be returned by value from a function,
+and the compiler optimizations like Return Value Optimization (RVO) and move
+semantics in C++11 and later versions make this operation efficient.
+
+### Conclusion
+
+While you cannot return a raw C-style array by value directly due to the
+language's limitations, wrapping the array in a struct or class or using C++
+Standard Library containers like `std::array` or `std::vector` provides a safe
+and modern approach to achieve similar functionality.
+
+## Scenario with C-Style Array
+
+is it possible to do the following
+
+```cpp
+int* CreateArray(){
+              int array[5]{1,2,3,4,5};
+              return array;
+}
+```
+
+Then using in the main()
+
+```cpp
+int my_array = *CreateArray();
+int size = sizeof(my_array[]) / sizeof(my_array[0]);
+for (int i = 0; i < size; i++) {
+    std::cout << "Retrun an array from a stack -> " << my_array[] << std::endl;
+}
+```
+
+The code snippet you've provided contains several issues and misconceptions
+about handling arrays in C++. Let's address these issues one by one:
+
+### Issue with `CreateArray` Function
+The `CreateArray` function attempts to return a pointer to a local array `array`
+that is allocated on the stack. This is problematic because the array will be
+destroyed once the function exits, leaving the returned pointer dangling.
+Accessing the memory through this pointer will result in undefined behavior.
+
+### Problem with Dereferencing and Size Calculation
+The line `int my_array = *CreateArray();` in your `main()` function attempts to
+copy the first element of the array returned by `CreateArray` into a single
+integer variable, not the entire array. This is because the dereference operator
+`*` applied to a pointer will yield the value pointed to, not the entire array.
+
+Moreover, the expression `sizeof(my_array[]) / sizeof(my_array[0])` is
+syntactically incorrect and will not compile. `sizeof` cannot be applied to a
+function return value in the way you've attempted, and `my_array` is declared as
+an `int`, not an array, so you cannot use `my_array[]` syntax or attempt to
+calculate its size this way.
+
+### Iterating Over the Array
+The loop and the way you attempt to print the array elements are also incorrect.
+Since `my_array` is an integer, not an array, the syntax `my_array[]` is
+invalid.
+
+### Correct Approach
+If you want to return an array from a function and use it in `main()`, consider
+the following correct approaches:
+
+- **Dynamic Allocation**: Allocate the array on the heap and return a pointer
+  (but remember to `delete[]` it to avoid memory leaks).
+- **Use `std::vector` or `std::array`**: These are much safer and more flexible
+  options in C++.
+
+Here's how you can correctly use a dynamically allocated array:
+
+```cpp
+#include <iostream>
+
+int* CreateArray() {
+    int* array = new int[5]{1, 2, 3, 4, 5};
+    return array;
+}
+
+int main() {
+    int* my_array = CreateArray();
+    int size = 5; // You need to manage size separately
+    for (int i = 0; i < size; i++) {
+        std::cout << "Return an array from a stack -> " << my_array[i] << std::endl;
+    }
+    delete[] my_array; // Don't forget to free the memory
+    return 0;
+}
+```
+
+If you decide to use `std::vector`, it simplifies memory management and size
+handling:
+
+```cpp
+#include <iostream>
+#include <vector>
+
+std::vector<int> CreateVector() {
+    return std::vector<int>{1, 2, 3, 4, 5};
+}
+
+int main() {
+    std::vector<int> my_vector = CreateVector();
+    for (int i = 0; i < my_vector.size(); i++) {
+        std::cout << "Return an array from a stack -> " << my_vector[i] << std::endl;
+    }
+    return 0;
+}
+```
+
+These approaches are much safer and idiomatic in C++.

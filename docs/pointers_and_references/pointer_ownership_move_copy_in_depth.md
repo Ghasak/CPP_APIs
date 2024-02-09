@@ -198,7 +198,6 @@ shared responsibility and automatic management of shared resources, like how a
 shared pointer manages the lifecycle of an object when multiple owners are
 involved.
 
-
 ## Pass the shared smart pointer to a function as a reference or as value? Who will be the owner and what will happen?
 
 When you pass a shared smart pointer (`std::shared_ptr`) to a function, the
@@ -273,3 +272,69 @@ void readBook(std::shared_ptr<Book>& book) { // Passing by reference
 
 This distinction is crucial in resource management, affecting how long resources
 are kept alive and when they're cleaned up.
+
+## What is owning a data
+
+I used to believe the owner means the object which is responsible of freeing the
+memory, now I got the following:
+
+- In the context of programming, particularly in resource management and
+  smart pointers in C++, "owning" refers to the responsibility for managing the
+  lifecycle of a resource. A resource can be anything that requires management,
+  such as dynamic memory, file handles, sockets, or any other system resource that
+  has a limited lifetime and must be explicitly released after use to avoid leaks
+  or other problems.
+
+### Responsibilities of the Owner
+
+The owner of a resource is responsible for ensuring that:
+
+1. **Initialization:** The resource is correctly initialized or acquired. This
+   might mean allocating memory, opening a file, or establishing a network
+   connection.
+
+2. **Exclusive Ownership or Shared Management:** Depending on the scenario, the
+   owner must either maintain exclusive ownership or manage shared ownership
+   properly. In the case of exclusive ownership, the resource should not be used
+   outside of the owner's control. For shared ownership, mechanisms must be in
+   place to manage the lifetime of the resource safely among multiple owners
+   (e.g., reference counting in `std::shared_ptr`).
+
+3. **Usage:** The owner provides mechanisms (methods, functions) for the safe
+   and efficient use of the resource.
+
+4. **Release:** Once the resource is no longer needed, or when the owner is
+   about to be destroyed, it must release or deallocate the resource
+   appropriately. This involves freeing memory, closing files, or shutting down
+   network connections to prevent resource leaks.
+
+5. **Transfer of Ownership:** The owner may transfer ownership to another owner,
+   ensuring that the resource is not prematurely released or double-freed. This
+   often involves moving semantics, where the responsibility and the resource's
+   control are transferred to another entity, leaving the original owner in a
+   state where it no longer has any claim to the resource.
+
+### Smart Pointers and Ownership
+
+In C++, smart pointers such as `std::unique_ptr` and `std::shared_ptr` are used
+to automate resource management, making it easier to handle the responsibilities
+of ownership:
+
+- **`std::unique_ptr`:** Manages a resource with exclusive ownership semantics.
+  When a `std::unique_ptr` is destroyed, it releases the resource it owns.
+  Ownership can be transferred but not shared, ensuring that only one
+  `std::unique_ptr` at a time is responsible for the resource.
+
+- **`std::shared_ptr`:** Allows for shared ownership of a resource through
+  reference counting. Multiple `std::shared_ptr` instances can own the same
+  resource, and the resource is released only when the last `std::shared_ptr`
+  owning it is destroyed or reset.
+
+- **`std::weak_ptr`:** Complements `std::shared_ptr` by providing a non-owning
+  weak reference to a resource. It is used to break circular references that
+  could lead to memory leaks without taking part in ownership or affecting the
+  resource's lifetime.
+
+Properly managing ownership is crucial in ensuring that resources are used
+effectively and that programs are free from leaks and other resource management
+errors.

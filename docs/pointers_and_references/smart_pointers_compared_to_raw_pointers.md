@@ -1182,11 +1182,9 @@ public:
     Vec2b(int x, int y) : x(x), y(y) {
         std::cout << "Vec2b(" << x << ", " << y << ") constructed" << std::endl;
     }
-
     ~Vec2b() {
         std::cout << "Vec2b(" << x << ", " << y << ") destroyed" << std::endl;
     }
-
     void Print() const {
         std::cout << "Vec2b(" << x << ", " << y << ")" << std::endl;
     }
@@ -1233,3 +1231,109 @@ counting involved. Each transfer of ownership results in the previous owner
 being set to `nullptr`, ensuring that at any time, only one `std::unique_ptr`
 owns the object. Once the final owner (`vec4` in this case) goes out of scope,
 the `Vec2b` object is automatically destroyed.
+
+## Compare Raw, Unique and Shared pointers
+
+In C++, arrays can be handled in several ways, including as raw pointers, smart
+pointers like `std::unique_ptr` and `std::shared_ptr`, and as references. When
+dealing with dynamic arrays (allocated on the heap), the choice between these
+methods affects memory management, ownership semantics, and the way the array is
+passed around in functions. Below are examples for each case you've asked for.
+
+### 1. Raw Pointer
+
+- **Allocating on Heap and Passing as Raw Pointer**:
+```cpp
+void processArray(int* array, size_t size) {
+    // Example processing: print elements
+    for (size_t i = 0; i < size; ++i) {
+        std::cout << array[i] << " ";
+    }
+    std::cout << std::endl;
+}
+
+int main() {
+    int* myArray = new int[5]{1, 2, 3, 4, 5};
+    processArray(myArray, 5);
+    delete[] myArray; // Don't forget to deallocate
+}
+```
+
+### 2. Smart Pointers
+
+#### a. `std::unique_ptr`
+
+- **Allocating and Passing as `std::unique_ptr` to Array**:
+```cpp
+#include <memory>
+
+void processArray(std::unique_ptr<int[]>& array, size_t size) {
+    for (size_t i = 0; i < size; ++i) {
+        std::cout << array[i] << " ";
+    }
+    std::cout << std::endl;
+}
+
+int main() {
+    std::unique_ptr<int[]> myArray = std::make_unique<int[]>(5);
+    for (int i = 0; i < 5; ++i) {
+        myArray[i] = i + 1; // Initialize
+    }
+    processArray(myArray, 5);
+    // No need to manually delete, it's automatically managed
+}
+```
+
+#### b. `std::shared_ptr`
+
+- **Allocating and Passing as `std::shared_ptr` to Array** (Note:
+  `std::shared_ptr` does not directly support array types, so custom deleter is
+  needed):
+
+```cpp
+#include <memory>
+
+void processArray(const std::shared_ptr<int[]>& array, size_t size) {
+    for (size_t i = 0; i < size; ++i) {
+        std::cout << array[i] << " ";
+    }
+    std::cout << std::endl;
+}
+
+int main() {
+    std::shared_ptr<int[]> myArray(new int[5]{1, 2, 3, 4, 5}, std::default_delete<int[]>());
+    processArray(myArray, 5);
+    // Automatic memory management
+}
+```
+
+### 3. Array Passed by Reference
+
+In C++, you cannot directly pass a dynamically allocated array by value in the
+way you can with a fixed-size array embedded within a struct or class. For
+dynamic arrays, references to pointers or smart pointers are typically used
+instead. Here's how you might pass a pointer by reference:
+
+- **Pointer by Reference (Raw Pointer)**:
+```cpp
+void processArray(int*& array, size_t size) {
+    for (size_t i = 0; i < size; ++i) {
+        std::cout << array[i] << " ";
+    }
+    std::cout << std::endl;
+}
+
+int main() {
+    int* myArray = new int[5]{1, 2, 3, 4, 5};
+    processArray(myArray, 5);
+    delete[] myArray; // Cleanup
+}
+```
+
+### Summary
+
+These examples illustrate different ways to handle dynamic arrays in C++,
+including using raw pointers, smart pointers (`std::unique_ptr`,
+`std::shared_ptr`), and passing arrays by reference. Each method has its own use
+case, with smart pointers offering automatic memory management to help prevent
+memory leaks and dangling pointers.
