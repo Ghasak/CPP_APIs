@@ -1,8 +1,9 @@
-#include "array_concept.hpp"
 #include <iostream>
 #include "../mylogging.hpp"
 #include <glog/logging.h>
 #include <array>
+#include <vector>
+#include "array_concept.hpp"
 
 // Caller function
 void array_function_in_depth() {
@@ -11,6 +12,9 @@ void array_function_in_depth() {
     pointer_with_array_arithmatic();
     vector_allocated_on_heap();
     what_is_vecotor_on_heap();
+    // Trick in std::array
+    std::array<int, ARRAY_CONST_SIZE> my_array{1, 2, 3, 4, 5};
+    print_std_array(my_array);
 }
 
 // concepts functions
@@ -118,4 +122,13 @@ void what_is_vecotor_on_heap() {
     LOG(INFO) << BLUE
               << "My Vector Heap Pointer: Length         : " << (*my_vector_heap_ptr).capacity()
               << RESET;
+}
+
+/*
+ * Array which takes the std::array and print its value
+ */
+void print_std_array(std::array<int, ARRAY_CONST_SIZE> my_array) {
+    for (size_t i = 0; i < my_array.size(); i++) {
+        std::cout << MAGENTA << "Element: " << YELLOW << my_array[i] << std::endl;
+    }
 }

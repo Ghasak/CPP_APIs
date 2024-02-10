@@ -1,17 +1,24 @@
-# Copying and Copying Constructors in C++
+# Copying and Copy-Constructors in C++
+
 <!-- markdown-toc start - Don't edit this section. Run M-x markdown-toc-refresh-toc -->
 **Table of Contents**
 
-- [Copying and Copying Constructors in C++](#copying-and-copying-constructors-in-c)
-    - [Intro](#intro)
+- [Copying and Copy-Constructors in C++](#copying-and-copy-constructors-in-c)
+    - [Intro - Copying & Copy Constructor](#intro---copying--copy-constructor)
     - [My Understanding](#my-understanding)
         - [Assign operator with copying](#assign-operator-with-copying)
         - [Demo - Creating a string class to demonstrate the copying](#demo---creating-a-string-class-to-demonstrate-the-copying)
     - [References](#references)
+    - [More Insight on Copying & Copy-Constructor](#more-insight-on-copying--copy-constructor)
+        - [What is Copying?](#what-is-copying)
+        - [How is it Used?](#how-is-it-used)
+        - [Things to Consider When Copying](#things-to-consider-when-copying)
+        - [Examples](#examples)
+    - [Basics string class from Scratch - Similar to std::string](#basics-string-class-from-scratch---similar-to-stdstring)
 
 <!-- markdown-toc end -->
 
-## Intro
+## Intro - Copying & Copy Constructor
 
 Copying refers to us copying data copying memory when we literally want to copy
 one object or primitive or just a piece of data from kind of one place into
@@ -406,7 +413,9 @@ PrintString(str2);  // <-- no copy passing by reference
 ```cpp
 
 void PringString(const String& string){
-   String copy_string = string;  // We are calling the assignment (copy-constructor here, be our defintion the copy-constructor accepting a const Strign&)
+   String copy_string = string;  // We are calling the assignment
+                                 // (copy-constructor here, be our defintion
+                                 // the copy-constructor accepting a const Strign&)
   std::cout << string  << std::endl;
 }
 
@@ -419,3 +428,206 @@ PrintString(str2);  // <-- no copy passing by reference
 ## References
 
 - [Copying and Copy Constructors in C++ - The Cherno](https://www.youtube.com/watch?v=BvR1Pgzzr38&list=PLlrATfBNZ98dudnM48yfGUldqGD0S4FFb&index=44)
+
+## More Insight on Copying & Copy-Constructor
+
+Copying in C++ is a fundamental concept that involves creating a new object as a
+duplicate of an existing object. This concept is essential in C++ programming
+because it allows developers to create copies of objects, whether they are
+simple data types or complex class instances. Copying is used in various
+scenarios, such as passing objects to functions by value, returning objects from
+functions, or explicitly creating a copy of an object.
+
+### What is Copying?
+
+Copying, in the context of C++, means creating a new object with the same state
+or value as an existing object. The process involves allocating memory for the
+new object and then copying the values of the existing object's members to the
+new object.
+
+### How is it Used?
+
+Copying is used in several key scenarios:
+
+- **Passing Objects by Value**: When a function takes a parameter by value, a
+  copy of the argument is made and passed to the function. This ensures that
+  modifications inside the function do not affect the original argument.
+- **Returning Objects from Functions**: When a function returns an object by
+  value, a copy of the object is returned to the caller. This can involve copy
+  construction or move construction in C++11 and later.
+- **Explicit Copying**: Developers can explicitly create a copy of an object by
+  using the assignment operator or a copy constructor.
+
+### Things to Consider When Copying
+
+When implementing copying in C++, there are several important considerations:
+
+
+- **Deep vs. Shallow Copy**: A shallow copy duplicates the top-level structure
+  but doesn't copy the underlying data for pointers or dynamic resources. A deep
+  copy duplicates everything, ensuring that the new object is entirely
+  independent of the original. Choosing between them depends on the resources
+  managed by the object.
+- **Resource Management**: If an object manages resources (like dynamic memory),
+  simply copying pointers can lead to issues like double free errors or memory
+  leaks. Proper resource management (copying the resource, not just the pointer)
+  is crucial.
+- **Copy Constructor and Assignment Operator**: Implementing custom copy
+  constructors and assignment operators is necessary for classes that manage
+  resources to ensure that copies are made correctly.
+- **Copy Elision and Optimization**: Modern C++ compilers can optimize
+  unnecessary copies away in certain situations, a feature known as copy
+  elision. This can improve performance significantly.
+
+### Examples
+
+**Simple Copying Example:**
+
+```cpp
+int a = 5;
+int b = a; // Copying the value of 'a' into 'b'
+```
+
+**Class Copying Example:**
+
+```cpp
+class Example {
+public:
+    int value;
+    // Copy constructor
+    Example(const Example& other) : value(other.value) {
+        // Here, we make a copy of 'other' by copying its 'value'
+    }
+};
+
+Example obj1;
+obj1.value = 10;
+Example obj2 = obj1; // Using the copy constructor
+```
+
+**Custom Copy Constructor for Deep Copy:**
+
+```cpp
+class StringWrapper {
+    char* data;
+public:
+    StringWrapper(const char* str) {
+        data = new char[strlen(str) + 1];
+        strcpy(data, str);
+    }
+    // Custom copy constructor for deep copy
+    StringWrapper(const StringWrapper& other) {
+        data = new char[strlen(other.data) + 1];
+        strcpy(data, other.data);
+    }
+    ~StringWrapper() {
+        delete[] data;
+    }
+};
+```
+
+In this example, the `StringWrapper` class manages a dynamic memory allocation.
+The custom copy constructor ensures that when an object is copied, the
+underlying data is also copied, preventing potential issues with shared resource
+management. This is an example of implementing a deep copy to ensure that each
+object manages its own resources independently.
+
+## Basics string class from Scratch - Similar to std::string
+
+Creating a basic class similar to `std::string` in C++ without using templates
+or smart pointers involves focusing on dynamically allocated arrays of
+characters and implementing fundamental functionalities like constructing,
+destructing, copying, and managing the memory for the string data. The class
+will provide basic operations such as constructing a string, destructing it,
+assigning a new value, and accessing the string content. Here's a simplified
+version:
+
+```cpp
+#include <cstring>
+#include <iostream>
+
+class SimpleString {
+private:
+    char* data;
+    size_t length;
+
+    void copyData(const char* str) {
+        // Allocate memory for the new string, including null terminator
+        length = strlen(str);
+        data = new char[length + 1];
+        // Copy the passed string into the newly allocated memory
+        strcpy(data, str);
+    }
+
+public:
+    // Default constructor
+    SimpleString() : data(nullptr), length(0) {}
+
+    // Constructor from a C-string
+    SimpleString(const char* str) {
+        copyData(str);
+    }
+
+    // Copy constructor for deep copying
+    SimpleString(const SimpleString& other) {
+        copyData(other.data);
+    }
+
+    // Assignment operator for deep copying
+    SimpleString& operator=(const SimpleString& other) {
+        if (this != &other) { // Protect against self-assignment
+            // Delete the existing data
+            delete[] data;
+            // Deep copy the data from the other object
+            copyData(other.data);
+        }
+        return *this;
+    }
+
+    // Destructor
+    ~SimpleString() {
+        delete[] data;
+    }
+
+    // Accessor for the C-string
+    const char* c_str() const {
+        return data;
+    }
+
+    // Accessor for the length of the string
+    size_t size() const {
+        return length;
+    }
+};
+
+int main() {
+    SimpleString str("Hello, World!");
+    std::cout << "String: " << str.c_str() << ", Length: " << str.size() << std::endl;
+
+    SimpleString strCopy = str; // Copy constructor
+    std::cout << "Copied String: " << strCopy.c_str() << ", Length: " << strCopy.size() << std::endl;
+
+    SimpleString strAssigned;
+    strAssigned = str; // Assignment operator
+    std::cout << "Assigned String: " << strAssigned.c_str() << ", Length: " << strAssigned.size() << std::endl;
+
+    return 0;
+}
+```
+
+This class includes:
+
+- A constructor that takes a C-style string (`const char*`) and initializes the
+  object with the provided string.
+- A copy constructor and an assignment operator to handle deep copying, ensuring
+  that each `SimpleString` object manages its own copy of the string data.
+- A destructor to free the dynamically allocated memory, preventing memory
+  leaks.
+- Member functions `c_str()` and `size()` to provide access to the string data
+  and its length, respectively.
+
+This implementation is a simplified model and lacks many features and
+optimizations of `std::string`, such as capacity management, string manipulation
+functions (append, insert, find, etc.), and iterator support. However, it
+captures the essence of dynamic memory management and object copying, which are
+crucial aspects of a string class implementation.

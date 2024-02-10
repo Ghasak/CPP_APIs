@@ -1,17 +1,29 @@
 # Array and Lists in action
 
 <!-- markdown-toc start - Don't edit this section. Run M-x markdown-toc-refresh-toc -->
-
 **Table of Contents**
 
 - [Array and Lists in action](#array-and-lists-in-action)
-  - [Associated code](#associated-code)
-  - [C-style array](#c-style-array)
-    - [Size of array](#size-of-array)
-  - [std::array](#stdarray)
-    - [How to obtain a pointer from std::array simmilar to C-style array](#how-to-obtain-a-pointer-from-stdarray-simmilar-to-c-style-array)
-    - [Compare C-style array vs std::array](#compare-c-style-array-vs-stdarray)
-    - [Stack vs Allocation on Heap C-Style array](#stack-vs-allocation-on-heap-c-style-array)
+    - [Associated code](#associated-code)
+    - [C-style array](#c-style-array)
+        - [Size of array](#size-of-array)
+    - [std::array](#stdarray)
+        - [How to obtain a pointer from std::array simmilar to C-style array](#how-to-obtain-a-pointer-from-stdarray-simmilar-to-c-style-array)
+        - [Compare C-style array vs std::array](#compare-c-style-array-vs-stdarray)
+        - [Stack vs Allocation on Heap C-Style array](#stack-vs-allocation-on-heap-c-style-array)
+    - [Std::vector](#stdvector)
+    - [CStyle Core Design Lacking Feature](#cstyle-core-design-lacking-feature)
+        - [1. Wrapping the Array in a Struct or Class](#1-wrapping-the-array-in-a-struct-or-class)
+        - [2. Using `std::array` or `std::vector`](#2-using-stdarray-or-stdvector)
+            - [Returning a `std::array`:](#returning-a-stdarray)
+            - [Returning a `std::vector`:](#returning-a-stdvector)
+        - [Conclusion](#conclusion)
+    - [Scenario with C-Style Array](#scenario-with-c-style-array)
+        - [Issue with `CreateArray` Function](#issue-with-createarray-function)
+        - [Problem with Dereferencing and Size Calculation](#problem-with-dereferencing-and-size-calculation)
+        - [Iterating Over the Array](#iterating-over-the-array)
+        - [Correct Approach](#correct-approach)
+    - [Trick in std::array](#trick-in-stdarray)
 
 <!-- markdown-toc end -->
 
@@ -291,12 +303,14 @@ The code snippet you've provided contains several issues and misconceptions
 about handling arrays in C++. Let's address these issues one by one:
 
 ### Issue with `CreateArray` Function
+
 The `CreateArray` function attempts to return a pointer to a local array `array`
 that is allocated on the stack. This is problematic because the array will be
 destroyed once the function exits, leaving the returned pointer dangling.
 Accessing the memory through this pointer will result in undefined behavior.
 
 ### Problem with Dereferencing and Size Calculation
+
 The line `int my_array = *CreateArray();` in your `main()` function attempts to
 copy the first element of the array returned by `CreateArray` into a single
 integer variable, not the entire array. This is because the dereference operator
@@ -309,11 +323,13 @@ an `int`, not an array, so you cannot use `my_array[]` syntax or attempt to
 calculate its size this way.
 
 ### Iterating Over the Array
+
 The loop and the way you attempt to print the array elements are also incorrect.
 Since `my_array` is an integer, not an array, the syntax `my_array[]` is
 invalid.
 
 ### Correct Approach
+
 If you want to return an array from a function and use it in `main()`, consider
 the following correct approaches:
 
@@ -364,3 +380,43 @@ int main() {
 ```
 
 These approaches are much safer and idiomatic in C++.
+
+## Trick in std::array
+
+Mentinoed in `Cherno` lecture a question about the std::array, see it [here](https://www.youtube.com/watch?v=Hw42GkHPyvk&list=PLlrATfBNZ98dudnM48yfGUldqGD0S4FFb&index=57)
+Is there a way we can pass the size to the constructor of the `std::array` in
+C++? as a parameter rather than a hard copy integer literal.
+
+The answer is yes: there are two ways:
+
+1. Using template, most people offered in the comment.
+2. Passing as a const, which is the way I proposed without using a `Template`.
+
+```cpp
+                                                                               [Prefered way]
+  +----------------------------------+                               +----------------------------------+
+  |           Ugly code              |                               |    Passing the size as Param     |
+  +----------------------------------+                ====>          +----------------------------------+
+  |  void print_std_array(std::array<int,5> my_array) {              |   const int size = 5; // better to use constexpr instead
+  |      for (size_t i = 0; i < my_array.size(); i++) {              |   void print_std_array(std::array<int, size> my_array) {
+  |          std::cout << my_array[i] << std::endl;                  |       for (size_t i = 0; i < my_array.size(); i++) {
+  |      }                                                           |           std::cout << my_array[i] << std::endl;
+  |  }                                                               |       }
+  |                                                                  |   }
+  +----------------------------------+                               +----------------------------------+
+
+ +----------------------------------+
+ |         calling in main          |                                     |
+ +----------------------------------+                                     V
+ |   int main(int argc, char* argv[]) {                                   |
+ |      std::array<int, size> my_array{1, 2, 3, 4, 5};                    |
+ |      print_std_array(my_array);                              <---------+
+ |  }
+```
+
+- **NOTE**: Incorrect Usage of std::array with Non-constexpr Size: You are trying
+  to use ARRAY_CONST_SIZE as the size of std::array, which is correct in intent.
+  However, the size of std::array must be known at compile time as a constexpr,
+  but const does not guarantee that the value will be a compile-time constant in
+  all contexts. This might not directly cause a compilation issue in all
+  compilers or settings, but it is a misuse of std::array semantics.

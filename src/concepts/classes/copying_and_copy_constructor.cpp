@@ -18,9 +18,9 @@ void copying_and_copy_constructor_concept() {
         str1);  // <-- [second-copy] Passing by value(means a new copy occur)
     PrintString_ByValue_will_Copy(
         str2);  // <-- [third-copy] Passing by value (means a new copy occur)
-    std::cout << YELLOW << "(((( YOU WILL SEE NO COPY HERE AFTER ))))" << RESET << std::endl;
-    PrintString_ByRef_will_Not_Copy(str1);  // pass by reference
-    PrintString_ByRef_will_Not_Copy(str2);  // pass by reference
+    std::cout << YELLOW << "(((( YOU WILL SEE ONLY ONE COPY HERE AFTER ))))" << RESET << std::endl;
+    PrintString_ByRef_will_Not_Copy(str1);
+    PrintString_ByRef_will_Not_Copy(str2);
 }
 
 // Adding our constructor
@@ -58,5 +58,16 @@ std::ostream& operator<<(std::ostream& stream, const String& string) {
     return stream;
 }
 
+/*
+ * Function accepting our String class-obj
+ * Passing the obj by value which will create a copy
+ */
 void PrintString_ByValue_will_Copy(const String string) { std::cout << string << std::endl; }
+
+/*
+ * Function accepting our String class-obj
+ * Passing the obj by reference which will not copy the obj,
+ * rather changing the original variable
+ * outside of the function that we passed to it.
+ */
 void PrintString_ByRef_will_Not_Copy(const String& string) { std::cout << string << std::endl; }

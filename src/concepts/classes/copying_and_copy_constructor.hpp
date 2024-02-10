@@ -1,6 +1,5 @@
-#include <string>
-
 #pragma once
+#include <string>
 
 /*
  * Concept:Copying and copy constructor concept in C++
@@ -12,7 +11,10 @@
  */
 
 void copying_and_copy_constructor_concept();
-
+/*
+ * Class String bare minimum to our std::string class template
+ * It allow to
+ */
 class String {
 private:
     char* m_Buffer;
@@ -29,6 +31,16 @@ public:
     ~String();
 };
 
-// Testing fucntion to pass as a reference
+/*
+ * Function accepting our String class-obj
+ * Passing the obj by value which will create a copy
+ */
 void PrintString_ByValue_will_Copy(const String);
+
+/*
+ * Function accepting our String class-obj
+ * Passing the obj by reference which will not copy the obj,
+ * rather changing the original variable
+ * outside of the function that we passed to it.
+ */
 void PrintString_ByRef_will_Not_Copy(const String&);

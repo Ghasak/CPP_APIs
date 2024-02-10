@@ -1,0 +1,27 @@
+Log file created at: 2024/02/10 15:09:51
+Running on machine: GMacBookPro.local
+Running duration (h:mm:ss): 0:00:00
+Log line format: [IWEF]yyyymmdd hh:mm:ss.uuuuuu threadid file:line] msg
+I20240210 15:09:51.237879 18861749 array_concept.cpp:28] [1;31mMemeory Profile: -> [00][00][00][00]-[00][00][00][00]-[00][00][00][00]-[00][00][00][00]-[00][00][00][00][0m
+I20240210 15:09:51.241916 18861749 array_concept.cpp:35] [1;31mMemeory Profile: -> [00][00][00][00]-[00][00][00][00]-[05][00][00][00]-[00][00][00][00]-[00][00][00][00][0m
+I20240210 15:09:51.241937 18861749 array_concept.cpp:42] [1;34mMemeory Profile: -> [00][00][00][00]-[00][00][00][00]-[05][00][00][00]-[00][00][00][00]-[05][00][00][00][0m
+I20240210 15:09:51.241953 18861749 array_concept.cpp:49] [1;34mMemeory Profile: -> [00][00][00][00]-[00][00][00][00]-[05][00][00][00]-[00][00][00][00]-[05][00][00][00][0m
+I20240210 15:09:51.241967 18861749 array_concept.cpp:56] [1;31mMemeory Profile: -> [00][00][00][00]-[00][00][00][00]-[0A][00][00][00]-[00][00][00][00]-[05][00][00][00][0m
+I20240210 15:09:51.241979 18861749 array_concept.cpp:65] Size of the standard array from std::array -> 3
+I20240210 15:09:51.241992 18861749 array_concept.cpp:70] Getting a pointer to first element in  std::array similar to C-style -> 5
+I20240210 15:09:51.242004 18861749 array_concept.cpp:77] [1;31m[0][0]-[0][0]-[0][0]-[0][0] [0m
+I20240210 15:09:51.242017 18861749 array_concept.cpp:78] [1;34m---1------2------3------4---[0m
+I20240210 15:09:51.242029 18861749 array_concept.cpp:79] [1;31mMY ARRAY IS :[1;34m0x16f615f60[0m
+I20240210 15:09:51.242041 18861749 array_concept.cpp:80] [1;31mMY ARRAY IS :[1;34m0, 1, 2, 3[0m
+I20240210 15:09:51.242054 18861749 array_concept.cpp:84] ELEMENT my_array[*(ptr + 4)] -> [1;31m20[0m
+I20240210 15:09:51.242066 18861749 array_concept.cpp:85] [1;31mMY ARRAY IS :[1;34m0, 1, 2, 20[0m
+I20240210 15:09:51.242079 18861749 array_concept.cpp:89] ELEMENT my_array[*(int*)((char*)ptr + 8)] -> [1;31m30[0m
+I20240210 15:09:51.242091 18861749 array_concept.cpp:91] [1;31mMY ARRAY IS :[1;34m0, 1, 30, 20[0m
+I20240210 15:09:51.242106 18861749 array_concept.cpp:105] [1;31mSize of our vector is => [1;34m3[0m
+I20240210 15:09:51.242118 18861749 array_concept.cpp:108] [1;31m10[0m
+I20240210 15:09:51.242130 18861749 array_concept.cpp:108] [1;31m20[0m
+I20240210 15:09:51.242141 18861749 array_concept.cpp:108] [1;31m30[0m
+I20240210 15:09:51.242153 18861749 array_concept.cpp:111] [1;31m(*my_vector_heap_ptr).size() is same as my_vector_heap_ptr->size()[0m
+I20240210 15:09:51.242166 18861749 array_concept.cpp:120] [1;34mMy Vector Heap Pointer: Memeory Address: 0x127704260[0m
+I20240210 15:09:51.242178 18861749 array_concept.cpp:121] [1;34mMy Vector Heap Pointer: Capacity       : 3[0m
+I20240210 15:09:51.242190 18861749 array_concept.cpp:123] [1;34mMy Vector Heap Pointer: Length         : 3[0m

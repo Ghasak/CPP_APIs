@@ -29,12 +29,12 @@ int main(int argc, char* argv[]) {
     // data_type_table();
     // pointers_concept();
     // smart_pointers_concept();
-    copying_and_copy_constructor_concept();
+    // copying_and_copy_constructor_concept();
     // const_in_action();
     // cstyle_string_as_apointer();
     // c_style_string_in_action();
     // double_pointers_in_action();
-    // enums_concept_hub();
+    // enemas_concept_hub();
 
     return 0;
 }
