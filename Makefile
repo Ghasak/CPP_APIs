@@ -23,29 +23,29 @@ all: debug_using_ninja
 debug: link_compile_commands
 	@cmake -DCMAKE_BUILD_TYPE=Debug -DCMAKE_TOOLCHAIN_FILE=${VCPKG_ROOT}/scripts/buildsystems/vcpkg.cmake  -S . -B build/debug
 	$(MAKE) -j $(NUMBER_CORES) -C build/debug
-	./build/debug/$(BINARY_NAME)
+	./build/Debug/$(BINARY_NAME)
 
 release: link_compile_commands
 	@cmake -DCMAKE_BUILD_TYPE=Release -DCMAKE_TOOLCHAIN_FILE=${VCPKG_ROOT}/scripts/buildsystems/vcpkg.cmake  -S . -B build/release
 	$(MAKE) -j $(NUMBER_CORES) build/release
-	./build/debug/$(BINARY_NAME)
+	./build/Release/$(BINARY_NAME)
 
 debug_using_ninja: link_compile_commands
-	@cmake -DCMAKE_BUILD_TYPE=Debug -DCMAKE_MAKE_PROGRAM=/opt/homebrew/bin/ninja \
+	@cmake -DCMAKE_BUILD_TYPE=Debug -DCMAKE_MAKE_PROGRAM=/usr/bin/ninja \
 		-DCMAKE_TOOLCHAIN_FILE=${VCPKG_ROOT}/scripts/buildsystems/vcpkg.cmake \
 		-G Ninja -S . \
 		-B ./build/debug
-	/opt/homebrew/bin/ninja -j${NUMBER_CORES} -C build/debug
-	./build/debug/$(BINARY_NAME)
+	/usr/bin/ninja -j${NUMBER_CORES} -C build/debug
+	./build/Debug/$(BINARY_NAME)
 
 
 release_using_ninja: link_compile_commands
-	@cmake -DCMAKE_BUILD_TYPE=Release -DCMAKE_MAKE_PROGRAM=/opt/homebrew/bin/ninja \
+	@cmake -DCMAKE_BUILD_TYPE=Release -DCMAKE_MAKE_PROGRAM=/usr/bin/ninja \
 		-DCMAKE_TOOLCHAIN_FILE=${VCPKG_ROOT}/scripts/buildsystems/vcpkg.cmake \
 		-G Ninja -S . \
 		-B ./build/release
-	/opt/homebrew/bin/ninja -j${NUMBER_CORES} -C build/release
-	./build/release/$(BINARY_NAME)
+	/usr/bin/ninja -j${NUMBER_CORES} -C build/release
+	./build/Release/$(BINARY_NAME)
 
 # -------------------------------------------------------------------------
 #                      TESTING (GOOGLE TEST MODULE)
@@ -57,9 +57,9 @@ test:
 	else \
 		cmake -DBUILD_TESTS=ON -DCMAKE_BUILD_TYPE=Test \
 		-DCMAKE_TOOLCHAIN_FILE=${VCPKG_ROOT}/scripts/buildsystems/vcpkg.cmake \
-		-DCMAKE_MAKE_PROGRAM=/opt/homebrew/bin/ninja \
+		-DCMAKE_MAKE_PROGRAM=/usr/bin/ninja \
 		-G Ninja -S . -B ./build/test; \
-		/opt/homebrew/bin/ninja -j${NUMBER_CORES} -C ./build/test; \
+		/usr/bin/ninja -j${NUMBER_CORES} -C ./build/test; \
 		if [ -L compile_commands.json ]; then \
 			rm -f compile_commands.json; \
 		fi; \

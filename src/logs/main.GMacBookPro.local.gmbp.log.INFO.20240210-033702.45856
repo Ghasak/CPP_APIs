@@ -1,8 +1,0 @@
-Log file created at: 2024/02/10 03:37:02
-Running on machine: GMacBookPro.local
-Running duration (h:mm:ss): 0:00:00
-Log line format: [IWEF]yyyymmdd hh:mm:ss.uuuuuu threadid file:line] msg
-I20240210 03:37:02.439936 18490668 copying_and_copy_constructor.cpp:9] [1;33mStarting with copying and cop constructor concept in C++[0m
-I20240210 03:37:02.442107 18490668 copying_and_copy_constructor.cpp:37] [1;31mCopy occur to [1;33mGhasak[0m
-I20240210 03:37:02.442130 18490668 copying_and_copy_constructor.cpp:46] [1;33mOur string -> [1;31mGhasak[1;34m ::is deleted from the heap ..[0m
-I20240210 03:37:02.442145 18490668 copying_and_copy_constructor.cpp:46] [1;33mOur string -> [1;31mKhasak[1;34m ::is deleted from the heap ..[0m

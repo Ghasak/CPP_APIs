@@ -37,7 +37,7 @@ void using_enums() {
     // <type> name = class_name::type_enum::enum_variate
     Log::Level my_level = Log::Level::LogLevelError;  // Log::LogLevelError this is also working
 
-    log_obj.SetLevel(my_level); // <- You can pass this directly Log::LogLevelError
+    log_obj.SetLevel(my_level);  // <- You can pass this directly Log::LogLevelError
 
     const char* my_message = "This is a testing, maybe an error ..";
 

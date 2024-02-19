@@ -2,6 +2,7 @@
 #include <iostream>
 #include "concepts/mylogging.hpp"
 #include <glog/logging.h>
+#include <array>
 
 /*
 HOSTING ALL CONCPETS
