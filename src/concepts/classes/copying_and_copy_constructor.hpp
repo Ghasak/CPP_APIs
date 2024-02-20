@@ -44,3 +44,22 @@ void PrintString_ByValue_will_Copy(const String);
  * outside of the function that we passed to it.
  */
 void PrintString_ByRef_will_Not_Copy(const String&);
+
+/*
+ * Copy constructor for C++ testing
+ */
+
+class StringG {
+public:
+    StringG() = default;
+    StringG(const char* message);
+    StringG(const StringG& other);
+    ~StringG();
+    void Print();
+
+private:
+    char* m_buffer_ptr = nullptr;
+    int m_size = 0;
+};
+
+void copy_construcotr_demo();
