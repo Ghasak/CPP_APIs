@@ -31,49 +31,20 @@ release: link_compile_commands
 	./build/Release/$(BINARY_NAME)
 
 debug_using_ninja: link_compile_commands
-<<<<<<< HEAD
-	@cmake -DCMAKE_BUILD_TYPE=Debug -DCMAKE_MAKE_PROGRAM=/usr/bin/ninja \
-||||||| parent of 5cb1792 ([NEW BRANCH LINUX] Debugging and operating on Linux Ubuntu ...)
-	@cmake -DCMAKE_BUILD_TYPE=Debug -DCMAKE_MAKE_PROGRAM=/opt/homebrew/bin/ninja \
-=======
 	@cmake -DCMAKE_BUILD_TYPE=debug -DCMAKE_MAKE_PROGRAM=/usr/bin/ninja \
->>>>>>> 5cb1792 ([NEW BRANCH LINUX] Debugging and operating on Linux Ubuntu ...)
 		-DCMAKE_TOOLCHAIN_FILE=${VCPKG_ROOT}/scripts/buildsystems/vcpkg.cmake \
 		-G Ninja -S . \
 		-B ./build/debug
-<<<<<<< HEAD
-	/usr/bin/ninja -j${NUMBER_CORES} -C build/debug
-	./build/Debug/$(BINARY_NAME)
-||||||| parent of 5cb1792 ([NEW BRANCH LINUX] Debugging and operating on Linux Ubuntu ...)
-	/opt/homebrew/bin/ninja -j${NUMBER_CORES} -C build/debug
-	./build/debug/$(BINARY_NAME)
-=======
 	/usr/bin/ninja -j${NUMBER_CORES} -C build/debug
 	./build/debug/$(BINARY_NAME)
->>>>>>> 5cb1792 ([NEW BRANCH LINUX] Debugging and operating on Linux Ubuntu ...)
-
 
 release_using_ninja: link_compile_commands
-<<<<<<< HEAD
-	@cmake -DCMAKE_BUILD_TYPE=Release -DCMAKE_MAKE_PROGRAM=/usr/bin/ninja \
-||||||| parent of 5cb1792 ([NEW BRANCH LINUX] Debugging and operating on Linux Ubuntu ...)
-	@cmake -DCMAKE_BUILD_TYPE=Release -DCMAKE_MAKE_PROGRAM=/opt/homebrew/bin/ninja \
-=======
-	@cmake -DCMAKE_BUILD_TYPE=release -DCMAKE_MAKE_PROGRAM=/usr/bin/ninja \
->>>>>>> 5cb1792 ([NEW BRANCH LINUX] Debugging and operating on Linux Ubuntu ...)
+	 @cmake -DCMAKE_BUILD_TYPE=release -DCMAKE_MAKE_PROGRAM=/usr/bin/ninja \
 		-DCMAKE_TOOLCHAIN_FILE=${VCPKG_ROOT}/scripts/buildsystems/vcpkg.cmake \
 		-G Ninja -S . \
 		-B ./build/release
-<<<<<<< HEAD
-	/usr/bin/ninja -j${NUMBER_CORES} -C build/release
-	./build/Release/$(BINARY_NAME)
-||||||| parent of 5cb1792 ([NEW BRANCH LINUX] Debugging and operating on Linux Ubuntu ...)
-	/opt/homebrew/bin/ninja -j${NUMBER_CORES} -C build/release
-	./build/release/$(BINARY_NAME)
-=======
 	/usr/bin/ninja -j${NUMBER_CORES} -C build/release
 	./build/release/$(BINARY_NAME)
->>>>>>> 5cb1792 ([NEW BRANCH LINUX] Debugging and operating on Linux Ubuntu ...)
 
 # -------------------------------------------------------------------------
 #                      TESTING (GOOGLE TEST MODULE)
