@@ -46,9 +46,10 @@ void PrintString_ByValue_will_Copy(const String);
 void PrintString_ByRef_will_Not_Copy(const String&);
 
 /*
+ * **************************************
  * Copy constructor for C++ testing
+ * **************************************
  */
-
 class StringG {
 public:
     StringG() = default;

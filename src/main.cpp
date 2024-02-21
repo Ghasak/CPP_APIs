@@ -3,9 +3,7 @@
 #include <glog/logging.h>
 #include <iostream>
 #include <ostream>
-
-// Definition of the default constructor with a message
-// StringG::StringG() noexcept { std::cout << "Shallow copy is called, which is default by the C++ created it for us" << std::endl; }
+#include <string>
 
 int main(int argc, char* argv[]) {
     // Initialize logging before processing arguments
@@ -35,10 +33,10 @@ int main(int argc, char* argv[]) {
     // copying_and_copy_constructor_concept();
     // const_in_action();
     // cstyle_string_as_apointer();
-    // c_style_string_in_action();
+    c_style_string_in_action();
     // double_pointers_in_action();
     // enums_concept_hub();
-    copying_and_copy_constructor_concept();
+    // copying_and_copy_constructor_concept();
 
     return 0;
 }
