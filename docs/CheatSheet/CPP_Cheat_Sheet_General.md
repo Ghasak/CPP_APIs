@@ -1,16 +1,18 @@
 # CheatSheet C++ - General
+
 <!-- markdown-toc start - Don't edit this section. Run M-x markdown-toc-refresh-toc -->
+
 **Table of Contents**
 
 - [CheatSheet C++ - General](#cheatsheet-c---general)
-    - [1. Strings](#1-strings)
-        - [1.1 C-Style](#11-c-style)
-            - [1.1.1 `const char* mystr1 = "Hello World";`](#111-const-char-mystr1--hello-world)
-            - [1.1.2 `const char mystr2[] = "Hello World";`](#112-const-char-mystr2--hello-world)
-            - [1.1.3 C-Style Array (Non-Const)](#113-c-style-array-non-const)
-        - [1.2 std::string](#12-stdstring)
-    - [2. Arrays and Lists](#2-arrays-and-lists)
-        - [2.1 std::Vector](#21-stdvector)
+  - [1. Strings](#1-strings)
+    - [1.1 C-Style](#11-c-style)
+      - [1.1.1 `const char* mystr1 = "Hello World";`](#111-const-char-mystr1--hello-world)
+      - [1.1.2 `const char mystr2[] = "Hello World";`](#112-const-char-mystr2--hello-world)
+      - [1.1.3 C-Style Array (Non-Const)](#113-c-style-array-non-const)
+    - [1.2 std::string](#12-stdstring)
+  - [2. Arrays and Lists](#2-arrays-and-lists)
+    - [2.1 std::Vector](#21-stdvector)
 
 <!-- markdown-toc end -->
 
@@ -137,6 +139,7 @@ Here is an updated table including `std::string::npos` and another similar membe
   operations.
 
 ## 2. Arrays and Lists
+
 ### 2.1 std::Vector
 
 Here's a table summarizing some of the common methods of `std::vector` in C++,

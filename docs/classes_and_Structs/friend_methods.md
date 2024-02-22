@@ -525,7 +525,7 @@ Here's what happens step-by-step:
 Assuming the user enters "John Doe" for the name and "30" for the age, the
 interaction would look like this:
 
-```
+```sh
 Enter name: John Doe
 Enter age: 30
 Name: John Doe, Age: 30
@@ -539,4 +539,4 @@ methods. This approach maintains encapsulation while allowing comprehensive
 control over the input process, including error checking or validation if
 needed. The use of `friend` here permits the `operator>>` to access private
 members of `Person`, which wouldn't be possible if it were implemented as a
-member function without exposing the private data publicly.
+member function without expoihe private data publicly.

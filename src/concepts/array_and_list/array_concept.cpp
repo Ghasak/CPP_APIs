@@ -15,6 +15,7 @@ void array_function_in_depth() {
     // Trick in std::array
     std::array<int, ARRAY_CONST_SIZE> my_array{1, 2, 3, 4, 5};
     print_std_array(my_array);
+    return_float_pointer_form_csytle_float_array();
 }
 
 // concepts functions
@@ -129,6 +130,33 @@ void what_is_vecotor_on_heap() {
  */
 void print_std_array(std::array<int, ARRAY_CONST_SIZE> my_array) {
     for (size_t i = 0; i < my_array.size(); i++) {
-        std::cout << MAGENTA << "Element: " << YELLOW << my_array[i] << std::endl;
+        std::cout << MAGENTA << "Element: " << YELLOW << my_array[i] << RESET << std::endl;
     }
+}
+
+// The value passed to the array
+const int SIZE_OF_ARRAY = 5;
+
+float* find_max_value(float myarray[SIZE_OF_ARRAY], float value_to_search_for) {
+    float* ptr_to_myarray = myarray;
+    while (*ptr_to_myarray <= SIZE_OF_ARRAY) {
+        ptr_to_myarray++;
+        LOG(INFO) << *(ptr_to_myarray) << RESET;
+        if (*ptr_to_myarray == value_to_search_for) {
+            LOG(INFO) << RED << "We found the value -> " << BLUE
+                      << static_cast<const void*>(ptr_to_myarray) << RED " At: " << YELLOW
+                      << *ptr_to_myarray << RESET;
+        }
+    }
+    return ptr_to_myarray;
+}
+
+/*
+ * Return a value form a cstyle array in C++
+ * We pass the value as we want to know the value that we wish to use
+ */
+void return_float_pointer_form_csytle_float_array() {
+    float testing_array[]{1, 2, 3, 4, 5, 6};
+    float* output = find_max_value(testing_array, 6);
+    LOG(INFO) << YELLOW << "Address: " << output << RED << " with value -> " << *output << RESET;
 }

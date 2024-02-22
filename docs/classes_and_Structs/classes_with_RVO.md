@@ -336,7 +336,7 @@ int main() {
 Without RVO, you would expect the output to include calls to the copy or move
 constructor for each return operation:
 
-```
+```sh
 Creating obj with RVO:
 Constructor called for value: 10
 Move constructor called for value: 10
@@ -350,7 +350,7 @@ Move constructor called for value: 20
 
 With RVO, the compiler optimizes away these copy/move operations:
 
-```
+```sh
 Creating obj with RVO:
 Constructor called for value: 10
 

@@ -20,3 +20,6 @@ void pointer_with_array_arithmatic();
 
 constexpr int ARRAY_CONST_SIZE = 5;
 void print_std_array(std::array<int, ARRAY_CONST_SIZE>);
+/* Show the concept of return a flaot pointer to a csytle array of floats elements*/
+float* find_max_value(float myarray[], float value_to_search_for);
+void return_float_pointer_form_csytle_float_array();

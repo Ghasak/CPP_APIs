@@ -1,15 +1,12 @@
 #include "concepts/mylogging.hpp"
 #include <glog/logging.h>
 #include "concepts/classes/classes_structs_size.hpp"
-#include <cstring>
 #include <string>
 
 void classes_size_concept() {
-    // Primitive Class data type Measure the size
-    const char* my_name = "ABC";
-    LOG(INFO) << RED "Size of this char* pointer data type -> " << BLUE << sizeof(my_name) << BLUE
-              << "with lenghth" << strlen(my_name) << RESET;
-    Vec2d v1 = Vec2d(10, 20, "ABC");
+    // Primitive Class data type Measure the size const char* my_name = "ABC"; LOG(INFO) << RED
+    // "Size of this char* pointer data type -> " << BLUE << sizeof(my_name) << BLUE << "with
+    // lenghth" << strlen(my_name) << RESET; Vec2d v1 = Vec2d(10, 20, "ABC");
     LOG(INFO) << RED "Size of this Vec2d Class data type -> " << BLUE << sizeof(Vec2d) << RESET;
     LOG(INFO) << BLUE << "WE HAVE x, y both int of              4-bytes size" << RESET;
     LOG(INFO) << BLUE << "WE HAVE char* pointer which is int of 8-bytes size" << RESET;

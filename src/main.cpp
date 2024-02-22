@@ -17,7 +17,7 @@ int main(int argc, char* argv[]) {
     // Demonstrate various concepts
     // Uncomment the functions you wish to run
     //---------------------------------------------
-    // array_function_in_depth();
+    array_function_in_depth();
     // class_implementation();
     // classes_concepts_hub();
     // classes_size_concept();
