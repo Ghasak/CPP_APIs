@@ -1,5 +1,0 @@
-Log file created at: 2024/02/21 14:13:22
-Running on machine: Precision-Tower-5810
-Running duration (h:mm:ss): 0:00:00
-Log line format: [IWEF]yyyymmdd hh:mm:ss.uuuuuu threadid file:line] msg
-I20240221 14:13:22.412402 2333469 main.cpp:47] [1;35mt a string to be tested ...[0m

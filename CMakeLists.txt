@@ -8,10 +8,13 @@ set(CMAKE_CXX_STANDARD 17)
 # Set compiler flags
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
 
+message(STATUS "C++ Compiler: ${CMAKE_CXX_COMPILER_ID} ${CMAKE_CXX_COMPILER_VERSION}")
+message(STATUS "Using compiler: ${CMAKE_CXX_COMPILER}")
+
 ######################################
 # Update the submodules here
 ######################################
-#include(cmake/UpdateSubmodules.cmake)
+include(cmake/UpdateSubmodules.cmake)
 ######################################
 
 
