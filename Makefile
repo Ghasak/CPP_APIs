@@ -36,6 +36,7 @@ debug_using_ninja: link_compile_commands
 		-G Ninja -S . \
 		-B ./build/debug
 	/usr/bin/ninja -j${NUMBER_CORES} -C build/debug
+
 	./build/debug/$(BINARY_NAME)
 
 release_using_ninja: link_compile_commands
@@ -99,7 +100,10 @@ clean:
 		vcpkg_installed CMakeCache.txt \
 		cmake_install.cmake CMakeFiles \
 		compile_commands.json .idea cmake-build-debug
+
 	@rm -rf src/logs/*
+	@rm -f script/.script_ran
+	@echo "Cleaned"
 
 clean_dependencies:
 	@rm -rf ./dependencies
@@ -125,3 +129,5 @@ help:
 	@echo ""
 	@echo "NOTE: Run Command - will not be maintained, as the project will grow later"
 	@echo "\033[35m ********************************************************\033[0m"
+
+

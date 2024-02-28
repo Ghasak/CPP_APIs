@@ -23,7 +23,7 @@ void cstyle_string_as_apointer() {
     LOG(INFO) << BLUE << "This prints the memory address where the first character ('H') is stored.: " << RED
               << " static_cast<const void*>(my_cstyle_string_ptr) -> " << YELLOW << static_cast<const void*>(my_cstyle_string_ptr) << RESET;
 
-    // printing the pointer derferencing
+    // printing the pointer dereferencing
 
     LOG(INFO) << BLUE << "This will output the first character of the string: H" << RED << " *my_cstyle_string_ptr -> " << YELLOW
               << (*my_cstyle_string_ptr) << RESET;
