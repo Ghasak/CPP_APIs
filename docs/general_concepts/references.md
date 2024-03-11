@@ -721,7 +721,8 @@ In summary, while you can implement chaining by returning new objects, it's
 generally more efficient and idiomatic in C++ to use method chaining with
 references, especially for builder patterns and similar constructs.
 
-#### How this is helpful compare to return the object itself using for example (\*this) to return the object?
+#### How this is helpful?
+- Compare to return the object itself using for example (\*this) to return the object?
 
 Returning a reference to the object itself using `*this` in method chaining is
 different from returning a new object, and each approach has its specific use

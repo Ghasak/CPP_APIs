@@ -1,8 +1,8 @@
 #include "concepts_bundles.hpp"
 #include "concepts/mylogging.hpp"
 #include <glog/logging.h>
-#include <iostream>
 #include <ostream>
+#include <iostream>
 
 int main(int argc, char* argv[]) {
     // Initialize logging before processing arguments
@@ -13,11 +13,12 @@ int main(int argc, char* argv[]) {
         std::cout << RED << "Argument No. " << BLUE << "[" << YELLOW << i << BLUE "]" << BLUE
                   << " which is -> " << MAGENTA << argv[i] << RESET << std::endl;
     }
+
     //---------------------------------------------
     // Demonstrate various concepts
     // Uncomment the functions you wish to run
     //---------------------------------------------
-    array_function_in_depth();
+    // array_function_in_depth();
     // class_implementation();
     // classes_concepts_hub();
     // classes_size_concept();
@@ -35,6 +36,12 @@ int main(int argc, char* argv[]) {
     // c_style_string_in_action();
     // double_pointers_in_action();
     // enemas_concept_hub();
+    // timing_concept();
+    // tracking_memory_allocation_concpet();
+
+    //// Memory Management for objects in C++
+    // lvalues_and_rvalues_concepts();
+    MoveSemanticsConcept();
 
     return 0;
 }

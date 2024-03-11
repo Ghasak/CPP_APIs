@@ -4,6 +4,7 @@
 #include <array>
 #include <vector>
 #include "array_concept.hpp"
+#include <string>
 
 // Caller function
 void array_function_in_depth() {
@@ -135,9 +136,9 @@ void print_std_array(std::array<int, ARRAY_CONST_SIZE> my_array) {
 }
 
 // The value passed to the array
-const int SIZE_OF_ARRAY = 5;
+constexpr size_t SIZE_OF_ARRAY = 5;
 
-float* find_max_value(float myarray[SIZE_OF_ARRAY], float value_to_search_for) {
+float* find_max_value(float myarray[], float value_to_search_for) {
     float* ptr_to_myarray = myarray;
     while (*ptr_to_myarray <= SIZE_OF_ARRAY) {
         ptr_to_myarray++;
@@ -159,4 +160,9 @@ void return_float_pointer_form_csytle_float_array() {
     float testing_array[]{1, 2, 3, 4, 5, 6};
     float* output = find_max_value(testing_array, 6);
     LOG(INFO) << YELLOW << "Address: " << output << RED << " with value -> " << *output << RESET;
+}
+
+std::string my_function(std::string& my_string_as_lvalue) {
+    std::string my_local_string = std::string("This will be added to your string");
+    return my_string_as_lvalue + my_local_string;
 }

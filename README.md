@@ -10,39 +10,39 @@ the latest `cpp` apis and the concepts behind the main issues.
   - [x] double poiner
   - [x] poiners with array and char array
 
-- [ ] Chars and Strings
+- [x] Chars and Strings
   - [x] Char and Strings as C-Style
   - [x] Array of Chars
-  - [ ] std::string
-- [ ] Arrays and Lists
+  - [x] std::string
+- [x] Arrays and Lists
 
   - [x] Arrays as a C-Style
   - [x] two dimensional array
-  - [ ] std::vector
+  - [x] std::vector
 
 - [x] Function/methods declaration, defitions and calling
-- [ ] OOP - Classes and Strings
+- [x] OOP - Classes and Strings
 
-  - [ ] Pointers in Classes
-  - [ ] Member Initzliation
-  - [ ] Return types in class methods
-  - [ ] Static in methods
-  - [ ] Creating objects stack vs heap
-  - [ ] (\*this ) pointer
-  - [ ] Copy Constructors
-  - [ ] Operators with Classes
-  - [ ] Templates with Classes
-  - [ ] Virtual Methods
-  - [ ] Friend Methods
+  - [x] Pointers in Classes
+  - [x] Member Initzliation
+  - [x] Return types in class methods
+  - [x] Static in methods
+  - [x] Creating objects stack vs heap
+  - [x] (\*this ) pointer
+  - [x] Copy Constructors
+  - [x] Operators with Classes
+  - [x] Templates with Classes
+  - [x] Virtual Methods
+  - [x] Friend Methods
 
-- [ ] Modules and Project Structure
+- [x] Modules and Project Structure
   - [x] CMake Buidling with Clang and Clangd-lsp
-  - [ ] Installing 3rd libraries Using:
-    - [ ] manually with CMake
-    - [ ] vcpkg
-    - [ ] as a git module
-    - [ ] CMake downloading directly
-    - [ ] Using pkg-config
+  - [x] Installing 3rd libraries Using:
+    - [x] manually with CMake
+    - [x] vcpkg
+    - [x] as a git module
+    - [x] CMake downloading directly
+    - [x] Using pkg-config
 
 ### OOP with CPP
 

@@ -1,5 +1,0 @@
-Log file created at: 2024/02/10 00:56:42
-Running on machine: GMacBookPro.local
-Running duration (h:mm:ss): 0:00:00
-Log line format: [IWEF]yyyymmdd hh:mm:ss.uuuuuu threadid file:line] msg
-I20240210 00:56:42.609916 18391323 main.cpp:25] [1;33mOur stringGhasakis deleted from the heap ..[0m

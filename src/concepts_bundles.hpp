@@ -17,3 +17,7 @@
 #include "concepts/classes/object_lifetime.hpp"
 #include "concepts/pointers_and_ref/smart_pointers.hpp"
 #include "concepts/classes/copying_and_copy_constructor.hpp"
+#include "concepts/features/timing.hpp"
+#include "concepts/features/track_memory_allocation.hpp"
+#include "concepts/classes/lvalues_and_rvalues_intro.hpp"
+#include "concepts/classes/move_semantics.hpp"
