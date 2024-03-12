@@ -320,7 +320,7 @@ encapsulation.
 Here's an ASCII chart illustrating a scenario where a class `A` has a friend
 function `F` and how it interacts:
 
-```
+```cpp
 +----------------+           +----------------+
 |     Class A    |           |    Function    |
 |----------------|           |       F        |

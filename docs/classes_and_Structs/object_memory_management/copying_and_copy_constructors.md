@@ -146,8 +146,8 @@ Instead, we will concentrate on the idea of copying and copy constructors.
 | #include <string>                         |
 |                                           |
 | class String{                             |--------------------------------------> Automatically a hidden copy-constructor is created
-|     private:                              |                                        (will be called when you use for example =)                  like:   String(const String& string):m_Buffer(string.m_Buffer), m_Size{m_Size}{}
-|         char* m_Buffer;                   |
+|     private:                              |                                        (will be called when you use for example =)
+|         char* m_Buffer;                   |                                        like:   String(const String& string):m_Buffer(string.m_Buffer), m_Size{m_Size}{}
 |         unsigned int m_Size;              |
 |     public:                               |
 |         String(const char* string){       |    <-- Our constructor accepting a char pointer string
