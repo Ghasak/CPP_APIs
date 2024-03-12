@@ -1,6 +1,22 @@
 # Data Types in CPP
 
-Using the variables in our current object
+In computer science, data types are typically categorized more formally. Here's
+a refined version of the table with terminology that aligns more closely with
+computer science nomenclature:
+
+| Category           | Examples/Notes                                     |
+| ------------------ | -------------------------------------------------- |
+| Fundamental Types  | int, char, float, double, bool, void, wchar_t      |
+| Compound Types     | Arrays, Function pointers, Pointers                |
+| User-Defined Types | class, struct, union, enum, enum class             |
+| Library Types      | std::string, std::vector, std::map, std::set, etc. |
+
+This categorization more accurately reflects the terminology used in computer
+science literature, distinguishing between the basic building blocks
+(Fundamental Types), types built from fundamental types and themselves (Compound
+Types), types that users can define to structure their data (User-Defined
+Types), and types that are part of the C++ Standard Library and offer extensive
+functionality (Library Types).
 
 ## BYTE REPRESENTATION
 
@@ -88,8 +104,7 @@ Here are the details for various integer types in C++:
 | `unsigned long long int` (uint64) | 8                | FF-FF-FF-FF-FF-FF-FF-FF | 11111111-11111111-11111111-11111111-11111111-11111111-1111111-111111111 | 18,446,744,073,709,551,615 | 0                          | 0                          |
 | `signed long long int` (int64)    | 8                | 7F-FF-FF-FF-FF-FF-FF-FF | 11111111-11111111-11111111-11111111-11111111-11111111-1111111-11111111  | 9,223,372,036,854,775,807  | -9,223,372,036,854,775,808 | -9,223,372,036,854,775,808 |
 
-These values assume a typical modern system with 32-bit `int`, 16-bit `short
-int`, and 64-bit `long int` and `long long int`. The maximum and minimum values
+These values assume a typical modern system with 32-bit `int`, 16-bit `short int`, and 64-bit `long int` and `long long int`. The maximum and minimum values
 are presented in decimal, hexadecimal, and binary formats. Note that the
 "minimum" and "lowest" values are the same for these integer types.
 

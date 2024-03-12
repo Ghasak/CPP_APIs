@@ -21,3 +21,4 @@
 #include "concepts/features/track_memory_allocation.hpp"
 #include "concepts/classes/lvalues_and_rvalues_intro.hpp"
 #include "concepts/classes/move_semantics.hpp"
+#include "concepts/classes/std_move_and_move_assignment_operator.hpp"

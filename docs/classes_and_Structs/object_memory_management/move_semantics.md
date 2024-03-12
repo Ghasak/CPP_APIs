@@ -1,6 +1,6 @@
 # Move Semantics in C++
 
-This is the second part after reading the `./lvalues_and_rvalues_in_cpp.md`
+This is the **second part** after reading the `./lvalues_and_rvalues_in_cpp.md`
 module, as we will need to understand the meaning of the `lvalue/rvalue` and
 `lvalue-reference/rvalue-reference`.
 

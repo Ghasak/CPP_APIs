@@ -1,3 +1,5 @@
+#include "concepts/classes/std_move_and_move_assignment_operator.hpp"
+#include "concepts/m_const/t_constant.hpp"
 #include "concepts_bundles.hpp"
 #include "concepts/mylogging.hpp"
 #include <glog/logging.h>
@@ -41,7 +43,8 @@ int main(int argc, char* argv[]) {
 
     //// Memory Management for objects in C++
     // lvalues_and_rvalues_concepts();
-    MoveSemanticsConcept();
+    // MoveSemanticsConcept();
+    StdMoveAndMoveAssignmentOperatorConcept();
 
     return 0;
 }
