@@ -56,5 +56,5 @@ target_link_libraries(
 # ************************************************
 # Set compiler flags
 # You can add (-Werror, -Wc++11-extensions), However, this will make the compiler more restrictive.
-set(CMAKE_CXX_FLAGS_DEBUG "${CMAKE_CXX_FLAGS_DEBUG} -Wall -Wextra -fcolor-diagnostics -g -Wunused-variable -fsized-deallocation")
+set(CMAKE_CXX_FLAGS_DEBUG "${CMAKE_CXX_FLAGS_DEBUG} -Wall -Wextra -fcolor-diagnostics -g -Wunused-variable -Wunused-but-set-parameter -fsized-deallocation")
 set(CMAKE_CXX_FLAGS_RELEASE "${CMAKE_CXX_FLAGS_RELEASE} -O3")

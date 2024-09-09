@@ -1,4 +1,3 @@
-#include <vector>
 
 #ifndef MYLOGGING_H
     #define MYLOGGING_H
@@ -27,7 +26,4 @@
 void init_logging(char** my_argv);
 void log_info(const char* message);
 
-// testing function purposes only
-float CalculateWeightedAverage(const std::vector<float>&, const std::vector<float>&);
-void PrintMyVector(std::vector<float>&);
 #endif  // MYLOGGING_H

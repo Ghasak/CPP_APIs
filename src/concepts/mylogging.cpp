@@ -1,7 +1,6 @@
 #include <glog/logging.h>
 #include <iostream>
 #include <string>
-#include <vector>
 #include "concepts/mylogging.hpp"
 
 /**
@@ -52,67 +51,3 @@ void init_logging(char** my_argv) {
 }
 
 void log_info(const char* message) { LOG(INFO) << message; }
-
-/**
- * Calculates the weighted average of a set of scores.
- *
- * This function computes the weighted average of a series of scores, which can represent
- * grades, ratings, or any other quantifiable metric that benefits from weighted evaluation.
- * Each score is multiplied by its corresponding weight, and the sum of these products is
- * then divided by the sum of the weights. This approach gives different importance to each
- * score based on its weight, allowing for more nuanced calculations than a simple average.
- *
- * @param scores A std::vector<float> containing the scores to be averaged. Each element in
- *               this vector represents a distinct score. Scores must be non-negative.
- * @param weights A std::vector<float> containing the weights corresponding to each score.
- *                Each weight amplifies the importance of its corresponding score in the
- *                calculation of the weighted average. Weights must be non-negative and the
- *                sum of weights must not be zero.
- * @return The weighted average as a float. Returns -1 if the input vectors are of different
- *         sizes, if any score or weight is negative, or if the sum of the weights is zero,
- *         indicating an error in input.
- *
- * Example:
- *   std::vector<float> scores = {90.0, 85.0, 88.0};
- *   std::vector<float> weights = {0.2, 0.5, 0.3};
- *   float weightedAverage = CalculateWeightedAverage(scores, weights);
- *   // weightedAverage would be calculated as follows: (90.0*0.2 + 85.0*0.5 + 88.0*0.3) /
- * (0.2+0.5+0.3)
- */
-float CalculateWeightedAverage(const std::vector<float>& scores,
-                               const std::vector<float>& weights) {
-    // Function implementation goes here.
-    if (scores.size() == weights.size()) {
-        float output = 0.0f;
-        std::vector<float> output_vect;
-        for (size_t i = 0; i < scores.size(); i++) {
-            output_vect.push_back(scores[i] * weights[i]);
-        }
-        for (size_t i = 0; i < output_vect.size(); i++) {
-            output += output_vect[i];
-        }
-        return (output / (float)output_vect.size());
-    }
-    return 0.0;
-}
-
-/**
- * Print Nicely the Vector input
- *
- * This function will print the float-type vector nicely in C++
- *
- * @param  v A std::vector<float> containing the scores to be averaged. Each element in
- *               this vector represents a distinct score. Scores must be non-negative.
- * @return Just printing the vector to the standard output in C++ .
- * Example:
- *   std::vector<float> scores = {90.0, 85.0, 88.0};
- *   PrintMyVector(scores);
- *   // will print nicely the: {90.0 , 85.0, 88.0} /
- */
-void PrintMyVector(std::vector<float>& v) {
-    std::cout << "{ ";
-    for (size_t i = 0; i < v.size(); i++) {
-        std::cout << YELLOW << v[i] << ", " << RESET;
-    }
-    std::cout << "} " << std::endl;
-}

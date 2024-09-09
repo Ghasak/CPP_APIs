@@ -51,26 +51,26 @@ why we need then the `heap` allocation:
 
 ```cpp
 
-+----------------------------+                                +-----------------------------+
-|          Entity Class      |                                |       Main function         |
-+----------------------------+                                +-----------------------------+
-                                                              | int main(int argc, char* argv[]){
-class Entity{                                                 |     // Creating an object on stack
-    private:                                                  |     // calling the default constructor
-        std::string m_Name;                                   |     Entity entity;
-    public:                                                   |     // Accessing the method
-        // Default Constructor                                |     // of the stack object
-        Entity(): m_Name{"Name"} {}                           |     entity.GetName();
-        // Consturctor with parameters                        |
-        Entity(const std::string& name)                       |     // Creating an object on heap
-            : m_Name{name} {                                  | }
-              // code goes here                               +-----------------------------+
-        }
-        // Getter function
-        const std::string& GetName() const {
-            return m_Name;
-        }
-};
++---------------------------------------------+                +---------------------------------------+
+|             Entity Class                    |                |             Main function             |
++---------------------------------------------+                +---------------------------------------+
+|                                             |                | int main(int argc, char* argv[]){     |
+| class Entity{                               |                |     // Creating an object on stack    |
+|     private:                                |                |     // calling the default constructor|
+|         std::string m_Name;                 |                |     Entity entity;                    |
+|     public:                                 |                |     // Accessing the method           |
+|         // Default Constructor              |                |     // of the stack object            |
+|         Entity(): m_Name{"Name"} {}         |                |     entity.GetName();                 |
+|         // Consturctor with parameters      |                |                                       |
+|         Entity(const std::string& name)     |                |     // Creating an object on heap     |
+|             : m_Name{name} {                |                | }                                     |
+|         }                                   |                +---------------------------------------+
+|         // Getter function                  |
+|         const std::string& GetName() const {|
+|             return m_Name;                  |
+|         }                                   |
+| };                                          |
++---------------------------------------------+
 
 //---------------------------------------------------------------------------------------------------------------------------------//
                                                               +-----------------------------+
@@ -156,7 +156,7 @@ int main(int argc , char* argv[]){                                              
                                                                                                                             pointer refer to it anymore
                                                                                                                             the pointer is dead as its just
                                                                                                                             an integer freed automatically
-                                                                                                                            once it existed the inner-scope
+                                                                                                                            once it existed the innerscope
 
 ```
 

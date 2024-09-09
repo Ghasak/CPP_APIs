@@ -88,7 +88,7 @@ fswatch -o src/ | xargs -n1 -I{} make all
 
 ## Debugging using CPPTOOLS
 
-```lisp
+```sh
 (dap-register-debug-template
  "cpptools::Run Configuration-GHASAKII"
  (list :type "cppdbg"

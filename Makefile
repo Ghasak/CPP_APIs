@@ -17,6 +17,10 @@ OUTPUT = build/debug/${BINARY_NAME}
 # Phony target since 'runcli' isn't a file
 .PHONY: all debug release run
 
+PROJECT_DIR_2="/Users/gmbp/Desktop/devCode/cppDev/CPP_APIs/"
+HOMEBREW_DIR="/opt/homebrew/Cellar"
+HOME="/Users/gmbp/"
+VCPKG_ROOT="/Users/gmbp/vcpkg"
 
 all: debug_using_ninja
 
@@ -31,7 +35,7 @@ release: link_compile_commands
 	./build/debug/$(BINARY_NAME)
 
 debug_using_ninja: link_compile_commands
-	@cmake -DCMAKE_BUILD_TYPE=Debug -DCMAKE_MAKE_PROGRAM=/opt/homebrew/bin/ninja \
+	@cmake -DCMAKE_BUILD_TYPE=debug -DCMAKE_MAKE_PROGRAM=/opt/homebrew/bin/ninja \
 		-DCMAKE_TOOLCHAIN_FILE=${VCPKG_ROOT}/scripts/buildsystems/vcpkg.cmake \
 		-G Ninja -S . \
 		-B ./build/debug
