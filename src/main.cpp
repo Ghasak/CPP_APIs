@@ -10,6 +10,7 @@
 
 void MyFunction(std::string&);
 void concept_of_string();
+void TestingString(const char*);
 
 int main(int argc, char* argv[]) {
     // Initialize logging before processing arguments
@@ -65,6 +66,9 @@ int main(int argc, char* argv[]) {
     std::string str_example = std::string("yes");
     MyFunction(str_example);
     std::vector<float> vecx = {1.2, 1.3, 12.2, 23.23, 44.12};
+
+    const char* testing_string = "Hello World!";
+    TestingString(testing_string);
 }
 
 /**
@@ -98,5 +102,31 @@ void myStirngFunction(std::string& str, std::vector<float>& v) {
 
     for (size_t i = 0; i < v.size(); i++) {
         std::cout << "valeu of each element -> " << v[i] << std::endl;
+    }
+}
+
+void TestingString(const char* str) {
+    // Traditional for loop to iterate over each character
+    for (int i = 0; i < str[i] != '\0'; i++) {
+        std::cout << str[i] << std::endl;
+    }
+    // Modern way to do same thing
+
+    std::string cppString = str;
+
+    // Range-based for loop (C++11 and later) to iterate over each character.
+
+    std::string message01{"Range-based for loop (C++11 and later) to iterate over each character"};
+    LOG(INFO) << " [ " << RED << "INFO" << RESET << " ] " << BLUE << message01 << RESET << std::endl;
+
+    for (char ch : cppString) {
+        std::cout << ch << std::endl;
+    }
+
+    // Using a pointer to iterate over each character
+
+    const char* cstringPointer = str;
+    for (const char* ptr = cstringPointer; *(ptr) != '\0'; ++ptr) {
+        std::cout << *ptr << std::endl;
     }
 }

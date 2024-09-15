@@ -331,21 +331,30 @@ demonstrate pointer manipulation in C++.
 
 ## Q4: what the size of this pointer? in linux or macOS ?
 
-The size of a pointer in C++ (or C) depends on the architecture of the system rather than the operating system itself. The most common architectures today are 32-bit and 64-bit.
+The size of a pointer in C++ (or C) depends on the architecture of the system
+rather than the operating system itself. The most common architectures today are
+32-bit and 64-bit.
 
 ### Pointer Size in Different Architectures
 
 1. **32-bit Architecture**:
 
-   - On a 32-bit system (also known as x86), the size of a pointer is typically **4 bytes** (32 bits). This is because a 32-bit system has an address space of 2^32, which requires 4 bytes to store any possible address.
+   - On a 32-bit system (also known as x86), the size of a pointer is typically
+     **4 bytes** (32 bits). This is because a 32-bit system has an address space
+     of 2^32, which requires 4 bytes to store any possible address.
 
 2. **64-bit Architecture**:
-   - On a 64-bit system (also known as x86_64 or AMD64), the size of a pointer is typically **8 bytes** (64 bits). This is because a 64-bit system has an address space of 2^64, which requires 8 bytes to store any possible address.
+   - On a 64-bit system (also known as x86_64 or AMD64), the size of a pointer
+     is typically **8 bytes** (64 bits). This is because a 64-bit system has an
+     address space of 2^64, which requires 8 bytes to store any possible
+     address.
 
 ### Size of Pointer on Linux or macOS
 
-- On **Linux** or **macOS** running on a **32-bit architecture**, a pointer size will be 4 bytes.
-- On **Linux** or **macOS** running on a **64-bit architecture**, a pointer size will be 8 bytes.
+- On **Linux** or **macOS** running on a **32-bit architecture**, a pointer size
+  will be 4 bytes.
+- On **Linux** or **macOS** running on a **64-bit architecture**, a pointer size
+  will be 8 bytes.
 
 Most modern Linux and macOS systems are 64-bit, so the size of a pointer is generally 8 bytes.
 
@@ -962,6 +971,3 @@ buffer[9] = '\0'; // Ensure null-termination
 | **Empty Strings**           | A string with only the null terminator (`'\0'`).                                                    | `char empty[] = "";`                                      |
 | **String Functions**        | Functions like `strlen()`, `strcpy()`, `strcat()`, and `strcmp()` for manipulating C-style strings. | `strcpy(dest, src);`                                      |
 | **Wide Character Strings**  | Uses `wchar_t` for representing larger character sets, such as Unicode.                             | `wchar_t wstr[] = L"Hello, 世界";`                        |
-
-
-
