@@ -130,3 +130,6 @@ void TestingString(const char* str) {
         std::cout << *ptr << std::endl;
     }
 }
+
+
+

@@ -99,3 +99,11 @@ fswatch -o src/ | xargs -n1 -I{} make all
        :program "${workspaceFolder}/build/debug/${fileBasenameNoExtension}"  ;; Refer to your binary here
        :cwd "${workspaceFolder}"))
 ```
+
+## Run the debugging sever directly
+
+We can run the debugger directly using
+
+```sh
+./OpenDebugAD7 --server=9999 --engineLogging --trace
+```
