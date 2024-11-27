@@ -1,6 +1,28 @@
 # Function Pointers in C++
 
+<!-- markdown-toc start - Don't edit this section. Run M-x markdown-toc-refresh-toc -->
+
+**Table of Contents**
+
+- [Function Pointers in C++](#function-pointers-in-c)
+  - [Introduction](#introduction)
+    - [1. Basic Function Pointer](#1-basic-function-pointer)
+    - [2. Function Pointer as a Parameter](#2-function-pointer-as-a-parameter)
+    - [3. Returning a Function Pointer](#3-returning-a-function-pointer)
+    - [4. Function Pointer with Arguments](#4-function-pointer-with-arguments)
+    - [5. Array of Function Pointers](#5-array-of-function-pointers)
+    - [6. Using Function Pointers for Callbacks](#6-using-function-pointers-for-callbacks)
+    - [7. Function Pointer to Overloaded Functions](#7-function-pointer-to-overloaded-functions)
+    - [8. Function Pointers in Structs](#8-function-pointers-in-structs)
+    - [9. Passing Function Pointers to Standard Algorithms](#9-passing-function-pointers-to-standard-algorithms)
+    - [10. Using Function Pointers with Templates](#10-using-function-pointers-with-templates)
+  - [Function pointers on heap - Possible](#function-pointers-on-heap---possible)
+    - [Example: Function Pointer on the Heap](#example-function-pointer-on-the-heap)
+
+<!-- markdown-toc end -->
+
 ## Introduction
+
 Function pointers in C++ are pointers that point to a function. They can be used
 to call functions indirectly, pass functions as arguments to other functions,
 and store arrays of functions. The basic syntax for declaring a function pointer
@@ -187,6 +209,7 @@ templates. Function pointers are a powerful tool in C++, allowing for flexible
 and dynamic code design.
 
 ## Function pointers on heap - Possible
+
 Creating and using a function pointer on the heap involves dynamically
 allocating memory for the function pointer itself, which is quite an unusual
 scenario because function pointers typically don't require dynamic allocation.

@@ -51,7 +51,7 @@ length 12-bytes  --> | [64]-[00]-[00]-[00]|||[C8]-[00]-[00]-[00]|||[2C]-[01]-[00
    will point to the second element in the array, which is the value `400`.
 --------------------------------------------------
 2. Dereferencing the double pointer:
-Double dereferencing it will giev us the first value which is `100`
+Double dereferencing it will give us the first value which is `100`
 
 *(my_array) --> `100`
 --------------------------------------------------
@@ -419,3 +419,21 @@ int main() {
 In the code above, after allocating and copying the strings, we use a loop to
 print each string using `std::cout`. Then, we deallocate the memory for each
 individual string and the array of pointers as previously described.
+
+
+
+
+# in Binary 
+[0][0][0][0][0][0][0][0] - [0][0][0][0][0][0][0][0]- [0][0][0][0][0][0][0][0]- [0][0][0][0][0][0][0][0]                        
+-----------------------------------------------------------------------------------------------------------------------------------
+|
+v
+0x00012 0x00013 0x00014                   sys 64-bit 8 bytes integer
+
+
+# In Hex 
+[0][0]-[0][0]-[0][0]-[0][0]      
+
+int x = 8; 
+
+void*  ptr = 0x00012; 

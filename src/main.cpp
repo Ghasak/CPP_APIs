@@ -3,6 +3,9 @@
 #include <glog/logging.h>
 #include <algorithm>
 // #include <iterator>
+#include <cstdint>
+#include <ios>
+#include <iterator>
 #include <ostream>
 #include <iostream>
 #include <vector>
@@ -129,7 +132,8 @@ void TestingString(const char* str) {
     for (const char* ptr = cstringPointer; *(ptr) != '\0'; ++ptr) {
         std::cout << *ptr << std::endl;
     }
+
+    std::cout << "+++++++++++++++++++++++++++++++++++++++++++" << std::endl;
+
+    meaning_of_pointers();
 }
-
-
-

@@ -26,3 +26,6 @@ struct Point2D {
      */
     Point2D(const Point2D& other);
 };
+
+
+void meaning_of_pointers();

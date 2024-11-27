@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="CMakeSettings">
+    <configurations>
+      <configuration PROFILE_NAME="Debug" ENABLED="true" CONFIG_NAME="Debug" />
+    </configurations>
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="7d851c53-5bae-4690-8e17-3ea0af8a9114" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/build/debug/main" beforeDir="false" afterPath="$PROJECT_DIR$/build/debug/main" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dependencies/googletest" beforeDir="false" afterPath="$PROJECT_DIR$/dependencies/googletest" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/pointers_and_references/explaining_pointers_until_i_go_insane.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/pointers_and_references/functions_pointers.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/pointers_and_references/multidimensional_arrays.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/pointers_and_references/pointer_more_insight.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/pointers_and_references/pointer_ownership_move_copy_in_depth.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/pointers_and_references/pointer_to_pointer.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/pointers_and_references/pointer_with_classes.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/pointers_and_references/pointers.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/pointers_and_references/shared_pointers_in_depth.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/pointers_and_references/smart_pointers.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/pointers_and_references/smart_pointers_compared_to_raw_pointers.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/pointers_and_references/unique_pointer_class_from_scratch.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/pointers_and_references/unique_pointers_in_depth.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main.cpp" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="ClangdSettings">
+    <option name="formatViaClangd" value="false" />
+  </component>
+  <component name="MakefileLocalSettings">
+    <option name="projectSyncType">
+      <map>
+        <entry key="$PROJECT_DIR$" value="RE_IMPORT" />
+      </map>
+    </option>
+  </component>
+  <component name="ProjectApplicationVersion">
+    <option name="ide" value="CLion" />
+    <option name="majorVersion" value="2024" />
+    <option name="minorVersion" value="1" />
+    <option name="productBranch" value="Classic" />
+  </component>
+  <component name="ProjectId" id="2pNYP574o5NxLr4ag51lBF3CxQI" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "RunOnceActivity.cidr.known.project.marker": "true",
+    "RunOnceActivity.readMode.enableVisualFormatting": "true",
+    "cf.first.check.clang-format": "false",
+    "cidr.known.project.marker": "true",
+    "nodejs_package_manager_path": "npm",
+    "vue.rearranger.settings.migration": "true"
+  }
+}]]></component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="7d851c53-5bae-4690-8e17-3ea0af8a9114" name="Changes" comment="" />
+      <created>1732607973073</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1732607973073</updated>
+      <workItem from="1732607974930" duration="10000" />
+    </task>
+    <servers />
+  </component>
+</project>

@@ -1,5 +1,33 @@
 # Pointers OwnerShip - Move and Copy
 
+<!-- markdown-toc start - Don't edit this section. Run M-x markdown-toc-refresh-toc -->
+
+**Table of Contents**
+
+- [Pointers OwnerShip - Move and Copy](#pointers-ownership---move-and-copy)
+  - [General Info about ownership](#general-info-about-ownership)
+    - [Primitive Types](#primitive-types)
+    - [Pointers](#pointers)
+    - [Object of Class](#object-of-class)
+    - [Pointers to Class Objects on Heap](#pointers-to-class-objects-on-heap)
+    - [Smart Pointers and Ownership](#smart-pointers-and-ownership)
+  - [OwnerShip another anology](#ownership-another-anology)
+    - [The Popular Book Analogy](#the-popular-book-analogy)
+    - [Primitive Types](#primitive-types-1)
+    - [Pointers](#pointers-1)
+    - [Object of Class](#object-of-class-1)
+    - [Pointers to Class Objects on Heap](#pointers-to-class-objects-on-heap-1)
+    - [Two Pointers to the Same Object and Shared Pointer](#two-pointers-to-the-same-object-and-shared-pointer)
+  - [Pass the shared smart pointer to a function as a reference or as value? Who will be the owner and what will happen?](#pass-the-shared-smart-pointer-to-a-function-as-a-reference-or-as-value-who-will-be-the-owner-and-what-will-happen)
+    - [Passing by Value](#passing-by-value)
+    - [Passing by Reference](#passing-by-reference)
+    - [Summary](#summary)
+  - [What is owning a data](#what-is-owning-a-data)
+    - [Responsibilities of the Owner](#responsibilities-of-the-owner)
+    - [Smart Pointers and Ownership](#smart-pointers-and-ownership-1)
+
+<!-- markdown-toc end -->
+
 ## General Info about ownership
 
 Understanding ownership in C++ is fundamental, especially as it relates to
