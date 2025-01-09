@@ -31,9 +31,7 @@ void passing_args_as_val(int copy_of_a) {
               << "The Parameter change but it will "
                  "not change the argument that got passed to this "
                  "function"
-              << RESET;
-
-    copy_of_a++;
+              << RESET << copy_of_a++;
 }
 void passing_args_as_ptr(int* ptr_to_a) {
     LOG(INFO) << RED << "[Pointer Call] -> " << BLUE
@@ -102,10 +100,8 @@ void pointer_more_insight() {
     std::cout << "Obtain the value " << BLUE << sizeof(**ptrx + 1) << " bytes\n" << RESET;
 
     std::cout << "Size of ptrx[0]: " << MAGENTA << sizeof(ptrx[0]) << " bytes\n" << RESET;
-    std::cout << "Obtrain the value dereferenced after moving 4 bytes: "
-              << *((int*)((char*)ptry[0] + 4)) << std::endl;
-    std::cout << "Size of ptry[0]   dereferenced after moving 4 bytes: "
-              << sizeof(*((int*)((char*)ptry[0] + 4))) << std::endl;
+    std::cout << "Obtrain the value dereferenced after moving 4 bytes: " << *((int*)((char*)ptry[0] + 4)) << std::endl;
+    std::cout << "Size of ptry[0]   dereferenced after moving 4 bytes: " << sizeof(*((int*)((char*)ptry[0] + 4))) << std::endl;
 
     int a = 5;
     int* ptra = &a;

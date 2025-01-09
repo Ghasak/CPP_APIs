@@ -6,10 +6,8 @@ the latest `cpp` apis and the concepts behind the main issues.
 ## Agenda
 
 - [x] Poiners and References
-
   - [x] double poiner
   - [x] poiners with array and char array
-
 - [x] Chars and Strings
   - [x] Char and Strings as C-Style
   - [x] Array of Chars

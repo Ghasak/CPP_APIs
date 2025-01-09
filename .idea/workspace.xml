@@ -3,39 +3,72 @@
   <component name="AutoImportSettings">
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
-  <component name="CMakeSettings">
-    <configurations>
-      <configuration PROFILE_NAME="Debug" ENABLED="true" CONFIG_NAME="Debug" />
-    </configurations>
+  <component name="BackendCodeEditorMiscSettings">
+    <option name="/Default/RiderDebugger/RiderRestoreDecompile/RestoreDecompileSetting/@EntryValue" value="false" type="bool" />
+    <option name="/Default/Housekeeping/GlobalSettingsUpgraded/IsUpgraded/@EntryValue" value="true" type="bool" />
+    <option name="/Default/Housekeeping/FeatureSuggestion/FeatureSuggestionManager/DisabledSuggesters/=SwitchToGoToActionSuggester/@EntryIndexedValue" value="true" type="bool" />
+    <option name="/Default/Housekeeping/FeatureSuggestion/FeatureSuggestionManager/DisabledSuggesters/=SwitchToGoToActionSuggester/@EntryIndexRemoved" />
+    <option name="/Default/Environment/Hierarchy/GeneratedFilesCacheKey/Timestamp/@EntryValue" value="3" type="long" />
+  </component>
+  <component name="CMakeRunConfigurationManager">
+    <generated />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="7d851c53-5bae-4690-8e17-3ea0af8a9114" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/build/debug/main" beforeDir="false" afterPath="$PROJECT_DIR$/build/debug/main" afterDir="false" />
+    <list default="true" id="876d8e37-c3e5-4c0a-933a-b3adabfb218c" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/.idea/codeStyles/Project.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/codeStyles/codeStyleConfig.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.envrc" beforeDir="false" afterPath="$PROJECT_DIR$/.envrc" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Makefile" beforeDir="false" afterPath="$PROJECT_DIR$/Makefile" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/debug/main" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/compile_commands.json" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/dependencies/googletest" beforeDir="false" afterPath="$PROJECT_DIR$/dependencies/googletest" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/pointers_and_references/explaining_pointers_until_i_go_insane.md" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/pointers_and_references/functions_pointers.md" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/pointers_and_references/multidimensional_arrays.md" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/pointers_and_references/pointer_more_insight.md" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/pointers_and_references/pointer_ownership_move_copy_in_depth.md" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/pointers_and_references/pointer_to_pointer.md" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/pointers_and_references/pointer_with_classes.md" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/pointers_and_references/pointers.md" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/pointers_and_references/shared_pointers_in_depth.md" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/pointers_and_references/smart_pointers.md" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/pointers_and_references/smart_pointers_compared_to_raw_pointers.md" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/pointers_and_references/unique_pointer_class_from_scratch.md" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/pointers_and_references/unique_pointers_in_depth.md" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dependencies/googletest/docs/reference/actions.md" beforeDir="false" afterPath="$PROJECT_DIR$/dependencies/googletest/docs/reference/actions.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dependencies/googletest/docs/reference/mocking.md" beforeDir="false" afterPath="$PROJECT_DIR$/dependencies/googletest/docs/reference/mocking.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/pointers_and_references/m02_more_insight_and_final_conclusion_v2.md" beforeDir="false" afterPath="$PROJECT_DIR$/docs/pointers_and_references/m02_more_insight_and_final_conclusion_v2.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/concepts/mylogging.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/src/concepts/mylogging.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/concepts/pointers_and_ref/pointers.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/src/concepts/pointers_and_ref/pointers.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/logs/main.GMacBookPro.local.gmbp.log.INFO.20241126-203519.27980" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/logs/main.GMacBookPro.local.gmbp.log.INFO.20241126-204015.28418" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/logs/main.INFO" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
-  <component name="ClangdSettings">
-    <option name="formatViaClangd" value="false" />
+  <component name="ExternalProjectsData">
+    <projectState path="$PROJECT_DIR$">
+      <ProjectState />
+    </projectState>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="MakefileLocalSettings">
+    <option name="availableProjects">
+      <map>
+        <entry>
+          <key>
+            <ExternalProjectPojo>
+              <option name="name" value="CPP_APIs" />
+              <option name="path" value="$PROJECT_DIR$" />
+            </ExternalProjectPojo>
+          </key>
+          <value>
+            <list>
+              <ExternalProjectPojo>
+                <option name="name" value="CPP_APIs" />
+                <option name="path" value="$PROJECT_DIR$" />
+              </ExternalProjectPojo>
+            </list>
+          </value>
+        </entry>
+      </map>
+    </option>
     <option name="projectSyncType">
       <map>
         <entry key="$PROJECT_DIR$" value="RE_IMPORT" />
@@ -45,21 +78,28 @@
   <component name="ProjectApplicationVersion">
     <option name="ide" value="CLion" />
     <option name="majorVersion" value="2024" />
-    <option name="minorVersion" value="1" />
+    <option name="minorVersion" value="3" />
     <option name="productBranch" value="Classic" />
   </component>
-  <component name="ProjectId" id="2pNYP574o5NxLr4ag51lBF3CxQI" />
+  <component name="ProjectColorInfo">{
+  &quot;customColor&quot;: &quot;&quot;,
+  &quot;associatedIndex&quot;: 4
+}</component>
+  <component name="ProjectId" id="2rCEOfDD7m3YQrzRVQ7hIQB3cJP" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
+    "RunOnceActivity.RadMigrateCodeStyle": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "RunOnceActivity.cidr.known.project.marker": "true",
+    "RunOnceActivity.git.unshallow": "true",
     "RunOnceActivity.readMode.enableVisualFormatting": "true",
     "cf.first.check.clang-format": "false",
     "cidr.known.project.marker": "true",
+    "git-widget-placeholder": "learn__cpp",
     "nodejs_package_manager_path": "npm",
     "vue.rearranger.settings.migration": "true"
   }
@@ -67,13 +107,17 @@
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
-      <changelist id="7d851c53-5bae-4690-8e17-3ea0af8a9114" name="Changes" comment="" />
-      <created>1732607973073</created>
+      <changelist id="876d8e37-c3e5-4c0a-933a-b3adabfb218c" name="Changes" comment="" />
+      <created>1736054626354</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
-      <updated>1732607973073</updated>
-      <workItem from="1732607974930" duration="10000" />
+      <updated>1736054626354</updated>
+      <workItem from="1736054628446" duration="17000" />
+      <workItem from="1736055019285" duration="30000" />
     </task>
     <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
   </component>
 </project>

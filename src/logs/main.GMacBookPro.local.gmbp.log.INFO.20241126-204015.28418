@@ -1,5 +1,0 @@
-Log file created at: 2024/11/26 20:40:15
-Running on machine: GMacBookPro.local
-Running duration (h:mm:ss): 0:00:00
-Log line format: [IWEF]yyyymmdd hh:mm:ss.uuuuuu threadid file:line] msg
-I20241126 20:40:15.616668 14484493 main.cpp:123]  [ [1;31mINFO[0m ] [1;34mRange-based for loop (C++11 and later) to iterate over each character[0m

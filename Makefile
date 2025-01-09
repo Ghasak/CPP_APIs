@@ -34,11 +34,24 @@ release: link_compile_commands
 	$(MAKE) -j $(NUMBER_CORES) build/release
 	./build/debug/$(BINARY_NAME)
 
+# debug_using_ninja: link_compile_commands
+# 	@cmake -DCMAKE_BUILD_TYPE=debug -DCMAKE_MAKE_PROGRAM=/opt/homebrew/bin/ninja \
+# 		-DCMAKE_TOOLCHAIN_FILE=${VCPKG_ROOT}/scripts/buildsystems/vcpkg.cmake \
+# 		-G Ninja -S . \
+# 		-B ./build/debug
+# 	/opt/homebrew/bin/ninja -j${NUMBER_CORES} -C build/debug
+# 	./build/debug/$(BINARY_NAME)
+
 debug_using_ninja: link_compile_commands
-	@cmake -DCMAKE_BUILD_TYPE=debug -DCMAKE_MAKE_PROGRAM=/opt/homebrew/bin/ninja \
+	@cmake -DCMAKE_BUILD_TYPE=Debug \
+		-DCMAKE_MAKE_PROGRAM=/opt/homebrew/bin/ninja \
 		-DCMAKE_TOOLCHAIN_FILE=${VCPKG_ROOT}/scripts/buildsystems/vcpkg.cmake \
-		-G Ninja -S . \
-		-B ./build/debug
+		-DCMAKE_OSX_SYSROOT=$(shell xcrun --show-sdk-path) \
+		-DCMAKE_C_COMPILER=/usr/bin/clang \
+		-DCMAKE_CXX_COMPILER=/usr/bin/clang++ \
+		-DCMAKE_CXX_FLAGS="-stdlib=libc++ -isysroot $(shell xcrun --show-sdk-path) -mmacosx-version-min=15.2" \
+		-DCMAKE_OSX_ARCHITECTURES="arm64" \
+		-G Ninja -S . -B ./build/debug
 	/opt/homebrew/bin/ninja -j${NUMBER_CORES} -C build/debug
 	./build/debug/$(BINARY_NAME)
 

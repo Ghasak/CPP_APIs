@@ -1,0 +1,22 @@
+Log file created at: 2025/01/07 17:06:31
+Running on machine: GMacBookPro.local
+Running duration (h:mm:ss): 0:00:00
+Log line format: [IWEF]yyyymmdd hh:mm:ss.uuuuuu threadid file:line] msg
+I20250107 17:06:31.420274 1906413 mylogging.cpp:85] Logging initialized. Logs will be written to /Users/gmbp/Desktop/devCode/cppDev/CPP_APIs/src/logs
+I20250107 17:06:31.421077 1906413 main.cpp:123]  [ [1;31mINFO[0m ] [1;34mRange-based for loop (C++11 and later) to iterate over each character[0m
+I20250107 17:06:31.421103 1906413 exper2.cpp:8] [1;31mValue of x[1;33m  => [1;34m1[0m
+I20250107 17:06:31.421109 1906413 exper2.cpp:8] [1;31mValue of x[1;33m  => [1;34m2[0m
+I20250107 17:06:31.421115 1906413 exper2.cpp:8] [1;31mValue of x[1;33m  => [1;34m3[0m
+I20250107 17:06:31.421121 1906413 exper2.cpp:11] [1;34mI want to access the second element and get it back from x[3] = {1,2,3}[0m
+I20250107 17:06:31.421126 1906413 exper2.cpp:12] [1;31mAddress of second elment is given as (x+1), x is a pointer as we know: 0x16ef6a14c[0m
+I20250107 17:06:31.421132 1906413 exper2.cpp:13] [1;31mDereference the Address of second elment is given as (x+1), x is a pointer as we know: 2[0m
+I20250107 17:06:31.421139 1906413 exper2.cpp:15] [1;34mGetting memory address of each byte of[[1;33m0x16ef6a148[0m][0m
+I20250107 17:06:31.421144 1906413 exper2.cpp:15] [1;34mGetting memory address of each byte of[[1;33m0x16ef6a14c[0m][0m
+I20250107 17:06:31.421149 1906413 exper2.cpp:15] [1;34mGetting memory address of each byte of[[1;33m0x16ef6a150[0m][0m
+I20250107 17:06:31.421155 1906413 exper2.cpp:19] [1;34mThe value of i -> 1[1;34m[0m
+I20250107 17:06:31.421161 1906413 exper2.cpp:19] [1;34mThe value of i -> 2[1;34m[0m
+I20250107 17:06:31.421166 1906413 exper2.cpp:19] [1;34mThe value of i -> 3[1;34m[0m
+I20250107 17:06:31.421171 1906413 exper2.cpp:24] [1;34mthe value of x is -> [1;33m0x16ef6a148[0m
+I20250107 17:06:31.421177 1906413 exper2.cpp:24] [1;34mthe value of x is -> [1;33m0x16ef6a14c[0m
+I20250107 17:06:31.421182 1906413 exper2.cpp:24] [1;34mthe value of x is -> [1;33m0x16ef6a150[0m
+I20250107 17:06:31.421187 1906413 exper2.cpp:28] [1;33m<YES>[1;34m sizeof(x)/sizeof(x[0]) [1;31m IS EQUAL [0m[1;34m std::size(x)[0m

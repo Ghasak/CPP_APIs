@@ -1,4 +1,5 @@
 #include <glog/logging.h>
+#include <filesystem>
 #include <iostream>
 #include <string>
 #include "concepts/mylogging.hpp"
@@ -33,21 +34,55 @@
  * the implications of the logging flags for your application's logging strategy.
  */
 void init_logging(char** my_argv) {
-    // Initialize Google's logging library after setting FLAGS_log_dir
+    // Initialize Google's logging library
     google::InitGoogleLogging(my_argv[0]);
+
+    // Retrieve PROJECT_DIR_2 environment variable
     const char* projectDir = getenv("PROJECT_DIR_2");
-    std::string logDirPath = std::string(projectDir) + "src/logs";
-    std::cout << logDirPath << std::endl;
+    if (!projectDir) {
+        std::cerr << "Error: PROJECT_DIR_2 environment variable is not set.\n";
+        exit(EXIT_FAILURE);
+    }
+
+    // Normalize project directory path by removing quotes and trailing slashes
+    std::string projectDirStr = std::string(projectDir);
+
+    // Remove surrounding quotes if they exist
+    if (!projectDirStr.empty() && projectDirStr.front() == '"' && projectDirStr.back() == '"') {
+        projectDirStr = projectDirStr.substr(1, projectDirStr.size() - 2);
+    }
+
+    // Remove trailing slash if present
+    if (!projectDirStr.empty() && projectDirStr.back() == '/') {
+        projectDirStr.pop_back();
+    }
+
+    // Set the log directory path
+    std::string logDirPath = projectDirStr + "/src/logs";
+
+    // Ensure the log directory exists
+    if (!std::filesystem::exists(logDirPath)) {
+        std::filesystem::create_directories(logDirPath);
+    }
+
+    // Debugging output for log directory creation
+    if (std::filesystem::exists(logDirPath)) {
+        std::cout << "Log directory created successfully: " << logDirPath << std::endl;
+    } else {
+        std::cerr << "Failed to create log directory: " << logDirPath << std::endl;
+        exit(EXIT_FAILURE);
+    }
 
     // Set logging flags
+    FLAGS_logtostderr = 0;  // Logs to files instead of stderr
+    FLAGS_alsologtostderr = 1;  // Also log to stderr
+    FLAGS_log_dir = logDirPath;
 
-    FLAGS_logtostderr = 0;      // 1: don't print error messages to the log files, 0:
-                                // print to the log files
-    FLAGS_alsologtostderr = 1;  // 1: print error messages to the console, 0: don't print.
-    FLAGS_log_dir = logDirPath.c_str();
+    // Debugging: print FLAGS_log_dir
+    std::cout << "FLAGS_log_dir is set to: " << FLAGS_log_dir << std::endl;
 
-    // Set log file name extension
-    // google::SetLogFilenameExtension(".log");
+    // Log initialization message
+    LOG(INFO) << "Logging initialized. Logs will be written to " << logDirPath;
 }
 
 void log_info(const char* message) { LOG(INFO) << message; }
