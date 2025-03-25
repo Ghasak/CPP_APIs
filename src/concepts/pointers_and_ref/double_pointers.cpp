@@ -3,6 +3,8 @@
 #include "concepts/mylogging.hpp"
 #include <glog/logging.h>
 #include <array>
+#include <string>
+#include <cstring>
 
 /*
 HOSTING ALL CONCPETS
@@ -55,14 +57,10 @@ void double_pointer_of_std_array() {
     int* ptr1 = my_array;
     int* ptr2 = my_std_array.data();
 
-    LOG(INFO) << RED << "PRINTING THE POINER ITSELF OR my_array          -> " << BLUE << ptr1
-              << RESET;
-    LOG(INFO) << RED << "DEREFERENCING THE POINER ITSELF OR my_array     -> " << BLUE << *ptr1
-              << RESET;
-    LOG(INFO) << YELLOW << "PRINTING THE POINER ITSELF OR my_std_array      -> " << BLUE << ptr2
-              << RESET;
-    LOG(INFO) << YELLOW << "DEREFERENCING THE POINER ITSELF OR my_std_array -> " << BLUE << *ptr2
-              << RESET;
+    LOG(INFO) << RED << "PRINTING THE POINER ITSELF OR my_array          -> " << BLUE << ptr1 << RESET;
+    LOG(INFO) << RED << "DEREFERENCING THE POINER ITSELF OR my_array     -> " << BLUE << *ptr1 << RESET;
+    LOG(INFO) << YELLOW << "PRINTING THE POINER ITSELF OR my_std_array      -> " << BLUE << ptr2 << RESET;
+    LOG(INFO) << YELLOW << "DEREFERENCING THE POINER ITSELF OR my_std_array -> " << BLUE << *ptr2 << RESET;
 }
 
 /*
@@ -82,12 +80,10 @@ void double_pointer_with_matricesII() {
 
     for (int i = 0; i < rows; i++) {
         for (int j = 0; j < cols; j++) {
-            LOG(INFO)
-                << GREEN
-                << "Casting our pointer to char with a size of one byte, incrementing it by four \n"
-                << "bytes, and then casting it again to an integer before dereferencing it. -> \n"
-                << "4-bytes as a 1-cell occupied with a single integer value, and int -> 4-bytes \n"
-                << YELLOW << *(int*)((char*)array_ptr[i] + (j * 4)) << RESET;
+            LOG(INFO) << GREEN << "Casting our pointer to char with a size of one byte, incrementing it by four \n"
+                      << "bytes, and then casting it again to an integer before dereferencing it. -> \n"
+                      << "4-bytes as a 1-cell occupied with a single integer value, and int -> 4-bytes \n"
+                      << YELLOW << *(int*)((char*)array_ptr[i] + (j * 4)) << RESET;
         }
     }
 
@@ -118,8 +114,8 @@ void double_pointer_with_matricesIII() {
 
     for (int i = 0; i < rows; ++i) {
         for (int j = 0; j < cols; ++j) {
-            LOG(INFO) << MAGENTA << "i = " << BLUE << i << MAGENTA << " , j = " << BLUE << j << RED
-                      << " cell value = " << YELLOW << i * cols + j << RESET;
+            LOG(INFO) << MAGENTA << "i = " << BLUE << i << MAGENTA << " , j = " << BLUE << j << RED << " cell value = " << YELLOW
+                      << i * cols + j << RESET;
             matrix[i][j] = 10 + (i * cols) + j;
         }
     }
@@ -282,9 +278,8 @@ void pointer_to_pointer_insight() {
     LOG(INFO) << BLUE << **(cstyle_array + 1) << RESET;
     LOG(INFO) << BLUE << *((int*)((char*)cstyle_array + 4)) << RESET;
     LOG(INFO) << MAGENTA << *(int*)(((char*)(*cstyle_array)) + 4) << RESET;
-    LOG(INFO) << RED << *(int*)(((*cstyle_array)) + 1)
-              << RESET;                                   //  <- *cstyle_array is an integer length
-    LOG(INFO) << RED << *((*cstyle_array) + 1) << RESET;  //  <- *cstyle_array is an integer length
+    LOG(INFO) << RED << *(int*)(((*cstyle_array)) + 1) << RESET;  //  <- *cstyle_array is an integer length
+    LOG(INFO) << RED << *((*cstyle_array) + 1) << RESET;          //  <- *cstyle_array is an integer length
 
     /* I20240129 18:45:07.822881 9186708 main.cpp:43] 0x16f0b9fc0 */
     /* I20240129 18:45:07.823963 9186708 main.cpp:44] 40 */
@@ -300,20 +295,15 @@ void cstyle_string_array_as_pointer() {
     const char* my_cstyle_char_ptr[] = {"Hello", "World"};
 
     LOG(INFO) << YELLOW << "const char* my_cstyle_char_ptr[] ={\"Hello\", \"World\"};" << RESET;
-    LOG(INFO) << BLUE << "Pointer of char array my_cstyle_char_ptr      -> " << my_cstyle_char_ptr
-              << RESET;
-    LOG(INFO) << RED << "Dereference the pointer **my_cstyle_char_ptr   -> "
-              << **(my_cstyle_char_ptr) << RESET;
-    LOG(INFO) << BLUE << "Dereference the pointer *my_cstyle_char_ptr   -> "
-              << *(my_cstyle_char_ptr) << RESET;
+    LOG(INFO) << BLUE << "Pointer of char array my_cstyle_char_ptr      -> " << my_cstyle_char_ptr << RESET;
+    LOG(INFO) << RED << "Dereference the pointer **my_cstyle_char_ptr   -> " << **(my_cstyle_char_ptr) << RESET;
+    LOG(INFO) << BLUE << "Dereference the pointer *my_cstyle_char_ptr   -> " << *(my_cstyle_char_ptr) << RESET;
 
-    LOG(INFO) << BLUE << "dereferencing the pointer after incrementing  -> "
-              << *(my_cstyle_char_ptr + 1) << RESET;
+    LOG(INFO) << BLUE << "dereferencing the pointer after incrementing  -> " << *(my_cstyle_char_ptr + 1) << RESET;
 
     // Navigate over each pointer in top level
     for (size_t i = 0; i < strlen(my_cstyle_char_ptr[0]); i++) {
-        LOG(INFO) << RED << "deferencing with casting " << YELLOW
-                  << *(((char*)(*my_cstyle_char_ptr)) + i) << RESET;
+        LOG(INFO) << RED << "deferencing with casting " << YELLOW << *(((char*)(*my_cstyle_char_ptr)) + i) << RESET;
     }
     // OUTPUT
     /*  const char* my_cstyle_char_ptr[] ={"Hello", "World"}; */
@@ -347,17 +337,13 @@ void poiner_with_array_allocation_on_heap_only_first_level() {
         my_cstyle_char_ptr_on_heap[i] = my_array[i];
     }
 
-    LOG(INFO) << MAGENTA
-              << "C-style string as Array allocated on heap, but not the string themselves: " << RED
+    LOG(INFO) << MAGENTA << "C-style string as Array allocated on heap, but not the string themselves: " << RED
               << *my_cstyle_char_ptr_on_heap << RESET;
 
     // Printing all strings
     for (int i = 0; i < num_strings; i++) {
-        LOG(INFO)
-            << YELLOW
-            << "C-style string as Array allocated on heap, but not the string themselves: -> "
-            << BLUE << (my_cstyle_char_ptr_on_heap[i])
-            << RESET;  // <- my_cstyle_char_ptr_on_heap : pointer to first letter in first string
+        LOG(INFO) << YELLOW << "C-style string as Array allocated on heap, but not the string themselves: -> " << BLUE
+                  << (my_cstyle_char_ptr_on_heap[i]) << RESET;  // <- my_cstyle_char_ptr_on_heap : pointer to first letter in first string
     }
 
     // Dealloacte memeory for the array of pointers
@@ -382,19 +368,17 @@ void poiner_with_array_allocation_on_heap_both_levels() {
 
     // Allocate memory for each C-style string and copy the pointers
     for (int i = 0; i < num_strings; i++) {
-        my_cstyle_char_ptr_on_heap[i] =
-            new char[strlen(my_array[i]) + 1];  // +1 for null terminator
+        my_cstyle_char_ptr_on_heap[i] = new char[strlen(my_array[i]) + 1];  // +1 for null terminator
         strcpy(const_cast<char*>(my_cstyle_char_ptr_on_heap[i]), my_array[i]);
     }
 
     // Printing all strings
     for (int i = 0; i < num_strings; i++) {
-        LOG(INFO)
-            << YELLOW
-            << "C-style string as array dynamically allocated on the heap, as well as the "
-               "individual string elements also being allocated on the heap -> "
-            << BLUE << (my_cstyle_char_ptr_on_heap[i])
-            << RESET;  // <- my_cstyle_char_ptr_on_heap : pointer to first letter in first string
+        LOG(INFO) << YELLOW
+                  << "C-style string as array dynamically allocated on the heap, as well as the "
+                     "individual string elements also being allocated on the heap -> "
+                  << BLUE << (my_cstyle_char_ptr_on_heap[i])
+                  << RESET;  // <- my_cstyle_char_ptr_on_heap : pointer to first letter in first string
     }
     // Deallocate memeory for each C-style string
 

@@ -3,7 +3,6 @@
 #include <glog/logging.h>
 #include <iostream>
 #include <ostream>
-#include <string>
 
 int main(int argc, char* argv[]) {
     // Initialize logging before processing arguments
@@ -33,8 +32,8 @@ int main(int argc, char* argv[]) {
     // copying_and_copy_constructor_concept();
     // const_in_action();
     // cstyle_string_as_apointer();
-    c_style_string_in_action();
-    // double_pointers_in_action();
+    // c_style_string_in_action();
+    double_pointers_in_action();
     // enums_concept_hub();
     // copying_and_copy_constructor_concept();
 

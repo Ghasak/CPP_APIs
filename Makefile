@@ -31,7 +31,7 @@ release: link_compile_commands
 	./build/Release/$(BINARY_NAME)
 
 debug_using_ninja: link_compile_commands
-	@cmake -DCMAKE_BUILD_TYPE=debug -DCMAKE_MAKE_PROGRAM=/usr/bin/ninja \
+	@cmake -DCMAKE_EXPORT_COMPILE_COMMANDS=ON -DCMAKE_BUILD_TYPE=debug -DCMAKE_MAKE_PROGRAM=/usr/bin/ninja \
 		-DCMAKE_TOOLCHAIN_FILE=${VCPKG_ROOT}/scripts/buildsystems/vcpkg.cmake \
 		-G Ninja -S . \
 		-B ./build/debug

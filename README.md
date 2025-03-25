@@ -10,11 +10,11 @@ the latest `cpp` apis and the concepts behind the main issues.
   - [x] double poiner
   - [x] poiners with array and char array
 
-- [ ] Chars and Strings
+- [x] Chars and Strings
   - [x] Char and Strings as C-Style
   - [x] Array of Chars
-  - [ ] std::string
-- [ ] Arrays and Lists
+  - [x] std::string
+- [x] Arrays and Lists
 
   - [x] Arrays as a C-Style
   - [x] two dimensional array

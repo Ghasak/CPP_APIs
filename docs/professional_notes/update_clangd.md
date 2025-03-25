@@ -1,3 +1,20 @@
+# Clangd update 
+
+- Check your g++ version that you use 
+
+```sh 
+echo | g++ -v -x c++ -E -
+```
+
+- The output use `AI` to generate a `.clangd` file for you, based on the given version.
+
+
+
+- You can see that I have used `C++ v11` before and now as I have updated and
+  upgraded my current complier on `Ubuntu 24.04` I now use `C++ version 13`.
+
+```sh 
+
 # CompileFlags:
 #   Add:
 #     - -I/usr/include/c++/11
@@ -18,3 +35,4 @@ CompileFlags:
     - -I/usr/local/include
     - -I/usr/include/x86_64-linux-gnu
     - -I/usr/include
+```
